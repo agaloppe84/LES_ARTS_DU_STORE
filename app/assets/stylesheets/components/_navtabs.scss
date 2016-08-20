@@ -1,0 +1,110 @@
+.tabs {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+.tabs li a {
+  color: #393E46;
+  border: none;
+  font-family: "Circular-Book";
+  font-weight: 100;
+  font-size: 13px;
+  opacity: 0.7;
+  transition: 0.5s ease;
+}
+
+.tabs li a:hover {
+  cursor: pointer;
+  color: #222831;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  transition: 0.5s ease;
+}
+
+.tab {
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+.nav-tabs > li.active > a {
+  color: #FF7C38;
+  background-color: transparent;
+  border: none;
+  border-bottom-color: transparent;
+  cursor: default;
+  opacity: 1;
+  font-family: "Circular-Medium";
+  transition: 0.5s ease;
+}
+
+.nav-tabs > li.active > a:focus {
+  color: #FF7C38;
+  background-color: transparent;
+  border: none;
+  border-bottom-color: transparent;
+  cursor: default;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.nav-tabs > li.active > a:hover {
+  color: #FF7C38;
+  background-color: transparent;
+  border: none;
+  border-bottom-color: transparent;
+  cursor: default;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+
+
+
+.navtab-big-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  padding-left: 200px;
+  border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+.big-title {
+  font-family: "Circular-Medium";
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: -1px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #393E46;
+  opacity: 0.9;
+}
+
+.blind-count {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 2px;
+  color: #145374;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

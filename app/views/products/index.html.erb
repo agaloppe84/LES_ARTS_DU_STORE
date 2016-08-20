@@ -1,6 +1,162 @@
-<% @products.each do |product| %>
 
-  <h4><%= product.title %></h4>
-  <h6><%= product.description %></h6>
 
-<% end %>
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs tabs" role="tablist">
+
+    <li role="presentation" class="active">
+      <a href="#one" aria-controls="home" role="tab" data-toggle="tab">volets roulants</a>
+    </li>
+    <li role="presentation">
+      <a href="#two" aria-controls="profile" role="tab" data-toggle="tab">stores intérieurs</a>
+    </li>
+    <li role="presentation">
+      <a href="#three" aria-controls="messages" role="tab" data-toggle="tab">stores extérieurs</a>
+    </li>
+    <li role="presentation">
+      <a href="#four" aria-controls="settings" role="tab" data-toggle="tab">pergolas</a>
+    </li>
+    <li role="presentation">
+      <a href="#five" aria-controls="settings" role="tab" data-toggle="tab">menuiseries</a>
+    </li>
+    <li role="presentation">
+      <a href="#six" aria-controls="settings" role="tab" data-toggle="tab">moustiquaires</a>
+    </li>
+    <li role="presentation">
+      <a href="#seven" aria-controls="settings" role="tab" data-toggle="tab">portes de garage</a>
+    </li>
+
+  </ul>
+
+
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+
+    <div role="tabpanel" class="tab-pane active" id="one">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= @volets_roulant.last.type.name.pluralize %></div>
+        <div class="blind-count"><%= @volets_roulant.count %> produits</div>
+      </div>
+
+
+      <% @volets_roulant.each do |volet| %>
+        <%= volet.title %>
+        <%= volet.description %>
+        <p><%= image_tag volet.photos, width: "450x450" %></p>
+      <% end %>
+
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane" id="two">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= @store_interieurs.last.type.name.pluralize %></div>
+        <div class="blind-count"><%= @store_interieurs.count %> produits</div>
+      </div>
+
+      <% @store_interieurs.each do |si| %>
+        <%= si.title %>
+        <%= si.description %>
+        <p><%= image_tag si.photos, width: "450x450" %></p>
+      <% end %>
+
+    </div>
+
+
+
+    <div role="tabpanel" class="tab-pane" id="three">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= @store_exterieurs.last.type.name.pluralize %></div>
+        <div class="blind-count"><%= @store_exterieurs.count %> produits</div>
+      </div>
+
+      <% @store_exterieurs.each do |se| %>
+        <%= se.title %>
+        <%= se.description %>
+        <p><%= image_tag se.photos, width: "450x450" %></p>
+      <% end %>
+
+    </div>
+
+
+
+    <div role="tabpanel" class="tab-pane" id="four">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= @pergolas.last.type.name.pluralize %></div>
+        <div class="blind-count"><%= @pergolas.count %> produits</div>
+      </div>
+
+      <% @pergolas.each do |pergola| %>
+        <%= pergola.title %>
+        <%= pergola.description %>
+        <p><%= image_tag pergola.photos, width: "450x450" %></p>
+      <% end %>
+
+    </div>
+
+
+
+
+    <div role="tabpanel" class="tab-pane" id="five">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= @menuiseries.last.type.name.pluralize %></div>
+        <div class="blind-count"><%= @menuiseries.count %> produits</div>
+      </div>
+
+      <% @menuiseries.each do |menuiserie| %>
+        <%= menuiserie.title %>
+        <%= menuiserie.description %>
+        <p><%= image_tag menuiserie.photos, width: "450x450" %></p>
+      <% end %>
+
+    </div>
+
+
+
+
+    <div role="tabpanel" class="tab-pane" id="six">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= @moustiquaires.last.type.name.pluralize %></div>
+        <div class="blind-count"><%= @moustiquaires.count %> produits</div>
+      </div>
+
+      <% @moustiquaires.each do |moustiquaire| %>
+        <%= moustiquaire.title %>
+        <%= moustiquaire.description %>
+        <p><%= image_tag moustiquaire.photos, width: "450x450" %></p>
+      <% end %>
+
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane" id="seven">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= @portes_de_garage.last.type.name.pluralize %></div>
+        <div class="blind-count"><%= @portes_de_garage.count %> produits</div>
+      </div>
+
+      <% @portes_de_garage.each do |porte| %>
+        <%= porte.title %>
+        <%= porte.description %>
+        <p><%= image_tag porte.photos, width: "450x450" %></p>
+      <% end %>
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+

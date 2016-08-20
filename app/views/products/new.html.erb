@@ -2,7 +2,8 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :photos %>
-  <%= f.association :type,label: 'Type de store' %>
+  <%= f.association :type, as: :radio_buttons %>
+
   <%= f.input :photos_cache, as: :hidden %>
   <%= f.submit %>
 <% end %>

@@ -52,17 +52,18 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 20px;
-  border-radius: 20em;
-  line-height: 40px;
-  background-color: #D23333;
-  color: white;
-  font-size: 14px;
-  border: 2px solid #D23333;
+  border-radius: 3px;
+  line-height: 32px;
+  background-color: transparent;
+  color: rgba(0,0,0,0.7);
+  font-size: 13px;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-family: "Open Sans";
+  font-weight: 400;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: rgba(0,0,0,0.6);
 }
 
 /* Navbar search form */
@@ -128,4 +129,40 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+
+.admin-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 45px;
+  transition: 0.5s ease;
+  &-icon {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+}
+
+.admin-button  {
+  text-decoration: none;
+  color: rgba(0,0,0,0.7);
+  font-size: 13px;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+.admin-button:hover {
+  text-decoration: none;
+  color: rgba(0,0,0,0.7);
+  font-size: 13px;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+.admin-button-container:hover {
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.4);
+  transition: 0.5s ease;
 }
