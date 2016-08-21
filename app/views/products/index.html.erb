@@ -44,9 +44,34 @@
 
 
       <% @volets_roulant.each do |volet| %>
-        <%= volet.title %>
-        <%= volet.description %>
-        <p><%= image_tag volet.photos, width: "450x450" %></p>
+
+        <div class="product-card">
+
+          <div class="product-card-left">
+
+            <div><%= volet.title %></div>
+            <div><%= volet.description %></div>
+
+            <div>
+            <% if user_signed_in? %>
+              <%= link_to edit_product_path(volet), class: "navbar-wagon-brand" do %>
+                <%= image_tag "logo.png" %>
+              <% end %>
+            <% end %>
+            </div>
+
+            <div><%= link_to "voir ce produit", product_path(volet), class: "navbar-wagon-brand btn" %></div>
+
+          </div>
+
+          <div class="product-card-right">
+            <% volet.photos.each do |photo| %>
+              <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+            <% end %>
+          </div>
+
+        </div>
+
       <% end %>
 
     </div>
@@ -62,7 +87,11 @@
       <% @store_interieurs.each do |si| %>
         <%= si.title %>
         <%= si.description %>
-        <p><%= image_tag si.photos, width: "450x450" %></p>
+
+        <% si.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -79,7 +108,11 @@
       <% @store_exterieurs.each do |se| %>
         <%= se.title %>
         <%= se.description %>
-        <p><%= image_tag se.photos, width: "450x450" %></p>
+
+        <% se.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -96,7 +129,11 @@
       <% @pergolas.each do |pergola| %>
         <%= pergola.title %>
         <%= pergola.description %>
-        <p><%= image_tag pergola.photos, width: "450x450" %></p>
+
+        <% pergola.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -114,7 +151,11 @@
       <% @menuiseries.each do |menuiserie| %>
         <%= menuiserie.title %>
         <%= menuiserie.description %>
-        <p><%= image_tag menuiserie.photos, width: "450x450" %></p>
+
+        <% menuiserie.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -132,7 +173,11 @@
       <% @moustiquaires.each do |moustiquaire| %>
         <%= moustiquaire.title %>
         <%= moustiquaire.description %>
-        <p><%= image_tag moustiquaire.photos, width: "450x450" %></p>
+
+        <% moustiquaire.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+
       <% end %>
 
     </div>
@@ -148,7 +193,11 @@
       <% @portes_de_garage.each do |porte| %>
         <%= porte.title %>
         <%= porte.description %>
-        <p><%= image_tag porte.photos, width: "450x450" %></p>
+
+        <% porte.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+
       <% end %>
 
     </div>

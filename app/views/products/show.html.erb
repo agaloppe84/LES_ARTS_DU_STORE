@@ -1,0 +1,11 @@
+<%= @product.title %>
+<%= @product.description %>
+
+
+
+<% @product.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+<% end %>
+
+
+<%= link_to "retour", products_path, class: "navbar-wagon-brand btn" %>

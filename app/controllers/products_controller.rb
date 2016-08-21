@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :index, :edit, :update]
 
   def index
     @products = Product.all
@@ -33,7 +34,11 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product.update(product_params)
+    if @product.update(product_params)
+      redirect_to product_path(@product), notice: "Product has been updated"
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -49,6 +54,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:title, :description, :type_id, :photos, :photo_cache)
+    params.require(:product).permit(:title, :description, :type_id, photos: [])
   end
 end

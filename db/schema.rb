@@ -11,18 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818113938) do
+ActiveRecord::Schema.define(version: 20160821174834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attachinary_files", force: :cascade do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "photos"
     t.integer  "type_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "photo"
   end
 
   add_index "products", ["type_id"], name: "index_products_on_type_id", using: :btree
@@ -30,12 +46,12 @@ ActiveRecord::Schema.define(version: 20160818113938) do
   create_table "promos", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "photos"
     t.date     "start"
     t.date     "end"
     t.integer  "type_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "photo"
   end
 
   add_index "promos", ["type_id"], name: "index_promos_on_type_id", using: :btree
