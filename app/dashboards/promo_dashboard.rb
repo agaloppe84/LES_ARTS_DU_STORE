@@ -12,7 +12,6 @@ class PromoDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::String,
-    photos: Field::String,
     start: Field::DateTime,
     end: Field::DateTime,
     created_at: Field::DateTime,
@@ -38,7 +37,6 @@ class PromoDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :description,
-    :photos,
     :start,
     :end,
     :created_at,
@@ -52,7 +50,6 @@ class PromoDashboard < Administrate::BaseDashboard
     :type,
     :title,
     :description,
-    :photos,
     :start,
     :end,
   ].freeze

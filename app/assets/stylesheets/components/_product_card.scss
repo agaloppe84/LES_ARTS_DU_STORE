@@ -31,11 +31,28 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  position: relative;
+}
+
+.product-card-left-item-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FF6A51;
+  transition: 0.5s ease;
+  opacity: 0.8;
+}
+
+.product-card-left-item-button:hover {
+  background-color: #FF6A51;
+  opacity: 1;
 }
 
 .item-title {
   font-family: "Circular-Medium";
-  font-size: 20px;
+  font-size: 16px;
   opacity: 0.9;
   border-bottom: 1px solid #F6F6F6;
   padding-left: 20px;
@@ -49,6 +66,45 @@
 }
 
 .item-link {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.item-link a {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card-left-item-button:hover a {
+  color: white;
+}
+
+.item-description-head {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  opacity: 0.5;
+  padding-left: 20px;
+}
+
+.item-type-name {
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  opacity: 0.4;
 }
 
 
@@ -141,3 +197,141 @@ a:hover {
 }
 
 
+
+
+
+
+.product-card-left-item-button-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #F4576D;
+  transition: 0.5s ease;
+  opacity: 0.9;
+}
+
+.product-card-left-item-button-edit:hover {
+  background-color: #F4576D;
+  opacity: 1;
+}
+
+
+.product-card-left-item-button-edit:hover a {
+  color: white;
+}
+
+.item-link-edit a {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-link-edit {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  opacity: 0.8;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.product-card-left-item-button-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FF7533;
+  transition: 0.5s ease;
+  opacity: 0.8;
+}
+
+.product-card-left-item-button-info:hover {
+  background-color: #FF7533;
+  opacity: 1;
+}
+
+
+.product-card-left-item-button-info:hover a {
+  color: white;
+}
+
+.item-link-info a {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-link-info {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  opacity: 0.8;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+.item-brand {
+  position: absolute;
+  top: 7px;
+  right: 50px;
+  width: 20px;
+}
+
+.item-brand img {
+  width: 50px;
+}
+
+
+.item-brand-show {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  opacity: 0.8;
+  color: #FF7533;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.item-brand-show img {
+  width: 80px;
+}

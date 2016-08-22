@@ -12,7 +12,6 @@ class ProductDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::String,
-    photos: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -36,7 +35,6 @@ class ProductDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :description,
-    :photos,
     :created_at,
     :updated_at,
   ].freeze
@@ -48,7 +46,6 @@ class ProductDashboard < Administrate::BaseDashboard
     :type,
     :title,
     :description,
-    :photos,
   ].freeze
 
   # Overwrite this method to customize how products are displayed

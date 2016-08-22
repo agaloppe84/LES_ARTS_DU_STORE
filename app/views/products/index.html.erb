@@ -40,6 +40,11 @@
         <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
         <div class="big-title"><%= @volets_roulant.last.type.name.pluralize %></div>
         <div class="blind-count"><%= @volets_roulant.count %> produits</div>
+        <% if @volets_roulant.last.type.promos.any? %>
+          <div class="blind-count">Promo en cours</div>
+          <div class="blind-count"><%= @volets_roulant.last.type.promos.last.description %></div>
+          <div class="blind-count"><%= "Jusqu'au #{@volets_roulant.last.type.promos.last.end}" %></div>
+        <% end %>
       </div>
 
 
@@ -49,28 +54,39 @@
 
           <div class="product-card-left">
 
-            <div class="product-card-left-item item-title"><%= volet.title %></div>
+            <div class="product-card-left-item item-title">
+              <%= volet.title %>
+              <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= volet.type.name %></div>
+              <div class="item-brand-show"><%= volet.brand %></div>
+            </div>
+
+            <div class="product-card-left-item item-description-head">Description</div>
             <div class="product-card-left-item item-description"><%= volet.description %></div>
 
+
             <div class="product-card-left-item">
             <% if user_signed_in? %>
-              <%= link_to edit_product_path(volet) do %>
-                <div class="modif-button"><%= "Modifier #{volet.title}" %></div>
-              <% end %>
+              <div class="product-card-left-item-button-edit">
+                <div class="item-link-edit"><%= link_to "Modifier #{volet.title}", edit_product_path(volet) %></div>
+              </div>
             <% end %>
             </div>
 
 
             <div class="product-card-left-item">
             <% if user_signed_in? %>
-              <%= link_to new_product_info_path(volet) do %>
-                <div class="modif-button"><%= "Ajouter une info" %></div>
-              <% end %>
+              <div class="product-card-left-item-button-info">
+                <div class="item-link-info"><%= link_to "Ajouter une info", new_product_info_path(volet) %></div>
+              </div>
             <% end %>
             </div>
 
 
-            <div class="product-card-left-item item-link"><%= link_to "voir ce produit", product_path(volet), class: "navbar-wagon-brand btn" %></div>
+            <div class="product-card-left-item-button">
+              <div class="item-link"><%= link_to "voir ce produit", product_path(volet) %></div>
+            </div>
+
+
 
           </div>
 
@@ -84,6 +100,15 @@
     </div>
 
 
+
+
+
+
+
+
+
+
+
     <div role="tabpanel" class="tab-pane" id="two">
       <div class="navtab-big-title">
         <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
@@ -91,17 +116,79 @@
         <div class="blind-count"><%= @store_interieurs.count %> produits</div>
       </div>
 
-      <% @store_interieurs.each do |si| %>
-        <%= si.title %>
-        <%= si.description %>
 
-        <% si.photos.each do |photo| %>
-          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        <% end %>
+      <% @store_interieurs.each do |si| %>
+
+        <div class="product-card">
+
+          <div class="product-card-left">
+
+            <div class="product-card-left-item item-title">
+              <%= si.title %>
+              <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= si.type.name %></div>
+            </div>
+
+            <div class="product-card-left-item item-description-head">Description</div>
+            <div class="product-card-left-item item-description"><%= si.description %></div>
+
+
+            <div class="product-card-left-item">
+            <% if user_signed_in? %>
+              <div class="product-card-left-item-button-edit">
+                <div class="item-link-edit"><%= link_to "Modifier #{si.title}", edit_product_path(si) %></div>
+              </div>
+            <% end %>
+            </div>
+
+
+            <div class="product-card-left-item">
+            <% if user_signed_in? %>
+              <div class="product-card-left-item-button-info">
+                <div class="item-link-info"><%= link_to "Ajouter une info", new_product_info_path(si) %></div>
+              </div>
+            <% end %>
+            </div>
+
+
+            <div class="product-card-left-item-button">
+              <div class="item-link"><%= link_to "voir ce produit", product_path(si) %></div>
+            </div>
+
+
+
+          </div>
+
+          <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if si.photos.any? then cl_image_path si.photos.last.path end %>);">
+          </div>
+
+        </div>
 
       <% end %>
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
