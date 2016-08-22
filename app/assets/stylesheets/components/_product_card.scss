@@ -20,3 +20,93 @@
   flex: 7;
 }
 
+
+
+
+
+
+
+.card {
+  height: 250px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center center;
+  color: white;
+  position: relative;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card-category {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 10px;
+  text-shadow: none;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  font-weight: 200;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: rgba(255,255,255,0.2);
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+.card-description h2 {
+  text-shadow: none;
+  font-family: "Circular-Medium";
+  font-size: 20px;
+}
+.card-description p {
+  font-size: 14px;
+  text-shadow: none;
+  font-family: "Circular-Book";
+  }
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+
+.modif-button {
+  text-shadow: none;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  font-weight: 200;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: rgba(255,25,25,0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: 0.5s ease;
+}
+
+.modif-button:hover {
+  background-color: rgba(255,25,25,0.8);
+  color: white;
+  text-decoration: none !important;
+  transition: 0.5s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+

@@ -54,8 +54,8 @@
 
             <div>
             <% if user_signed_in? %>
-              <%= link_to edit_product_path(volet), class: "navbar-wagon-brand" do %>
-                <%= image_tag "logo.png" %>
+              <%= link_to edit_product_path(volet) do %>
+                <div class="modif-button"><%= "Modifier #{volet.title}" %></div>
               <% end %>
             <% end %>
             </div>

@@ -149,20 +149,42 @@
   text-decoration: none;
   color: rgba(0,0,0,0.7);
   font-size: 13px;
-  font-family: "Open Sans";
+  font-family: "Circular-Book";
   font-weight: 400;
+  line-height: 1.8;
+}
+
+.admin-button-destroy {
+  text-decoration: none;
+  color: #D72323;
+  font-size: 13px;
+  font-family: "Circular-Book";
+  font-weight: 400;
+  line-height: 1.8;
+  opacity: 0.5;
+  &:hover {
+    opacity: 0.9;
+    text-decoration: none;
+    color: #D72323;
+  }
 }
 
 .admin-button:hover {
   text-decoration: none;
   color: rgba(0,0,0,0.7);
   font-size: 13px;
-  font-family: "Open Sans";
+  font-family: "Circular-Book";
   font-weight: 400;
 }
 
 .admin-button-container:hover {
-  border-radius: 3px;
-  border: 1px solid rgba(0,0,0,0.4);
   transition: 0.5s ease;
+}
+
+
+.current-user {
+  color: rgba(0,0,0,0.7);
+  font-size: 13px;
+  font-family: "Circular-Book";
+  line-height: 1.8;
 }

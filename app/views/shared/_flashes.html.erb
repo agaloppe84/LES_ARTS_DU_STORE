@@ -1,12 +1,15 @@
 <% if notice %>
   <div class="alert alert-info alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= notice %>
+    <div><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+    <div><%= notice %></div>
   </div>
 <% end %>
 <% if alert %>
   <div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= alert %>
+    <div class="alert-locked"><%= image_tag "locked.svg", width: "16px" %></div>
+    <div class="alert-title-warning">Attention </div>
+    <div class="alert-title">espace sécurisé </div>
+    <div class="alert-text"><%= alert %></div>
+    <div><%= image_tag "warning.svg", width: "20px" %></div>
   </div>
 <% end %>

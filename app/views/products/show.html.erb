@@ -1,11 +1,16 @@
-<%= @product.title %>
-<%= @product.description %>
 
 
-
-<% @product.photos.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-<% end %>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= if @product.photos.any? then cl_image_path @product.photos.last.path end %>);">
+  <div class="card-category"><i class="fa fa-tags" aria-hidden="true"></i>
+ <%= @product.type.name %></div>
+  <div class="card-description">
+    <h2><%= @product.title %></h2>
+    <p><%= @product.description %></p>
+  </div>
+  <img class="card-user avatar" src="user.jpg">
+  <a class="card-link" href="#" ></a>
+</div>
 
 
 <%= link_to "retour", products_path, class: "navbar-wagon-brand btn" %>
+
