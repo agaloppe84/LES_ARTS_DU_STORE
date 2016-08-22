@@ -4,4 +4,5 @@ class Product < ActiveRecord::Base
   validates :type, presence: true
   has_attachments :photos, maximum: 2
   belongs_to :type
+  has_many :infos, dependent: :destroy
 end

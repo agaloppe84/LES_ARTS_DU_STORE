@@ -49,10 +49,10 @@
 
           <div class="product-card-left">
 
-            <div><%= volet.title %></div>
-            <div><%= volet.description %></div>
+            <div class="product-card-left-item item-title"><%= volet.title %></div>
+            <div class="product-card-left-item item-description"><%= volet.description %></div>
 
-            <div>
+            <div class="product-card-left-item">
             <% if user_signed_in? %>
               <%= link_to edit_product_path(volet) do %>
                 <div class="modif-button"><%= "Modifier #{volet.title}" %></div>
@@ -60,14 +60,21 @@
             <% end %>
             </div>
 
-            <div><%= link_to "voir ce produit", product_path(volet), class: "navbar-wagon-brand btn" %></div>
+
+            <div class="product-card-left-item">
+            <% if user_signed_in? %>
+              <%= link_to new_product_info_path(volet) do %>
+                <div class="modif-button"><%= "Ajouter une info" %></div>
+              <% end %>
+            <% end %>
+            </div>
+
+
+            <div class="product-card-left-item item-link"><%= link_to "voir ce produit", product_path(volet), class: "navbar-wagon-brand btn" %></div>
 
           </div>
 
-          <div class="product-card-right">
-            <% volet.photos.each do |photo| %>
-              <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-            <% end %>
+          <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if volet.photos.any? then cl_image_path volet.photos.last.path end %>);">
           </div>
 
         </div>

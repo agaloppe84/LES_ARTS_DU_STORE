@@ -10,9 +10,12 @@ resources :types
 
   devise_for :users
   root to: 'pages#home'
-  resources :products
   resources :types
   resources :promos
+
+  resources :products do
+    resources :infos, only: [:new, :create]
+  end
 
   mount Attachinary::Engine => "/attachinary"
   # The priority is based upon order of creation: first created -> highest priority.

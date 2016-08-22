@@ -12,5 +12,16 @@
 </div>
 
 
-<%= link_to "retour", products_path, class: "navbar-wagon-brand btn" %>
+<% @product.infos.each do |info| %>
+  <%= info.title %>
+  <%= info.content %>
+<% end %>
+
+
+
+<div class="product-card-left">
+<%= link_to products_path do %>
+    <div class="modif-button"><%= "Retour" %></div>
+<% end %>
+</div>
 

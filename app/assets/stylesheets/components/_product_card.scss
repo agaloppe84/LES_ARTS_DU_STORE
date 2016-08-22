@@ -2,8 +2,10 @@
   height: 250px;
   width: 100%;
   display: flex;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .product-card-left {
@@ -13,11 +15,40 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .product-card-right {
   height: 100%;
   flex: 7;
+  background-size: cover !important;
+  background-position: center center;
+}
+
+.product-card-left-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.item-title {
+  font-family: "Circular-Medium";
+  font-size: 20px;
+  opacity: 0.9;
+  border-bottom: 1px solid #F6F6F6;
+  padding-left: 20px;
+}
+
+.item-description {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  opacity: 0.7;
+  padding-left: 20px;
+}
+
+.item-link {
 }
 
 
