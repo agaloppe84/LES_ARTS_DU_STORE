@@ -49,7 +49,7 @@
           <div class="blind-count"><%= @products.count %> produits</div>
 
           <div class="add-model-name">
-            <%= link_to new_product_path, class: "" do %>
+            <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
               <i class="fa fa-plus" aria-hidden="true"></i>
             <% end %>
           </div>
@@ -135,7 +135,7 @@
           <div class="blind-count"><%= @promos.count %> promos</div>
 
           <div class="add-model-name">
-            <%= link_to new_promo_path, class: "" do %>
+            <%= link_to new_promo_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une promo ?" } do %>
               <i class="fa fa-plus" aria-hidden="true"></i>
             <% end %>
           </div>
