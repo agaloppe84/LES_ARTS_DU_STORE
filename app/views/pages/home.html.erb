@@ -1,8 +1,13 @@
-<div class="banner">
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @album.photos.any? then cl_image_path @album.photos.sample.path end %>);">
 
   <div class="banner-content">
-    <div class="banner-text">Les artisans du store</div>
+    <div class="banner-text">les&nbsp;</div>
+    <div class="banner-text-bold">artisans&nbsp;</div>
+    <div class="banner-text">du store</div>
   </div>
+
 
 </div>
 

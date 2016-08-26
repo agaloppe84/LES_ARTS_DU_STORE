@@ -1,0 +1,8 @@
+<% @album.photos.each do |photo| %>
+
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+
+<% end %>
+
+
+<div class="item-link-edit"><%= link_to "Modifier cet album", edit_album_path(@album) %></div>

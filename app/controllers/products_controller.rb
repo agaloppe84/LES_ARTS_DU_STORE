@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to product_path(@product), notice: "Product has been created"
+      redirect_to dashboard_path(@product), notice: "Le produit à été crée"
     else
       render :new
     end
@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to product_path(@product), notice: "Product has been updated"
+      redirect_to product_path(@product), notice: "Le produit à été mis à jour"
     else
       render :new
     end
@@ -43,6 +43,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
+    redirect_to dashboard_path, notice: "Le produit à été effacé"
   end
 
 

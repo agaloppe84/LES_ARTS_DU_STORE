@@ -12,25 +12,23 @@
     <% if user_signed_in? %>
 
 
-      <div class="admin-button-container admin-button"><%= current_user.email %></div>
-
         <!-- Bouton admin -->
       <div class="admin-button-container">
-        <div><%= link_to "dashboard", admin_root_path, class: "admin-button" %></div>
+        <div><%= link_to "Dashboard", dashboard_path, class: "admin-button" %></div>
         <!-- <div class="admin-button-container-icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
       </div>
 
 
         <!-- deconnecter -->
       <div class="admin-button-container">
-        <div><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "admin-button-destroy" %></div>
+        <div><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "admin-button-destroy" %></div>
       </div>
 
 
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
 

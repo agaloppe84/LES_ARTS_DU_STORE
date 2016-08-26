@@ -14,7 +14,11 @@ class PromosController < ApplicationController
 
   def create
     @promo = Promo.new(promo_params)
-    @promo.save
+    if @promo.save
+      redirect_to dashboard_path, notice: "La promo à été crée"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -22,10 +26,12 @@ class PromosController < ApplicationController
 
   def update
     @promo.update(promo_params)
+    redirect_to dashboard_path, notice: "La promo à été mise à jour"
   end
 
   def destroy
     @promo.destroy
+    redirect_to dashboard_path, notice: "La promo à été effacée"
   end
 
 
@@ -37,7 +43,7 @@ class PromosController < ApplicationController
   end
 
   def promo_params
-    params.require(:promo).permit(:title, :description, :start, :end, :type, photos: [])
+    params.require(:promo).permit(:title, :description, :start, :end, :type_id, photos: [])
   end
 
 end

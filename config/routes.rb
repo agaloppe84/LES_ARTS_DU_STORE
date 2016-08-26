@@ -10,8 +10,13 @@ resources :types
 
   devise_for :users
   root to: 'pages#home'
+  get 'services' => 'pages#services'
+  get 'devis' => 'pages#devis'
+  get 'contact' => 'pages#contact'
+  get 'dashboard' => 'pages#dashboard'
   resources :types
   resources :promos
+  resources :albums
 
   resources :products do
     resources :infos, only: [:new, :create]

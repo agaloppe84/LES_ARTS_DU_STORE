@@ -1,0 +1,222 @@
+<div class="fullpage">
+
+
+  <div class="fullpage-leftblock">
+
+    <div class="leftblock-title">
+      <div class="leftblock-text">MENU</div>
+    </div>
+
+    <div class="leftblock-content">
+      <ul class="nav nav-pills nav-stacked">
+
+        <li role="presentation" class="active">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+          <a href="#one" data-toggle="tab">Produits</a>
+          <div class="product-count"><%= "( #{@products.count} )" %></div>
+        </li>
+
+        <li role="presentation">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+          <a href="#two" data-toggle="tab">Promos</a>
+          <div class="product-count"><%= "( #{@promos.count} )" %></div>
+        </li>
+
+        <li role="presentation">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+          <a href="#three" data-toggle="tab">Albums</a>
+          <div class="product-count"><%= "( #{@albums.count} )" %></div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="fullpage-rightblock">
+
+    <div class="tab-content">
+
+      <div role="tabpanel" class="tab-pane active" id="one">
+
+        <div class="rightblock-title">
+          <div class="header-product-text">Produits</div>
+          <div class="blind-count"><%= @products.count %> produits</div>
+
+          <div class="add-model-name">
+            <%= link_to new_product_path, class: "" do %>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            <% end %>
+          </div>
+
+          <%= render 'shared/flashes' %>
+
+        </div>
+
+        <% @types.each do |type| %>
+
+          <div class="product-card-dashboard">
+
+
+
+
+
+              <div class="header-container">
+                <div class="dashboard-card-type">
+                  <div class="card-type-text"><%= type.name.pluralize %></div>
+                  <div class="blind-count"><%= "( #{type.products.count} ) " %></div>
+                  <div class="product-links"></div>
+                </div>
+              </div>
+
+
+              <div class="dashboard-table-header">
+                <div class="product-id-header"><%= "id" %></div>
+                <div class="product-id-title-header"><%= "titre" %></div>
+                <div class="product-id-info-header"><%= "infos" %></div>
+              </div>
+
+
+
+
+              <div class="item-container">
+                <% type.products.each do |product| %>
+
+                  <div class="dashboard-card-item">
+                    <div class="product-id"><%= "id : " %><%= product.id %></div>
+
+
+                    <%= link_to product_path(product), class: "product-id-title" do %>
+                        <%= product.title %>
+                    <% end %>
+
+
+                    <div class="product-id-info"><%= product.infos.count %></div>
+
+                    <div class="product-links">
+
+                      <%= link_to edit_product_path(product), class: "" do %>
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                      <% end %>
+
+                      <%= link_to new_product_info_path(product), class: "" do %>
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      <% end %>
+
+                      <%= link_to product_path(product), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      <% end %>
+
+                    </div>
+
+                  </div>
+
+                <% end %>
+              </div>
+
+
+          </div>
+
+        <% end %>
+
+      </div>
+
+
+
+      <div role="tabpanel" class="tab-pane" id="two">
+
+        <div class="rightblock-title">
+          <div class="header-product-text">Promos</div>
+          <div class="blind-count"><%= @promos.count %> promos</div>
+
+          <div class="add-model-name">
+            <%= link_to new_promo_path, class: "" do %>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            <% end %>
+          </div>
+
+        </div>
+
+
+          <div class="product-card-dashboard">
+
+
+              <div class="dashboard-table-header">
+                <div class="product-id-header"><%= "id" %></div>
+                <div class="product-id-title-header"><%= "titre" %></div>
+                <div class="product-id-title-header"><%= "type" %></div>
+                <div class="product-id-date-header"><%= "Début" %></div>
+                <div class="product-id-date-header"><%= "Fin" %></div>
+              </div>
+
+
+
+              <div class="item-container">
+
+                <% @promos.each do |promo| %>
+
+                  <div class="dashboard-card-item">
+                    <div class="product-id"><%= "id : " %><%= promo.id %></div>
+
+
+                    <%= link_to promo_path(promo), class: "product-id-title" do %>
+                        <%= promo.title %>
+                    <% end %>
+
+
+                    <div class="product-id-title"><%= promo.type.name %></div>
+
+                    <div class="product-id-date"><%= promo.start.strftime("%Y-%b") %></div>
+
+                    <div class="product-id-date"><%= promo.end.strftime("%Y-%b") %></div>
+
+                    <div class="product-links-promo">
+
+                      <%= link_to edit_promo_path(promo), class: "" do %>
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                      <% end %>
+
+                      <%= link_to promo_path(promo), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette promo ?" } do %>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      <% end %>
+
+                    </div>
+
+                  </div>
+
+                <% end %>
+
+              </div>
+
+          </div>
+
+
+      </div>
+
+
+
+
+      <div role="tabpanel" class="tab-pane" id="three">
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+

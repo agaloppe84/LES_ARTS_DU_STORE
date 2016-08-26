@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1154px" height="632px" viewBox="0 0 1154 632" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>test background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1154" height="632"></rect>
+        <linearGradient x1="-2.06448739%" y1="55.1869679%" x2="50.787532%" y2="160.17439%" id="linearGradient-3">
+            <stop stop-color="#FF9461" offset="0%"></stop>
+            <stop stop-color="#F088FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="les-artisans-du-stor" font-family="Circular-Book, Circular" font-size="12" font-weight="300" letter-spacing="-0.299999982" fill="#FFFFFF">
+            <tspan x="107" y="104">les</tspan>
+            <tspan x="121.076" y="104" font-family="Circular-Medium, Circular" font-weight="400"> </tspan>
+            <tspan x="123.752" y="104" font-family="Circular-Black, Circular" font-weight="700">artisans</tspan>
+            <tspan x="165.92" y="104" font-family="Circular-Medium, Circular" font-weight="400"> </tspan>
+            <tspan x="168.596" y="104">du store</tspan>
+        </text>
+        <g id="Group">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" xlink:href="#path-1"></use>
+            <g mask="url(#mask-2)" id="Path-1" fill="url(#linearGradient-3)">
+                <g transform="translate(-375.000000, 95.000000)">
+                    <path d="M89.4626603,181.261544 L91.8325434,876.761544 L1708.09278,874.608293 L1710.46266,392.28012 C1710.46266,392.28012 1276.77406,476.2569 821.75652,413.812627 C402.555331,356.283608 89.4626603,181.261544 89.4626603,181.261544 Z" opacity="0.555795243" style="mix-blend-mode: lighten;" transform="translate(899.962660, 529.011544) scale(-1, 1) rotate(-11.000000) translate(-899.962660, -529.011544) "></path>
+                    <path d="M225.985827,161.384132 L228.335242,648.364143 L1830.63641,646.856465 L1832.98583,309.136581 C1832.98583,309.136581 1403.04284,367.936025 951.955125,324.213362 C536.374428,283.932294 225.985827,161.384132 225.985827,161.384132 Z" opacity="0.377973414" style="mix-blend-mode: multiply;" transform="translate(1029.485827, 404.874138) scale(-1, 1) rotate(-6.000000) translate(-1029.485827, -404.874138) "></path>
+                    <path d="M126.391034,196.384489 L128.581093,739.914518 L1622.20098,738.231763 L1624.39103,361.294529 C1624.39103,361.294529 1223.61033,426.921994 803.119105,378.122084 C415.72652,333.163421 126.391034,196.384489 126.391034,196.384489 Z" opacity="0.377973414" style="mix-blend-mode: multiply;" transform="translate(875.391034, 468.149504) scale(-1, 1) rotate(-16.000000) translate(-875.391034, -468.149504) "></path>
+                    <path d="M26.1014322,219.299124 L28.6565783,672.829123 L1771.26626,671.425005 L1773.8214,356.902653 C1773.8214,356.902653 1306.22966,411.663241 815.641594,370.94383 C363.669794,333.429615 26.1014322,219.299124 26.1014322,219.299124 Z" opacity="0.314190765" style="mix-blend-mode: multiply;" transform="translate(899.961418, 446.064124) scale(-1, 1) rotate(-10.000000) translate(-899.961418, -446.064124) "></path>
+                    <path d="M331.679139,105.482363 L333.640718,758.012393 L1671.43753,755.992176 L1673.39911,303.463611 C1673.39911,303.463611 1314.43017,382.252066 937.807021,323.665779 C590.829472,269.691066 331.679139,105.482363 331.679139,105.482363 Z" opacity="0.314190765" style="mix-blend-mode: multiply;" transform="translate(1002.539125, 431.747378) scale(-1, 1) rotate(-357.000000) translate(-1002.539125, -431.747378) "></path>
+                    <path d="M221.54081,94.9724104 L223.524318,690.009693 L1576.27727,688.167472 L1578.26078,275.510038 C1578.26078,275.510038 1215.27868,347.356645 834.445007,293.932245 C483.58836,244.713105 221.54081,94.9724104 221.54081,94.9724104 Z" opacity="0.314190765" style="mix-blend-mode: multiply;" transform="translate(899.900795, 392.491051) scale(-1, 1) rotate(-358.000000) translate(-899.900795, -392.491051) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

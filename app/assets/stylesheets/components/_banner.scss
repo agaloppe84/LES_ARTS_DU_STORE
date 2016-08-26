@@ -1,8 +1,7 @@
 .banner {
-  height: 50vh;
+  height: 80vh;
   width: 100%;
-  background-image: url(https://w-dog.net/wallpapers/9/11/427064910004211/sea-wave-beautiful-sunset-scene-water-splash-tropical-paradise-ocean-sea-waves-sunlight-nature-landscape-palm-trees-sea-wave-beautiful-sunset-scenes-water-splash-tropical-paradise-ocean-sea-waves-su.jpg);
-  background-size: cover;
+  background-size: cover !important;
   background-position: center center;
   display: flex;
   align-items: center;
@@ -16,9 +15,18 @@
     justify-content: center;
   }
   &-text {
-    font-size: 30px;
-    font-family: "Open Sans";
+    font-size: 19px;
+    font-family: "Circular-Book";
     font-weight: 100;
-    color: white;
+    color: rgba(0,0,0,0.5);
+    letter-spacing: -1px;
   }
+}
+
+.banner-text-bold {
+  font-size: 19px;
+  font-family: "Circular-Black";
+  font-weight: 100;
+  color: rgba(0,0,0,0.8);
+  letter-spacing: -1px;
 }

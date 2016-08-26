@@ -1,0 +1,183 @@
+
+
+
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs tabs" role="tablist">
+
+    <li role="presentation" class="active">
+      <a href="#one" aria-controls="home" role="tab" data-toggle="tab">Les produits</a>
+    </li>
+    <li role="presentation">
+      <a href="#two" aria-controls="profile" role="tab" data-toggle="tab">Les types</a>
+    </li>
+    <li role="presentation">
+      <a href="#three" aria-controls="messages" role="tab" data-toggle="tab">Les promos</a>
+    </li>
+    <li role="presentation">
+      <a href="#four" aria-controls="settings" role="tab" data-toggle="tab">Les albums</a>
+    </li>
+
+  </ul>
+
+
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+
+    <div role="tabpanel" class="tab-pane active" id="one">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= "Les produits" %></div>
+        <div class="blind-count"><%= @products.count %> produits</div>
+      </div>
+
+
+      <% @products.each do |product| %>
+
+        <div class="product-card">
+
+          <div class="product-card-left">
+
+            <div class="product-card-left-item item-title">
+              <%= product.title %>
+              <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= product.type.name %></div>
+              <div class="item-brand-show"><%= product.brand %></div>
+            </div>
+
+            <div class="product-card-left-item item-description-head">Description</div>
+            <div class="product-card-left-item item-description"><%= product.description %></div>
+
+            <div class="product-card-left-item item-description">
+
+              <% product.infos.each do |info| %>
+                <%= info.title %>
+              <% end %>
+
+            </div>
+
+
+            <div class="product-card-left-item">
+            <% if user_signed_in? %>
+              <div class="product-card-left-item-button-edit">
+                <div class="item-link-edit"><%= link_to "Modifier #{product.title}", edit_product_path(product) %></div>
+              </div>
+            <% end %>
+            </div>
+
+
+            <div class="product-card-left-item">
+            <% if user_signed_in? %>
+              <div class="product-card-left-item-button-info">
+                <div class="item-link-info"><%= link_to "Ajouter une info", new_product_info_path(product) %></div>
+              </div>
+            <% end %>
+            </div>
+
+
+            <div class="product-card-left-item-button">
+              <div class="item-link"><%= link_to "voir ce produit", product_path(product) %></div>
+            </div>
+
+
+
+          </div>
+
+          <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if product.photos.any? then cl_image_path product.photos.last.path end %>);">
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+
+
+
+
+
+    <div role="tabpanel" class="tab-pane" id="two">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= "Les types" %></div>
+        <div class="blind-count"><%= @types.count %> types</div>
+      </div>
+
+
+      <% @types.each do |type| %>
+
+        <div class="product-card-dashboard">
+
+          <div class="product-card-left-dashboard">
+
+            <div class="dash-item item-title">
+              <%= type.name %>
+            </div>
+
+
+            <% type.products.each do |product| %>
+              <div class="product-card-dashboard item-description"><%= product.id %><%= "#" %>&nbsp;<%= product.title %></div>
+            <% end %>
+
+          </div>
+
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+
+
+
+
+    <div role="tabpanel" class="tab-pane" id="three">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= "Les promos" %></div>
+        <div class="blind-count"><%= @promos.count %> promos</div>
+      </div>
+
+      <% @promos.each do |promo| %>
+        <%= promo.title %>
+        <%= promo.description %>
+        <%= promo.type.name %>
+
+        <% promo.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+
+
+    <div role="tabpanel" class="tab-pane" id="four">
+      <div class="navtab-big-title">
+        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
+        <div class="big-title"><%= "Les albums" %></div>
+        <div class="blind-count"><%= @albums.count %> produits</div>
+      </div>
+
+      <% @albums.each do |album| %>
+        <%= album.name %>
+
+        <% album.photos.each do |photo| %>
+          <%= cl_image_tag photo.path, width: 60, height: 40, crop: :fill %>
+        <% end %>
+
+      <% end %>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+

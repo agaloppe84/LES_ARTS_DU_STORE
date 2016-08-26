@@ -4,17 +4,20 @@
 
 .alert {
   margin: 0;
-  color: white;
+  color: rgba(0,0,0,0.6);
   padding: 0;
-  height: 60px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 35px;
-  padding-left: 35px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-left: 25px;
 }
 .alert-info {
-  background: $green;
+  background: transparent;
+  font-family: "Circular-Bold";
+  font-size: 13px;
 }
 .alert-warning {
   background: white;

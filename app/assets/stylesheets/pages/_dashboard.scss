@@ -1,0 +1,410 @@
+.fullpage {
+  display: flex;
+  align-items: stretch;
+}
+
+.fullpage-leftblock {
+  min-width: 180px;
+  max-width: 180px;
+  background-color: #222831;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullpage-rightblock {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightblock-title {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 40px;
+  background-color: white;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.leftblock-title {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftblock-text {
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 200;
+  color: white;
+  letter-spacing: 3px;
+  transition: 0.8s ease;
+  opacity: 0.8;
+}
+
+.leftblock-text:hover {
+  letter-spacing: 0px;
+  transition: 0.8s ease;
+}
+
+
+.leftblock-content {
+  width: 100%;
+  min-height: 100vh;
+  background-color: transparent;
+  padding-left: 40px;
+  padding-top: 10px;
+}
+
+.rightblock-content {
+  height: 100vh;
+}
+
+
+.product-card-dashboard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card-type {
+  height: 42px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.dashboard-card-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  background-color: white;
+  transition: 0.3s ease;
+}
+
+.dashboard-card-item:hover {
+  padding-left: 20px;
+}
+
+.item-container {
+  width: 100%;
+  padding-top: 0;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 60px;
+}
+
+
+.header-container {
+  width: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.product-links {
+  margin-left: auto;
+  width: 130px;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.product-id {
+  width: 60px;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+}
+
+.product-id-title {
+  width: 150px;
+  font-family: "Circular-Bold";
+  font-size: 13px;
+  color: #28518A;
+  transition: 0.5s ease;
+}
+
+.product-id-title:hover {
+  opacity: 0.7;
+}
+
+.product-id-info {
+  width: 50px;
+  font-family: "Circular-Bold";
+  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+}
+
+
+
+
+
+
+.leftblock-content .nav li.active a {
+  background-color: transparent;
+  opacity: 0.9;
+  color: #00FFF5;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content .nav li.active:hover a {
+  background-color: transparent;
+  color: #00FFF5;
+  opacity: 0.9;
+}
+
+
+
+
+.leftblock-content .nav li {
+  background-color: transparent;
+  color: #00FFF5;
+  opacity: 0.9;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content .nav li a {
+  background-color: transparent;
+  color: #00FFF5;
+  opacity: 0.3;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content .nav li:hover {
+  background-color: transparent;
+  opacity: 0.9;
+  color: #00FFF5;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content .nav li:hover a {
+  background-color: transparent;
+  opacity: 1;
+  color: #00FFF5;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+
+.leftblock-content .nav li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.leftblock-content .nav li:hover i {
+  color: #00FFF5;
+  transition: 0.5s ease;
+  opacity: 1;
+}
+
+.leftblock-content .nav li.active i {
+  color: #00FFF5;
+  transition: 0.5s ease;
+  opacity: 1;
+}
+
+.leftblock-content .nav li i {
+  color: #00FFF5;
+  transition: 0.5s ease;
+  opacity: 0.4;
+  font-size: 8px;
+}
+
+
+
+
+
+
+
+.dashboard-table-header {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 30px;
+  padding-left: 90px;
+}
+
+
+.product-id-header {
+  width: 60px;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  color: rgba(0,0,0,0.4);
+}
+
+
+.product-id-title-header {
+  width: 150px;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  color: rgba(0,0,0,0.4);
+}
+
+.product-id-info-header {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  color: rgba(0,0,0,0.4);
+  width: 50px;
+}
+
+.card-type-text {
+  font-family: "Circular-Book";
+  font-size: 15px;
+  color: rgba(0,0,0,0.6);
+}
+
+.header-product-text {
+  font-family: "Circular-Black";
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+.leftblock-content .nav li:hover .product-count {
+  color: white;
+  transition: 0.5s ease;
+  opacity: 1;
+  font-family: "Open Sans";
+  font-weight: 200;
+}
+
+.leftblock-content .nav li.active .product-count {
+  color: white;
+  transition: 0.5s ease;
+  opacity: 1;
+  font-family: "Open Sans";
+  font-weight: 200;
+}
+
+.leftblock-content .nav li .product-count {
+  color: white;
+  transition: 0.5s ease;
+  opacity: 0.4;
+  font-size: 12px;
+  transition: 0.8s ease;
+  font-family: "Open Sans";
+  font-weight: 200;
+  width: 30px;
+  text-align: right;
+}
+
+.product-links a {
+  text-decoration: none;
+  color: lightgrey;
+  transition: 0.5s ease;
+}
+
+.product-links a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+
+.add-model-name a {
+  text-decoration: none;
+  color: lightgrey;
+  transition: 0.5s ease;
+}
+
+.add-model-name a:hover {
+  text-decoration: none;
+  color: grey;
+  font-size: 16px;
+}
+
+
+.add-model-name a i {
+  text-decoration: none;
+  color: lightgrey;
+  transition: 0.5s ease;
+  font-size: 15px;
+}
+
+.add-model-name a:hover i {
+  text-decoration: none;
+  color: grey;
+  font-size: 17px;
+}
+
+
+
+.product-id-date {
+  width: 80px;
+  font-family: "Circular-Bold";
+  font-size: 13px;
+  color: rgba(0,0,0,0.6);
+}
+
+.product-id-date-header {
+  width: 80px;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  color: rgba(0,0,0,0.4);
+}
+
+
+
+.product-links-promo {
+  margin-left: auto;
+  width: 60px;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.product-links-promo a {
+  text-decoration: none;
+  color: lightgrey;
+  transition: 0.5s ease;
+}
+
+.product-links-promo a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
