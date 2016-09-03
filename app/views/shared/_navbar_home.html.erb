@@ -1,6 +1,6 @@
 <div class="navbar-wagon-home navbar-wagon-fixed">
   <!-- Logo -->
-  <div class="home-logo">
+  <div class="home-logo nav-container-flex-left">
 
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
       <div>les artisans du store</div>
@@ -8,7 +8,7 @@
 
   </div>
 
-  <div class="nav-home">
+  <div class="nav-home-2">
 
     <div class="home-logo">
       <%= link_to products_path, class: "navbar-wagon-brand" do %>
@@ -34,30 +34,39 @@
 
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right-margins">
 
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
 
+      <div class="home-logo nav-container-flex-connected">
         <!-- Bouton admin -->
-      <div class="admin-button-container">
-        <div><%= link_to "Dashboard", dashboard_path, class: "admin-button" %></div>
-        <!-- <div class="admin-button-container-icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
-      </div>
+        <div class="admin-button-container">
+          <div><%= link_to "Dashboard", dashboard_path, class: "admin-button" %></div>
+          <!-- <div class="admin-button-container-icon"><i class="fa fa-cog" aria-hidden="true"></i></div> -->
+        </div>
 
 
-        <!-- deconnecter -->
-      <div class="admin-button-container">
-        <div><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "admin-button-destroy" %></div>
+          <!-- deconnecter -->
+        <div class="admin-button-container">
+          <div><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "admin-button-destroy" %></div>
+        </div>
+
       </div>
 
 
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <div class="home-logo nav-container-flex-right">
+
+        <%= link_to new_user_session_path, class: "navbar-wagon-brand" do %>
+          <div>connexion</div>
+        <% end %>
+
+      </div>
 
     <% end %>
 
@@ -65,16 +74,9 @@
 
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
-  </div>
+
+
+
+
 </div>
 

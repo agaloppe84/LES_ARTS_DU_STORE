@@ -25,3 +25,13 @@
 <% end %>
 </div>
 
+
+
+<div class="product-card-left">
+  <% if user_signed_in? %>
+    <%= link_to dashboard_path do %>
+      <div class="dashboard-return-button"><%= "Retour au dashboard" %></div>
+    <% end %>
+  <% end %>
+</div>
+

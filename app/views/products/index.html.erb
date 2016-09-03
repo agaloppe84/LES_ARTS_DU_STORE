@@ -1,282 +1,566 @@
 
 
-<div>
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs tabs" role="tablist">
-
-    <li role="presentation" class="active">
-      <a href="#one" aria-controls="home" role="tab" data-toggle="tab">volets roulants</a>
-    </li>
-    <li role="presentation">
-      <a href="#two" aria-controls="profile" role="tab" data-toggle="tab">stores intérieurs</a>
-    </li>
-    <li role="presentation">
-      <a href="#three" aria-controls="messages" role="tab" data-toggle="tab">stores extérieurs</a>
-    </li>
-    <li role="presentation">
-      <a href="#four" aria-controls="settings" role="tab" data-toggle="tab">pergolas</a>
-    </li>
-    <li role="presentation">
-      <a href="#five" aria-controls="settings" role="tab" data-toggle="tab">menuiseries</a>
-    </li>
-    <li role="presentation">
-      <a href="#six" aria-controls="settings" role="tab" data-toggle="tab">moustiquaires</a>
-    </li>
-    <li role="presentation">
-      <a href="#seven" aria-controls="settings" role="tab" data-toggle="tab">portes de garage</a>
-    </li>
-
-  </ul>
+<div class="fullpage-show">
 
 
+  <div class="fullpage-leftblock-show">
 
-  <!-- Tab panes -->
-  <div class="tab-content">
+    <div class="leftblock-title">
+      <div class="leftblock-text-show">MENU</div>
+    </div>
+
+    <div class="leftblock-content-show">
+      <ul class="nav nav-pills nav-stacked">
+
+        <li role="presentation" class="active">
+          <div class="menu-icon-show"><i class="fa fa-sun-o" aria-hidden="true"></i></div>
+          <a href="#one" data-toggle="tab">volets roulants</a>
+        </li>
+
+        <li role="presentation">
+          <div class="menu-icon-show"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+          <a href="#two" data-toggle="tab">stores intérieurs</a>
+
+        </li>
+
+        <li role="presentation">
+          <div class="menu-icon-show"><i class="fa fa-tint" aria-hidden="true"></i></div>
+          <a href="#three" data-toggle="tab">stores extérieurs</a>
+
+        </li>
+
+        <li role="presentation">
+          <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true"></i></div>
+          <a href="#four" data-toggle="tab">pergolas</a>
+
+        </li>
+
+        <li role="presentation">
+          <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true"></i></div>
+          <a href="#five" data-toggle="tab">menuiseries</a>
+
+        </li>
+
+        <li role="presentation">
+          <div class="menu-icon-show"><i class="fa fa-bug" aria-hidden="true"></i></div>
+          <a href="#six" data-toggle="tab">moustiquaires</a>
+
+        </li>
+
+        <li role="presentation">
+          <div class="menu-icon-show"><i class="fa fa-car" aria-hidden="true"></i></div>
+          <a href="#seven" data-toggle="tab">portes de garage</a>
+
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
 
 
-    <div role="tabpanel" class="tab-pane active" id="one">
-      <div class="navtab-big-title">
-        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
-        <div class="big-title"><%= @volets_roulant.last.type.name.pluralize %></div>
-        <div class="blind-count"><%= @volets_roulant.count %> produits</div>
-        <% if @volets_roulant.last.type.promos.any? %>
-          <div class="blind-count">Promo en cours</div>
-          <div class="blind-count"><%= @volets_roulant.last.type.promos.last.description %></div>
-          <div class="blind-count"><%= "Jusqu'au #{@volets_roulant.last.type.promos.last.end}" %></div>
-        <% end %>
-      </div>
 
 
-      <% @volets_roulant.each do |volet| %>
 
-        <div class="product-card">
 
-          <div class="product-card-left">
+  <div class="fullpage-rightblock">
 
-            <div class="product-card-left-item item-title">
-              <%= volet.title %>
-              <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= volet.type.name %></div>
-              <div class="item-brand-show"><%= volet.brand %></div>
+    <div class="tab-content">
+
+      <div role="tabpanel" class="tab-pane active" id="one">
+
+
+          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
+
+            <div class="banner-content">
+              <div>Volets roulant</div>
             </div>
-
-            <div class="product-card-left-item item-description-head">Description</div>
-            <div class="product-card-left-item item-description"><%= volet.description %></div>
-
-
-            <div class="product-card-left-item">
-
-            </div>
-
-
-            <div class="product-card-left-item">
-
-            </div>
-
-
-            <div class="product-card-left-item-button">
-              <div class="item-link"><%= link_to "voir ce produit", product_path(volet) %></div>
-            </div>
-
-
 
           </div>
 
-          <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if volet.photos.any? then cl_image_path volet.photos.last.path end %>);">
+
+          <div class="navtab-big-title">
+            <div class="big-icon"><i class="fa fa-sun-o" aria-hidden="true"></i></div>
+            <div class="big-title"><%= @volets_roulant.last.type.name.pluralize %></div>
+            <div class="blind-count"><%= @volets_roulant.count %> produits</div>
+            <% if @volets_roulant.last.type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= @volets_roulant.last.type.promos.last.description %></div>
+              <div class="blind-count"><%= "Jusqu'au #{@volets_roulant.last.type.promos.last.end}" %></div>
+            <% end %>
           </div>
 
-        </div>
 
-      <% end %>
+          <% @volets_roulant.each do |volet| %>
 
-    </div>
+            <div class="product-card">
+
+              <div class="product-card-left">
+
+                  <div class="product-card-left-item item-title">
+                    <%= volet.title %>
+                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= volet.type.name %></div>
+                    <div class="item-brand-show"><%= volet.brand %></div>
+                  </div>
+
+                  <div class="product-card-left-item item-description-head">Description</div>
+                  <div class="product-card-left-item item-description"><%= volet.description %></div>
 
 
+                  <div class="product-card-left-item">
+                  </div>
 
 
+                  <div class="product-card-left-item">
+                  </div>
 
 
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "voir ce produit", product_path(volet) %></div>
+                  </div>
 
+              </div>
 
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if volet.photos.any? then cl_image_path volet.photos.last.path end %>);">
+              </div>
 
+            </div>
 
+          <% end %>
 
-    <div role="tabpanel" class="tab-pane" id="two">
-      <div class="navtab-big-title">
-        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
-        <div class="big-title"><%= @store_interieurs.last.type.name.pluralize %></div>
-        <div class="blind-count"><%= @store_interieurs.count %> produits</div>
       </div>
 
 
-      <% @store_interieurs.each do |si| %>
 
-        <div class="product-card">
+      <div role="tabpanel" class="tab-pane" id="two">
 
-          <div class="product-card-left">
+          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @si_album.photos.any? then cl_image_path @si_album.photos.sample.path end %>);">
 
-            <div class="product-card-left-item item-title">
-              <%= si.title %>
-              <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= si.type.name %></div>
+            <div class="banner-content">
+              <div>Volets roulant</div>
             </div>
-
-            <div class="product-card-left-item item-description-head">Description</div>
-            <div class="product-card-left-item item-description"><%= si.description %></div>
-
-
-            <div class="product-card-left-item">
-
-            </div>
-
-
-            <div class="product-card-left-item">
-
-            </div>
-
-
-            <div class="product-card-left-item-button">
-              <div class="item-link"><%= link_to "voir ce produit", product_path(si) %></div>
-            </div>
-
-
 
           </div>
 
-          <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if si.photos.any? then cl_image_path si.photos.last.path end %>);">
+
+          <div class="navtab-big-title">
+            <div class="big-icon"><i class="fa fa-cloud" aria-hidden="true"></i></div>
+            <div class="big-title"><%= @store_interieurs.last.type.name.pluralize %></div>
+            <div class="blind-count"><%= @store_interieurs.count %> produits</div>
+            <% if @store_interieurs.last.type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= @store_interieurs.last.type.promos.last.description %></div>
+              <div class="blind-count"><%= "Jusqu'au #{@store_interieurs.last.type.promos.last.end}" %></div>
+            <% end %>
           </div>
 
-        </div>
 
-      <% end %>
+          <% @store_interieurs.each do |si| %>
 
-    </div>
+            <div class="product-card">
 
+              <div class="product-card-left">
 
+                  <div class="product-card-left-item item-title">
+                    <%= si.title %>
+                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= si.type.name %></div>
+                    <div class="item-brand-show"><%= si.brand %></div>
+                  </div>
 
-
-
-
-
-
-
-
-
-
+                  <div class="product-card-left-item item-description-head">Description</div>
+                  <div class="product-card-left-item item-description"><%= si.description %></div>
 
 
+                  <div class="product-card-left-item">
+                  </div>
 
 
+                  <div class="product-card-left-item">
+                  </div>
 
 
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "voir ce produit", product_path(si) %></div>
+                  </div>
 
+              </div>
 
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if si.photos.any? then cl_image_path si.photos.last.path end %>);">
+              </div>
 
+            </div>
 
+          <% end %>
 
-
-
-
-    <div role="tabpanel" class="tab-pane" id="three">
-      <div class="navtab-big-title">
-        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
-        <div class="big-title"><%= @store_exterieurs.last.type.name.pluralize %></div>
-        <div class="blind-count"><%= @store_exterieurs.count %> produits</div>
       </div>
 
-      <% @store_exterieurs.each do |se| %>
-        <%= se.title %>
-        <%= se.description %>
-
-        <% se.photos.each do |photo| %>
-          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        <% end %>
-
-      <% end %>
-
-    </div>
 
 
 
-    <div role="tabpanel" class="tab-pane" id="four">
-      <div class="navtab-big-title">
-        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
-        <div class="big-title"><%= @pergolas.last.type.name.pluralize %></div>
-        <div class="blind-count"><%= @pergolas.count %> produits</div>
+
+      <div role="tabpanel" class="tab-pane" id="three">
+
+
+
+          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @se_album.photos.any? then cl_image_path @se_album.photos.sample.path end %>);">
+
+            <div class="banner-content">
+              <div>Volets roulant</div>
+            </div>
+
+          </div>
+
+
+
+          <div class="navtab-big-title">
+            <div class="big-icon"><i class="fa fa-tint" aria-hidden="true"></i></div>
+            <div class="big-title"><%= @store_exterieurs.last.type.name.pluralize %></div>
+            <div class="blind-count"><%= @store_exterieurs.count %> produits</div>
+            <% if @store_exterieurs.last.type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= @store_exterieurs.last.type.promos.last.description %></div>
+              <div class="blind-count"><%= "Jusqu'au #{@store_exterieurs.last.type.promos.last.end}" %></div>
+            <% end %>
+          </div>
+
+
+          <% @store_exterieurs.each do |se| %>
+
+            <div class="product-card">
+
+              <div class="product-card-left">
+
+                  <div class="product-card-left-item item-title">
+                    <%= se.title %>
+                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= se.type.name %></div>
+                    <div class="item-brand-show"><%= se.brand %></div>
+                  </div>
+
+                  <div class="product-card-left-item item-description-head">Description</div>
+                  <div class="product-card-left-item item-description"><%= se.description %></div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "voir ce produit", product_path(se) %></div>
+                  </div>
+
+              </div>
+
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if se.photos.any? then cl_image_path se.photos.last.path end %>);">
+              </div>
+
+            </div>
+
+          <% end %>
+
       </div>
 
-      <% @pergolas.each do |pergola| %>
-        <%= pergola.title %>
-        <%= pergola.description %>
-
-        <% pergola.photos.each do |photo| %>
-          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        <% end %>
-
-      <% end %>
-
-    </div>
 
 
 
 
-    <div role="tabpanel" class="tab-pane" id="five">
-      <div class="navtab-big-title">
-        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
-        <div class="big-title"><%= @menuiseries.last.type.name.pluralize %></div>
-        <div class="blind-count"><%= @menuiseries.count %> produits</div>
+      <div role="tabpanel" class="tab-pane" id="four">
+
+
+
+          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
+
+            <div class="banner-content">
+              <div>Volets roulant</div>
+            </div>
+
+          </div>
+
+
+
+          <div class="navtab-big-title">
+            <div class="big-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+            <div class="big-title"><%= @pergolas.last.type.name.pluralize %></div>
+            <div class="blind-count"><%= @pergolas.count %> produits</div>
+            <% if @pergolas.last.type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= @pergolas.last.type.promos.last.description %></div>
+              <div class="blind-count"><%= "Jusqu'au #{@pergolas.last.type.promos.last.end}" %></div>
+            <% end %>
+          </div>
+
+
+          <% @pergolas.each do |pergola| %>
+
+            <div class="product-card">
+
+              <div class="product-card-left">
+
+                  <div class="product-card-left-item item-title">
+                    <%= pergola.title %>
+                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= pergola.type.name %></div>
+                    <div class="item-brand-show"><%= pergola.brand %></div>
+                  </div>
+
+                  <div class="product-card-left-item item-description-head">Description</div>
+                  <div class="product-card-left-item item-description"><%= pergola.description %></div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "voir ce produit", product_path(pergola) %></div>
+                  </div>
+
+              </div>
+
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if pergola.photos.any? then cl_image_path pergola.photos.last.path end %>);">
+              </div>
+
+            </div>
+
+          <% end %>
+
       </div>
 
-      <% @menuiseries.each do |menuiserie| %>
-        <%= menuiserie.title %>
-        <%= menuiserie.description %>
-
-        <% menuiserie.photos.each do |photo| %>
-          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        <% end %>
-
-      <% end %>
-
-    </div>
 
 
 
 
-    <div role="tabpanel" class="tab-pane" id="six">
-      <div class="navtab-big-title">
-        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
-        <div class="big-title"><%= @moustiquaires.last.type.name.pluralize %></div>
-        <div class="blind-count"><%= @moustiquaires.count %> produits</div>
+
+
+      <div role="tabpanel" class="tab-pane" id="five">
+
+
+
+
+          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
+
+            <div class="banner-content">
+              <div>Volets roulant</div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="navtab-big-title">
+            <div class="big-icon"><i class="fa fa-circle" aria-hidden="true"></i></div>
+            <div class="big-title"><%= @menuiseries.last.type.name.pluralize %></div>
+            <div class="blind-count"><%= @menuiseries.count %> produits</div>
+            <% if @menuiseries.last.type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= @menuiseries.last.type.promos.last.description %></div>
+              <div class="blind-count"><%= "Jusqu'au #{@menuiseries.last.type.promos.last.end}" %></div>
+            <% end %>
+          </div>
+
+
+          <% @menuiseries.each do |menuiserie| %>
+
+            <div class="product-card">
+
+              <div class="product-card-left">
+
+                  <div class="product-card-left-item item-title">
+                    <%= menuiserie.title %>
+                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= menuiserie.type.name %></div>
+                    <div class="item-brand-show"><%= menuiserie.brand %></div>
+                  </div>
+
+                  <div class="product-card-left-item item-description-head">Description</div>
+                  <div class="product-card-left-item item-description"><%= menuiserie.description %></div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "voir ce produit", product_path(menuiserie) %></div>
+                  </div>
+
+              </div>
+
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if menuiserie.photos.any? then cl_image_path menuiserie.photos.last.path end %>);">
+              </div>
+
+            </div>
+
+          <% end %>
+
       </div>
 
-      <% @moustiquaires.each do |moustiquaire| %>
-        <%= moustiquaire.title %>
-        <%= moustiquaire.description %>
-
-        <% moustiquaire.photos.each do |photo| %>
-          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        <% end %>
-
-      <% end %>
-
-    </div>
 
 
-    <div role="tabpanel" class="tab-pane" id="seven">
-      <div class="navtab-big-title">
-        <div class="big-icon"><i class="fa fa-windows" aria-hidden="true"></i></div>
-        <div class="big-title"><%= @portes_de_garage.last.type.name.pluralize %></div>
-        <div class="blind-count"><%= @portes_de_garage.count %> produits</div>
+
+
+
+
+
+
+      <div role="tabpanel" class="tab-pane" id="six">
+
+
+
+          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
+
+            <div class="banner-content">
+              <div>Volets roulant</div>
+            </div>
+
+          </div>
+
+
+
+
+
+          <div class="navtab-big-title">
+            <div class="big-icon"><i class="fa fa-bug" aria-hidden="true"></i></div>
+            <div class="big-title"><%= @moustiquaires.last.type.name.pluralize %></div>
+            <div class="blind-count"><%= @moustiquaires.count %> produits</div>
+            <% if @moustiquaires.last.type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= @moustiquaires.last.type.promos.last.description %></div>
+              <div class="blind-count"><%= "Jusqu'au #{@moustiquaires.last.type.promos.last.end}" %></div>
+            <% end %>
+          </div>
+
+
+          <% @moustiquaires.each do |mousti| %>
+
+            <div class="product-card">
+
+              <div class="product-card-left">
+
+                  <div class="product-card-left-item item-title">
+                    <%= mousti.title %>
+                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= mousti.type.name %></div>
+                    <div class="item-brand-show"><%= mousti.brand %></div>
+                  </div>
+
+                  <div class="product-card-left-item item-description-head">Description</div>
+                  <div class="product-card-left-item item-description"><%= mousti.description %></div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "voir ce produit", product_path(mousti) %></div>
+                  </div>
+
+              </div>
+
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if mousti.photos.any? then cl_image_path mousti.photos.last.path end %>);">
+              </div>
+
+            </div>
+
+          <% end %>
+
       </div>
 
-      <% @portes_de_garage.each do |porte| %>
-        <%= porte.title %>
-        <%= porte.description %>
 
-        <% porte.photos.each do |photo| %>
-          <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-        <% end %>
 
-      <% end %>
+
+
+
+
+
+
+
+      <div role="tabpanel" class="tab-pane" id="seven">
+
+
+
+
+          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
+
+            <div class="banner-content">
+              <div>Volets roulant</div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <div class="navtab-big-title">
+            <div class="big-icon"><i class="fa fa-car" aria-hidden="true"></i></div>
+            <div class="big-title"><%= @portes_de_garage.last.type.name.pluralize %></div>
+            <div class="blind-count"><%= @portes_de_garage.count %> produits</div>
+            <% if @portes_de_garage.last.type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= @portes_de_garage.last.type.promos.last.description %></div>
+              <div class="blind-count"><%= "Jusqu'au #{@portes_de_garage.last.type.promos.last.end}" %></div>
+            <% end %>
+          </div>
+
+
+          <% @portes_de_garage.each do |pdg| %>
+
+            <div class="product-card">
+
+              <div class="product-card-left">
+
+                  <div class="product-card-left-item item-title">
+                    <%= pdg.title %>
+                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= pdg.type.name %></div>
+                    <div class="item-brand-show"><%= pdg.brand %></div>
+                  </div>
+
+                  <div class="product-card-left-item item-description-head">Description</div>
+                  <div class="product-card-left-item item-description"><%= pdg.description %></div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item">
+                  </div>
+
+
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "voir ce produit", product_path(pdg) %></div>
+                  </div>
+
+              </div>
+
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if pdg.photos.any? then cl_image_path pdg.photos.last.path end %>);">
+              </div>
+
+            </div>
+
+          <% end %>
+
+      </div>
+
+
+
 
     </div>
 
@@ -284,6 +568,11 @@
   </div>
 
 
+
+
+
 </div>
+
+
 
 

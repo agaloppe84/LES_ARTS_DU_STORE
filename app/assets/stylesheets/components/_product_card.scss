@@ -2,8 +2,8 @@
   height: 250px;
   width: 100%;
   display: flex;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 12%;
+  padding-right: 12%;
   margin-bottom: 70px;
 }
 
@@ -366,4 +366,297 @@ a:hover {
   width: 100%;
   height: 50px;
 }
+
+
+.album-show-photo {
+  background-position: center center;
+  background-size: cover !important;
+  width: 300px;
+  height: 150px;
+  border-radius: 3px;
+  margin: 20px;
+  position: relative;
+  margin-bottom: 35px;
+  transition: 0.4s ease;
+}
+
+
+.album-show-photo:hover {
+}
+
+
+
+.album-fullpage {
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.album-name {
+  width: 640px;
+  font-family: "Circular-Book";
+  font-size: 15px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.photos-count {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.photo-name-and-desc {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  font-family: "Circular-Medium";
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.file-type {
+  margin-right: 14px;
+}
+
+.file-size {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  margin-right: 14px;
+  opacity: 0.6;
+}
+
+.hd-image {
+  font-family: "Circular-Black";
+  font-size: 11px;
+  color: blue;
+  opacity: 0.6;
+}
+
+
+.non-hd-image {
+  font-family: "Circular-Black";
+  font-size: 11px;
+  color: red;
+  opacity: 0.7;
+}
+
+
+.dashboard-return-button {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  border: 1px solid grey;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  color: rgba(0,0,0,0.6);
+  border-radius: 3px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: transparent;
+}
+
+.dashboard-return-button:hover {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  border: 1px solid grey;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  color: rgba(0,0,0,0.9);
+  border-radius: 3px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+.fullpage-leftblock-show {
+  min-width: 230px;
+  max-width: 230px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+  border-right: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+}
+
+
+.leftblock-text-show {
+  opacity: 0.8;
+  font-family: "Circular-Book";
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.leftblock-content-show .nav li.active a {
+  background-color: transparent;
+  opacity: 1;
+  color: grey;
+  font-family: "Circular-Bold";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content-show .nav li.active:hover a {
+  background-color: transparent;
+  color: grey;
+  opacity: 1;
+  font-family: "Circular-Bold";
+}
+
+
+
+
+.leftblock-content-show .nav li {
+  background-color: transparent;
+  color: grey;
+  opacity: 1;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content-show .nav li a {
+  background-color: transparent;
+  color: grey;
+  opacity: 0.5;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content-show .nav li:hover {
+  background-color: transparent;
+  opacity: 1;
+  color: grey;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+.leftblock-content-show .nav li:hover a {
+  background-color: transparent;
+  opacity: 1;
+  color: grey;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+
+.leftblock-content-show .nav li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.leftblock-content-show .nav li:hover i {
+  color: grey;
+  transition: 0.5s ease;
+  opacity: 1;
+}
+
+.leftblock-content-show .nav li.active i {
+  color: grey;
+  transition: 0.5s ease;
+  opacity: 1;
+}
+
+.leftblock-content-show .nav li i {
+  color: grey;
+  transition: 0.5s ease;
+  opacity: 0;
+  font-size: 14px;
+}
+
+
+.leftblock-content-show .nav li:hover .product-count {
+  color: lightgrey;
+  transition: 0.5s ease;
+  opacity: 1;
+  font-family: "Open Sans";
+  font-weight: 200;
+}
+
+.leftblock-content-show .nav li.active .product-count {
+  color: lightgrey;
+  transition: 0.5s ease;
+  opacity: 1;
+  font-family: "Open Sans";
+  font-weight: 200;
+}
+
+.leftblock-content-show .nav li .product-count {
+  color: lightgrey;
+  transition: 0.5s ease;
+  opacity: 0.4;
+  font-size: 12px;
+  transition: 0.8s ease;
+  font-family: "Open Sans";
+  font-weight: 200;
+  width: 30px;
+  text-align: right;
+}
+
+
+.leftblock-content-show .nav-stacked {
+  padding-left: 30px;
+}
+
+
+
+
+
+
+.fullpage-show {
+  display: flex;
+  align-items: stretch;
+}
+
+.menu-icon-show {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
 

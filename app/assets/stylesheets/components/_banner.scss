@@ -30,3 +30,15 @@
   color: rgba(0,0,0,0.8);
   letter-spacing: -1px;
 }
+
+
+.banner-on-index {
+  height: 30vh;
+  width: 100%;
+  background-size: cover !important;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

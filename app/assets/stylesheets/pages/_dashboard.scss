@@ -6,9 +6,11 @@
 .fullpage-leftblock {
   min-width: 180px;
   max-width: 180px;
-  background-color: #222831;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
+  border-top: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
 }
 
 .fullpage-rightblock {
@@ -27,6 +29,7 @@
   padding-left: 40px;
   background-color: white;
   margin-bottom: 20px;
+  border-top: 1px solid lightgrey;
 }
 
 .leftblock-title {
@@ -160,8 +163,8 @@
 
 .leftblock-content .nav li.active a {
   background-color: transparent;
-  opacity: 0.9;
-  color: #00FFF5;
+  opacity: 1;
+  color: grey;
   font-family: "Circular-Book";
   font-size: 13px;
   transition: 0.5s ease;
@@ -169,8 +172,8 @@
 
 .leftblock-content .nav li.active:hover a {
   background-color: transparent;
-  color: #00FFF5;
-  opacity: 0.9;
+  color: grey;
+  opacity: 1;
 }
 
 
@@ -178,7 +181,7 @@
 
 .leftblock-content .nav li {
   background-color: transparent;
-  color: #00FFF5;
+  color: grey;
   opacity: 0.9;
   font-family: "Circular-Book";
   font-size: 13px;
@@ -187,8 +190,8 @@
 
 .leftblock-content .nav li a {
   background-color: transparent;
-  color: #00FFF5;
-  opacity: 0.3;
+  color: grey;
+  opacity: 0.5;
   font-family: "Circular-Book";
   font-size: 13px;
   transition: 0.5s ease;
@@ -196,8 +199,8 @@
 
 .leftblock-content .nav li:hover {
   background-color: transparent;
-  opacity: 0.9;
-  color: #00FFF5;
+  opacity: 1;
+  color: grey;
   font-family: "Circular-Book";
   font-size: 13px;
   transition: 0.5s ease;
@@ -206,7 +209,7 @@
 .leftblock-content .nav li:hover a {
   background-color: transparent;
   opacity: 1;
-  color: #00FFF5;
+  color: grey;
   font-family: "Circular-Book";
   font-size: 13px;
   transition: 0.5s ease;
@@ -221,21 +224,21 @@
 
 
 .leftblock-content .nav li:hover i {
-  color: #00FFF5;
+  color: grey;
   transition: 0.5s ease;
   opacity: 1;
 }
 
 .leftblock-content .nav li.active i {
-  color: #00FFF5;
+  color: grey;
   transition: 0.5s ease;
   opacity: 1;
 }
 
 .leftblock-content .nav li i {
-  color: #00FFF5;
+  color: grey;
   transition: 0.5s ease;
-  opacity: 0.4;
+  opacity: 0;
   font-size: 8px;
 }
 
@@ -406,4 +409,20 @@
   text-decoration: none;
   color: grey;
 }
+
+
+
+
+
+.product-links-promo i {
+  text-decoration: none;
+  color: lightgrey;
+  transition: 0.5s ease;
+}
+
+.product-links-promo i:hover {
+  text-decoration: none;
+  color: grey;
+}
+
 

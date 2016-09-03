@@ -1,0 +1,49 @@
+
+
+<div class="infos-fullpage">
+
+    <div class="infos-product-title">
+        <%= @product.title %>&nbsp;
+        <%= "  |  " %>&nbsp;
+        <%= @product.infos.count %>&nbsp;
+        <%= "infos" %>&nbsp;
+        <%= "  |  " %>&nbsp;
+        <%= link_to new_product_info_path(@product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
+            <div>Créer une info</div>
+        <% end %>
+    </div>
+
+    <% @product.infos.each do |info| %>
+
+
+
+      <div class="info-item">
+
+        <div class="info-icon" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+
+        <div class="info-title-color"><%= info.title %>&nbsp;</div>
+
+        <div class="info-title-color-content"><%= info.content %>&nbsp;</div>
+
+
+        <div class="info-links-container">
+
+
+          <%= link_to product_info_path(@product,info), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette info ?" } do %>
+              <i class="fa fa-times" aria-hidden="true"></i>
+          <% end %>
+
+          <%= link_to edit_product_info_path(@product,info), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette info ?" } do %>
+            <i class="fa fa-cog" aria-hidden="true"></i>
+          <% end %>
+
+        </div>
+
+
+
+      </div>
+
+    <% end %>
+
+
+</div>

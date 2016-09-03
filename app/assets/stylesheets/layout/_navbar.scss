@@ -19,7 +19,7 @@
   height: 55px;
   padding: 0px 30px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   box-shadow: none;
 }
@@ -227,4 +227,42 @@
   align-items: center;
   justify-content: space-around;
   margin-left: -30px;
+}
+
+
+.nav-home-2 {
+  display: flex;
+  width: 220px;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-items {
+  cursor: pointer;
+}
+
+.nav-container-flex-left {
+  width: 300px;
+  text-align: left;
+}
+
+.nav-container-flex-right {
+  width: 300px;
+  text-align: right;
+}
+
+.navbar-wagon-right-margins {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.nav-container-flex-connected {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

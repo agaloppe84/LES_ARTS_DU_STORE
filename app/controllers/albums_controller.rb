@@ -16,7 +16,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
-      redirect_to album_path(@album), notice: "Album has been created"
+      redirect_to dashboard_path, notice: "L'album à été crée"
     else
       render :new
     end
@@ -26,15 +26,13 @@ class AlbumsController < ApplicationController
   end
 
   def update
-    if @album.update(album_params)
-      redirect_to album_path(@album), notice: "Album has been updated"
-    else
-      render :new
-    end
+    @album.update(album_params)
+    redirect_to dashboard_path, notice: "L'album à été mise à jour"
   end
 
   def destroy
     @album.destroy
+    redirect_to dashboard_path, notice: "L'album à été effacé"
   end
 
 

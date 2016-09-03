@@ -19,7 +19,7 @@ resources :types
   resources :albums
 
   resources :products do
-    resources :infos, only: [:new, :create]
+    resources :infos
   end
 
   mount Attachinary::Engine => "/attachinary"

@@ -1,6 +1,6 @@
 <div class="form-fullpage">
 
-  <div class="form-title"><%= "Créer une info pour #{@product.title}" %></div>
+  <div class="form-title"><%= "Modifier #{@product.title} / #{@info.title}" %></div>
 
 
     <%= simple_form_for [@product, @info] do |f| %>
@@ -15,7 +15,7 @@
       <%= f.input :icon, as: :attachinary, label: false %>
 
       <div class="form-fullpage-button">
-        <%= f.button :submit, 'Créer une info', class: 'form-button' %>
+        <%= f.button :submit, 'Valider', class: 'form-button' %>
       </div>
 
 

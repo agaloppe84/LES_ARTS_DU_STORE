@@ -12,6 +12,13 @@ class ProductsController < ApplicationController
     @volets_roulant = @products.joins(:type).where( "types.name = 'volet roulant'" ).references(:type)
     @portes_de_garage = @products.joins(:type).where( "types.name = 'porte de garage'" ).references(:type)
     @types = Type.all
+    @vr_album = Album.where( "name = 'volet roulant'" ).last
+    @si_album = Album.where( "name = 'store interieur'" ).last
+    @se_album = Album.where( "name = 'store exterieur'" ).last
+    @mo_album = Album.where( "name = 'moustiquaire'" ).last
+    @pe_album = Album.where( "name = 'pergola'" ).last
+    @pdg_album = Album.where( "name = 'porte de garage'" ).last
+    @me_album = Album.where( "name = 'menuiserie'" ).last
   end
 
   def show

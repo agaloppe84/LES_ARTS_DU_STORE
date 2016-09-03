@@ -1,5 +1,22 @@
-<%= simple_form_for(@album) do |f| %>
-  <%= f.input :photos, as: :attachinary %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+<div class="form-fullpage">
+
+
+    <div class="form-title">Créer un album</div>
+
+
+    <%= simple_form_for(@album) do |f| %>
+
+      <div class="form-label">Nom de l'album</div>
+      <%= f.input :name, label: false %>
+
+      <div class="form-label">Photos</div>
+      <%= f.input :photos, as: :attachinary, label: false %>
+
+      <div class="form-fullpage-button">
+          <%= f.button :submit, 'Créer un album', class: 'form-button' %>
+      </div>
+
+    <% end %>
+
+
+</div>

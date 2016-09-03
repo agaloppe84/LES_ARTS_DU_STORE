@@ -1,6 +1,13 @@
 class InfosController < ApplicationController
-  before_action :find_product, only: [ :new, :create ]
+  before_action :find_product, only: [ :new, :create, :edit, :update, :destroy, :show, :index ]
   skip_before_action :authenticate_user!, only: [:new, :create]
+
+  def index
+    @infos = Info.all
+  end
+
+  def show
+  end
 
   def new
     @info = Info.new
@@ -9,11 +16,30 @@ class InfosController < ApplicationController
   def create
     @info = @product.infos.build(info_params)
     if @info.save
-      redirect_to product_path(@product), notice: "L'info a été crée"
+      redirect_to product_infos_path, notice: "L'info a été crée"
     else
       render :new
     end
   end
+
+
+  def edit
+    @info = Info.find(params[:id])
+  end
+
+
+  def update
+    @info = Info.find(params[:id])
+    @info.update(info_params)
+    redirect_to product_infos_path, notice: "L'info à été mise à jour"
+  end
+
+  def destroy
+    @info = Info.find(params[:id])
+    @info.destroy
+    redirect_to product_infos_path, notice: "L'info à été effacée"
+  end
+
 
   private
 

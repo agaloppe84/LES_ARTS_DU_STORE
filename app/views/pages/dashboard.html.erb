@@ -4,7 +4,7 @@
   <div class="fullpage-leftblock">
 
     <div class="leftblock-title">
-      <div class="leftblock-text">MENU</div>
+      <div class="leftblock-text-show">DASHBOARD</div>
     </div>
 
     <div class="leftblock-content">
@@ -100,12 +100,16 @@
 
                     <div class="product-links">
 
-                      <%= link_to edit_product_path(product), class: "" do %>
+                      <%= link_to edit_product_path(product), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier ce produit ?" } do %>
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       <% end %>
 
-                      <%= link_to new_product_info_path(product), class: "" do %>
+                      <%= link_to new_product_info_path(product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
                         <i class="fa fa-plus" aria-hidden="true"></i>
+                      <% end %>
+
+                      <%= link_to product_infos_path(product), class: "" do %>
+                        <i class="fa fa-eye" aria-hidden="true"></i>
                       <% end %>
 
                       <%= link_to product_path(product), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
@@ -177,7 +181,7 @@
 
                     <div class="product-links-promo">
 
-                      <%= link_to edit_promo_path(promo), class: "" do %>
+                      <%= link_to edit_promo_path(promo), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette promo ?" } do %>
                         <i class="fa fa-cog" aria-hidden="true"></i>
                       <% end %>
 
@@ -203,6 +207,70 @@
 
       <div role="tabpanel" class="tab-pane" id="three">
 
+        <div class="rightblock-title">
+          <div class="header-product-text">Albums</div>
+          <div class="blind-count"><%= @albums.count %> albums</div>
+
+          <div class="add-model-name">
+            <%= link_to new_album_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un album ?" } do %>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            <% end %>
+          </div>
+
+        </div>
+
+
+          <div class="product-card-dashboard">
+
+
+              <div class="dashboard-table-header">
+                <div class="product-id-header"><%= "id" %></div>
+                <div class="product-id-title-header"><%= "name" %></div>
+                <div class="product-id-title-header"><%= "photos" %></div>
+              </div>
+
+
+
+              <div class="item-container">
+
+                <% @albums.each do |album| %>
+
+                  <div class="dashboard-card-item">
+                    <div class="product-id"><%= "id : " %><%= album.id %></div>
+
+
+                    <%= link_to album_path(album), class: "product-id-title" do %>
+                        <%= album.name %>
+                    <% end %>
+
+
+                    <div class="product-id-title"><%= album.photos.count %></div>
+
+
+                    <div class="product-links-promo">
+
+                      <%= link_to edit_album_path(album), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cet album ?" } do %>
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                      <% end %>
+
+
+                      <% if album.name == "homepage" %>
+                          <i class="fa fa-warning" aria-hidden="true"></i>
+                        <% else %>
+                          <%= link_to album_path(album), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cet album ?" } do %>
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                          <% end %>
+                      <% end %>
+
+                    </div>
+
+                  </div>
+
+                <% end %>
+
+              </div>
+
+          </div>
 
 
       </div>
