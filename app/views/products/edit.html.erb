@@ -7,7 +7,7 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :photos, as: :attachinary %>
-  <%= f.input :brand %>
+  <%= f.association :brand, as: :radio_buttons, label: false %>
   <%= f.association :type, as: :radio_buttons %>
   <%= f.submit %>
 <% end %>

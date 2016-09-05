@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824211332) do
+ActiveRecord::Schema.define(version: 20160905132953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20160824211332) do
 
   add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
 
+  create_table "brands", force: :cascade do |t|
+    t.string   "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
   create_table "infos", force: :cascade do |t|
     t.string   "title"
     t.integer  "product_id"
@@ -57,9 +64,10 @@ ActiveRecord::Schema.define(version: 20160824211332) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "photo"
-    t.string   "brand"
+    t.integer  "brand_id"
   end
 
+  add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
   add_index "products", ["type_id"], name: "index_products_on_type_id", using: :btree
 
   create_table "promos", force: :cascade do |t|
@@ -100,6 +108,7 @@ ActiveRecord::Schema.define(version: 20160824211332) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "infos", "products"
+  add_foreign_key "products", "brands"
   add_foreign_key "products", "types"
   add_foreign_key "promos", "types"
 end

@@ -40,7 +40,17 @@
   font-family: "Circular-Medium";
   font-size: 15px;
   opacity: 1;
+  box-shadow: none;
+  transition: 0.5s ease;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #5ACFD6;
+    transition: 0.5s ease;
+  }
 }
+
+.form-fullpage
 
 
 .form-button {

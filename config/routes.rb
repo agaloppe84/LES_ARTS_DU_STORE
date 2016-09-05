@@ -17,6 +17,7 @@ resources :types
   resources :types
   resources :promos
   resources :albums
+  resources :brands
 
   resources :products do
     resources :infos

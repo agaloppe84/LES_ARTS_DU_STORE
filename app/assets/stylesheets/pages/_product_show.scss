@@ -1,0 +1,61 @@
+.banner-product-page-show {
+  height: 250px;
+  background-size: cover !important;
+  background-position: center center;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-end;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.banner-product-show-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 100%;
+}
+
+
+.show-description-item {
+  font-family: "Roboto";
+  font-weight: 100;
+  font-size: 22px;
+  text-shadow: none;
+}
+
+
+.show-description-brand-icon img {
+  width: 70px;
+}
+
+.back-button-fixed {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 60px;
+  height: 40px;
+  background-color: transparent;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+  cursor: pointer;
+  &:hover {
+    width: 75px;
+  }
+}
+
+.back-button-fixed i {
+  font-size: 20px;
+  color: rgba(100,100,100,0.9);
+}

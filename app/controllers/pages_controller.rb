@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     @infos = Info.all
     @promos = Promo.all
     @types = Type.all
+    @brands = Brand.all
   end
 
 end

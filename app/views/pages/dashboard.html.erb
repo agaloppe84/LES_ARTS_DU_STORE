@@ -28,6 +28,12 @@
           <div class="product-count"><%= "( #{@albums.count} )" %></div>
         </li>
 
+        <li role="presentation">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+          <a href="#four" data-toggle="tab">Marques</a>
+          <div class="product-count"><%= "( #{@brands.count} )" %></div>
+        </li>
+
       </ul>
     </div>
 
@@ -274,6 +280,99 @@
 
 
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div role="tabpanel" class="tab-pane" id="four">
+
+        <div class="rightblock-title">
+          <div class="header-product-text">Marques</div>
+          <div class="blind-count"><%= @brands.count %> marques</div>
+
+          <div class="add-model-name">
+            <%= link_to new_brand_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une marque ?" } do %>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            <% end %>
+          </div>
+
+        </div>
+
+
+          <div class="product-card-dashboard">
+
+
+              <div class="dashboard-table-header">
+                <div class="product-id-header"><%= "id" %></div>
+                <div class="product-id-title-header"><%= "name" %></div>
+                <div class="product-id-title-header"><%= "produits" %></div>
+              </div>
+
+
+
+              <div class="item-container">
+
+                <% @brands.each do |brand| %>
+
+                  <div class="dashboard-card-item">
+                    <div class="product-id"><%= "id : " %><%= brand.id %></div>
+
+
+                    <%= link_to brand_path(brand), class: "product-id-title" do %>
+                        <%= brand.name %>
+                    <% end %>
+
+
+                    <div class="product-id-title"><%= brand.products.count %></div>
+
+
+                    <div class="product-links-promo">
+
+                      <%= link_to edit_brand_path(brand), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette marque ?" } do %>
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                      <% end %>
+
+
+
+                      <%= link_to brand_path(brand), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette marque ?" } do %>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      <% end %>
+
+
+                    </div>
+
+                  </div>
+
+                <% end %>
+
+              </div>
+
+          </div>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

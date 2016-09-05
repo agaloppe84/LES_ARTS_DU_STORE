@@ -17,7 +17,7 @@
       <%= f.association :type, as: :radio_buttons, label: false %>
 
       <div class="form-label">Marque</div>
-      <%= f.input :brand, label: false %>
+      <%= f.association :brand, as: :radio_buttons, label: false %>
 
       <div class="form-label">Photos</div>
       <%= f.input :photos, as: :attachinary, label: false %>

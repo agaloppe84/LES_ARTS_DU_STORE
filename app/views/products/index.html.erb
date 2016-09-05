@@ -82,7 +82,7 @@
 
           <div class="navtab-big-title">
             <div class="big-icon"><i class="fa fa-sun-o" aria-hidden="true"></i></div>
-            <div class="big-title"><%= @volets_roulant.last.type.name.pluralize %></div>
+            <div class="product-index-type-header"><%= @volets_roulant.last.type.name.pluralize %></div>
             <div class="blind-count"><%= @volets_roulant.count %> produits</div>
             <% if @volets_roulant.last.type.promos.any? %>
               <div class="blind-count">Promo en cours</div>
@@ -100,8 +100,7 @@
 
                   <div class="product-card-left-item item-title">
                     <%= volet.title %>
-                    <div class="item-type-name">&nbsp;<%= " | " %>&nbsp;<%= volet.type.name %></div>
-                    <div class="item-brand-show"><%= volet.brand %></div>
+                    <div class="item-brand-show"><%= if volet.brand == nil then "" else volet.brand.name end %></div>
                   </div>
 
                   <div class="product-card-left-item item-description-head">Description</div>

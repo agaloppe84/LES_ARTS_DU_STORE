@@ -2,7 +2,18 @@
 <div class="album-fullpage">
 
     <div class="album-name">
-      <%= @album.name %><div class="photos-count"><%= @album.photos.count %><%= " photos " %></div>
+
+      <%= @album.name %>
+      <div class="photos-count">
+        <%= @album.photos.count %><%= " photos " %>&nbsp;
+
+        <% if @album.photos.count == 10 %>
+          <div>(maximum)</div>
+        <% end %>
+
+      </div>
+
+
     </div>
 
     <% @album.photos.each do |photo| %>

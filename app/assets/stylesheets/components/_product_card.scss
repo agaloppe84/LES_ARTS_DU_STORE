@@ -408,6 +408,9 @@ a:hover {
   font-family: "Circular-Book";
   font-size: 12px;
   opacity: 0.5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .photo-name-and-desc {
@@ -490,15 +493,23 @@ a:hover {
 
 
 .fullpage-leftblock-show {
-  min-width: 230px;
-  max-width: 230px;
+  min-width: 90px;
+  max-width: 90px;
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  transition: 0.5s ease;
+  transition: 0.2s ease;
   border-right: 1px solid lightgrey;
   border-top: 1px solid lightgrey;
+  &:hover {
+    min-width: 240px;
+    max-width: 240px;
+  }
 }
+
+
+
+
 
 
 .leftblock-text-show {
@@ -506,6 +517,42 @@ a:hover {
   font-family: "Circular-Book";
   font-size: 12px;
 }
+
+
+
+.fullpage-leftblock-show .leftblock-content-show .nav-stacked li a {
+  display: none;
+  transition: 0.1s ease;
+}
+
+
+
+
+.fullpage-leftblock-show:hover .leftblock-content-show .nav-stacked li a {
+  display: inline;
+  transition: 0.1s ease;
+}
+
+
+
+
+
+
+
+
+.fullpage-leftblock-show .leftblock-content-show .nav-stacked li  {
+  margin-bottom: 28px;
+  transition: 0.1s ease;
+}
+
+
+
+
+.fullpage-leftblock-show:hover .leftblock-content-show .nav-stacked li  {
+  margin-bottom: 0;
+  transition: 0.1s ease;
+}
+
 
 
 
@@ -599,7 +646,7 @@ a:hover {
 .leftblock-content-show .nav li i {
   color: grey;
   transition: 0.5s ease;
-  opacity: 0;
+  opacity: 0.4;
   font-size: 14px;
 }
 
