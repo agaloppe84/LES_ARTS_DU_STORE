@@ -36,7 +36,7 @@ div.mc-field-group ul li label {
   border-radius: 0px !important;
   border-top: none !important;
   border-color: lightgrey !important;
-  max-width: 220px;
+  max-width: 280px;
   font-family: "Circular-Book";
   font-size: 15px;
   opacity: 0.7;
@@ -51,10 +51,10 @@ div.mc-field-group ul li label {
 
 
 div.mc-field-group select {
-  max-width: 220px;
+  max-width: 280px;
   border-radius: 0px !important;
   border-color: lightgrey !important;
-  height: 35px;
+  height: 37px;
   border-radius: none !important;
   background-color: transparent;
   font-family: "Circular-Book";
@@ -79,7 +79,7 @@ div.mc-field-group select:focus {
 
 
 #mc_embed_signup .mc-field-group {
-  max-width: 220px;
+  max-width: 280px;
 }
 
 input.button {
@@ -140,6 +140,25 @@ input.button {
 
 #mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
   border: 1px solid lightgrey !important;
+}
+
+
+
+#mc_embed_signup .mc-field-group select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+}
+
+.select-icon-absolute {
+  position: absolute;
+  bottom: 28px;
+  right: 9px;
+  font-size: 23px;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 
