@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
     # @album = Album.all.last
     @album = Album.where( "name = 'homepage'" ).last
+    @products = Product.all
 
   end
 

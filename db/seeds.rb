@@ -1,5 +1,38 @@
+Type.destroy_all
+Brand.destroy_all
+Album.destroy_all
+Info.destroy_all
+Promo.destroy_all
+Product.destroy_all
+
+
+
+
+
+
+
+
+
 
 puts "Création du seed - START"
+
+
+
+
+
+
+puts "Création des users - START"
+
+# ------------------------- Création des users ------------------------- #
+
+
+    User.create!(email: 'agaloppe@me.com', password: '1234soleil')
+    User.create!(email: 'audric.agalops@gmail.com', password: '1234soleil')
+
+
+# ------------------------- Création des users ------------------------- #
+
+puts "Création des users - END"
 
 
 
@@ -28,6 +61,26 @@ puts "Création des types de stores - END"
 
 
 
+puts "Création des marques - START"
+
+# ------------------------- Création des marques ------------------------- #
+
+
+    coublanc =      Brand.create!(name: 'coublanc', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+    luxaflex =      Brand.create!(name: 'luxaflex', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+    franceferm =    Brand.create!(name: 'france fermetures', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+    franciaflex =   Brand.create!(name: 'franciaflex', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+
+
+
+# ------------------------- Création des marques ------------------------- #
+
+puts "Création des marques - END"
+
+
+
+
+
 
 
 
@@ -42,11 +95,11 @@ puts "Création des stores - START"
     puts "Création des moustiquaires - START"
 
 
-        Product.create!(title: 'Mousty 1', type: moustiquaire , description: 'test')
-        Product.create!(title: 'Mousty 2', type: moustiquaire , description: 'test')
-        Product.create!(title: 'Mousty 3', type: moustiquaire , description: 'test')
-        Product.create!(title: 'Mousty 4', type: moustiquaire , description: 'test')
-        Product.create!(title: 'Mousty 5', type: moustiquaire , description: 'test')
+        mousty01 = Product.create!(title: 'Mousty 1', type: moustiquaire , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        mousty02 = Product.create!(title: 'Mousty 2', type: moustiquaire , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        mousty03 = Product.create!(title: 'Mousty 3', type: moustiquaire , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        mousty04 = Product.create!(title: 'Mousty 4', type: moustiquaire , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        mousty05 = Product.create!(title: 'Mousty 5', type: moustiquaire , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
     puts "Création des moustiquaires - END"
@@ -60,11 +113,11 @@ puts "Création des stores - START"
     puts "Création des portes de garage - START"
 
 
-        Product.create!(title: 'Porto 1', type: porte_de_garage , description: 'test')
-        Product.create!(title: 'Porto 2', type: porte_de_garage , description: 'test')
-        Product.create!(title: 'Porto 3', type: porte_de_garage , description: 'test')
-        Product.create!(title: 'Porto 4', type: porte_de_garage , description: 'test')
-        Product.create!(title: 'Porto 5', type: porte_de_garage , description: 'test')
+        porto01 = Product.create!(title: 'Porto 1', type: porte_de_garage , description: 'test', brand: luxaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        porto02 = Product.create!(title: 'Porto 2', type: porte_de_garage , description: 'test', brand: luxaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        porto03 = Product.create!(title: 'Porto 3', type: porte_de_garage , description: 'test', brand: luxaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        porto04 = Product.create!(title: 'Porto 4', type: porte_de_garage , description: 'test', brand: luxaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        porto05 = Product.create!(title: 'Porto 5', type: porte_de_garage , description: 'test', brand: luxaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
     puts "Création des portes de garage - END"
@@ -78,11 +131,11 @@ puts "Création des stores - START"
     puts "Création des stores interieurs - START"
 
 
-        Product.create!(title: 'Inte 1', type: store_interieur , description: 'test')
-        Product.create!(title: 'Inte 2', type: store_interieur , description: 'test')
-        Product.create!(title: 'Inte 3', type: store_interieur , description: 'test')
-        Product.create!(title: 'Inte 4', type: store_interieur , description: 'test')
-        Product.create!(title: 'Inte 5', type: store_interieur , description: 'test')
+        inte01 = Product.create!(title: 'Inte 1', type: store_interieur , description: 'test', brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte02 = Product.create!(title: 'Inte 2', type: store_interieur , description: 'test', brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte03 = Product.create!(title: 'Inte 3', type: store_interieur , description: 'test', brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte04 = Product.create!(title: 'Inte 4', type: store_interieur , description: 'test', brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte05 = Product.create!(title: 'Inte 5', type: store_interieur , description: 'test', brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
     puts "Création des stores interieurs - END"
@@ -96,11 +149,11 @@ puts "Création des stores - START"
     puts "Création des stores exterieurs - START"
 
 
-        Product.create!(title: 'Exte 1', type: store_exterieur , description: 'test')
-        Product.create!(title: 'Exte 2', type: store_exterieur , description: 'test')
-        Product.create!(title: 'Exte 3', type: store_exterieur , description: 'test')
-        Product.create!(title: 'Exte 4', type: store_exterieur , description: 'test')
-        Product.create!(title: 'Exte 5', type: store_exterieur , description: 'test')
+        exte01 = Product.create!(title: 'Exte 1', type: store_exterieur , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte02 = Product.create!(title: 'Exte 2', type: store_exterieur , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte03 = Product.create!(title: 'Exte 3', type: store_exterieur , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte04 = Product.create!(title: 'Exte 4', type: store_exterieur , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte05 = Product.create!(title: 'Exte 5', type: store_exterieur , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
     puts "Création des stores exterieurs - END"
@@ -114,11 +167,11 @@ puts "Création des stores - START"
     puts "Création des menuiseries - START"
 
 
-        Product.create!(title: 'Menui 1', type: menuiserie , description: 'test')
-        Product.create!(title: 'Menui 2', type: menuiserie , description: 'test')
-        Product.create!(title: 'Menui 3', type: menuiserie , description: 'test')
-        Product.create!(title: 'Menui 4', type: menuiserie , description: 'test')
-        Product.create!(title: 'Menui 5', type: menuiserie , description: 'test')
+        menui01 = Product.create!(title: 'Menui 1', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui02 = Product.create!(title: 'Menui 2', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui03 = Product.create!(title: 'Menui 3', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui04 = Product.create!(title: 'Menui 4', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui05 = Product.create!(title: 'Menui 5', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
     puts "Création des menuiseries - END"
@@ -132,11 +185,11 @@ puts "Création des stores - START"
     puts "Création des pergolas - START"
 
 
-        Product.create!(title: 'Pergo 1', type: pergola , description: 'test')
-        Product.create!(title: 'Pergo 2', type: pergola , description: 'test')
-        Product.create!(title: 'Pergo 3', type: pergola , description: 'test')
-        Product.create!(title: 'Pergo 4', type: pergola , description: 'test')
-        Product.create!(title: 'Pergo 5', type: pergola , description: 'test')
+        pergo01 = Product.create!(title: 'Pergo 1', type: pergola , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        pergo02 = Product.create!(title: 'Pergo 2', type: pergola , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        pergo03 = Product.create!(title: 'Pergo 3', type: pergola , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        pergo04 = Product.create!(title: 'Pergo 4', type: pergola , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        pergo05 = Product.create!(title: 'Pergo 5', type: pergola , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
     puts "Création des pergolas - END"
@@ -150,11 +203,11 @@ puts "Création des stores - START"
     puts "Création des volets roulants - START"
 
 
-        Product.create!(title: 'Volet 1', type: volet_roulant , description: 'test')
-        Product.create!(title: 'Volet 2', type: volet_roulant , description: 'test')
-        Product.create!(title: 'Volet 3', type: volet_roulant , description: 'test')
-        Product.create!(title: 'Volet 4', type: volet_roulant , description: 'test')
-        Product.create!(title: 'Volet 5', type: volet_roulant , description: 'test')
+        volet01 = Product.create!(title: 'Volet 1', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet02 = Product.create!(title: 'Volet 2', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet03 = Product.create!(title: 'Volet 3', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet04 = Product.create!(title: 'Volet 4', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet05 = Product.create!(title: 'Volet 5', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
     puts "Création des volets roulants - END"
@@ -166,6 +219,164 @@ puts "Création des stores - START"
 # ------------------------- Création des stores ------------------------- #
 
 puts "Création des stores - END"
+
+
+
+
+
+
+
+puts "Création des infos - START"
+
+# ------------------------- INFOS - Moustiquaires ------------------------- #
+
+
+    Info.create!(title: 'info', content: 'info-test', product: mousty01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: mousty02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: mousty03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: mousty04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: mousty05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+
+
+# ------------------------- INFOS - Moustiquaires ------------------------- #
+
+
+# ------------------------- INFOS - Portes de garage ------------------------- #
+
+
+    Info.create!(title: 'info', content: 'info-test', product: porto01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: porto02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: porto03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: porto04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: porto05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+
+
+# ------------------------- INFOS - Portes de garage ------------------------- #
+
+
+# ------------------------- INFOS - Stores intérieurs ------------------------- #
+
+
+    Info.create!(title: 'info', content: 'info-test', product: inte01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: inte02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: inte03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: inte04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: inte05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+
+
+# ------------------------- INFOS - Stores intérieurs ------------------------- #
+
+
+
+# ------------------------- INFOS - Stores exterieurs ------------------------- #
+
+
+    Info.create!(title: 'info', content: 'info-test', product: exte01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: exte02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: exte03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: exte04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: exte05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+
+
+# ------------------------- INFOS - Stores exterieurs ------------------------- #
+
+
+
+# ------------------------- INFOS - Menuiseries ------------------------- #
+
+
+    Info.create!(title: 'info', content: 'info-test', product: menui01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: menui02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: menui03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: menui04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: menui05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+
+
+# ------------------------- INFOS - Menuiseries ------------------------- #
+
+
+
+# ------------------------- INFOS - Pergolas ------------------------- #
+
+
+    Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: pergo02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: pergo03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: pergo04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: pergo05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+
+
+# ------------------------- INFOS - Pergolas ------------------------- #
+
+
+
+# ------------------------- INFOS - Volets roulants ------------------------- #
+
+
+    Info.create!(title: 'info', content: 'info-test', product: volet01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: volet02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: volet03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: volet04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: volet05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+
+
+# ------------------------- INFOS - Volets roulants ------------------------- #
+
+
+puts "Création des infos - END"
+
+
+
+
+
+
+
+
+
+
+puts "Création des albums - START"
+
+# ------------------------- Création des albums ------------------------- #
+
+
+    Album.create!(name: 'homepage', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'porte de garage', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'store exterieur', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'store interieur', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'pergola', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'menuiserie', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'volet roulant', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'moustiquaire', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+
+
+# ------------------------- Création des albums ------------------------- #
+
+puts "Création des albums - END"
+
+
+
+
+
+
+
+
+puts "Création des promos - START"
+
+# ------------------------- Création des types de stores ------------------------- #
+
+
+    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 2.months, end: Date.today + 3.months, type: moustiquaire, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 3.months, end: Date.today + 4.months, type: pergola, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+
+
+# ------------------------- Création des types de stores ------------------------- #
+
+puts "Création des promos - END"
+
+
+
+
+
 
 
 

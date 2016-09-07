@@ -1,10 +1,11 @@
 .banner {
-  height: 80vh;
+  height: 60vh;
   width: 100%;
   background-size: cover !important;
+  position: relative;
   background-position: center center;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   &-content {
     min-width: 50%;
@@ -15,20 +16,20 @@
     justify-content: center;
   }
   &-text {
-    font-size: 19px;
-    font-family: "Circular-Book";
-    font-weight: 100;
-    color: rgba(0,0,0,0.5);
-    letter-spacing: -1px;
+    font-size: 26px;
+    font-family: "Circular-Black";
+    font-weight: 200;
+    color: black;
+    opacity: 0.8;
   }
 }
 
 .banner-text-bold {
-  font-size: 19px;
+  font-size: 30px;
   font-family: "Circular-Black";
   font-weight: 100;
-  color: rgba(0,0,0,0.8);
-  letter-spacing: -1px;
+  color: rgba(255,155,155,0.9);
+  margin-right: 15px;
 }
 
 
@@ -41,4 +42,53 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.banner-call-to-action {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(255,255,255,0.6);
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  color: rgba(55,55,55,0.8);
+  font-family: "Circular-Black";
+  font-size: 14px;
+  transition: 0.3s ease;
+  &:hover {
+    height: 60px;
+    background-color: rgba(255,255,255,0.9);
+    color: #E03E36;
+  }
+}
+
+.banner-product-count {
+  display: none;
+  margin-left: 15px;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.banner-product-count-header {
+  display: none;
+  margin-left: 5px;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.banner-call-to-action:hover .banner-product-count {
+  display: inline;
+}
+
+.banner-call-to-action:hover .banner-product-count-header {
+  display: inline;
+}
+
+
 
