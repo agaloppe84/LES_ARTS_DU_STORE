@@ -24,6 +24,61 @@
 
 
 
+
+
+
+
+<div class="home-small-container">
+
+  <div class="flex-one">
+
+    <div class="home-small-container-item">
+      <div class="home-small-header">Nos produits</div>
+      <div class="home-small-header-title"><%= "#{@products.count} produits" %></div>
+    </div>
+
+    <%= image_tag("arrows.svg", size: "15x15", alt: "Devis") %>
+
+  </div>
+
+
+  <div class="flex-one">
+
+    <div class="home-small-container-item">
+      <div class="home-small-header">Dernière promo</div>
+      <div class="home-small-header-title"><%= "#{@promos.last.title}" %></div>
+    </div>
+
+    <%= image_tag("arrows.svg", size: "15x15", alt: "Devis") %>
+
+  </div>
+
+
+  <div class="flex-one">
+
+    <div class="home-small-container-item">
+      <div class="home-small-header">Notre travail</div>
+      <div class="home-small-header-title"><%= "#{@photos} photos" %></div>
+    </div>
+
+    <%= image_tag("arrows.svg", size: "15x15", alt: "Devis") %>
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="home-content-container-transparent">
 
 

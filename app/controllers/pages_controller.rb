@@ -5,6 +5,15 @@ class PagesController < ApplicationController
     # @album = Album.all.last
     @album = Album.where( "name = 'homepage'" ).last
     @products = Product.all
+    @promos = Promo.all
+    @albums = Album.all
+
+    @photos = 0
+
+    @albums.each do |album|
+      album.photos.count
+      @photos = @photos + album.photos.count
+    end
 
   end
 
