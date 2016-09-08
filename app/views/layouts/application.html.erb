@@ -11,11 +11,9 @@
   <body>
 
   <!-- navbar is different on homepage only -->
-    <% if current_page?('/') %>
-      <%= render 'shared/navbar_home' %>
-    <% else %>
-      <%= render 'shared/navbar'  %>
-    <% end %>
+
+      <%= render 'shared/small_nav_top'  %>
+
 
     <%= yield %>
     <%= javascript_include_tag 'application' %>

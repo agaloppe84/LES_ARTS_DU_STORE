@@ -1,7 +1,7 @@
 
 <%= link_to products_path do %>
   <div class="back-button-fixed">
-    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+    <div class="nav-small-link-design">retour</div>
   </div>
 <% end %>
 
@@ -30,17 +30,35 @@
 
         <div class="product-title-container">
           <div class="pro-header-top">Produit</div>
-          <div class="pro-title-top-name"><%= @product.title %></div>
+
+          <% if @product.type.name == "volet roulant" %>
+              <div class="product-show-big-title color-one-text"><%= @product.title %></div>
+          <% elsif @product.type.name == "store interieur" %>
+              <div class="product-show-big-title color-two-text"><%= @product.title %></div>
+          <% elsif @product.type.name == "store exterieur" %>
+              <div class="product-show-big-title color-three-text"><%= @product.title %></div>
+          <% elsif @product.type.name == "pergola" %>
+              <div class="product-show-big-title color-four-text"><%= @product.title %></div>
+          <% elsif @product.type.name == "menuiserie" %>
+              <div class="product-show-big-title color-five-text"><%= @product.title %></div>
+          <% elsif @product.type.name == "moustiquaire" %>
+              <div class="product-show-big-title color-six-text"><%= @product.title %></div>
+          <% elsif @product.type.name == "porte de garage" %>
+              <div class="product-show-big-title color-seven-text"><%= @product.title %></div>
+          <% else %>
+              <div class="product-show-big-title"><%= @product.title %></div>
+          <% end %>
+
         </div>
 
         <div class="product-title-container">
           <div class="pro-header-top">Type</div>
-          <div class="pro-title-top"><%= @product.type.name %></div>
+          <div class="product-show-big-title-alt"><%= @product.type.name %></div>
         </div>
 
         <div class="product-title-container">
           <div class="pro-header-top">Marque</div>
-          <div class="pro-title-top"><%= if @product.brand == nil then "" else @product.brand.name end %></div>
+          <div class="product-show-big-title-alt"><%= if @product.brand == nil then "" else @product.brand.name end %></div>
         </div>
 
 

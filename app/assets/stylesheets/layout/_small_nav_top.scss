@@ -1,0 +1,86 @@
+
+
+
+.navigation-small-top:hover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 70px;
+  background-color: rgba(255,255,255,1);
+  border-bottom-left-radius: 1px;
+  border: none;
+  box-shadow: 3px 2px 15px 1px rgba(55,55,55,0.1);
+  border-top: none;
+  border-right: none;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.4s ease;
+}
+
+.navigation-small-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 12%;
+  height: 45px;
+  background-color: rgba(255,255,255,0.8);
+  border-bottom-left-radius: 1px;
+  border: none;
+  box-shadow: 3px 2px 15px 1px rgba(55,55,55,0.1);
+  border-top: none;
+  border-right: none;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+
+
+.nav-small-top-title {
+  font-family: "Circular-Book";
+  color: rgba(15,15,15,0.7);
+  font-size: 14px;
+  transition: 0.4s ease;
+}
+
+.navigation-small-top:hover .nav-small-top-title {
+  display: none;
+  transition: 0.4s ease;
+}
+
+
+.navigation-small-top .nav-small-top-link {
+  display: none;
+}
+
+
+.navigation-small-top:hover .nav-small-top-link {
+  display: inline;
+}
+
+
+.nav-small-link-design {
+  font-family: "Circular-Book";
+  color: rgba(15,15,15,0.7);
+  font-size: 14px;
+  transition: 0.4s ease;
+}
+
+
+.nav-small-link-design:hover {
+  font-family: "Circular-Book";
+  color: #03D6D2;
+  font-size: 14px;
+  transition: 0.4s ease;
+}
