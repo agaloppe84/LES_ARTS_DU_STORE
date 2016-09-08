@@ -5,3 +5,194 @@
   margin-left: 15px;
   opacity: 0.8;
 }
+
+
+.big-icon-index-top {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+.big-icon-index-top i {
+  font-size: 10px;
+}
+
+.big-title {
+  font-family: "Circular-Book";
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(15,15,15,0.7);
+}
+
+.color-one i {
+  color: #5ACFD6;
+  opacity: 0.7;
+}
+
+.color-two i {
+  color: #F23A3A;
+  opacity: 0.7;
+}
+
+.color-three i {
+  color: #FF7C38;
+  opacity: 0.7;
+}
+
+.color-four i {
+  color: #B80D57;
+  opacity: 0.7;
+}
+
+.color-five i {
+  color: #A2EF44;
+  opacity: 0.7;
+}
+
+.color-six i {
+  color: #C70039;
+  opacity: 0.7;
+}
+
+.color-seven i {
+  color: #FFD00C;
+  opacity: 0.7;
+}
+
+
+
+.product-card-left-item-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #03D6D2;
+  transition: 0.5s ease;
+  opacity: 0.8;
+}
+
+.product-card-left-item-button:hover {
+  background-color: #03D6D2;
+  opacity: 1;
+}
+
+
+
+.color-one-text {
+  color: #5ACFD6;
+  opacity: 0.8;
+}
+
+.color-two-text {
+  color: #F23A3A;
+  opacity: 0.8;
+}
+
+.color-three-text {
+  color: #FF7C38;
+  opacity: 0.8;
+}
+
+.color-four-text {
+  color: #B80D57;
+  opacity: 0.8;
+}
+
+.color-five-text {
+  color: #A2EF44;
+  opacity: 0.8;
+}
+
+.color-six-text {
+  color: #C70039;
+  opacity: 0.8;
+}
+
+.color-seven-text {
+  color: #FFD00C;
+  opacity: 0.8;
+}
+
+.banner-on-index-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-on-index-content-duo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.banner-on-index {
+  height: 30vh;
+  width: 100%;
+  background-size: cover !important;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.banner-on-index-text {
+  font-family: "Circular-Book";
+  font-size: 17px;
+  color: rgba(255,255,255,1);
+}
+
+.banner-on-index-button {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  color: rgba(255,255,255,1);
+  height: 100%;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+
+
+.banner-on-index-absolute {
+  position: absolute;
+  width: 25%;
+  bottom: 0;
+  left: 13%;
+  height: 100%;
+  background-color: rgba(5,5,5,0.5);
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.absolute-big-text {
+  font-family: "Circular-Book";
+  font-size: 17px;
+  color: rgba(255,255,255,1);
+}
+
+.leftblock-title-product-index {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}

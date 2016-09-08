@@ -35,21 +35,7 @@
   position: relative;
 }
 
-.product-card-left-item-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: #FF6A51;
-  transition: 0.5s ease;
-  opacity: 0.8;
-}
 
-.product-card-left-item-button:hover {
-  background-color: #FF6A51;
-  opacity: 1;
-}
 
 .item-title {
   font-family: "Circular-Medium";
@@ -325,9 +311,9 @@ a:hover {
   right: 20px;
   font-family: "Circular-Book";
   font-size: 13px;
-  opacity: 0.8;
-  color: #FF7533;
-  width: 100px;
+  opacity: 0.6;
+  color: #364F6B;
+  width: 150px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -513,9 +499,10 @@ a:hover {
 
 
 .leftblock-text-show {
-  opacity: 0.8;
-  font-family: "Circular-Book";
-  font-size: 12px;
+  opacity: 1;
+  font-family: "Circular-Book" !important;
+  font-size: 15px;
+  color: rgba(5,5,5,0.7);
 }
 
 
@@ -571,17 +558,17 @@ a:hover {
 .leftblock-content-show .nav li.active a {
   background-color: transparent;
   opacity: 1;
-  color: grey;
-  font-family: "Circular-Bold";
-  font-size: 13px;
+  color: rgba(5,5,5,0.7);
+  font-family: "Circular-Book";
+  font-size: 15px;
   transition: 0.5s ease;
 }
 
 .leftblock-content-show .nav li.active:hover a {
   background-color: transparent;
-  color: grey;
+  color: rgba(5,5,5,0.7);
   opacity: 1;
-  font-family: "Circular-Bold";
+  font-family: "Circular-Book";
 }
 
 
@@ -589,37 +576,37 @@ a:hover {
 
 .leftblock-content-show .nav li {
   background-color: transparent;
-  color: grey;
+  color: rgba(5,5,5,0.7);
   opacity: 1;
   font-family: "Circular-Book";
-  font-size: 13px;
+  font-size: 15px;
   transition: 0.5s ease;
 }
 
 .leftblock-content-show .nav li a {
   background-color: transparent;
-  color: grey;
+  color: rgba(5,5,5,0.7);
   opacity: 0.5;
   font-family: "Circular-Book";
-  font-size: 13px;
+  font-size: 15px;
   transition: 0.5s ease;
 }
 
 .leftblock-content-show .nav li:hover {
   background-color: transparent;
   opacity: 1;
-  color: grey;
+  color: rgba(5,5,5,0.7);
   font-family: "Circular-Book";
-  font-size: 13px;
+  font-size: 15px;
   transition: 0.5s ease;
 }
 
 .leftblock-content-show .nav li:hover a {
   background-color: transparent;
   opacity: 1;
-  color: grey;
+  color: rgba(5,5,5,0.7);
   font-family: "Circular-Book";
-  font-size: 13px;
+  font-size: 15px;
   transition: 0.5s ease;
 }
 
@@ -632,21 +619,18 @@ a:hover {
 
 
 .leftblock-content-show .nav li:hover i {
-  color: grey;
   transition: 0.5s ease;
   opacity: 1;
 }
 
 .leftblock-content-show .nav li.active i {
-  color: grey;
   transition: 0.5s ease;
   opacity: 1;
 }
 
 .leftblock-content-show .nav li i {
-  color: grey;
   transition: 0.5s ease;
-  opacity: 0.4;
+  opacity: 0.2;
   font-size: 14px;
 }
 

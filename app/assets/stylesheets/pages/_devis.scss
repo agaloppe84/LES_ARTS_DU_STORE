@@ -92,7 +92,22 @@ input.button {
 #mc_embed_signup .button {
   margin: 0px 0px 0px 20px !important;
   font-size: 13px !important;
+  height: 48px !important;
+  width: 160px !important;
+  border-radius: 2px !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(55,55,55,0.8) !important;
+  color: rgba(5,5,5,0.8) !important;
+  opacity: 0.6 !important;
+  font-family: "Circular-Black" !important;
+  align-self: center !important;
 }
+
+#mc_embed_signup .button:hover {
+  opacity: 0.9 !important;
+  font-family: "Circular-Black" !important;
+}
+
 
 
 
@@ -103,9 +118,9 @@ input.button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 20%;
-  padding-right: 20%;
-  margin-bottom: 25px;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 42px;
   margin-top: 25px;
 }
 
@@ -154,11 +169,115 @@ input.button {
 
 .select-icon-absolute {
   position: absolute;
-  bottom: 28px;
-  right: 9px;
-  font-size: 23px;
+  bottom: 14px;
+  right: 12px;
+  font-size: 15px;
   cursor: pointer;
   opacity: 0.7;
 }
 
+
+#mc_embed_signup form {
+  padding: 0 0 0 0 !important;
+  margin-top: 80px;
+}
+
+
+#mc_embed_signup .mc-field-group {
+  padding-bottom: 0 !important;
+}
+
+
+
+.mailchimp-page-container {
+  display: flex;
+  align-items: stretch;
+}
+
+
+.mailchimp-left-container {
+  min-width: 400px;
+  max-width: 400px;
+  background-color: #DFEBED;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+}
+
+#mc_embed_signup {
+  width: 100% !important;
+  min-height: 100vh;
+}
+
+
+.mailchimp-left-text {
+  font-family: "Circular-Black";
+  font-weight: 100;
+  color: rgba(15,15,15,0.6);
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+.mailchimp-left-text-color {
+  font-family: "Circular-Book" !important;
+  font-weight: 100;
+  color: #5ACFD6;
+  font-size: 15px;
+}
+
+
+.mailchimp-left-image {
+  margin-bottom: 4px;
+  margin-right: 18px;
+}
+
+.mailchimp-left-image-column {
+  margin-bottom: 15px;
+  margin-right: 0px;
+}
+
+
+
+.mailchimp-left-text-light {
+  font-family: "Circular-Book";
+  font-weight: 100;
+  color: rgba(15,15,15,0.7);
+  font-size: 15px;
+}
+
+.mailchimp-left-text-light-call {
+  font-family: "Circular-Book";
+  font-weight: 100;
+  color: rgba(15,15,15,0.4);
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+
+.mc-left-container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.mc-left-container-flex-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+
+.mc-left-container-flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 

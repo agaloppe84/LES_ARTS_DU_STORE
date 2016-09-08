@@ -1,13 +1,33 @@
 
-<h4><%= @product.title %></h4>
-<h4><%= @product.type.name %></h4>
+<div class="form-fullpage">
 
 
-<%= simple_form_for(@product) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :attachinary %>
-  <%= f.association :brand, as: :radio_buttons, label: false %>
-  <%= f.association :type, as: :radio_buttons %>
-  <%= f.submit %>
-<% end %>
+    <div class="form-title"><%= "Modifier #{@product.title}" %></div>
+
+
+    <%= simple_form_for(@product) do |f| %>
+
+      <div class="form-label">Nom</div>
+      <%= f.input :title, label: false %>
+
+      <div class="form-label">Description</div>
+      <%= f.input :description, label: false %>
+
+      <div class="form-label">Type de produit</div>
+      <%= f.association :type, as: :radio_buttons, label: false %>
+
+      <div class="form-label">Marque</div>
+      <%= f.association :brand, as: :radio_buttons, label: false %>
+
+      <div class="form-label">Photos</div>
+      <%= f.input :photos, as: :attachinary, label: false %>
+
+      <div class="form-fullpage-button">
+          <%= f.button :submit, 'Modifier', class: 'form-button' %>
+      </div>
+
+    <% end %>
+
+
+</div>
+
