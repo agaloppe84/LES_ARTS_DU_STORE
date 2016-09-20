@@ -24,11 +24,11 @@
 
 
 
-<div class="infos-fullpage">
+<div class="infos-fullpage-show">
 
     <div class="infos-product-title">
 
-        <div class="product-title-container">
+        <div class="product-title-container-show">
           <div class="pro-header-top">Produit</div>
 
           <% if @product.type.name == "volet roulant" %>
@@ -88,13 +88,13 @@
 
 
 
-      <div class="info-item">
+      <div class="info-item-show">
 
-        <div class="info-icon" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+        <div class="info-icon-show" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
 
-        <div class="info-title-color"><%= info.title %>&nbsp;</div>
+        <div class="info-title-color-show"><%= info.title %>&nbsp;</div>
 
-        <div class="info-title-color-content"><%= info.content %>&nbsp;</div>
+        <div class="info-title-color-content-show"><%= info.content %>&nbsp;</div>
 
 
 

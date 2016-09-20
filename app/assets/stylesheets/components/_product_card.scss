@@ -478,32 +478,14 @@ a:hover {
 
 
 
-.fullpage-leftblock-show {
-  min-width: 90px;
-  max-width: 90px;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  transition: 0.2s ease;
-  border-right: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;
-  &:hover {
-    min-width: 240px;
-    max-width: 240px;
-  }
-}
 
 
 
 
 
 
-.leftblock-text-show {
-  opacity: 1;
-  font-family: "Circular-Book" !important;
-  font-size: 15px;
-  color: rgba(5,5,5,0.7);
-}
+
+
 
 
 

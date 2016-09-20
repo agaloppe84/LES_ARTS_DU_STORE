@@ -1,1 +1,17 @@
-// Your footer style
+.footer {
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16%;
+  padding-right: 16%;
+  border-top: 1px solid lightgrey;
+}
+
+.footer-text {
+  font-family: "Circular-Book";
+  color: rgba(55,55,55,0.7);
+  font-size: 14px;
+}

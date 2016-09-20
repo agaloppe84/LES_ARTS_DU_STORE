@@ -8,15 +8,7 @@
   </div>
 
 
-  <%= link_to products_path do %>
 
-      <div class="banner-call-to-action">
-        <div>Découvrir notre gamme</div>
-        <div class="banner-product-count"><%= @products.count %></div>
-        <div class="banner-product-count-header">produits</div>
-      </div>
-
-  <% end %>
 
 
 </div>
@@ -30,16 +22,20 @@
 
 <div class="home-small-container">
 
-  <div class="flex-one">
 
-    <div class="home-small-container-item">
-      <div class="home-small-header">Nos produits</div>
-      <div class="home-small-header-title"><%= "#{@products.count} produits" %></div>
+
+  <%= link_to products_path do %>
+    <div class="flex-one">
+
+      <div class="home-small-container-item">
+        <div class="home-small-header">Nos produits</div>
+        <div class="home-small-header-title"><%= "#{@products.count} produits" %></div>
+      </div>
+
+      <%= image_tag("store.svg", size: "28x28", alt: "Devis") %>
+
     </div>
-
-    <%= image_tag("arrows.svg", size: "15x15", alt: "Devis") %>
-
-  </div>
+  <% end %>
 
 
   <div class="flex-one">
@@ -49,7 +45,7 @@
       <div class="home-small-header-title"><%= "#{@promos.last.title}" %></div>
     </div>
 
-    <%= image_tag("arrows.svg", size: "15x15", alt: "Devis") %>
+    <%= image_tag("price.svg", size: "28x28", alt: "Devis") %>
 
   </div>
 
@@ -61,7 +57,7 @@
       <div class="home-small-header-title"><%= "#{@photos} photos" %></div>
     </div>
 
-    <%= image_tag("arrows.svg", size: "15x15", alt: "Devis") %>
+    <%= image_tag("pictures.svg", size: "28x28", alt: "Devis") %>
 
   </div>
 
