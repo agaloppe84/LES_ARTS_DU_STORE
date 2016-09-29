@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :services, :devis, :contact]
+  skip_before_action :authenticate_user!, only: [:home, :services, :devis, :contact, :promo]
   def home
 
     # @album = Album.all.last
@@ -33,6 +33,10 @@ class PagesController < ApplicationController
     @promos = Promo.all
     @types = Type.all
     @brands = Brand.all
+  end
+
+  def promo
+    @last_promo = Promo.all.last
   end
 
 end

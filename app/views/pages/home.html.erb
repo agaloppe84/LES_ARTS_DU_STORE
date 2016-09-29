@@ -37,17 +37,18 @@
     </div>
   <% end %>
 
+  <%= link_to promo_path do %>
+    <div class="flex-one">
 
-  <div class="flex-one">
+      <div class="home-small-container-item">
+        <div class="home-small-header">Dernière promo</div>
+        <div class="home-small-header-title"><%= "#{@promos.last.title}" %></div>
+      </div>
 
-    <div class="home-small-container-item">
-      <div class="home-small-header">Dernière promo</div>
-      <div class="home-small-header-title"><%= "#{@promos.last.title}" %></div>
+      <%= image_tag("price.svg", size: "28x28", alt: "Devis") %>
+
     </div>
-
-    <%= image_tag("price.svg", size: "28x28", alt: "Devis") %>
-
-  </div>
+  <% end %>
 
 
   <div class="flex-one">

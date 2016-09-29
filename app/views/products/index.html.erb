@@ -99,30 +99,56 @@
 
             <div class="product-card">
 
-              <div class="product-card-left">
+              <div class="product-card-left-alt">
 
-                  <div class="product-card-left-item item-title">
-                    <%= volet.title %>
-                    <div class="item-brand-show"><%= if volet.brand == nil then "" else volet.brand.name end %></div>
+                  <!-- <div class="product-card-left-item-new item-title">
+                    <div class="header-for-card">Produit</div>
+                  </div> -->
+
+                  <div class="flex-inline">
+
+                      <div class="flex-column">
+                          <div class="item-title">
+                            <%= volet.title %>
+                          </div>
+
+                           <div class="item-title-small">
+                            <%= volet.description %>
+                          </div>
+                      </div>
+
+                      <div class="flex-brand-icon">
+                          <div class="info-icon" style="background-image: url(<%= if volet.brand == nil then "" else  cl_image_path volet.brand.logo.path end %>);"></div>
+                      </div>
+
                   </div>
 
-                  <div class="product-card-left-item item-description-head">Description</div>
-                  <div class="product-card-left-item item-description"><%= volet.description %></div>
+                  <div class="infos-volets">
+                    <% volet.infos.first(4).each do |info| %>
 
+                      <div class="infos-item-boob">
+                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
 
-                  <div class="product-card-left-item">
-                  </div>
+                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
 
+                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+                      </div>
 
-                  <div class="product-card-left-item">
+                    <% end %>
                   </div>
 
 
                   <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "voir ce produit", product_path(volet) %></div>
+                    <div class="item-link"><%= link_to "détails", product_path(volet) %></div>
+                    <div class="item-link"><%= link_to "devis", devis_path %></div>
+                    <div class="item-link"><%= link_to "pdf", devis_path %></div>
                   </div>
 
               </div>
+
+
+
+
 
               <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if volet.photos.any? then cl_image_path volet.photos.last.path end %>);">
               </div>

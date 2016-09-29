@@ -1,0 +1,21 @@
+<%= link_to root_path do %>
+  <div class="back-button-fixed">
+    <div class="nav-small-link-design">Accueil</div>
+  </div>
+<% end %>
+
+
+<div class="banner-product-page-show" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @last_promo.photo == nil then "" else  cl_image_path @last_promo.photo.path end %>);">
+
+
+
+  <div class="banner-product-show-description">
+    <div class="show-description-item"><%= @last_promo.title %></div>
+    <div class="blind-count"><%= "Jusqu'au #{@last_promo.end.strftime('%d %B %Y')}" %></div>
+  </div>
+
+
+
+</div>
+
+

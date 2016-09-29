@@ -130,3 +130,41 @@
   height: 100%;
   width: 230px;
 }
+
+
+.infos-big-boob {
+  color: rgba(55,55,55,0.8);
+  padding-right: 5px;
+  font-family: "Circular-Book";
+  font-size: 13px;
+}
+
+
+.infos-small-boob {
+  color: rgba(55,55,55,0.6);
+  width: 250px;
+  font-family: "Circular-Book";
+  font-size: 13px;
+}
+
+.infos-item-boob {
+  width: 100%;
+  height: 20px;
+  font-family: "Circular-Medium";
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 20px;
+  transition: 0.3s ease;
+}
+
+.infos-icon-boob{
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  margin-right: 20px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
