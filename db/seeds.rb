@@ -26,11 +26,14 @@ puts "Création des users - START"
 # ------------------------- Création des users ------------------------- #
 
 
-    User.create!(email: 'agaloppe@me.com', password: '1234soleil')
-    User.create!(email: 'audric.agalops@gmail.com', password: '1234soleil')
+    user1 = User.create!(email: 'agaloppe@me.com', password: '1234soleil')
+    user2 = User.create!(email: 'audric.agalops@gmail.com', password: '1234soleil')
 
 
 # ------------------------- Création des users ------------------------- #
+puts "User: " + user1.email + "" + "Password: " + user1.password
+puts "User: " + user2.email + "" + "Password: " + user2.password
+
 
 puts "Création des users - END"
 
@@ -44,16 +47,24 @@ puts "Création des types de stores - START"
 # ------------------------- Création des types de stores ------------------------- #
 
 
-    moustiquaire =      Type.create!(name: 'moustiquaire')
-    porte_de_garage =   Type.create!(name: 'porte de garage')
-    store_interieur =   Type.create!(name: 'store interieur')
-    store_exterieur =   Type.create!(name: 'store exterieur')
-    menuiserie =        Type.create!(name: 'menuiserie')
-    pergola =           Type.create!(name: 'pergola')
-    volet_roulant =     Type.create!(name: 'volet roulant')
+    moustiquaire =      Type.create!(name: 'moustiquaire', color:'#007CB9', plurname: 'Moustiquaires')
+    porte_de_garage =   Type.create!(name: 'porte de garage', color:'#007CB9', plurname: 'Portes de garage')
+    store_interieur =   Type.create!(name: 'store interieur', color:'#007CB9', plurname: 'Stores intérieurs')
+    store_exterieur =   Type.create!(name: 'store exterieur', color:'#007CB9', plurname: 'Stores extérieurs')
+    menuiserie =        Type.create!(name: 'menuiserie', color:'#007CB9', plurname: 'Menuiseries')
+    pergola =           Type.create!(name: 'pergola', color:'#007CB9', plurname: 'Pergolas')
+    volet_roulant =     Type.create!(name: 'volet roulant', color:'#007CB9', plurname: 'Volets roulants')
 
 
 # ------------------------- Création des types de stores ------------------------- #
+puts "Nom de catégorie: " + moustiquaire.name + "" + "Couleur: " + moustiquaire.color
+puts "Nom de catégorie: " + porte_de_garage.name + "" + "Couleur: " + porte_de_garage.color
+puts "Nom de catégorie: " + store_interieur.name + "" + "Couleur: " + store_interieur.color
+puts "Nom de catégorie: " + store_exterieur.name + "" + "Couleur: " + store_exterieur.color
+puts "Nom de catégorie: " + menuiserie.name + "" + "Couleur: " + menuiserie.color
+puts "Nom de catégorie: " + pergola.name + "" + "Couleur: " + pergola.color
+puts "Nom de catégorie: " + volet_roulant.name + "" + "Couleur: " + volet_roulant.color
+
 
 puts "Création des types de stores - END"
 
@@ -339,21 +350,19 @@ puts "Création des albums - START"
 # ------------------------- Création des albums ------------------------- #
 
 
-    Album.create!(name: 'homepage', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Album.create!(name: 'porte de garage', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Album.create!(name: 'store exterieur', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Album.create!(name: 'store interieur', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Album.create!(name: 'pergola', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Album.create!(name: 'menuiserie', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Album.create!(name: 'volet roulant', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Album.create!(name: 'moustiquaire', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'homepage', type: moustiquaire, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'porte de garage', type: porte_de_garage, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'store exterieur', type: store_exterieur, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'store interieur', type: store_interieur, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'pergola', type: pergola, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'menuiserie', type: menuiserie, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'volet roulant', type: volet_roulant, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Album.create!(name: 'moustiquaire', type: moustiquaire, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
 
 
 # ------------------------- Création des albums ------------------------- #
 
 puts "Création des albums - END"
-
-
 
 
 

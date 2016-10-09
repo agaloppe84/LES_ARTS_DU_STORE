@@ -21,7 +21,11 @@ class TypesController < ApplicationController
   end
 
   def update
-    @type.update(type_params)
+    if @type.update(type_params)
+      redirect_to dashboard_path, notice: "La catégorie à été mise à jour"
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -38,7 +42,7 @@ class TypesController < ApplicationController
   end
 
   def type_params
-    params.require(:type).permit(:name)
+    params.require(:type).permit(:name, :color, :plurname)
   end
 
 

@@ -1,0 +1,26 @@
+<div class="form-fullpage">
+
+
+    <div class="form-title"><%= "Créer une catégorie" %></div>
+
+
+    <%= simple_form_for(@type) do |f| %>
+
+      <div class="form-label">Nom</div>
+      <%= f.input :name, label: false %>
+
+      <div class="form-label">Nom au pluriel</div>
+      <%= f.input :plurname, label: false %>
+
+      <div class="form-label">Couleur</div>
+      <%= f.input :color, label: false %>
+
+
+      <div class="form-fullpage-button">
+          <%= f.button :submit, 'Modifier', class: 'form-button' %>
+      </div>
+
+    <% end %>
+
+
+</div>

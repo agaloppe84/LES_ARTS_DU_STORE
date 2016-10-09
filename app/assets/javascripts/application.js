@@ -6,3 +6,4 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require alert
+//= require product_modal

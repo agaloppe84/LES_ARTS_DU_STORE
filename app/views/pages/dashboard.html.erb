@@ -34,6 +34,12 @@
           <div class="product-count"><%= "( #{@brands.count} )" %></div>
         </li>
 
+        <li role="presentation">
+          <i class="fa fa-circle" aria-hidden="true"></i>
+          <a href="#five" data-toggle="tab">Catégories</a>
+          <div class="product-count"><%= "( #{@types.count} )" %></div>
+        </li>
+
       </ul>
     </div>
 
@@ -76,7 +82,7 @@
 
               <div class="header-container">
                 <div class="dashboard-card-type">
-                  <div class="card-type-text"><%= type.name.pluralize %></div>
+                  <div class="card-type-text"><%= type.name.capitalize.pluralize %></div>
                   <div class="blind-count"><%= "( #{type.products.count} ) " %></div>
                   <div class="product-links"></div>
                 </div>
@@ -365,6 +371,85 @@
 
       </div>
 
+
+
+
+
+
+
+
+      <div role="tabpanel" class="tab-pane" id="five">
+
+        <div class="rightblock-title">
+          <div class="header-product-text">Catégories</div>
+          <div class="blind-count"><%= @types.count %> catégories</div>
+
+          <div class="add-model-name">
+            <%= link_to new_type_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une catégorie ?" } do %>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            <% end %>
+          </div>
+
+        </div>
+
+
+          <div class="product-card-dashboard">
+
+
+              <div class="dashboard-table-header">
+                <div class="product-id-header"><%= "id" %></div>
+                <div class="product-id-title-header"><%= "name" %></div>
+                <div class="product-id-title-header"><%= "couleur" %></div>
+              </div>
+
+
+
+              <div class="item-container">
+
+                <% @types.each do |type| %>
+
+                  <div class="dashboard-card-item">
+                    <div class="product-id"><%= "id : " %><%= type.id %></div>
+
+
+                    <%= link_to type_path(type), class: "product-id-title" do %>
+                        <%= type.name %>
+                    <% end %>
+
+                    <div class="product-id-title">
+                      <div class="dashboard-type-color" style="background-color: <%= type.color if type.color.present? %>;"></div>
+                    </div>
+
+
+
+
+
+
+                    <div class="product-links-promo">
+
+                      <%= link_to edit_type_path(type), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette catégorie ?" } do %>
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                      <% end %>
+
+
+
+                      <%= link_to type_path(type), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette catégorie ?" } do %>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                      <% end %>
+
+
+                    </div>
+
+                  </div>
+
+                <% end %>
+
+              </div>
+
+          </div>
+
+
+      </div>
 
 
 
