@@ -1,29 +1,39 @@
 <div class="form-create-prospect-<%= product.id %> half-modal hidden">
     <div class="button-close-create">
-        <%= image_tag "crossclosed.svg", size: "16" %>
+        <%= image_tag "crossclosed-mini.svg", size: "18" %>
+        <div class="text-for-close">fermer</div>
     </div>
 
 
 
-    <div class="infos-fullpage-show">
 
-      <div class="infos-product-title">
+
+    <div class="pseudo-modal-fullpage">
+
+      <div class="modal-product-title">
 
           <div class="product-title-container-show">
-            <div class="pro-header-top">Produit</div>
             <div class="product-show-big-title" style="color: <%= product.type.color %>;"><%= product.title %></div>
           </div>
 
           <div class="product-title-container">
-            <div class="pro-header-top">Type</div>
-            <div class="product-show-big-title-alt"><%= product.type.name %></div>
+            <!-- <div class="pro-header-top">Type</div>
+            <div class="product-show-big-title-alt"><%= product.type.name %></div> -->
           </div>
 
           <div class="product-title-container">
-            <div class="pro-header-top">Marque</div>
-            <div class="product-show-big-title-alt"><%= product.brand.name %></div>
+           <!--  <div class="pro-header-top">Marque</div>
+            <div class="product-show-big-title-alt"><%= product.brand.name %></div> -->
           </div>
 
+
+      </div>
+
+
+
+      <div class="modal-description">
+
+        <div class="modal-description-text"><%= product.description %></div>
 
       </div>
 
