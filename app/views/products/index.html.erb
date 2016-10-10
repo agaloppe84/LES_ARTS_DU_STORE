@@ -1,6 +1,4 @@
 
-
-
 <div class="fullpage-show">
 
 
@@ -11,120 +9,72 @@
     </div>
 
     <div class="leftblock-content-show">
+
       <ul class="nav nav-pills nav-stacked">
 
-        <li role="presentation" class="active">
-          <div class="menu-icon-show color-one"><i class="fa fa-circle" aria-hidden="true"></i></div>
-          <a href="#one" data-toggle="tab">volets roulants</a>
-        </li>
-
-        <li role="presentation">
-          <div class="menu-icon-show color-two"><i class="fa fa-circle" aria-hidden="true"></i></div>
-          <a href="#two" data-toggle="tab">stores intérieurs</a>
-
-        </li>
-
-        <li role="presentation">
-          <div class="menu-icon-show color-three"><i class="fa fa-circle" aria-hidden="true"></i></div>
-          <a href="#three" data-toggle="tab">stores extérieurs</a>
-
-        </li>
-
-        <li role="presentation">
-          <div class="menu-icon-show color-four"><i class="fa fa-circle" aria-hidden="true"></i></div>
-          <a href="#four" data-toggle="tab">pergolas</a>
-
-        </li>
-
-        <li role="presentation">
-          <div class="menu-icon-show color-five"><i class="fa fa-circle" aria-hidden="true"></i></div>
-          <a href="#five" data-toggle="tab">menuiseries</a>
-
-        </li>
-
-        <li role="presentation">
-          <div class="menu-icon-show color-six"><i class="fa fa-circle" aria-hidden="true"></i></div>
-          <a href="#six" data-toggle="tab">moustiquaires</a>
-
-        </li>
-
-        <li role="presentation">
-          <div class="menu-icon-show color-seven"><i class="fa fa-circle" aria-hidden="true"></i></div>
-          <a href="#seven" data-toggle="tab">portes de garage</a>
-
-        </li>
+      <% @types.each do |type| %>
+        <% if type == @types.first %>
+            <li role="presentation" class="active">
+              <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+              <a href="#<%= type.id %>" data-toggle="tab"><%= type.plurname %></a>
+            </li>
+        <% else %>
+            <li role="presentation">
+              <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+              <a href="#<%= type.id %>" data-toggle="tab"><%= type.plurname %></a>
+            </li>
+        <% end %>
+      <% end %>
 
       </ul>
+
     </div>
 
   </div>
-
-
-
-
 
 
   <div class="fullpage-rightblock">
 
     <div class="tab-content">
 
-      <div role="tabpanel" class="tab-pane active" id="one">
+      <% @types.each do |type| %>
+
+      <% if type == @types.first %>
+
+    <div role="tabpanel" class="tab-pane active" id="<%= type.id %>">
 
 
-          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
+        <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%=  cl_image_path type.albums.last.photos.sample.path  %>);">
 
-            <div class="banner-on-index-content">
+            <div class="banner-on-index-content"></div>
 
-            </div>
+        </div>
 
-            <!-- <div class="banner-on-index-absolute">
-              <div class="absolute-big-text">Volets roulants</div>
-            </div> -->
-
-          </div>
-
-
-          <div class="navtab-big-title">
-            <div class="big-icon-index-top color-one"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= "Volets roulants" %></div>
-            <div class="blind-count color-one-text"><%= @volets_roulant.count %> produits</div>
-            <% if @volets_roulant.last.type.promos.any? %>
+        <div class="navtab-big-title">
+            <div class="big-icon-index-top" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+            <div class="big-title"><%= type.plurname %></div>
+            <div class="blind-count" style="color: <%= type.color %>;"><%= type.products.count %> produits</div>
+            <% if type.promos.any? %>
               <div class="blind-count">Promo en cours</div>
-              <div class="blind-count"><%= "Jusqu'au #{@volets_roulant.last.type.promos.last.end}" %></div>
+              <div class="blind-count"><%= "Jusqu'au #{type.promos.last.end}" %></div>
             <% end %>
-          </div>
+        </div>
 
 
-          <% @volets_roulant.each do |volet| %>
 
-            <div class="product-card">
+      <div class="flex-inline-wrap">
+        <% type.products.each do |product| %>
 
-              <div class="product-card-left-alt">
 
-                  <!-- <div class="product-card-left-item-new item-title">
-                    <div class="header-for-card">Produit</div>
-                  </div> -->
 
-                  <div class="flex-inline">
+            <div class="card">
+              <div class="card-top image-center" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= cl_image_path product.photos.last.path  %>);">
+                <div class="infos-on-hover">
 
-                      <div class="flex-column">
-                          <div class="item-title">
-                            <%= volet.title %>
-                          </div>
-
-                           <div class="item-title-small">
-                            <%= volet.description %>
-                          </div>
-                      </div>
-
-                      <div class="flex-brand-icon">
-                          <div class="info-icon" style="background-image: url(<%= if volet.brand == nil then "" else  cl_image_path volet.brand.logo.path end %>);"></div>
-                      </div>
-
-                  </div>
-
+                  <div class="infos-on-hover-text"><%= product.title %></div>
+                  <div class="infos-on-hover-description"><%= product.description %></div>
                   <div class="infos-volets">
-                    <% volet.infos.first(4).each do |info| %>
+                    <% product.infos.first(4).each do |info| %>
 
                       <div class="infos-item-boob">
                         <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
@@ -138,456 +88,137 @@
                   </div>
 
 
-                  <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "détails", product_path(volet) %></div>
-                    <div class="item-link"><%= link_to "devis", devis_path %></div>
-                    <div class="item-link"><%= link_to "pdf", devis_path %></div>
-                  </div>
+                </div>
+
+              </div>
+
+              <div class="card-bottom">
+                <div class="card-bottom-item">
+                  <div class="button-two"><%= product.title %></div>
+                </div>
+                <div class="card-bottom-item-three product-modal-button-<%= product.id %>" style="background-color: <%= type.color %>;cursor: pointer;">
+                  <div class="button">Voir ce produit</div>
+                </div>
 
               </div>
 
 
 
-
-
-              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if volet.photos.any? then cl_image_path volet.photos.last.path end %>);">
-              </div>
-
             </div>
 
-          <% end %>
 
-      </div>
+            <%= render partial: "product", locals: {product: product} %>
 
+            <% content_for :afterjs do %>
+              <script>
 
-
-      <div role="tabpanel" class="tab-pane" id="two">
-
-          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if @si_album.photos.any? then cl_image_path @si_album.photos.sample.path end %>);">
-
-            <div class="banner-content">
-
-            </div>
-
-          </div>
+                $(document).ready(function() {
+                  $(".product-modal-button-<%= product.id %>").click(function() {
+                  $(".form-create-prospect-<%= product.id %>").removeClass("hidden");
+                  });
+                });
 
 
-          <div class="navtab-big-title">
-            <div class="big-icon-index-top color-two"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= "Stores intérieurs" %></div>
-            <div class="blind-count color-two-text"><%= @store_interieurs.count %> produits</div>
-            <% if @store_interieurs.last.type.promos.any? %>
-              <div class="blind-count">Promo en cours</div>
-              <div class="blind-count"><%= "Jusqu'au #{@store_interieurs.last.type.promos.last.end}" %></div>
+              </script>
             <% end %>
-          </div>
-
-
-          <% @store_interieurs.each do |si| %>
-
-            <div class="product-card">
-
-              <div class="product-card-left">
-
-                  <div class="product-card-left-item item-title">
-                    <%= si.title %>
-                    <div class="item-brand-show"><%= si.brand.name %></div>
-                  </div>
-
-                  <div class="product-card-left-item item-description-head">Description</div>
-                  <div class="product-card-left-item item-description"><%= si.description %></div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "voir ce produit", product_path(si) %></div>
-                  </div>
-
-              </div>
-
-              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if si.photos.any? then cl_image_path si.photos.last.path end %>);">
-              </div>
-
-            </div>
 
           <% end %>
-
-      </div>
-
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="three">
-
-
-
-          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if @se_album.photos.any? then cl_image_path @se_album.photos.sample.path end %>);">
-
-            <div class="banner-content">
-
-            </div>
-
-          </div>
-
-
-
-          <div class="navtab-big-title">
-            <div class="big-icon-index-top color-three"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= "Stores extérieurs" %></div>
-            <div class="blind-count color-three-text"><%= @store_exterieurs.count %> produits</div>
-            <% if @store_exterieurs.last.type.promos.any? %>
-              <div class="blind-count">Promo en cours</div>
-              <div class="blind-count"><%= "Jusqu'au #{@store_exterieurs.last.type.promos.last.end}" %></div>
-            <% end %>
-          </div>
-
-
-          <% @store_exterieurs.each do |se| %>
-
-            <div class="product-card">
-
-              <div class="product-card-left">
-
-                  <div class="product-card-left-item item-title">
-                    <%= se.title %>
-                    <div class="item-brand-show"><%= se.brand.name %></div>
-                  </div>
-
-                  <div class="product-card-left-item item-description-head">Description</div>
-                  <div class="product-card-left-item item-description"><%= se.description %></div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "voir ce produit", product_path(se) %></div>
-                  </div>
-
-              </div>
-
-              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if se.photos.any? then cl_image_path se.photos.last.path end %>);">
-              </div>
-
-            </div>
-
-          <% end %>
-
-      </div>
-
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="four">
-
-
-
-          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
-
-            <div class="banner-content">
-
-            </div>
-
-          </div>
-
-
-
-          <div class="navtab-big-title">
-            <div class="big-icon-index-top color-four"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= "Pergolas" %></div>
-            <div class="blind-count color-four-text"><%= @pergolas.count %> produits</div>
-            <% if @pergolas.last.type.promos.any? %>
-              <div class="blind-count">Promo en cours</div>
-              <div class="blind-count"><%= "Jusqu'au #{@pergolas.last.type.promos.last.end}" %></div>
-            <% end %>
-          </div>
-
-
-          <% @pergolas.each do |pergola| %>
-
-            <div class="product-card">
-
-              <div class="product-card-left">
-
-                  <div class="product-card-left-item item-title">
-                    <%= pergola.title %>
-                    <div class="item-brand-show"><%= pergola.brand.name %></div>
-                  </div>
-
-                  <div class="product-card-left-item item-description-head">Description</div>
-                  <div class="product-card-left-item item-description"><%= pergola.description %></div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "voir ce produit", product_path(pergola) %></div>
-                  </div>
-
-              </div>
-
-              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if pergola.photos.any? then cl_image_path pergola.photos.last.path end %>);">
-              </div>
-
-            </div>
-
-          <% end %>
-
-      </div>
-
-
-
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="five">
-
-
-
-
-          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
-
-            <div class="banner-content">
-
-            </div>
-
-          </div>
-
-
-
-
-          <div class="navtab-big-title">
-            <div class="big-icon-index-top color-five"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= "Menuiseries" %></div>
-            <div class="blind-count color-five-text"><%= @menuiseries.count %> produits</div>
-            <% if @menuiseries.last.type.promos.any? %>
-              <div class="blind-count">Promo en cours</div>
-              <div class="blind-count"><%= "Jusqu'au #{@menuiseries.last.type.promos.last.end}" %></div>
-            <% end %>
-          </div>
-
-
-          <% @menuiseries.each do |menuiserie| %>
-
-            <div class="product-card">
-
-              <div class="product-card-left">
-
-                  <div class="product-card-left-item item-title">
-                    <%= menuiserie.title %>
-                    <div class="item-brand-show"><%= menuiserie.brand.name %></div>
-                  </div>
-
-                  <div class="product-card-left-item item-description-head">Description</div>
-                  <div class="product-card-left-item item-description"><%= menuiserie.description %></div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "voir ce produit", product_path(menuiserie) %></div>
-                  </div>
-
-              </div>
-
-              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if menuiserie.photos.any? then cl_image_path menuiserie.photos.last.path end %>);">
-              </div>
-
-            </div>
-
-          <% end %>
-
-      </div>
-
-
-
-
-
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="six">
-
-
-
-          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
-
-            <div class="banner-content">
-
-            </div>
-
-          </div>
-
-
-
-
-
-          <div class="navtab-big-title">
-            <div class="big-icon-index-top color-six"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= "Moustiquaires" %></div>
-            <div class="blind-count color-six-text"><%= @moustiquaires.count %> produits</div>
-            <% if @moustiquaires.last.type.promos.any? %>
-              <div class="blind-count">Promo en cours</div>
-              <div class="blind-count"><%= "Jusqu'au #{@moustiquaires.last.type.promos.last.end}" %></div>
-            <% end %>
-          </div>
-
-
-          <% @moustiquaires.each do |mousti| %>
-
-            <div class="product-card">
-
-              <div class="product-card-left">
-
-                  <div class="product-card-left-item item-title">
-                    <%= mousti.title %>
-                    <div class="item-brand-show"><%= mousti.brand.name %></div>
-                  </div>
-
-                  <div class="product-card-left-item item-description-head">Description</div>
-                  <div class="product-card-left-item item-description"><%= mousti.description %></div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "voir ce produit", product_path(mousti) %></div>
-                  </div>
-
-              </div>
-
-              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if mousti.photos.any? then cl_image_path mousti.photos.last.path end %>);">
-              </div>
-
-            </div>
-
-          <% end %>
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="seven">
-
-
-
-
-          <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if @vr_album.photos.any? then cl_image_path @vr_album.photos.sample.path end %>);">
-
-            <div class="banner-content">
-
-            </div>
-
-          </div>
-
-
-
-
-
-
-          <div class="navtab-big-title">
-            <div class="big-icon-index-top color-seven"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= "Portes de garage" %></div>
-            <div class="blind-count color-seven-text"><%= @portes_de_garage.count %> produits</div>
-            <% if @portes_de_garage.last.type.promos.any? %>
-              <div class="blind-count">Promo en cours</div>
-              <div class="blind-count"><%= "Jusqu'au #{@portes_de_garage.last.type.promos.last.end}" %></div>
-            <% end %>
-          </div>
-
-
-          <% @portes_de_garage.each do |pdg| %>
-
-            <div class="product-card">
-
-              <div class="product-card-left">
-
-                  <div class="product-card-left-item item-title">
-                    <%= pdg.title %>
-                    <div class="item-brand-show"><%= pdg.brand.name %></div>
-                  </div>
-
-                  <div class="product-card-left-item item-description-head">Description</div>
-                  <div class="product-card-left-item item-description"><%= pdg.description %></div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item">
-                  </div>
-
-
-                  <div class="product-card-left-item-button">
-                    <div class="item-link"><%= link_to "voir ce produit", product_path(pdg) %></div>
-                  </div>
-
-              </div>
-
-              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= if pdg.photos.any? then cl_image_path pdg.photos.last.path end %>);">
-              </div>
-
-            </div>
-
-          <% end %>
-
-      </div>
-
-
-
+        </div>
 
     </div>
 
+  <% else %>
 
-  </div>
+    <div role="tabpanel" class="tab-pane" id="<%= type.id %>">
+
+        <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%=  cl_image_path type.albums.last.photos.sample.path  %>);">
+
+            <div class="banner-on-index-content"></div>
+
+        </div>
+
+        <div class="navtab-big-title">
+            <div class="big-icon-index-top" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+            <div class="big-title"><%= type.plurname %></div>
+            <div class="blind-count" style="color: <%= type.color %>;"><%= type.products.count %> produits</div>
+            <% if type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= "Jusqu'au #{type.promos.last.end}" %></div>
+            <% end %>
+        </div>
+
+
+        <div class="flex-inline-wrap">
+        <% type.products.each do |product| %>
 
 
 
+            <div class="card">
+              <div class="card-top image-center" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= cl_image_path product.photos.last.path  %>);">
+                <div class="infos-on-hover">
+
+                  <div class="infos-on-hover-text"><%= product.title %></div>
+                  <div class="infos-on-hover-description"><%= product.description %></div>
+                  <div class="infos-volets">
+                    <% product.infos.first(4).each do |info| %>
+
+                      <div class="infos-item-boob">
+                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+
+                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
+
+                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+                      </div>
+
+                    <% end %>
+                  </div>
 
 
+                </div>
+
+              </div>
+
+              <div class="card-bottom">
+                <div class="card-bottom-item">
+                  <div class="button-two"><%= product.title %></div>
+                </div>
+                <div class="card-bottom-item-three product-modal-button-<%= product.id %>" style="background-color: <%= type.color %>;cursor: pointer;">
+                  <div class="button">Voir ce produit</div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <%= render partial: "product", locals: {product: product} %>
+
+            <% content_for :afterjs do %>
+              <script>
+
+                $(document).ready(function() {
+                  $(".product-modal-button-<%= product.id %>").click(function() {
+                  $(".form-create-prospect-<%= product.id %>").removeClass("hidden");
+                  });
+                });
+
+
+              </script>
+            <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
 </div>
+
+
+
+
+
+
+
+
 
 
 
