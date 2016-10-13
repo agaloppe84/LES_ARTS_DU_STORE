@@ -43,7 +43,7 @@ class PromosController < ApplicationController
   end
 
   def promo_params
-    params.require(:promo).permit(:title, :description, :start, :end, :type_id, photos: [])
+    params.require(:promo).permit(:title, :description, :start, :current, :end, :type_id, photos: [])
   end
 
 end

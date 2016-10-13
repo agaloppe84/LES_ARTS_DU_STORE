@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
 resources :products
-resources :promos
 resources :types
 
     root to: "users#index"
@@ -15,8 +14,11 @@ resources :types
   get 'contact' => 'pages#contact'
   get 'dashboard' => 'pages#dashboard'
   get 'promo' => 'pages#promo'
+
   resources :types
   resources :promos
+
+
   resources :albums
   resources :brands
 

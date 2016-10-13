@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to product_path(@product), notice: "Le produit à été mis à jour"
+      redirect_to dashboard_path(@product), notice: "Le produit à été mis à jour"
     else
       render :new
     end

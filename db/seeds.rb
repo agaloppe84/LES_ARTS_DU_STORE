@@ -32,8 +32,8 @@ puts "Création des users - START"
 
 
 # ------------------------- Création des users ------------------------- #
-puts "User: " + user1.email + "" + "Password: " + user1.password
-puts "User: " + user2.email + "" + "Password: " + user2.password
+puts "-----------" + user1.email + "-----------" + "Password: " + "-----------" + user1.password
+puts "-----------" + user2.email + "-----------" + "Password: " + "-----------" + user2.password
 
 
 puts "Création des users - END"
@@ -58,13 +58,13 @@ puts "Création des types de stores - START"
 
 
 # ------------------------- Création des types de stores ------------------------- #
-puts "Nom de catégorie: " + moustiquaire.name + "" + "Couleur: " + moustiquaire.color
-puts "Nom de catégorie: " + porte_de_garage.name + "" + "Couleur: " + porte_de_garage.color
-puts "Nom de catégorie: " + store_interieur.name + "" + "Couleur: " + store_interieur.color
-puts "Nom de catégorie: " + store_exterieur.name + "" + "Couleur: " + store_exterieur.color
-puts "Nom de catégorie: " + menuiserie.name + "" + "Couleur: " + menuiserie.color
-puts "Nom de catégorie: " + pergola.name + "" + "Couleur: " + pergola.color
-puts "Nom de catégorie: " + volet_roulant.name + "" + "Couleur: " + volet_roulant.color
+puts "-----------" + moustiquaire.name + "-----------" + "Couleur: " + "-----------" + moustiquaire.color
+puts "-----------" + porte_de_garage.name + "-----------" + "Couleur: " + "-----------" + porte_de_garage.color
+puts "-----------" + store_interieur.name + "-----------" + "Couleur: " + "-----------" + store_interieur.color
+puts "-----------" + store_exterieur.name + "-----------" + "Couleur: " + "-----------" + store_exterieur.color
+puts "-----------" + menuiserie.name + "-----------" + "Couleur: " + "-----------" + menuiserie.color
+puts "-----------" + pergola.name + "-----------" + "Couleur: " + "-----------" + pergola.color
+puts "-----------" + volet_roulant.name + "" + "Couleur: " + "-----------" + volet_roulant.color
 
 
 puts "Création des types de stores - END"
@@ -88,6 +88,11 @@ puts "Création des marques - START"
 # ------------------------- Création des marques ------------------------- #
 
 puts "Création des marques - END"
+
+puts "-----------" + coublanc.name + "-----------"
+puts "-----------" + luxaflex.name + "-----------"
+puts "-----------" + franceferm.name + "-----------"
+puts "-----------" + franciaflex.name + "-----------"
 
 
 
@@ -510,8 +515,8 @@ puts "Création des promos - START"
 # ------------------------- Création des types de stores ------------------------- #
 
 
-    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 2.months, end: Date.today + 3.months, type: moustiquaire, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 3.months, end: Date.today + 4.months, type: pergola, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 2.months, end: Date.today + 3.months, type: moustiquaire, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 3.months, end: Date.today + 4.months, type: pergola, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
 
 
 # ------------------------- Création des types de stores ------------------------- #

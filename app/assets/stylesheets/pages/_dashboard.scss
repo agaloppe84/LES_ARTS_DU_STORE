@@ -572,7 +572,9 @@
 .dashboardv2-left-menu {
   width: 100%;
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(100,100,100,0.2);
+  min-height: 350px;
 }
 
 
@@ -831,10 +833,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: auto;
+  margin-top: 69px;
   border-top: 1px solid rgba(248,90,22,1);
   height: 50px;
-  position: absolute;
   bottom: 0;
   left: 0;
   font-size: 14px;
@@ -1039,6 +1040,17 @@
 }
 
 
+.v3-prod-infos-alt {
+  padding-left: 69px;
+  padding-right: 40px;
+  position: relative;
+  min-height: 150px;
+  padding-top: 63px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(100,100,100,0.2);
+}
+
+
 .v2-link-on-active-infos {
   margin-left: auto;
   transition: 0.3s ease;
@@ -1164,7 +1176,8 @@
   min-height: 30px;
   max-height: 30px;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   opacity: 0.5;
   transition: 0.3s ease;
   &:hover {
@@ -1193,4 +1206,22 @@
 
 .v3-power-item-cont:hover .v3-powers-text-on-hover {
   opacity: 0.9;
+}
+
+
+.v4-no-promo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 29px;
+  height: 100%;
+  font-family: "Circular-Bold";
+  font-size: 14px;
+  color: rgba(55,55,55,0.5);
+}
+
+.v4-no-promo-div-small-text {
+  font-family: "Circular-Book";
+  font-size: 11px;
 }
