@@ -27,12 +27,23 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+
     @products = Product.all
     @albums = Album.all
     @infos = Info.all
     @promos = Promo.all
     @types = Type.all
     @brands = Brand.all
+    @photos = 0
+    @addtab = 0
+
+    @albums.each do |album|
+      album.photos.count
+      @photos = @photos + album.photos.count
+      @photos
+    end
+
+
   end
 
   def promo

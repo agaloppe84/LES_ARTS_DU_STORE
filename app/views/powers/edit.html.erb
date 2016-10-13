@@ -1,0 +1,62 @@
+<div class="form-fullpage">
+
+  <div class="form-title"><%= "Modifier #{@product.title} / Pouvoirs n°#{@power.id}" %></div>
+
+
+    <%= simple_form_for [@product, @power] do |f| %>
+
+
+
+
+
+      <div class="form-label">Protection contre le Vent</div>
+      <%= f.input :wind, label: false %>
+
+      <div class="form-label">Protection contre le Froid</div>
+      <%= f.input :cold, label: false %>
+
+      <div class="form-label">Protection contre le Chaud</div>
+      <%= f.input :hot, label: false %>
+
+      <div class="form-label">Protection contre l'Humidité</div>
+      <%= f.input :humidity, label: false %>
+
+      <div class="form-label">Economie d'energie</div>
+      <%= f.input :energysaver, label: false %>
+
+      <div class="form-label">Crédit d'impot</div>
+      <%= f.input :taxsaver, label: false %>
+
+      <div class="form-label">Protection contre les insectes</div>
+      <%= f.input :insects, label: false %>
+
+      <div class="form-label">Protection contre le vol</div>
+      <%= f.input :security, label: false %>
+
+      <div class="form-label">Protection contre le soleil</div>
+      <%= f.input :sun, label: false %>
+
+      <div class="form-label">Protection contre la pluis</div>
+      <%= f.input :rain, label: false %>
+
+      <div class="form-label">Produit d'intérieur</div>
+      <%= f.input :inside, label: false %>
+
+      <div class="form-label">Produit d'extérieur</div>
+      <%= f.input :outside, label: false %>
+
+      <div class="form-label">Certification</div>
+      <%= f.input :certification, label: false %>
+
+
+
+
+
+      <div class="form-fullpage-button">
+        <%= f.button :submit, 'Valider', class: 'form-button' %>
+      </div>
+
+
+    <% end %>
+
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008204130) do
+ActiveRecord::Schema.define(version: 20161012095004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,27 @@ ActiveRecord::Schema.define(version: 20161008204130) do
   end
 
   add_index "infos", ["product_id"], name: "index_infos_on_product_id", using: :btree
+
+  create_table "powers", force: :cascade do |t|
+    t.boolean  "wind"
+    t.boolean  "cold"
+    t.boolean  "hot"
+    t.boolean  "humidity"
+    t.boolean  "energysaver"
+    t.boolean  "taxsaver"
+    t.boolean  "insects"
+    t.boolean  "security"
+    t.boolean  "sun"
+    t.boolean  "rain"
+    t.boolean  "inside"
+    t.boolean  "outside"
+    t.boolean  "certification"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "product_id"
+  end
+
+  add_index "powers", ["product_id"], name: "index_powers_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
@@ -114,6 +135,7 @@ ActiveRecord::Schema.define(version: 20161008204130) do
 
   add_foreign_key "albums", "types"
   add_foreign_key "infos", "products"
+  add_foreign_key "powers", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "types"
   add_foreign_key "promos", "types"

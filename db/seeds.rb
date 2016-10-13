@@ -2,6 +2,7 @@ Type.destroy_all
 Brand.destroy_all
 Album.destroy_all
 Info.destroy_all
+Power.destroy_all
 Promo.destroy_all
 Product.destroy_all
 
@@ -335,6 +336,141 @@ puts "Création des infos - START"
 
 
 puts "Création des infos - END"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+puts "Création des pouvoirs - START"
+
+# ------------------------- POUVOIRS - Moustiquaires ------------------------- #
+
+
+    Power.create!(product: mousty01 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
+    Power.create!(product: mousty02 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
+    Power.create!(product: mousty03 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
+    Power.create!(product: mousty04 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
+    Power.create!(product: mousty05 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
+
+    puts "Moustiquaires done !!!!!!!!"
+# ------------------------- POUVOIRS - Moustiquaires ------------------------- #
+
+
+# ------------------------- POUVOIRS - Portes de garage ------------------------- #
+
+
+    Power.create!(product: porto01 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: false, outside: false, certification: false)
+    Power.create!(product: porto02 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: false, outside: false, certification: false)
+    Power.create!(product: porto03 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: false, outside: false, certification: false)
+    Power.create!(product: porto04 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: false, outside: false, certification: false)
+    Power.create!(product: porto05 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: false, outside: false, certification: false)
+
+
+# ------------------------- POUVOIRS - Portes de garage ------------------------- #
+
+
+# ------------------------- POUVOIRS - Stores intérieurs ------------------------- #
+
+
+    Power.create!(product: inte01 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: inte02 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: inte03 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: inte04 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: inte05 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+
+
+# ------------------------- POUVOIRS - Stores intérieurs ------------------------- #
+
+
+
+# ------------------------- POUVOIRS - Stores exterieurs ------------------------- #
+
+
+    Power.create!(product: exte01 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: exte02 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: exte03 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: exte04 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: exte05 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+
+
+# ------------------------- POUVOIRS - Stores exterieurs ------------------------- #
+
+
+
+# ------------------------- POUVOIRS - Menuiseries ------------------------- #
+
+
+    Power.create!(product: menui01 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
+    Power.create!(product: menui02 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
+    Power.create!(product: menui03 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
+    Power.create!(product: menui04 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
+    Power.create!(product: menui05 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
+
+
+# ------------------------- POUVOIRS - Menuiseries ------------------------- #
+
+
+
+# ------------------------- POUVOIRS - Pergolas ------------------------- #
+
+
+    Power.create!(product: pergo01 , sun: true, rain: true, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: pergo02 , sun: true, rain: true, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: pergo03 , sun: true, rain: true, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: pergo04 , sun: true, rain: true, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: pergo05 , sun: true, rain: true, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+
+
+# ------------------------- POUVOIRS - Pergolas ------------------------- #
+
+
+
+# ------------------------- POUVOIRS - Volets roulants ------------------------- #
+
+
+    Power.create!(product: volet01 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: volet02 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: volet03 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: volet04 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+    Power.create!(product: volet05 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
+
+
+# ------------------------- POUVOIRS - Volets roulants ------------------------- #
+
+
+puts "Création des pouvoirs - END"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

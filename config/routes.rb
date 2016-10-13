@@ -20,8 +20,10 @@ resources :types
   resources :albums
   resources :brands
 
+
   resources :products do
     resources :infos
+    resources :powers
   end
 
   mount Attachinary::Engine => "/attachinary"
