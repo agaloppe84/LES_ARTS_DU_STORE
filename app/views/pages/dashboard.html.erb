@@ -1,488 +1,9 @@
-<div class="fullpage">
-
-
-  <div class="fullpage-leftblock">
-
-    <div class="leftblock-title">
-      <div class="leftblock-text-show">DASHBOARD</div>
-    </div>
-
-    <div class="leftblock-content">
-      <ul class="nav nav-pills nav-stacked">
-
-        <li role="presentation" class="active">
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <a href="#one" data-toggle="tab">Produits</a>
-          <div class="product-count"><%= "( #{@products.count} )" %></div>
-        </li>
-
-        <li role="presentation">
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <a href="#two" data-toggle="tab">Promos</a>
-          <div class="product-count"><%= "( #{@promos.count} )" %></div>
-        </li>
-
-        <li role="presentation">
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <a href="#three" data-toggle="tab">Albums</a>
-          <div class="product-count"><%= "( #{@albums.count} )" %></div>
-        </li>
-
-        <li role="presentation">
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <a href="#four" data-toggle="tab">Marques</a>
-          <div class="product-count"><%= "( #{@brands.count} )" %></div>
-        </li>
-
-        <li role="presentation">
-          <i class="fa fa-circle" aria-hidden="true"></i>
-          <a href="#five" data-toggle="tab">Catégories</a>
-          <div class="product-count"><%= "( #{@types.count} )" %></div>
-        </li>
-
-      </ul>
-    </div>
-
-  </div>
-
-
-
-
-
-
-  <div class="fullpage-rightblock">
-
-    <div class="tab-content">
-
-      <div role="tabpanel" class="tab-pane active" id="one">
-
-        <div class="rightblock-title">
-          <div class="header-product-text">
-            <div>PRODUITS</div>
-          </div>
-          <div class="blind-count"><%= @products.count %> produits</div>
-
-          <div class="add-model-name">
-            <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            <% end %>
-          </div>
-
-          <%= render 'shared/flashes' %>
-
-        </div>
-
-        <% @types.each do |type| %>
-
-          <div class="product-card-dashboard">
-
-
-
-
-
-              <div class="header-container">
-                <div class="dashboard-card-type">
-                  <div class="card-type-text"><%= type.name.capitalize.pluralize %></div>
-                  <div class="blind-count"><%= "( #{type.products.count} ) " %></div>
-                  <div class="product-links"></div>
-                </div>
-              </div>
-
-
-              <div class="dashboard-table-header">
-                <div class="product-id-header"><%= "id" %></div>
-                <div class="product-id-title-header"><%= "titre" %></div>
-                <div class="product-id-info-header"><%= "infos" %></div>
-              </div>
-
-
-
-
-              <div class="item-container">
-                <% type.products.each do |product| %>
-
-                  <div class="dashboard-card-item">
-                    <div class="product-id"><%= "id : " %><%= product.id %></div>
-
-
-                    <%= link_to product_path(product), class: "product-id-title" do %>
-                        <%= product.title %>
-                    <% end %>
-
-
-                    <div class="product-id-info"><%= product.infos.count %></div>
-
-                    <div class="product-links">
-
-                      <%= link_to edit_product_path(product), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier ce produit ?" } do %>
-                        <i class="fa fa-cog" aria-hidden="true"></i>
-                      <% end %>
-
-                      <%= link_to new_product_info_path(product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      <% end %>
-
-                      <%= link_to product_infos_path(product), class: "" do %>
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                      <% end %>
-
-                      <%= link_to product_path(product), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                      <% end %>
-
-                    </div>
-
-                  </div>
-
-                <% end %>
-              </div>
-
-
-          </div>
-
-        <% end %>
-
-      </div>
-
-
-
-      <div role="tabpanel" class="tab-pane" id="two">
-
-        <div class="rightblock-title">
-          <div class="header-product-text">Promos</div>
-          <div class="blind-count"><%= @promos.count %> promos</div>
-
-          <div class="add-model-name">
-            <%= link_to new_promo_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une promo ?" } do %>
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            <% end %>
-          </div>
-
-        </div>
-
-
-          <div class="product-card-dashboard">
-
-
-              <div class="dashboard-table-header">
-                <div class="product-id-header"><%= "id" %></div>
-                <div class="product-id-title-header"><%= "titre" %></div>
-                <div class="product-id-title-header"><%= "type" %></div>
-                <div class="product-id-date-header"><%= "Début" %></div>
-                <div class="product-id-date-header"><%= "Fin" %></div>
-              </div>
-
-
-
-              <div class="item-container">
-
-                <% @promos.each do |promo| %>
-
-                  <div class="dashboard-card-item">
-                    <div class="product-id"><%= "id : " %><%= promo.id %></div>
-
-
-                    <%= link_to promo_path(promo), class: "product-id-title" do %>
-                        <%= promo.title %>
-                    <% end %>
-
-
-                    <div class="product-id-title"><%= promo.type.name %></div>
-
-                    <div class="product-id-date"><%= promo.start.strftime("%Y-%b") %></div>
-
-                    <div class="product-id-date"><%= promo.end.strftime("%Y-%b") %></div>
-
-                    <div class="product-links-promo">
-
-                      <%= link_to edit_promo_path(promo), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette promo ?" } do %>
-                        <i class="fa fa-cog" aria-hidden="true"></i>
-                      <% end %>
-
-                      <%= link_to promo_path(promo), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette promo ?" } do %>
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                      <% end %>
-
-                    </div>
-
-                  </div>
-
-                <% end %>
-
-              </div>
-
-          </div>
-
-
-      </div>
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="three">
-
-        <div class="rightblock-title">
-          <div class="header-product-text">Albums</div>
-          <div class="blind-count"><%= @albums.count %> albums</div>
-
-          <div class="add-model-name">
-            <%= link_to new_album_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un album ?" } do %>
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            <% end %>
-          </div>
-
-        </div>
-
-
-          <div class="product-card-dashboard">
-
-
-              <div class="dashboard-table-header">
-                <div class="product-id-header"><%= "id" %></div>
-                <div class="product-id-title-header"><%= "name" %></div>
-                <div class="product-id-title-header"><%= "photos" %></div>
-              </div>
-
-
-
-              <div class="item-container">
-
-                <% @albums.each do |album| %>
-
-                  <div class="dashboard-card-item">
-                    <div class="product-id"><%= "id : " %><%= album.id %></div>
-
-
-                    <%= link_to album_path(album), class: "product-id-title" do %>
-                        <%= album.name %>
-                    <% end %>
-
-
-                    <div class="product-id-title"><%= album.photos.count %></div>
-
-
-                    <div class="product-links-promo">
-
-                      <%= link_to edit_album_path(album), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cet album ?" } do %>
-                        <i class="fa fa-cog" aria-hidden="true"></i>
-                      <% end %>
-
-
-                      <% if album.name == "homepage" %>
-                          <i class="fa fa-warning" aria-hidden="true"></i>
-                        <% else %>
-                          <%= link_to album_path(album), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cet album ?" } do %>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                          <% end %>
-                      <% end %>
-
-                    </div>
-
-                  </div>
-
-                <% end %>
-
-              </div>
-
-          </div>
-
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="four">
-
-        <div class="rightblock-title">
-          <div class="header-product-text">Marques</div>
-          <div class="blind-count"><%= @brands.count %> marques</div>
-
-          <div class="add-model-name">
-            <%= link_to new_brand_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une marque ?" } do %>
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            <% end %>
-          </div>
-
-        </div>
-
-
-          <div class="product-card-dashboard">
-
-
-              <div class="dashboard-table-header">
-                <div class="product-id-header"><%= "id" %></div>
-                <div class="product-id-title-header"><%= "name" %></div>
-                <div class="product-id-title-header"><%= "produits" %></div>
-              </div>
-
-
-
-              <div class="item-container">
-
-                <% @brands.each do |brand| %>
-
-                  <div class="dashboard-card-item">
-                    <div class="product-id"><%= "id : " %><%= brand.id %></div>
-
-
-                    <%= link_to brand_path(brand), class: "product-id-title" do %>
-                        <%= brand.name %>
-                    <% end %>
-
-
-                    <div class="product-id-title"><%= brand.products.count %></div>
-
-
-                    <div class="product-links-promo">
-
-                      <%= link_to edit_brand_path(brand), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette marque ?" } do %>
-                        <i class="fa fa-cog" aria-hidden="true"></i>
-                      <% end %>
-
-
-
-                      <%= link_to brand_path(brand), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette marque ?" } do %>
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                      <% end %>
-
-
-                    </div>
-
-                  </div>
-
-                <% end %>
-
-              </div>
-
-          </div>
-
-
-      </div>
-
-
-
-
-
-
-
-
-      <div role="tabpanel" class="tab-pane" id="five">
-
-        <div class="rightblock-title">
-          <div class="header-product-text">Catégories</div>
-          <div class="blind-count"><%= @types.count %> catégories</div>
-
-          <div class="add-model-name">
-            <%= link_to new_type_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une catégorie ?" } do %>
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            <% end %>
-          </div>
-
-        </div>
-
-
-          <div class="product-card-dashboard">
-
-
-              <div class="dashboard-table-header">
-                <div class="product-id-header"><%= "id" %></div>
-                <div class="product-id-title-header"><%= "name" %></div>
-                <div class="product-id-title-header"><%= "couleur" %></div>
-              </div>
-
-
-
-              <div class="item-container">
-
-                <% @types.each do |type| %>
-
-                  <div class="dashboard-card-item">
-                    <div class="product-id"><%= "id : " %><%= type.id %></div>
-
-
-                    <%= link_to type_path(type), class: "product-id-title" do %>
-                        <%= type.name %>
-                    <% end %>
-
-                    <div class="product-id-title">
-                      <div class="dashboard-type-color" style="background-color: <%= type.color if type.color.present? %>;"></div>
-                    </div>
-
-
-
-
-
-
-                    <div class="product-links-promo">
-
-                      <%= link_to edit_type_path(type), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette catégorie ?" } do %>
-                        <i class="fa fa-cog" aria-hidden="true"></i>
-                      <% end %>
-
-
-
-                      <%= link_to type_path(type), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette catégorie ?" } do %>
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                      <% end %>
-
-
-                    </div>
-
-                  </div>
-
-                <% end %>
-
-              </div>
-
-          </div>
-
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-  </div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
 
 <div class="dashboardv2-fullpage">
 
   <div class="v2-fullpage-item-01">
+
+    <div class="fullpage-overflow">
 
 
     <div class="v2-fullpage-item-01-header">
@@ -560,11 +81,65 @@
 
 
 
+    <div class="dashv2-infos-compilated-alt">
 
-      <%= link_to new_type_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une catégorie ?" } do %>
-          <div class="v2-add-category-button">Créer une catégorie</div>
-      <% end %>
+                <div class="dashv2-infos-compilated-item">
+                  <div class="v2-big-number"><%= @brands.count %></div>
+                  <% if @brands.count <= 1 %>
+                    <div class="dashv2-infos-compilated-item-label">Marque</div>
+                  <% else %>
+                    <div class="dashv2-infos-compilated-item-label">Marques</div>
+                  <% end %>
+                </div>
 
+                <%= link_to new_brand_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une marque ?" } do %>
+
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <div class="v5-text-on-button-hover">
+                      <div>Créer une marque</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
+                  </div>
+
+
+                <% end %>
+
+    </div>
+
+
+
+            <div class="v3-prod-infos-alt">
+
+
+                <div class="infos-volets">
+                    <% @brands.each do |brand| %>
+
+                      <div class="infos-item-boob">
+                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path brand.logo.path %>);"></div>
+
+                        <div class="infos-big-boob"><%= brand.name %>&nbsp;</div>
+
+                        <div class="infos-small-boob"></div>
+
+                        <div class="v2-link-on-active-infos">
+                          <%= link_to edit_brand_path(brand), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier cette marque ?" } do %>
+                              <div class="text-on-edit-hover">Modifier</div>
+                              <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                          <% end %>
+                          <%= link_to brand_path(brand), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette marque ?" } do %>
+                              <div class="text-on-destroy-hover">Supprimer</div>
+                              <i class="fa fa-times" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                          <% end %>
+                        </div>
+
+                      </div>
+
+                    <% end %>
+                </div>
+
+            </div>
+        </div>
 
   </div>
 
@@ -603,19 +178,19 @@
         <div class="dashv2-infos-compilated-alt">
           <div class="dashv2-infos-compilated-item">
             <div class="v2-big-type-color" style="background-color: <%= type.color %>;"></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Couleur</div>
+            <div class="dashv2-infos-compilated-item-label">Couleur</div>
           </div>
           <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.products.count %></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Produits</div>
+            <div class="v2-big-number"><%= type.products.count %></div>
+            <div class="dashv2-infos-compilated-item-label">Produits</div>
           </div>
           <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.albums.count %></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Albums</div>
+            <div class="v2-big-number"><%= type.albums.count %></div>
+            <div class="dashv2-infos-compilated-item-label">Albums</div>
           </div>
           <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.promos.count %></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Promos</div>
+            <div class="v2-big-number"><%= type.promos.count %></div>
+            <div class="dashv2-infos-compilated-item-label">Promos</div>
           </div>
         </div>
 
@@ -672,18 +247,22 @@
         <div class="dashv2-infos-compilated-alt">
 
                 <div class="dashv2-infos-compilated-item">
-                  <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.promos.count %></div>
+                  <div class="v2-big-number"><%= type.promos.count %></div>
                   <% if type.promos.count <= 1 %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Promo</div>
+                    <div class="dashv2-infos-compilated-item-label">Promo</div>
                   <% else %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Promos</div>
+                    <div class="dashv2-infos-compilated-item-label">Promos</div>
                   <% end %>
                 </div>
 
                 <%= link_to new_promo_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une promo pour cette catégorie ?" } do %>
 
-                  <div class="v4-info-new-button">
-                    <div>Créer une promo</div>
+                  <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <div class="v5-text-on-button-hover">
+                      <div>Créer une promo</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                   </div>
 
                 <% end %>
@@ -694,15 +273,60 @@
 
 
 
+            <div class="v3-prod-infos-alt">
+
+              <% if type.promos.any? %>
+
+                <div class="infos-volets">
+                    <% type.promos.each do |promo| %>
+
+                      <div class="infos-item-boob">
+                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path promo.photos.last.path %>);"></div>
+
+                        <div class="infos-big-boob"><%= promo.title %>&nbsp;</div>
+
+                        <div class="infos-small-boob"></div>
+
+                        <div class="v2-link-on-active-infos">
+                          <%= link_to edit_promo_path(promo), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier cette promo ?" } do %>
+                              <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
+                              <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                          <% end %>
+                          <%= link_to promo_path(promo), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette promo ?" } do %>
+                              <div class="text-on-destroy-hover" style="color: <%= type.color %>;">Supprimer</div>
+                              <i class="fa fa-times" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                          <% end %>
+                        </div>
+
+                      </div>
+
+                    <% end %>
+                </div>
+
+              <% else %>
+                <div class="v4-no-promo-div">
+                  <div class="v5-big-text">Pas de promo</div>
+                  <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer une promo !!</div>
+                </div>
+              <% end %>
+
+            </div>
 
 
 
 
 
+
+
+
+
+
+
+<!--
       <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
           <div class="v2-add-category-button-better">Créer un produit</div>
       <% end %>
-
+ -->
 
 
 
@@ -729,19 +353,19 @@
         <div class="dashv2-infos-compilated-alt">
           <div class="dashv2-infos-compilated-item">
             <div class="v2-big-type-color" style="background-color: <%= type.color %>;"></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Couleur</div>
+            <div class="dashv2-infos-compilated-item-label">Couleur</div>
           </div>
           <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.products.count %></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Produits</div>
+            <div class="v2-big-number"><%= type.products.count %></div>
+            <div class="dashv2-infos-compilated-item-label">Produits</div>
           </div>
           <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.albums.count %></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Albums</div>
+            <div class="v2-big-number"><%= type.albums.count %></div>
+            <div class="dashv2-infos-compilated-item-label">Albums</div>
           </div>
           <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.promos.count %></div>
-            <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Promos</div>
+            <div class="v2-big-number"><%= type.promos.count %></div>
+            <div class="dashv2-infos-compilated-item-label">Promos</div>
           </div>
         </div>
 
@@ -792,19 +416,24 @@
     <div class="dashv2-infos-compilated-alt">
 
                 <div class="dashv2-infos-compilated-item">
-                  <div class="v2-big-number" style="color: <%= type.color %>;"><%= type.promos.count %></div>
+                  <div class="v2-big-number"><%= type.promos.count %></div>
                   <% if type.promos.count <= 1 %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Promo</div>
+                    <div class="dashv2-infos-compilated-item-label">Promo</div>
                   <% else %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Promos</div>
+                    <div class="dashv2-infos-compilated-item-label">Promos</div>
                   <% end %>
                 </div>
 
                 <%= link_to new_promo_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une promo pour cette catégorie ?" } do %>
 
-                  <div class="v4-info-new-button">
-                    <div>Créer une promo</div>
+                  <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <div class="v5-text-on-button-hover">
+                      <div>Créer une promo</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                   </div>
+
 
                 <% end %>
 
@@ -832,11 +461,11 @@
                         <div class="v2-link-on-active-infos">
                           <%= link_to edit_promo_path(promo), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier cette promo ?" } do %>
                               <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
-                              <i class="fa fa-pencil" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                              <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
                           <% end %>
                           <%= link_to promo_path(promo), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette promo ?" } do %>
                               <div class="text-on-destroy-hover" style="color: <%= type.color %>;">Supprimer</div>
-                              <i class="fa fa-times" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                              <i class="fa fa-times" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
                           <% end %>
                         </div>
 
@@ -847,8 +476,8 @@
 
               <% else %>
                 <div class="v4-no-promo-div">
-                  <div>Pas de promo</div>
-                  <div class="v4-no-promo-div-small-text" style="color: <%= type.color %>;">Cliquez sur créer une promo !!</div>
+                  <div class="v5-big-text">Pas de promo</div>
+                  <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer une promo !!</div>
                 </div>
               <% end %>
 
@@ -864,11 +493,11 @@
 
 
 
-
+<!--
     <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
           <div class="v2-add-category-button-better">Créer un produit</div>
       <% end %>
-
+ -->
 
 
 
@@ -900,18 +529,22 @@
               <div class="dashv2-infos-compilated-alt">
 
                 <div class="dashv2-infos-compilated-item">
-                  <div class="v2-big-number" style="color: <%= type.color %>;"><%= product.infos.count %></div>
+                  <div class="v2-big-number"><%= product.infos.count %></div>
                   <% if product.infos.count == 1 %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Info</div>
+                    <div class="dashv2-infos-compilated-item-label">Info</div>
                   <% else %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Infos</div>
+                    <div class="dashv2-infos-compilated-item-label">Infos</div>
                   <% end %>
                 </div>
 
                 <%= link_to new_product_info_path(product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
 
-                  <div class="v4-info-new-button">
-                    <div>Créer une info</div>
+                  <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <div class="v5-text-on-button-hover">
+                      <div>Créer une info</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                   </div>
 
                 <% end %>
@@ -954,11 +587,11 @@
               <div class="dashv2-infos-compilated-alt">
                 <div class="dashv2-infos-compilated-item">
                   <% if product.power.present? %>
-                    <div class="v2-big-number-brand" style="color: <%= type.color %>;">Oui</div>
+                    <div class="v2-big-number-brand" style="color: green;">Oui</div>
                   <% else %>
-                    <div class="v2-big-number-brand" style="color: <%= type.color %>;">Non</div>
+                    <div class="v2-big-number-brand" style="color: red;">Non</div>
                   <% end %>
-                  <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Powers</div>
+                  <div class="dashv2-infos-compilated-item-label">Powers</div>
 
                 </div>
 
@@ -966,16 +599,24 @@
                 <% if product.power.present? %>
 
                   <%= link_to edit_product_power_path(product,product.power), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
-                    <div class="v4-info-new-button">
-                      <div>Modifier</div>
+                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                      <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                      <div class="v5-text-on-button-hover">
+                      <div>Editer les pouvoirs</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                     </div>
                   <% end %>
 
                 <% else %>
 
                   <%= link_to new_product_power_path(product), class: "", data: { confirm: "Créer des pouvoirs pour ce produit ?" } do %>
-                    <div class="v4-info-new-button">
+                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                      <div class="v5-text-on-button-hover">
                       <div>Créer des pouvoirs</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                     </div>
                   <% end %>
 
@@ -1100,7 +741,12 @@
 
                 <% else %>
 
-                  <div class="no-present-power">Ce store n'a pas de pouvoir</div>
+                  <div class="v3-prod-infos-alt">
+                    <div class="v4-no-promo-div">
+                      <div class="v5-big-text">Pas de pouvoirs</div>
+                      <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer des pouvoirs !!</div>
+                    </div>
+                  </div>
 
               <% end %>
 
@@ -1128,18 +774,22 @@
               <div class="dashv2-infos-compilated-alt">
 
                 <div class="dashv2-infos-compilated-item">
-                  <div class="v2-big-number" style="color: <%= type.color %>;"><%= product.infos.count %></div>
+                  <div class="v2-big-number"><%= product.infos.count %></div>
                   <% if product.infos.count == 1 %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Info</div>
+                    <div class="dashv2-infos-compilated-item-label">Info</div>
                   <% else %>
-                    <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Infos</div>
+                    <div class="dashv2-infos-compilated-item-label">Infos</div>
                   <% end %>
                 </div>
 
                 <%= link_to new_product_info_path(product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
 
-                  <div class="v4-info-new-button">
-                    <div>Créer une info</div>
+                  <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <div class="v5-text-on-button-hover">
+                      <div>Créer une info</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                   </div>
 
                 <% end %>
@@ -1182,11 +832,11 @@
 
                 <div class="dashv2-infos-compilated-item">
                   <% if product.power.present? %>
-                    <div class="v2-big-number-brand" style="color: <%= type.color %>;">Oui</div>
+                    <div class="v2-big-number-brand" style="color: green;">Oui</div>
                   <% else %>
-                    <div class="v2-big-number-brand" style="color: <%= type.color %>;">Non</div>
+                    <div class="v2-big-number-brand" style="color: red;">Non</div>
                   <% end %>
-                  <div class="dashv2-infos-compilated-item-label" style="color: <%= type.color %>;">Powers</div>
+                  <div class="dashv2-infos-compilated-item-label">Powers</div>
 
                 </div>
 
@@ -1194,16 +844,24 @@
                 <% if product.power.present? %>
 
                   <%= link_to edit_product_power_path(product,product.power), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
-                    <div class="v4-info-new-button">
-                      <div>Modifier</div>
+                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                      <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                      <div class="v5-text-on-button-hover">
+                      <div>Editer les pouvoirs</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                     </div>
                   <% end %>
 
                 <% else %>
 
                   <%= link_to new_product_power_path(product), class: "", data: { confirm: "Créer des pouvoirs pour ce produit ?" } do %>
-                    <div class="v4-info-new-button">
+                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
+                      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                      <div class="v5-text-on-button-hover">
                       <div>Créer des pouvoirs</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
                     </div>
                   <% end %>
 
@@ -1327,7 +985,12 @@
 
                 <% else %>
 
-                  <div class="no-present-power">Ce store n'a pas de pouvoir</div>
+                  <div class="v3-prod-infos-alt">
+                    <div class="v4-no-promo-div">
+                      <div class="v5-big-text">Pas de pouvoirs</div>
+                      <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer des pouvoirs !!</div>
+                    </div>
+                  </div>
 
               <% end %>
 
@@ -1343,6 +1006,39 @@
   </div>
 
 
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="dashboardv2-fullpage-bottom">
+
+  <div class="dashboardv2-fullpage-bottom-item">
+    <%= link_to new_type_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une catégorie ?" } do %>
+      <div class="v5-button">Créer une catégorie</div>
+    <% end %>
+  </div>
+
+  <div class="dashboardv2-fullpage-bottom-item">
+    <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
+      <div class="v5-button-2">Créer un produit</div>
+    <% end %>
+  </div>
+
+  <div class="dashboardv2-fullpage-bottom-item">
+
+  </div>
 
 </div>
 
