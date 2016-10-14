@@ -15,7 +15,7 @@
 
 .fullpage-rightblock {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -451,21 +451,41 @@
 
 .dashboardv2-fullpage {
   width: 100%;
-  height: 93vh;
+  height: 83vh;
   display: flex;
   background-color: white;
 }
 
 .dashboardv2-fullpage-bottom {
   width: 100%;
-  height: 7vh;
+  height: 17vh;
   display: flex;
+  border-top: 7px solid rgba(155,155,155,0.2);
+  border-bottom: 7px solid rgba(155,155,155,0.2);
 }
 
-.dashboardv2-fullpage-bottom-item {
+.dashboardv2-fullpage-bottom-item-1 {
   flex: 4;
   font-size: 14px;
   font-family: "Circular-Medium";
+  height: 100%;
+}
+
+.dashboardv2-fullpage-bottom-item-55 {
+  flex: 4;
+  font-size: 14px;
+  font-family: "Circular-Medium";
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(100,100,100,0.2);
+}
+
+.dashboardv2-fullpage-bottom-item-2 {
+  flex: 4;
+  font-size: 14px;
+  font-family: "Circular-Medium";
+  height: 100%;
 }
 
 .v5-button {
@@ -515,40 +535,43 @@
 
 .v2-fullpage-item-01 {
   flex: 4;
-  background-color: white;
+  background-color: transparent;
+  z-index: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-right: 1px solid rgba(155,155,155,0.2);
+  border-right: 7px solid rgba(155,155,155,0.2);
   position: relative;
   overflow-y: scroll;
   &-header {
     height: 100px;
     border-bottom: 1px solid rgba(100,100,100,0.2);
     width: 100%;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 30px;
+    justify-content: center;
     position: relative;
   }
 }
 
 .v2-fullpage-item-02 {
   flex: 4;
-  background-color: white;
+  background-color: transparent;
+  z-index: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  border-right: 7px solid rgba(155,155,155,0.2);
   position: relative;
   overflow-y: scroll;
   &-header {
     height: 100px;
     width: 100%;
-    background-color: white;
+    border-right: 1px solid rgba(100,100,100,0.2);
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -558,7 +581,8 @@
 
 .v2-fullpage-item-03 {
   flex: 4;
-  background-color: white;
+  background-color: transparent;
+  z-index: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -567,7 +591,7 @@
   &-header {
     height: 100px;
     width: 100%;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -577,9 +601,8 @@
 
 
 .dashboard-user-email {
-  position: absolute;
-  top: 60px;
-  left: 45px;
+  top: 66px;
+  left: 59px;
   font-family: "Circular-Book";
   font-size: 11px;
   color: rgba(55,55,55,0.8);
@@ -592,11 +615,9 @@
 }
 
 .dashboard-user-email-dot {
-  position: absolute;
-  top: 62px;
-  left: 31px;
   font-size: 9px;
-  color: #9BDF46;
+  color: #52D681;
+  margin-right: 8px;
 }
 
 
@@ -939,13 +960,28 @@
 
 .dashv2-infos-compilated {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  position: relative;
   align-items: center;
-  padding-left: 60px;
+  padding-left: 40px;
   padding-right: 60px;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(100,100,100,0.2);
+}
+
+
+.dashv2-infos-compilated-on-middle {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(100,100,100,0.2);
+  border-top: 1px solid rgba(100,100,100,0.2);
 }
 
 
@@ -985,7 +1021,7 @@
 .navtab-big-title-v2 {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   height: 100px;
   padding-left: 55px;
   padding-right: 12%;
@@ -1092,7 +1128,7 @@
   padding-right: 40px;
   position: relative;
   min-height: 350px;
-  padding-top: 48px;
+  padding-top: 40px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(100,100,100,0.2);
 }
@@ -1100,12 +1136,14 @@
 
 .v3-prod-infos-alt {
   padding-left: 69px;
-  padding-right: 40px;
+  padding-right: 69px;
   position: relative;
-  min-height: 150px;
-  padding-top: 63px;
+  min-height: 241px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 48px;
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(100,100,100,0.2);
 }
 
 
@@ -1164,10 +1202,10 @@
 
 
 .v2-big-type-color {
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  opacity: 0.9;
+  opacity: 1;
   margin-bottom: 6px;
   &:hover {
     opacity: 1;
@@ -1270,11 +1308,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-right: 29px;
+  padding-right: 0;
   height: 100%;
   font-family: "Circular-Bold";
   font-size: 14px;
   color: rgba(55,55,55,0.5);
+  margin-top: 53px;
 }
 
 .v4-no-promo-div-small-text {
@@ -1311,5 +1350,220 @@
 
 .fullpage-overflow {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
 }
+
+
+
+.v5-type-with-active-promo {
+  height: 100%;
+  display: flex;
+  min-width: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10px;
+  padding-top: 2px;
+}
+
+.active-promo-green-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #52D681;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.active-promo-green-dot-text {
+  font-size: 12px;
+  font-family: "Circular-Medium";
+  color: #52D681;
+  margin-left: 10px;
+}
+
+.v2-link-on-active-infos {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.infos-item-boob:hover .v2-link-on-active-infos {
+  opacity: 1;
+}
+
+.infos-item-boob:hover {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.v6-bottom-left-dash {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 45px;
+    position: relative;
+    border-right: 1px solid rgba(100,100,100,0.2);
+}
+
+.all-active-promo {
+  height: 100%;
+  width: 160px;
+  border-left: 1px solid rgba(100,100,100,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.all-active-promo-header {
+  width: 100%;
+  height: 63px;
+  border-bottom: 1px solid rgba(100,100,100,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.all-active-promo-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 25px;
+  padding-left: 25px;
+}
+
+.all-active-promo-header-text {
+  font-size: 11px;
+  font-family: "Circular-Medium";
+  color: #52D681;
+}
+
+
+.all-active-promo-header-text-v2 {
+  font-size: 11px;
+  font-family: "Circular-Book";
+  color: rgba(55,55,55,0.8);
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+.v6-bottom-middle-dash {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.v8-home-photos-container {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+}
+
+.v8-home-photos-container-button {
+  width: 60px;
+  border-left: 1px solid rgba(100,100,100,0.2);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.v8-home-photos-container a {
+  color: rgba(100,100,100,1);
+  height: 100%;
+}
+
+.v8-home-photos-container-left-item {
+  font-size: 12px;
+  color: rgba(25,25,25,0.8);
+  opacity: 0.3;
+  transition: 0.4s ease;
+}
+
+
+.v8-home-photos-container:hover .v8-home-photos-container-left-item {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+.v6-bottom-right-dash {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.v7-flexbox-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.v7-flexbox-inline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.v10-album-name {
+  color: rgba(0,0,0,0.8);
+  padding-right: 5px;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  text-shadow: none;
+  min-width: 140px;
+}
+
+
+
+
+
+
+
+

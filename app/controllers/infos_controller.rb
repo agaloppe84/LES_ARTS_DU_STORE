@@ -16,7 +16,7 @@ class InfosController < ApplicationController
   def create
     @info = @product.infos.build(info_params)
     if @info.save
-      redirect_to product_infos_path, notice: "L'info a été crée"
+      redirect_to product_infos_path, notice: "L'info pour #{@product.title} à été crée"
     else
       render :new
     end
@@ -31,13 +31,13 @@ class InfosController < ApplicationController
   def update
     @info = Info.find(params[:id])
     @info.update(info_params)
-    redirect_to product_infos_path, notice: "L'info à été mise à jour"
+    redirect_to product_infos_path, notice: "L'info #{@info.title} à été mise à jour"
   end
 
   def destroy
     @info = Info.find(params[:id])
     @info.destroy
-    redirect_to product_infos_path, notice: "L'info à été effacée"
+    redirect_to product_infos_path, notice: "L'info #{@info.title} à été effacée"
   end
 
 

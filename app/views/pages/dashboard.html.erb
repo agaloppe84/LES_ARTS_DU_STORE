@@ -1,22 +1,17 @@
 
 <div class="dashboardv2-fullpage">
 
+
+
+
+<!--************************************ DEBUT DU BLOC DE GAUCHE ************************************-->
   <div class="v2-fullpage-item-01">
 
     <div class="fullpage-overflow">
 
 
     <div class="v2-fullpage-item-01-header">
-      <div class="header-hard-dashboard">Dashboard</div>
-      <div class="dashboard-user-email"><%= current_user.email %></div>
-      <div class="dashboard-user-email-dot"><i class="fa fa-circle" aria-hidden="true"></i></div>
-      <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Etes-vous sûr de vouloir vous déconnecter?" } do %>
-        <div class="dashboard-user-signout">
-          <div class="text-on-signout-hover">Déconnexion</div>
-          <i class="fa fa-sign-out" aria-hidden="true"></i>
-        </div>
-      <% end %>
-      <%= render 'shared/flashes' %>
+      <div class="header-hard-dashboard">Catégories</div>
     </div>
 
 
@@ -25,18 +20,19 @@
         <div class="v2-big-number"><%= @types.count %></div>
         <div class="dashv2-infos-compilated-item-label">Catégories</div>
       </div>
-      <div class="dashv2-infos-compilated-item">
-        <div class="v2-big-number"><%= @products.count %></div>
-        <div class="dashv2-infos-compilated-item-label">Produits</div>
-      </div>
-      <div class="dashv2-infos-compilated-item">
-        <div class="v2-big-number"><%= @albums.count %></div>
-        <div class="dashv2-infos-compilated-item-label">Albums</div>
-      </div>
-      <div class="dashv2-infos-compilated-item">
-        <div class="v2-big-number"><%= @brands.count %></div>
-        <div class="dashv2-infos-compilated-item-label">Marques</div>
-      </div>
+
+
+
+      <%= link_to new_type_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une catégorie ?" } do %>
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <div class="v5-text-on-button-hover" style="left: -128px;">
+                      <div class="animated pulse">Créer une catégorie</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
+                  </div>
+      <% end %>
+
     </div>
 
 
@@ -97,7 +93,7 @@
                   <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <div class="v5-text-on-button-hover">
-                      <div>Créer une marque</div>
+                      <div class="animated pulse">Créer une marque</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                   </div>
@@ -139,9 +135,76 @@
                 </div>
 
             </div>
-        </div>
 
+
+
+
+
+        <!--*********** DEBUT DU HEADER DES ALBUMS ***********-->
+        <div class="dashv2-infos-compilated-on-middle">
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @albums.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Albums</div>
+            </div>
+
+            <%= link_to new_album_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un album ?" } do %>
+                <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  <div class="v5-text-on-button-hover" style="left: -128px;">
+                      <div class="animated pulse">Créer un album</div>
+                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                  </div>
+                </div>
+            <% end %>
+
+        </div>
+        <!--*********** FIN DU HEADER DES ALBUMS ***********-->
+
+
+
+        <!--*********** DEBUT DU CONTAINER DES ALBUMS ***********-->
+        <div class="v3-prod-infos-alt">
+                <div class="infos-volets">
+                    <% @albums.each do |album| %>
+
+                      <div class="infos-item-boob">
+
+                        <div class="v10-album-name"><%= album.name %>&nbsp;</div>
+
+                        <div class="infos-small-boob"><%= "#{album.photos.count} photos" %></div>
+
+                        <div class="v2-link-on-active-infos">
+                          <%= link_to edit_album_path(album), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier cet album ?" } do %>
+                              <div class="text-on-edit-hover">Modifier</div>
+                              <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                          <% end %>
+                          <%= link_to album_path(album), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cet album ?" } do %>
+                              <div class="text-on-destroy-hover">Supprimer</div>
+                              <i class="fa fa-times" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                          <% end %>
+                        </div>
+
+                      </div>
+
+                    <% end %>
+                </div>
+        </div>
+        <!--*********** FIN DU CONTAINER DES ALBUMS ***********-->
+
+
+
+
+
+
+        </div>
   </div>
+<!--************************************ FIN DU BLOC DE GAUCHE ************************************-->
+
+
+
+
+
 
 
 
@@ -153,9 +216,6 @@
 
       <% @types.each do |type| %>
 
-        <% content_for :current_type do %>
-            <% type %>
-        <% end %>
 
       <% if type == @types.first %>
 
@@ -164,14 +224,10 @@
 
 
 
-        <div class="navtab-big-title-v2">
-            <div class="big-icon-index-top" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= type.plurname %></div>
-            <div class="blind-count" style="color: <%= type.color %>;"></div>
-            <% if type.promos.where( "current = true " ).last %>
-              <div class="blind-count">Promo en cours</div>
-              <!-- <div class="blind-count"><%= "Jusqu'au #{type.promos.last.end}" %></div> -->
-            <% end %>
+        <div class="v2-fullpage-item-01-header">
+           <div class="header-hard-dashboard" style="opacity: 0.4;">Catégorie</div>
+           <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+           <div class="header-hard-dashboard"><%= type.plurname %></div>
         </div>
 
 
@@ -188,10 +244,19 @@
             <div class="v2-big-number"><%= type.albums.count %></div>
             <div class="dashv2-infos-compilated-item-label">Albums</div>
           </div>
-          <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number"><%= type.promos.count %></div>
-            <div class="dashv2-infos-compilated-item-label">Promos</div>
-          </div>
+          <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
+
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <i class="fa fa-plus-circle" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                    <div class="v5-text-on-button-hover">
+                      <div class="animated pulse">Créer un produit</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
+                  </div>
+
+
+          <% end %>
+
         </div>
 
 
@@ -255,12 +320,19 @@
                   <% end %>
                 </div>
 
+                <% if type.promos.where( "current = true " ).last %>
+                  <div class="v5-type-with-active-promo">
+                    <div class="active-promo-green-dot"></div>
+                    <div class="active-promo-green-dot-text">Promo active</div>
+                  </div>
+               <% end %>
+
                 <%= link_to new_promo_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une promo pour cette catégorie ?" } do %>
 
                   <div class="v4-info-new-button" style="color: <%= type.color %>;">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <div class="v5-text-on-button-hover">
-                      <div>Créer une promo</div>
+                      <div class="animated pulse">Créer une promo</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                   </div>
@@ -281,9 +353,23 @@
                     <% type.promos.each do |promo| %>
 
                       <div class="infos-item-boob">
-                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path promo.photos.last.path %>);"></div>
 
-                        <div class="infos-big-boob"><%= promo.title %>&nbsp;</div>
+                       <% if promo.current? %>
+                          <div class="v5-type-with-active-promo">
+                            <div class="active-promo-green-dot"></div>
+                            <div class="active-promo-green-dot-text">Active</div>
+                          </div>
+                        <% else %>
+                          <div class="v5-type-with-active-promo">
+                            <div class="active-promo-green-dot" style="background-color: rgba(155,155,155,0.4);"></div>
+                          </div>
+                        <% end %>
+
+
+                        <!-- <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path promo.photos.last.path %>);"></div> -->
+
+                        <div class="infos-big-boob"><%= truncate( promo.title, length: 18, omission: '...' ) %></div>
+
 
                         <div class="infos-small-boob"></div>
 
@@ -339,14 +425,10 @@
 
 
 
-        <div class="navtab-big-title-v2">
-            <div class="big-icon-index-top" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
-            <div class="big-title"><%= type.plurname %></div>
-            <div class="blind-count" style="color: <%= type.color %>;"></div>
-            <% if type.promos.where( "current = true " ).last %>
-              <div class="blind-count">Promo en cours</div>
-              <!-- <div class="blind-count"><%= "Jusqu'au #{type.promos.last.end}" %></div> -->
-            <% end %>
+        <div class="v2-fullpage-item-01-header">
+           <div class="header-hard-dashboard" style="opacity: 0.4;">Catégorie</div>
+           <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+           <div class="header-hard-dashboard"><%= type.plurname %></div>
         </div>
 
 
@@ -363,10 +445,19 @@
             <div class="v2-big-number"><%= type.albums.count %></div>
             <div class="dashv2-infos-compilated-item-label">Albums</div>
           </div>
-          <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-number"><%= type.promos.count %></div>
-            <div class="dashv2-infos-compilated-item-label">Promos</div>
-          </div>
+          <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
+
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <i class="fa fa-plus-circle" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                    <div class="v5-text-on-button-hover">
+                      <div class="animated pulse">Créer un produit</div>
+                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                    </div>
+                  </div>
+
+
+          <% end %>
+
         </div>
 
 
@@ -424,12 +515,19 @@
                   <% end %>
                 </div>
 
+                <% if type.promos.where( "current = true " ).last %>
+                  <div class="v5-type-with-active-promo">
+                    <div class="active-promo-green-dot"></div>
+                    <div class="active-promo-green-dot-text">Promo active</div>
+                  </div>
+               <% end %>
+
                 <%= link_to new_promo_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une promo pour cette catégorie ?" } do %>
 
                   <div class="v4-info-new-button" style="color: <%= type.color %>;">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <div class="v5-text-on-button-hover">
-                      <div>Créer une promo</div>
+                      <div class="animated pulse">Créer une promo</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                   </div>
@@ -452,9 +550,25 @@
                     <% type.promos.each do |promo| %>
 
                       <div class="infos-item-boob">
-                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path promo.photos.last.path %>);"></div>
 
-                        <div class="infos-big-boob"><%= promo.title %>&nbsp;</div>
+
+                        <% if promo.current? %>
+                          <div class="v5-type-with-active-promo">
+                            <div class="active-promo-green-dot"></div>
+                            <div class="active-promo-green-dot-text">Active</div>
+                          </div>
+                        <% else %>
+                          <div class="v5-type-with-active-promo">
+                            <div class="active-promo-green-dot" style="background-color: rgba(155,155,155,0.4);"></div>
+                          </div>
+                        <% end %>
+
+
+                        <!-- <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path promo.photos.last.path %>);"></div> -->
+
+                        <div class="infos-big-boob"><%= truncate( promo.title, length: 18, omission: '...' ) %></div>
+
+
 
                         <div class="infos-small-boob"></div>
 
@@ -522,8 +636,10 @@
 
             <div role="tabpanel" class="tab-pane" id="<%= "#{product.id}" + "produit" + "#{type.id}" %>">
 
-              <div class="v3-dash-prod-show">
-                <div class="v3-dash-prod-show-item"><%= product.title %></div>
+              <div class="v2-fullpage-item-01-header">
+                 <div class="header-hard-dashboard" style="opacity: 0.4;"><%= type.plurname %></div>
+                 <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                 <div class="header-hard-dashboard"><%= product.title %></div>
               </div>
 
               <div class="dashv2-infos-compilated-alt">
@@ -542,7 +658,7 @@
                   <div class="v4-info-new-button" style="color: <%= type.color %>;">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <div class="v5-text-on-button-hover">
-                      <div>Créer une info</div>
+                      <div class="animated pulse">Créer une info</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                   </div>
@@ -587,9 +703,9 @@
               <div class="dashv2-infos-compilated-alt">
                 <div class="dashv2-infos-compilated-item">
                   <% if product.power.present? %>
-                    <div class="v2-big-number-brand" style="color: green;">Oui</div>
+                    <div class="v2-big-number-brand" style="color: #52D681;">Oui</div>
                   <% else %>
-                    <div class="v2-big-number-brand" style="color: red;">Non</div>
+                    <div class="v2-big-number-brand" style="color: #FA4659;">Non</div>
                   <% end %>
                   <div class="dashv2-infos-compilated-item-label">Powers</div>
 
@@ -602,7 +718,7 @@
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
-                      <div>Editer les pouvoirs</div>
+                      <div class="animated pulse">Editer les pouvoirs</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                     </div>
@@ -614,7 +730,7 @@
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
-                      <div>Créer des pouvoirs</div>
+                      <div class="animated pulse">Créer des pouvoirs</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                     </div>
@@ -767,8 +883,10 @@
 
             <div role="tabpanel" class="tab-pane" id="<%= "#{product.id}" + "produit" + "#{type.id}" %>">
 
-              <div class="v3-dash-prod-show">
-                <div class="v3-dash-prod-show-item"><%= product.title %></div>
+              <div class="v2-fullpage-item-01-header">
+                 <div class="header-hard-dashboard" style="opacity: 0.4;"><%= type.plurname %></div>
+                 <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                 <div class="header-hard-dashboard"><%= product.title %></div>
               </div>
 
               <div class="dashv2-infos-compilated-alt">
@@ -787,7 +905,7 @@
                   <div class="v4-info-new-button" style="color: <%= type.color %>;">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                     <div class="v5-text-on-button-hover">
-                      <div>Créer une info</div>
+                      <div class="animated pulse">Créer une info</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                   </div>
@@ -832,9 +950,9 @@
 
                 <div class="dashv2-infos-compilated-item">
                   <% if product.power.present? %>
-                    <div class="v2-big-number-brand" style="color: green;">Oui</div>
+                    <div class="v2-big-number-brand" style="color: #52D681;">Oui</div>
                   <% else %>
-                    <div class="v2-big-number-brand" style="color: red;">Non</div>
+                    <div class="v2-big-number-brand" style="color: #FA4659;">Non</div>
                   <% end %>
                   <div class="dashv2-infos-compilated-item-label">Powers</div>
 
@@ -847,7 +965,7 @@
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
-                      <div>Editer les pouvoirs</div>
+                      <div class="animated pulse">Editer les pouvoirs</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                     </div>
@@ -859,7 +977,7 @@
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
-                      <div>Créer des pouvoirs</div>
+                      <div class="animated pulse">Créer des pouvoirs</div>
                       <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
                     </div>
                     </div>
@@ -1024,21 +1142,95 @@
 
 <div class="dashboardv2-fullpage-bottom">
 
-  <div class="dashboardv2-fullpage-bottom-item">
-    <%= link_to new_type_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer une catégorie ?" } do %>
-      <div class="v5-button">Créer une catégorie</div>
-    <% end %>
-  </div>
+    <div class="dashboardv2-fullpage-bottom-item-2">
+        <div class="v6-bottom-left-dash">
 
-  <div class="dashboardv2-fullpage-bottom-item">
-    <%= link_to new_product_path, class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
-      <div class="v5-button-2">Créer un produit</div>
-    <% end %>
-  </div>
+            <div class="v7-flexbox-column">
+              <div class="header-hard-dashboard">Dashboard</div>
 
-  <div class="dashboardv2-fullpage-bottom-item">
+              <div class="v7-flexbox-inline">
+                <div class="dashboard-user-email-dot"><i class="fa fa-circle" aria-hidden="true"></i></div>
+                <div class="dashboard-user-email"><%= current_user.email %></div>
+              </div>
+            </div>
 
-  </div>
+            <div class="all-active-promo">
+              <div class="all-active-promo-header">
+                <div class="all-active-promo-header-text">Promos actives</div>
+              </div>
+              <div class="all-active-promo-content">
+                <% @promos.where( "current = true" ).each do |current_promo| %>
+                  <div class="all-active-promo-header-text-v2"><%= truncate(current_promo.title, length: 15, omission: "...") %></div>
+                <% end %>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="dashboardv2-fullpage-bottom-item-55">
+        <div class="v6-bottom-middle-dash">
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @types.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Catégories</div>
+            </div>
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @products.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Produits</div>
+            </div>
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @promos.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Promos</div>
+            </div>
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @albums.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Albums</div>
+            </div>
+
+        </div>
+
+        <!-- <div class="v8-home-photos-container">
+          <div class="v8-home-photos-container-left-item">Modifier les photos de la homepage</div>
+
+          <%= link_to edit_album_path(@hp_album), data: { confirm: "Etes-vous sûr de vouloir modifier les photos de la homepage?" } do %>
+            <div class="v8-home-photos-container-button">
+              <i class="fa fa-camera" aria-hidden="true"></i>
+            </div>
+          <% end %>
+
+        </div> -->
+
+
+    </div>
+
+
+
+    <div class="dashboardv2-fullpage-bottom-item-1">
+      <div class="v6-bottom-right-dash">
+
+          <%= render 'shared/flashes' %>
+
+          <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Etes-vous sûr de vouloir vous déconnecter?" } do %>
+              <div class="dashboard-user-signout">
+                <div class="text-on-signout-hover">Déconnexion</div>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </div>
+          <% end %>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
 
 </div>
 

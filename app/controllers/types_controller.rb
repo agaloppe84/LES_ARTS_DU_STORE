@@ -22,7 +22,7 @@ class TypesController < ApplicationController
 
   def update
     if @type.update(type_params)
-      redirect_to dashboard_path, notice: "La catégorie à été mise à jour"
+      redirect_to dashboard_path, notice: "La catégorie #{@type.name} à été mise à jour"
     else
       render :new
     end

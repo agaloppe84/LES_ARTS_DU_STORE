@@ -16,23 +16,25 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
-      redirect_to dashboard_path, notice: "L'album à été crée"
+      redirect_to dashboard_path, notice: "L'album #{@album.name} à été crée"
     else
       render :new
     end
   end
 
   def edit
+    @hp_album = Album.where( "name = 'homepage'" ).last
   end
 
   def update
+    @hp_album = Album.where( "name = 'homepage'" ).last
     @album.update(album_params)
-    redirect_to dashboard_path, notice: "L'album à été mise à jour"
+    redirect_to dashboard_path, notice: "L'album #{@album.name} à été mis à jour"
   end
 
   def destroy
     @album.destroy
-    redirect_to dashboard_path, notice: "L'album à été effacé"
+    redirect_to dashboard_path, notice: "L'album #{@album.name} à été effacé"
   end
 
 

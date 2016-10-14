@@ -15,7 +15,7 @@ class PromosController < ApplicationController
   def create
     @promo = Promo.new(promo_params)
     if @promo.save
-      redirect_to dashboard_path, notice: "La promo à été crée"
+      redirect_to dashboard_path, notice: "La promo #{@promo.title} à été crée"
     else
       render :new
     end
@@ -26,12 +26,12 @@ class PromosController < ApplicationController
 
   def update
     @promo.update(promo_params)
-    redirect_to dashboard_path, notice: "La promo à été mise à jour"
+    redirect_to dashboard_path, notice: "La promo #{@promo.title} à été mise à jour"
   end
 
   def destroy
     @promo.destroy
-    redirect_to dashboard_path, notice: "La promo à été effacée"
+    redirect_to dashboard_path, notice: "La promo #{@promo.title} à été effacée"
   end
 
 

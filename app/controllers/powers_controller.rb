@@ -16,9 +16,9 @@ class PowersController < ApplicationController
   def create
     @power = @product.power(power_params)
     if @power.save
-      redirect_to product_powers_path, notice: "Le pouvoir a été crée"
+      redirect_to dashboard_path, notice: "Le pouvoir pour #{@product.title} a été crée"
     elsif @product.power.present?
-      redirect_to product_powers_path, notice: "Ce store à déja un pouvoir"
+      redirect_to dashboard_path, notice: "Ce store à déja un pouvoir"
     else
       render :new
     end
@@ -33,13 +33,13 @@ class PowersController < ApplicationController
   def update
     @power = Power.find(params[:id])
     @power.update(power_params)
-    redirect_to product_powers_path, notice: "Le pouvoir à été mis à jour"
+    redirect_to dashboard_path, notice: "Le pouvoir pour #{@product.title} à été mis à jour"
   end
 
   def destroy
     @power = Power.find(params[:id])
     @power.destroy
-    redirect_to product_powers_path, notice: "Le pouvoir à été effacé"
+    redirect_to dashboard_path, notice: "Le pouvoir pour #{@product.title} à été effacé"
   end
 
 

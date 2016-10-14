@@ -2,11 +2,10 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :services, :devis, :contact, :promo]
   def home
 
-    # @album = Album.all.last
-    @album = Album.where( "name = 'homepage'" ).last
     @products = Product.all
     @promos = Promo.all
     @albums = Album.all
+    @last_promo = Promo.all.last
 
     @photos = 0
 
@@ -14,6 +13,15 @@ class PagesController < ApplicationController
       album.photos.count
       @photos = @photos + album.photos.count
     end
+
+
+    @tpv = []
+
+    @albums.each do |album|
+      @tpv += album.photos.sample(2)
+    end
+
+    @random_album = @tpv
 
   end
 
@@ -28,6 +36,7 @@ class PagesController < ApplicationController
 
   def dashboard
 
+    @hp_album = Album.where( "name = 'homepage'" ).last
     @products = Product.all
     @albums = Album.all
     @infos = Info.all
@@ -46,7 +55,7 @@ class PagesController < ApplicationController
 
   end
 
-  def promo
+  def promotions
     @last_promo = Promo.all.last
   end
 

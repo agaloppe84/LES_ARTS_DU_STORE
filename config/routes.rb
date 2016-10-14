@@ -13,6 +13,7 @@ resources :types
   get 'devis' => 'pages#devis'
   get 'contact' => 'pages#contact'
   get 'dashboard' => 'pages#dashboard'
+  get 'promotions' => 'pages#promotions'
   # get 'promo' => 'pages#promo'
 
   resources :types

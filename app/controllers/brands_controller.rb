@@ -15,7 +15,7 @@ class BrandsController < ApplicationController
   def create
     @brand = Brand.new(brand_params)
     if @brand.save
-      redirect_to dashboard_path, notice: "La marque à été crée"
+      redirect_to dashboard_path, notice: "La marque #{@brand.name} à été crée"
     else
       render :new
     end
@@ -26,12 +26,12 @@ class BrandsController < ApplicationController
 
   def update
     @brand.update(brand_params)
-    redirect_to dashboard_path, notice: "La marque à été mise à jour"
+    redirect_to dashboard_path, notice: "La marque #{@brand.name} à été mise à jour"
   end
 
   def destroy
     @brand.destroy
-    redirect_to dashboard_path, notice: "La marque à été effacée"
+    redirect_to dashboard_path, notice: "La marque #{@brand.name} à été effacée"
   end
 
 

@@ -1,5 +1,19 @@
+
+
+<div>Modifier<%= @album.name %> </div>
+
+
+
 <%= simple_form_for(@album) do |f| %>
+
+
   <%= f.input :photos, as: :attachinary %>
-  <%= f.input :name %>
+
+  <% if @album == @hp_album  %>
+  <% else %>
+    <%= f.input :name %>
+  <% end %>
   <%= f.submit %>
+
+
 <% end %>
