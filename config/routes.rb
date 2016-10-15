@@ -18,17 +18,14 @@ resources :types
 
   resources :types do
     resources :albums
+    resources :promos
+    resources :products do
+      resources :infos
+      resources :powers
+      resources :brands
+    end
   end
 
-
-  resources :promos
-  resources :brands
-
-
-  resources :products do
-    resources :infos
-    resources :powers
-  end
 
   mount Attachinary::Engine => "/attachinary"
   # The priority is based upon order of creation: first created -> highest priority.

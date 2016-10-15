@@ -1,5 +1,6 @@
 class PromosController < ApplicationController
   before_action :set_promo, only: [:show, :edit, :update, :destroy]
+  before_action :find_type, only: [ :new, :create, :edit, :update, :destroy, :show, :index ]
 
   def index
     @promos = Promo.all
@@ -13,7 +14,7 @@ class PromosController < ApplicationController
   end
 
   def create
-    @promo = Promo.new(promo_params)
+    @promo = @type.promos.build(promo_params)
     if @promo.save
       redirect_to dashboard_path, notice: "La promo #{@promo.title} à été crée"
     else
@@ -40,6 +41,10 @@ class PromosController < ApplicationController
 
   def set_promo
     @promo = Promo.find(params[:id])
+  end
+
+  def find_type
+    @type = Type.find(params[:type_id])
   end
 
   def promo_params

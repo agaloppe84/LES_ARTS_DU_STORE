@@ -3,7 +3,7 @@
   <div class="form-title"><%= "Modifier #{@product.title} / #{@info.title}" %></div>
 
 
-    <%= simple_form_for [@product, @info] do |f| %>
+    <%= simple_form_for [@product.type, @product, @info] do |f| %>
 
       <div class="form-label">Nom</div>
       <%= f.input :title, label: false %>

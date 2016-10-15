@@ -1,6 +1,5 @@
-<%= simple_form_for(@brand) do |f| %>
+<%= simple_form_for[@product, @brand] do |f| %>
   <%= f.input :name %>
-  <%= f.association :product, as: :radio_buttons %>
   <%= f.input :logo, as: :attachinary %>
   <%= f.submit %>
 <% end %>

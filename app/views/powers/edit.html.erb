@@ -3,7 +3,7 @@
   <div class="form-title"><%= "Modifier #{@product.title} / Pouvoirs n°#{@power.id}" %></div>
 
 
-    <%= simple_form_for [@product, @power] do |f| %>
+    <%= simple_form_for [@product.type, @product, @power] do |f| %>
 
 
 

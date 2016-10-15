@@ -1,5 +1,6 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
+  before_action :find_product, only: [ :new, :create, :edit, :update, :destroy, :show, :index ]
 
   def index
     @brands = Brand.all
@@ -41,6 +42,10 @@ class BrandsController < ApplicationController
 
   def set_brand
     @brand = Brand.find(params[:id])
+  end
+
+  def find_product
+    @product = Product.find(params[:product_id])
   end
 
   def brand_params

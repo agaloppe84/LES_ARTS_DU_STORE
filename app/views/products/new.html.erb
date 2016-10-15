@@ -2,22 +2,16 @@
 <div class="form-fullpage">
 
 
-    <div class="form-title">Créer un produit</div>
+    <div class="form-title"><%= "Créer un produit pour #{@type.name}" %></div>
 
 
-    <%= simple_form_for(@product) do |f| %>
+    <%= simple_form_for [@type, @product] do |f| %>
 
       <div class="form-label">Nom</div>
       <%= f.input :title, label: false %>
 
       <div class="form-label">Description</div>
       <%= f.input :description, label: false %>
-
-      <div class="form-label">Type de produit</div>
-      <%= f.association :type, as: :radio_buttons, label: false %>
-
-      <div class="form-label">Marque</div>
-      <%= f.association :brand, as: :radio_buttons, label: false %>
 
       <div class="form-label">Photos</div>
       <%= f.input :photos, as: :attachinary, label: false %>
