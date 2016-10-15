@@ -86,38 +86,6 @@ puts "Création des types de stores - END"
 
 
 
-puts "Création des marques - START"
-
-# ------------------------- Création des marques ------------------------- #
-
-
-    coublanc =      Brand.create!(name: 'coublanc', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
-    luxaflex =      Brand.create!(name: 'luxaflex', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
-    franceferm =    Brand.create!(name: 'france fermetures', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
-    franciaflex =   Brand.create!(name: 'franciaflex', logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
-
-
-
-# ------------------------- Création des marques ------------------------- #
-    puts "----------------------------------------------------"
-    puts "MARQUES"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{coublanc.name}"
-    puts "** 2 **/ #{luxaflex.name}"
-    puts "** 3 **/ #{franceferm.name}"
-    puts "** 4 **/ #{franciaflex.name}"
-    puts "----------------------------------------------------"
-
-
-
-
-puts "Création des marques - END"
-
-
-
-
-
-
 
 
 
@@ -130,15 +98,16 @@ puts "Création des stores - START"
 
 
     # ---- Création des moustiquaires ---- #
-    puts "Création des moustiquaires - START"
 
 
-        mousty01 = Product.create!(title: 'Moustiquaire plissée', type: moustiquaire , description: 'Plisséa est la moustiquaire idéale pour porte et baies vitrées', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        mousty02 = Product.create!(title: 'Moustiquaire enroulable', type: moustiquaire , description: 'Saga est une moustiquaire à enroulement vertical pour les fenêtres ou à enroulement latéral pour les portes', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        mousty03 = Product.create!(title: 'Moustiquaire à battant', type: moustiquaire , description: "Classique , la moustiquaire à battant Altesse se manoeuvre avec légèreté quel que soit le sens d'ouverture choisi", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+        mousty01 = Product.create!(title: 'Moustiquaire plissée', type: moustiquaire , description: 'Plisséa est la moustiquaire idéale pour porte et baies vitrées', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        mousty02 = Product.create!(title: 'Moustiquaire enroulable', type: moustiquaire , description: 'Saga est une moustiquaire à enroulement vertical pour les fenêtres ou à enroulement latéral pour les portes', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        mousty03 = Product.create!(title: 'Moustiquaire à battant', type: moustiquaire , description: "Classique , la moustiquaire à battant Altesse se manoeuvre avec légèreté quel que soit le sens d'ouverture choisi", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
-    puts "Création des moustiquaires - END"
+    puts " "
+    puts " "
     # ---- Création des moustiquaires ---- #
     puts "----------------------------------------------------"
     puts "MOUSTIQUAIRES"
@@ -148,18 +117,19 @@ puts "Création des stores - START"
     puts "** 3 **/ #{mousty03.title}"
     puts "----------------------------------------------------"
 
-
+    puts " "
+    puts " "
 
 
     # ---- Création des portes de garage ---- #
-    puts "Création des portes de garage - START"
 
 
-        porto01 = Product.create!(title: 'Sectionnelles', type: porte_de_garage , description: "Confort , design et technicité , decouvrez des modèles répondant à des besoins essentiels de sécurité", brand: luxaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        porto02 = Product.create!(title: 'Traditionnelles', type: porte_de_garage , description: "Une vaste gamme sur mesure , traditionnelles , enroulables ou modernes répondant à tous les projets", brand: luxaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+        porto01 = Product.create!(title: 'Sectionnelles', type: porte_de_garage , description: "Confort , design et technicité , decouvrez des modèles répondant à des besoins essentiels de sécurité", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        porto02 = Product.create!(title: 'Traditionnelles', type: porte_de_garage , description: "Une vaste gamme sur mesure , traditionnelles , enroulables ou modernes répondant à tous les projets", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
-    puts "Création des portes de garage - END"
+
     # ---- Création des portes de garage ---- #
     puts "----------------------------------------------------"
     puts "PORTES DE GARAGE"
@@ -168,26 +138,27 @@ puts "Création des stores - START"
     puts "** 2 **/ #{porto02.title}"
     puts "----------------------------------------------------"
 
-
+    puts " "
+    puts " "
 
 
 
     # ---- Création des stores interieurs ---- #
-    puts "Création des stores interieurs - START"
 
 
-        inte01 = Product.create!(title: 'Stores Silhouette', type: store_interieur , description: "Doux jeux de lumières au gré de vos envies", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte02 = Product.create!(title: 'Voiles Facette', type: store_interieur , description: "Tissu doux pour un dosage subtil de la lumière", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte03 = Product.create!(title: 'Stores Duette', type: store_interieur , description: "Filtrez la lumière et isolez votre maison toute l'année", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte04 = Product.create!(title: 'Stores Plissé', type: store_interieur , description: "Décoratifs et complices de votre maison", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte05 = Product.create!(title: 'Stores Textiles', type: store_interieur , description: "Des tissus décoratifs , fabriqués sur mesure", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte06 = Product.create!(title: 'Stores Vénitiens', type: store_interieur , description: "Modulez la lumière avec un design classique", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte07 = Product.create!(title: 'Stores Vénitiens Bois', type: store_interieur , description: "La chaleur et la beauté de la nature dans votre maison", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte08 = Product.create!(title: 'Stores Rouleaux', type: store_interieur , description: "Une touche personnelle pour marquer votre style", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte09 = Product.create!(title: 'Stores Rouleaux Twist', type: store_interieur , description: "Variations de lumière pour une multitudes d'ambiances", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte10 = Product.create!(title: 'Stores à Bandes Verticales', type: store_interieur , description: "Elégance en toute simplicité pour les larges baies", brand: franciaflex , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
-    puts "Création des stores interieurs - END"
+        inte01 = Product.create!(title: 'Stores Silhouette', type: store_interieur , description: "Doux jeux de lumières au gré de vos envies", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte02 = Product.create!(title: 'Voiles Facette', type: store_interieur , description: "Tissu doux pour un dosage subtil de la lumière", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte03 = Product.create!(title: 'Stores Duette', type: store_interieur , description: "Filtrez la lumière et isolez votre maison toute l'année", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte04 = Product.create!(title: 'Stores Plissé', type: store_interieur , description: "Décoratifs et complices de votre maison", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte05 = Product.create!(title: 'Stores Textiles', type: store_interieur , description: "Des tissus décoratifs , fabriqués sur mesure", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte06 = Product.create!(title: 'Stores Vénitiens', type: store_interieur , description: "Modulez la lumière avec un design classique", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte07 = Product.create!(title: 'Stores Vénitiens Bois', type: store_interieur , description: "La chaleur et la beauté de la nature dans votre maison", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte08 = Product.create!(title: 'Stores Rouleaux', type: store_interieur , description: "Une touche personnelle pour marquer votre style", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte09 = Product.create!(title: 'Stores Rouleaux Twist', type: store_interieur , description: "Variations de lumière pour une multitudes d'ambiances", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        inte10 = Product.create!(title: 'Stores à Bandes Verticales', type: store_interieur , description: "Elégance en toute simplicité pour les larges baies", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+
     # ---- Création des stores interieurs ---- #
     puts "----------------------------------------------------"
     puts "STORES INTERIEURS"
@@ -199,23 +170,24 @@ puts "Création des stores - START"
     puts "** 5 **/ #{inte05.title}"
     puts "----------------------------------------------------"
 
-
+    puts " "
+    puts " "
 
 
 
 
     # ---- Création des stores exterieurs ---- #
-    puts "Création des stores exterieurs - START"
 
 
-        exte01 = Product.create!(title: 'Stores coffres', type: store_exterieur , description: "Design , robuste , le store coffre peut couvrir une largeur de près de 12m", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte02 = Product.create!(title: 'Stores Monoblocs', type: store_exterieur , description: "Armature thermolaquée assurant à la fois résistance et discrétion", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte03 = Product.create!(title: 'Stores Loggia', type: store_exterieur , description: "Pour une occultation presque totale de vos fenêtres", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte04 = Product.create!(title: 'Stores Bannette', type: store_exterieur , description: "Adaptés aux grandes surfaces vitrées", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte05 = Product.create!(title: 'Abris 2 pentes', type: store_exterieur , description: "Profitez de votre jardin en été sans avoir à souffrir du soleil", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+        exte01 = Product.create!(title: 'Stores coffres', type: store_exterieur , description: "Design , robuste , le store coffre peut couvrir une largeur de près de 12m", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte02 = Product.create!(title: 'Stores Monoblocs', type: store_exterieur , description: "Armature thermolaquée assurant à la fois résistance et discrétion", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte03 = Product.create!(title: 'Stores Loggia', type: store_exterieur , description: "Pour une occultation presque totale de vos fenêtres", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte04 = Product.create!(title: 'Stores Bannette', type: store_exterieur , description: "Adaptés aux grandes surfaces vitrées", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        exte05 = Product.create!(title: 'Abris 2 pentes', type: store_exterieur , description: "Profitez de votre jardin en été sans avoir à souffrir du soleil", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
-    puts "Création des stores exterieurs - END"
+
     # ---- Création des stores exterieurs ---- #
     puts "----------------------------------------------------"
     puts "STORES EXTERIEURS"
@@ -227,22 +199,23 @@ puts "Création des stores - START"
     puts "** 5 **/ #{exte05.title}"
     puts "----------------------------------------------------"
 
-
+    puts " "
+    puts " "
 
 
 
     # ---- Création des menuiseries ---- #
-    puts "Création des menuiseries - START"
 
 
-        menui01 = Product.create!(title: 'Menui 1', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui02 = Product.create!(title: 'Menui 2', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui03 = Product.create!(title: 'Menui 3', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui04 = Product.create!(title: 'Menui 4', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui05 = Product.create!(title: 'Menui 5', type: menuiserie , description: 'test', brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+        menui01 = Product.create!(title: 'Menui 1', type: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui02 = Product.create!(title: 'Menui 2', type: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui03 = Product.create!(title: 'Menui 3', type: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui04 = Product.create!(title: 'Menui 4', type: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        menui05 = Product.create!(title: 'Menui 5', type: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
-    puts "Création des menuiseries - END"
+
     # ---- Création des menuiseries ---- #
     puts "----------------------------------------------------"
     puts "MENUISERIES"
@@ -254,19 +227,20 @@ puts "Création des stores - START"
     puts "** 5 **/ #{menui05.title}"
     puts "----------------------------------------------------"
 
-
+    puts " "
+    puts " "
 
 
 
     # ---- Création des pergolas ---- #
-    puts "Création des pergolas - START"
 
 
-        pergo01 = Product.create!(title: 'Pergolas toiles', type: pergola , description: "Entrez dans un nouvel univers , où intérieur et extérieur se confondent", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        pergo02 = Product.create!(title: 'Pergolas Bioclimatiques', type: pergola , description: "Profitez d'un espace extérieur protégé", brand: coublanc , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+        pergo01 = Product.create!(title: 'Pergolas toiles', type: pergola , description: "Entrez dans un nouvel univers , où intérieur et extérieur se confondent", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        pergo02 = Product.create!(title: 'Pergolas Bioclimatiques', type: pergola , description: "Profitez d'un espace extérieur protégé", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
-    puts "Création des pergolas - END"
+
     # ---- Création des pergolas ---- #
     puts "----------------------------------------------------"
     puts "PERGOLAS"
@@ -275,22 +249,23 @@ puts "Création des stores - START"
     puts "** 2 **/ #{pergo02.title}"
     puts "----------------------------------------------------"
 
-
+    puts " "
+    puts " "
 
 
 
     # ---- Création des volets roulants ---- #
-    puts "Création des volets roulants - START"
 
 
-        volet01 = Product.create!(title: 'Volet 1', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet02 = Product.create!(title: 'Volet 2', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet03 = Product.create!(title: 'Volet 3', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet04 = Product.create!(title: 'Volet 4', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet05 = Product.create!(title: 'Volet 5', type: volet_roulant , description: 'test', brand: franceferm , photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+        volet01 = Product.create!(title: 'Volet 1', type: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet02 = Product.create!(title: 'Volet 2', type: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet03 = Product.create!(title: 'Volet 3', type: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet04 = Product.create!(title: 'Volet 4', type: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet05 = Product.create!(title: 'Volet 5', type: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
-    puts "Création des volets roulants - END"
+
     # ---- Création des volets roulants ---- #
     puts "----------------------------------------------------"
     puts "VOLETS ROULANTS"
@@ -302,7 +277,8 @@ puts "Création des stores - START"
     puts "** 5 **/ #{volet05.title}"
     puts "----------------------------------------------------"
 
-
+    puts " "
+    puts " "
 
 
 # ------------------------- Création des stores ------------------------- #
@@ -628,6 +604,38 @@ puts "Création des promos - START"
 # ------------------------- Création des types de stores ------------------------- #
 
 puts "Création des promos - END"
+
+
+
+
+
+puts "Création des marques - START"
+
+# ------------------------- Création des marques ------------------------- #
+
+
+    coublanc =      Brand.create!(name: 'coublanc', product: exte01, logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+    luxaflex =      Brand.create!(name: 'luxaflex', product: mousty02, logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+    franceferm =    Brand.create!(name: 'france fermetures', product: pergo01, logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+    franciaflex =   Brand.create!(name: 'franciaflex',  product: porto02, logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
+
+
+
+# ------------------------- Création des marques ------------------------- #
+    puts "----------------------------------------------------"
+    puts "MARQUES"
+    puts "----------------------------------------------------"
+    puts "** 1 **/ #{coublanc.name}"
+    puts "** 2 **/ #{luxaflex.name}"
+    puts "** 3 **/ #{franceferm.name}"
+    puts "** 4 **/ #{franciaflex.name}"
+    puts "----------------------------------------------------"
+
+
+
+
+puts "Création des marques - END"
+
 
 
 

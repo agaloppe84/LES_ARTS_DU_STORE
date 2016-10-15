@@ -13,8 +13,12 @@ class TypesController < ApplicationController
   end
 
   def create
-    @type = Product.new(type_params)
-    @type.save
+    @type = Type.new(type_params)
+    if @type.save
+      redirect_to dashboard_path, notice: "Nouvelle catégorie crée: #{@type.name}"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -30,6 +34,7 @@ class TypesController < ApplicationController
 
   def destroy
     @type.destroy
+    redirect_to dashboard_path, notice: "Catégorie effacée : #{@type.name}"
   end
 
 

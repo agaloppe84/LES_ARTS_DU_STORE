@@ -4,7 +4,7 @@
     <div class="form-title">Créer un album</div>
 
 
-    <%= simple_form_for(@album) do |f| %>
+    <%= simple_form_for [@type, @album] do |f| %>
 
       <div class="form-label">Nom de l'album</div>
       <%= f.input :name, label: false %>

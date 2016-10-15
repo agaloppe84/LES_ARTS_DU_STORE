@@ -1,5 +1,5 @@
 class Brand < ActiveRecord::Base
   has_attachment :logo
-  has_many :products
+  belongs_to :product
   validates :logo, presence: true
 end

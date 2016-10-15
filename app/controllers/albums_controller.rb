@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:show, :index, :edit, :update, :new, :create]
+  before_action :find_type, only: [ :new, :create, :edit, :update, :destroy, :show, :index ]
+  skip_before_action :authenticate_user!, only: [ :show, :index, :edit, :update, :new, :create ]
 
   def index
     @albums = Album.all
@@ -14,38 +14,37 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    @album = Album.new(album_params)
+    @album = @type.albums.build(album_params)
     if @album.save
-      redirect_to dashboard_path, notice: "L'album #{@album.name} à été crée"
+      redirect_to dashboard_path, notice: "Album crée pour #{@type.name}"
     else
       render :new
     end
   end
 
   def edit
-    @hp_album = Album.where( "name = 'homepage'" ).last
+    @album = Album.find(params[:id])
   end
 
   def update
-    @hp_album = Album.where( "name = 'homepage'" ).last
+    @album = Album.find(params[:id])
     @album.update(album_params)
-    redirect_to dashboard_path, notice: "L'album #{@album.name} à été mis à jour"
+    redirect_to dashboard_path, notice: "Album mis à jour pour #{@type.name}"
   end
 
   def destroy
+    @album = Album.find(params[:id])
     @album.destroy
-    redirect_to dashboard_path, notice: "L'album #{@album.name} à été effacé"
+    redirect_to dashboard_path, notice: "Album effacé pour #{@type.name}"
   end
 
 
   private
 
-  def set_album
-    @album = Album.find(params[:id])
-  end
-
   def album_params
     params.require(:album).permit(:name, :type_id, photos: [])
   end
-
+  def find_type
+    @type = Type.find(params[:type_id])
+  end
 end

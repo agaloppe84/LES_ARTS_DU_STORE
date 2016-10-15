@@ -16,11 +16,12 @@ resources :types
   get 'promotions' => 'pages#promotions'
   # get 'promo' => 'pages#promo'
 
-  resources :types
+  resources :types do
+    resources :albums
+  end
+
+
   resources :promos
-
-
-  resources :albums
   resources :brands
 
 

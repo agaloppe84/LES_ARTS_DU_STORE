@@ -1,6 +1,6 @@
 class Type < ActiveRecord::Base
   validates :name, presence: true
-  has_many :products
-  has_many :promos
-  has_many :albums
+  has_many :products, dependent: :destroy
+  has_many :promos, dependent: :destroy
+  has_many :albums, dependent: :destroy
 end
