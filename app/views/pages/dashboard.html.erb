@@ -702,7 +702,7 @@
 
               <div class="dashv2-infos-compilated-alt">
                 <div class="dashv2-infos-compilated-item">
-                  <% if product.power.present? %>
+                  <% if product.powers.any? %>
                     <div class="v2-big-number-brand" style="color: #52D681;">Oui</div>
                   <% else %>
                     <div class="v2-big-number-brand" style="color: #FA4659;">Non</div>
@@ -712,9 +712,9 @@
                 </div>
 
 
-                <% if product.power.present? %>
+                <% if product.powers.any? %>
 
-                  <%= link_to edit_product_power_path(product,product.power), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
+                  <%= link_to edit_product_power_path(product,product.powers.last), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -743,13 +743,13 @@
 
 
 
-              <% if product.power.present? %>
+              <% if product.powers.any? %>
 
 
                 <div class="v3-dash-powers-container">
 
 
-                  <% if product.power.sun == false %>
+                  <% if product.powers.last.sun == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Soleil</div>
@@ -757,7 +757,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.rain == false %>
+                  <% if product.powers.last.rain == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Pluie</div>
@@ -765,7 +765,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.wind == false %>
+                  <% if product.powers.last.wind == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Vent</div>
@@ -773,7 +773,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.cold == false %>
+                  <% if product.powers.last.cold == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Froid</div>
@@ -781,7 +781,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.hot == false %>
+                  <% if product.powers.last.hot == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Chaleur</div>
@@ -789,7 +789,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.humidity == false %>
+                  <% if product.powers.last.humidity == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Humidité</div>
@@ -797,7 +797,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.energysaver == false %>
+                  <% if product.powers.last.energysaver == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Enérgie</div>
@@ -805,7 +805,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.taxsaver == false %>
+                  <% if product.powers.last.taxsaver == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Impots</div>
@@ -813,7 +813,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.insects == false %>
+                  <% if product.powers.last.insects == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Insectes</div>
@@ -821,7 +821,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.security == false %>
+                  <% if product.powers.last.security == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Sécurité</div>
@@ -829,7 +829,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.inside == false %>
+                  <% if product.powers.last.inside == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Intérieur</div>
@@ -837,7 +837,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.outside == false %>
+                  <% if product.powers.last.outside == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Extérieur</div>
@@ -845,7 +845,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.certification == false %>
+                  <% if product.powers.last.certification == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Certif</div>
@@ -949,7 +949,7 @@
               <div class="dashv2-infos-compilated-alt">
 
                 <div class="dashv2-infos-compilated-item">
-                  <% if product.power.present? %>
+                  <% if product.powers.any? %>
                     <div class="v2-big-number-brand" style="color: #52D681;">Oui</div>
                   <% else %>
                     <div class="v2-big-number-brand" style="color: #FA4659;">Non</div>
@@ -959,9 +959,9 @@
                 </div>
 
 
-                <% if product.power.present? %>
+                <% if product.powers.any? %>
 
-                  <%= link_to edit_product_power_path(product,product.power), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
+                  <%= link_to edit_product_power_path(product,product.powers.last), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -989,13 +989,13 @@
 
 
 
-               <% if product.power.present? %>
+               <% if product.powers.any? %>
 
 
                 <div class="v3-dash-powers-container">
 
 
-                  <% if product.power.sun == false %>
+                  <% if product.powers.last.sun == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Soleil</div>
@@ -1003,7 +1003,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.rain == false %>
+                  <% if product.powers.last.rain == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Pluie</div>
@@ -1011,7 +1011,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.wind == false %>
+                  <% if product.powers.last.wind == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Vent</div>
@@ -1019,7 +1019,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.cold == false %>
+                  <% if product.powers.last.cold == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Froid</div>
@@ -1027,7 +1027,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.hot == false %>
+                  <% if product.powers.last.hot == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Chaleur</div>
@@ -1035,7 +1035,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.humidity == false %>
+                  <% if product.powers.last.humidity == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Humidité</div>
@@ -1043,7 +1043,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.energysaver == false %>
+                  <% if product.powers.last.energysaver == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Enérgie</div>
@@ -1051,7 +1051,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.taxsaver == false %>
+                  <% if product.powers.last.taxsaver == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Impots</div>
@@ -1059,7 +1059,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.insects == false %>
+                  <% if product.powers.last.insects == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Insectes</div>
@@ -1067,7 +1067,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.security == false %>
+                  <% if product.powers.last.security == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Sécurité</div>
@@ -1075,7 +1075,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.inside == false %>
+                  <% if product.powers.last.inside == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Intérieur</div>
@@ -1083,7 +1083,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.outside == false %>
+                  <% if product.powers.last.outside == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Extérieur</div>
@@ -1091,7 +1091,7 @@
                     </div>
                   <% end %>
 
-                  <% if product.power.certification == false %>
+                  <% if product.powers.last.certification == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
                       <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Certif</div>

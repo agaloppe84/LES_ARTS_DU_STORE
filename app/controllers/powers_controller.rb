@@ -14,11 +14,9 @@ class PowersController < ApplicationController
   end
 
   def create
-    @power = @product.power(power_params)
+    @power = @product.powers.build(power_params)
     if @power.save
       redirect_to dashboard_path, notice: "Le pouvoir pour #{@product.title} a été crée"
-    elsif @product.power.present?
-      redirect_to dashboard_path, notice: "Ce store à déja un pouvoir"
     else
       render :new
     end
