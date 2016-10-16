@@ -24,7 +24,7 @@
 
 
 
-  <%= link_to products_path do %>
+  <%= link_to types_path do %>
     <div class="flex-one">
 
       <div class="home-small-container-item">
@@ -37,7 +37,7 @@
     </div>
   <% end %>
 
-  <%= link_to promo_path(@last_promo) do %>
+  <%= link_to promotions_path(@last_promo) do %>
     <div class="flex-one">
 
       <div class="home-small-container-item">
@@ -133,6 +133,60 @@
 
   </div>
 
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+  <% @promos.each do |promo|%>
+
+    <%= link_to "ModalTest", "#promoedit#{promo.id}", "data-toggle" => "modal", "data-instance" => promo, "title" => "Add this item", class: "open-AddBookDialog" %>
+
+    <div class="modal" id="promoedit<%= promo.id %>">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">×</button>
+          <h3><%= promo.type.name %></h3>
+        </div>
+          <div class="modal-body">
+              <p>some content</p>
+              <input type="text" name="PromoInstance" id="PromoInstance" value=""/>
+          </div>
+
+          <%= render 'promos/edit', type: promo.type, promo: promo %>
+    </div>
+
+  <% end %>
+
+
+
+
+
+        <% content_for :dynmodal do %>
+          <script>
+              $(document).on("click", ".open-AddBookDialog", function () {
+             var myPromoInstance = $(this).data('instance');
+             $(".modal-body #PromoInstance").val( myPromoInstance );
+              });
+          </script>
+        <% end %>
 
 
 </div>

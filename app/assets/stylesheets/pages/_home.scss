@@ -132,3 +132,20 @@
   color: rgba(55,55,55,0.9);
   transition: 0.4s ease;
 }
+
+
+.modal {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  top: 26%;
+  left: 26%;
+  border-radius: 2px;
+}
+
+.modal-header {
+  position: fixed;
+  width: 50%;
+  background-color: white;
+  z-index: 1;
+}
