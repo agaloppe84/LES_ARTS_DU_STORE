@@ -136,16 +136,167 @@
 
 .modal {
   width: 50%;
-  height: 50%;
+  height: 70%;
   background-color: white;
-  top: 26%;
-  left: 26%;
+  top: 15%;
+  left: 25%;
   border-radius: 2px;
 }
 
 .modal-header {
-  position: fixed;
-  width: 50%;
+  width: 100%;
   background-color: white;
   z-index: 1;
+  padding: 0;
+  height: 70px;
+}
+
+.modal-body {
+  padding: 0;
+  padding-top: 0px;
+}
+
+.modal {
+  padding-right: 0 !important;
+}
+
+
+
+
+
+
+
+
+  .header-on-modal {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding-left: 25px;
+  }
+
+  .header-on-modal-2 {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding-left: 25px;
+    z-index: 1;
+  }
+
+.close {
+  position: absolute;
+  top: 23px;
+  right: 19px;
+}
+
+.form-in-modal {
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+
+
+.submit-button-on-modal {
+  width: 50%;
+  height: 60px;
+  border: none;
+  position: fixed;
+  bottom: 15%;
+  font-size: 14px;
+  color: #424242;
+  background-color: white;
+  border-top: 1px solid rgba(66,66,66,0.4);
+  opacity: 1;
+  transition: 0.3s ease;
+  font-family: "Circular-Book";
+  outline: none;
+  &:hover {
+    opacity: 1;
+    color: white;
+    background-color: #424242;
+    outline: none;
+  }
+  &:visited {
+    outline: none;
+  }
+}
+
+
+.container-without-button {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+
+.label-on-modal-dashboard {
+  font-size: 11px;
+  font-family: "Circular-Book";
+  color: #FA4659;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  box-shadow: none;
+  height: 40px;
+  font-size: 13px;
+  font-family: "Circular-Book";
+  color: #424242;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: none;
+}
+
+
+.form-inline {
+  height: 40px;
+}
+
+select {
+  border-radius: 1px !important;
+  -webkit-appearance: none;
+}
+
+.form-active-promo {
+  margin-right: 80%;
+}
+
+
+.form-inline-date {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.form-inline-date-column {
+  margin-right: 35px;
+  margin-bottom: 15px;
+}
+
+a {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  color: rgba(55,55,55,0.7);
+}
+
+
+
+.testtesttest input.attachinary-input {
+  height: 50px;
+}
+
+
+input #promo_photos {
+  font-size: 12px;
+  color: red;
 }

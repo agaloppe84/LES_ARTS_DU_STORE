@@ -158,19 +158,32 @@
 
   <% @promos.each do |promo|%>
 
-    <%= link_to "ModalTest", "#promoedit#{promo.id}", "data-toggle" => "modal", "data-instance" => promo, "title" => "Add this item", class: "open-AddBookDialog" %>
+    <%= link_to "#{promo.title}", "#promoedit#{promo.id}", "data-toggle" => "modal", "data-instance" => promo, "title" => "Add this item", class: "open-AddBookDialog" %>
 
     <div class="modal" id="promoedit<%= promo.id %>">
         <div class="modal-header">
-          <button class="close" data-dismiss="modal">×</button>
-          <h3><%= promo.type.name %></h3>
+          <div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.4;">Modifier la promo</div>
+           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
+           <div class="header-hard-dashboard"><%= promo.title %></div>
+
+          <% if promo.current? %>
+              <div class="v5-type-with-active-promo" style="margin-left: 8px;">
+                  <div class="active-promo-green-dot"></div>
+                  <div class="active-promo-green-dot-text">Active</div>
+              </div>
+
+          <% end %>
+
+           <button class="close" data-dismiss="modal">×</button>
+        </div>
         </div>
           <div class="modal-body">
-              <p>some content</p>
-              <input type="text" name="PromoInstance" id="PromoInstance" value=""/>
+            <%= render 'promos/edit', type: promo.type, promo: promo %>
           </div>
 
-          <%= render 'promos/edit', type: promo.type, promo: promo %>
+
     </div>
 
   <% end %>
