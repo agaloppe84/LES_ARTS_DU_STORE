@@ -128,7 +128,7 @@
             <div class="v2-big-number"><%= type.products.count %></div>
             <div class="dashv2-infos-compilated-item-label">Produits</div>
           </div>
-          <%= link_to new_type_product_path(type), class: "", data: { confirm: "Etes-vous sûr de vouloir créer un produit ?" } do %>
+          <%= link_to "#productNewModal", class: "", data: { toggle: "modal", typeid: "#{type.id}" } do %>
 
                   <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
                     <i class="fa fa-plus-circle" aria-hidden="true" style="color: <%= type.color %>;"></i>
@@ -159,7 +159,7 @@
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
-                <%= link_to edit_type_product_path(type, product), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier ce produit ?" } do %>
+                <%= link_to "#productEditModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
                     <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
                     <i class="fa fa-pencil" aria-hidden="true" style="color: <%= type.color %>;"></i>
                 <% end %>
@@ -175,7 +175,7 @@
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
-                <%= link_to edit_type_product_path(type, product), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier ce produit ?" } do %>
+                <%= link_to "#productEditModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
                     <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
                     <i class="fa fa-pencil" aria-hidden="true" style="color: <%= type.color %>;"></i>
                 <% end %>
@@ -413,7 +413,7 @@
             <div class="v2-big-number"><%= type.products.count %></div>
             <div class="dashv2-infos-compilated-item-label">Produits</div>
           </div>
-          <%= link_to "#productNewModal", class: "", data: { toggle: "modal" } do %>
+          <%= link_to "#productNewModal", class: "", data: { toggle: "modal", typeid: "#{type.id}" } do %>
 
                   <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
                     <i class="fa fa-plus-circle" aria-hidden="true" style="color: <%= type.color %>;"></i>
@@ -714,7 +714,7 @@
                   <% end %>
                 </div>
 
-                <%= link_to new_type_product_info_path(type,product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
+                <%= link_to "#infoNewModal", class: "", data: { toggle: "modal", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
 
                   <div class="v4-info-new-button" style="color: <%= type.color %>;">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
@@ -953,7 +953,7 @@
                   <% end %>
                 </div>
 
-                <%= link_to new_type_product_info_path(type, product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
+                <%= link_to "#infoNewModal", class: "", data: { toggle: "modal", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
 
                   <div class="v4-info-new-button" style="color: <%= type.color %>;">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
@@ -1295,6 +1295,22 @@
                     </div>
                   </div>
                   <!--******************* NEW TYPE END *********************-->
+
+                  <!--******************* EDIT PRODUCT START *********************-->
+                  <div class="modal fade" id="productEditModal" tabindex="-1" role="dialog" aria-labelledby="ProductEdit">
+                    <div class="modal-body">
+                      Loading...
+                    </div>
+                  </div>
+                  <!--******************* EDIT PRODUCT END *********************-->
+
+                  <!--******************* NEW PRODUCT START *********************-->
+                  <div class="modal fade" id="productNewModal" tabindex="-1" role="dialog" aria-labelledby="ProductNew">
+                    <div class="modal-body">
+                      Loading...
+                    </div>
+                  </div>
+                  <!--******************* NEW PRODUCT END *********************-->
 
                   <!--******************* EDIT PROMO START *********************-->
                   <div class="modal fade" id="promoEditModal" tabindex="-1" role="dialog" aria-labelledby="PromoEdit">

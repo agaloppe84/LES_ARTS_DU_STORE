@@ -1,24 +1,43 @@
-<div class="form-fullpage">
 
-  <div class="form-title"><%= "Créer une info pour #{@product.title}" %></div>
-
-
-    <%= simple_form_for [@product.type, @product, @info] do |f| %>
-
-      <div class="form-label">Nom</div>
-      <%= f.input :title, label: false %>
-
-      <div class="form-label">Contenu</div>
-      <%= f.input :content, label: false %>
-
-      <div class="form-label">Photos</div>
-      <%= f.input :icon, as: :attachinary, label: false %>
-
-      <div class="form-fullpage-button">
-        <%= f.button :submit, 'Créer une info', class: 'form-button' %>
-      </div>
+<div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.4;">Créer une info pour</div>
+           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
+           <button class="close" data-dismiss="modal">×</button>
+</div>
 
 
-    <% end %>
+
+
+
+
+<div class="form-in-modal">
+
+<%= simple_form_for [@product.type, @product, @info] do |f| %>
+
+  <div class="container-without-button">
+
+    <div class="label-on-modal-dashboard">Nom de l'info</div>
+    <%= f.input :title, label: false %>
+
+    <div class="label-on-modal-dashboard">Contenu</div>
+    <%= f.input :content, label: false %>
+
+    <div class="label-on-modal-dashboard">Icone</div>
+    <%= f.input :icon, as: :attachinary, label: false %>
+
+
+  </div>
+
+
+    <%= f.submit "Créer une info pour #{@product.title}", :class => 'submit-button-on-modal' %>
+
+
+<% end %>
 
 </div>
+
+
+
+
+
