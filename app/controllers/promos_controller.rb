@@ -11,6 +11,7 @@ class PromosController < ApplicationController
 
   def new
     @promo = Promo.new
+    render layout: false
   end
 
   def create
@@ -23,6 +24,7 @@ class PromosController < ApplicationController
   end
 
   def edit
+    render layout: false
   end
 
   def update

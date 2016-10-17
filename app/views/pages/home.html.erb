@@ -150,58 +150,51 @@
 
 
 
-<div>
+
+
+<!-- *****************EDIT PROMO**************** -->
+<% @promos.each do |promo|%>
+<%= link_to "#{promo.title}", "#promoEditModal", "data-toggle" => "modal", "data-id" => "#{promo.id}", "data-typeid" => "#{promo.type.id}", "title" => "Add this item" %>
+<% end %>
+
+
+  <div class="modal fade" id="promoEditModal" tabindex="-1" role="dialog" aria-labelledby="PromoEdit">
+
+      <div class="modal-body">
+        Loading...
+      </div>
+
+  </div>
+<!-- *****************EDIT PROMO**************** -->
+
+
+
+
+<!-- *****************EDIT TYPE**************** -->
+<% @types.each do |type|%>
+<%= link_to "#{type.name}", "#typeEditModal", "data-toggle" => "modal", "data-id" => "#{type.id}", "title" => "Add this item" %>
+<% end %>
+
+
+  <div class="modal fade" id="typeEditModal" tabindex="-1" role="dialog" aria-labelledby="typeEdit">
+
+      <div class="modal-body">
+        Loading...
+      </div>
+
+  </div>
+<!-- *****************EDIT TYPE**************** -->
 
 
 
 
 
-  <% @promos.each do |promo|%>
-
-    <%= link_to "#{promo.title}", "#promoedit#{promo.id}", "data-toggle" => "modal", "data-instance" => promo, "title" => "Add this item", class: "open-AddBookDialog" %>
-
-    <div class="modal" id="promoedit<%= promo.id %>">
-        <div class="modal-header">
-          <div class="header-on-modal">
-           <div class="header-hard-dashboard" style="opacity: 0.4;">Modifier la promo</div>
-           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-
-           <div class="header-hard-dashboard"><%= promo.title %></div>
-
-          <% if promo.current? %>
-              <div class="v5-type-with-active-promo" style="margin-left: 8px;">
-                  <div class="active-promo-green-dot"></div>
-                  <div class="active-promo-green-dot-text">Active</div>
-              </div>
-
-          <% end %>
-
-           <button class="close" data-dismiss="modal">×</button>
-        </div>
-        </div>
-          <div class="modal-body">
-            <%= render 'promos/edit', type: promo.type, promo: promo %>
-          </div>
-
-
-    </div>
-
-  <% end %>
 
 
 
 
 
-        <% content_for :dynmodal do %>
-          <script>
-              $(document).on("click", ".open-AddBookDialog", function () {
-             var myPromoInstance = $(this).data('instance');
-             $(".modal-body #PromoInstance").val( myPromoInstance );
-              });
-          </script>
-        <% end %>
 
 
-</div>
 
 

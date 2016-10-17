@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @promos = Promo.all
     @albums = Album.all
     @last_promo = Promo.all.last
+    @types = Type.all
 
     @photos = 0
 

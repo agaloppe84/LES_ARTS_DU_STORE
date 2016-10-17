@@ -11,6 +11,7 @@ class InfosController < ApplicationController
 
   def new
     @info = Info.new
+    render layout: false
   end
 
   def create
@@ -24,6 +25,7 @@ class InfosController < ApplicationController
 
   def edit
     @info = Info.find(params[:id])
+    render layout: false
   end
 
   def update

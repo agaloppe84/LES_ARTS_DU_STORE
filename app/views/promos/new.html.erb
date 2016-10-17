@@ -1,9 +1,92 @@
+
+<div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "Créer une promo pour #{@type.name}" %></div>
+
+          <% if @promo.current? %>
+              <div class="v5-type-with-active-promo" style="margin-left: 8px;">
+                  <div class="active-promo-green-dot"></div>
+                  <div class="active-promo-green-dot-text">Active</div>
+              </div>
+
+          <% end %>
+
+           <button class="close" data-dismiss="modal">×</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="header-on-modal-2">
+    <div class="header-hard-dashboard" style="opacity: 0.4;font-size: 13px;"><%= "Catégorie" %></div>
+    <div style="margin-left: 8px;margin-right: 8px;padding-top: 2px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <div class="header-hard-dashboard" style="font-size: 13px;"><%= @type.name %></div>
+</div>
+
+
+
+<div class="form-in-modal">
+
 <%= simple_form_for [@type, @promo] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :start, as: :date, start_year: Date.today.year, discard_day: true, order: [:month, :year] %>
-  <%= f.input :end, as: :date, start_year: Date.today.year, discard_day: true, order: [:month, :year] %>
-  <%= f.input :current %>
-  <%= f.input :photos, as: :attachinary %>
-  <%= f.submit %>
+
+  <div class="container-without-button">
+
+    <div class="label-on-modal-dashboard">Titre de la promo</div>
+    <%= f.input :title, label: false %>
+
+    <div class="label-on-modal-dashboard">Description</div>
+    <%= f.input :description, label: false %>
+
+
+
+
+  <div class="form-inline-date">
+
+
+    <div class="form-inline-date-column">
+      <div class="label-on-modal-dashboard">Début</div>
+      <%= f.input :start, as: :date, label: false, start_year: Date.today.year, discard_day: true, order: [:month, :year] %>
+    </div>
+
+    <div class="form-inline-date-column">
+      <div class="label-on-modal-dashboard">Fin</div>
+      <%= f.input :end, as: :date, label: false, start_year: Date.today.year, discard_day: true, order: [:month, :year] %>
+    </div>
+
+
+  </div>
+
+
+
+
+
+    <div class="label-on-modal-dashboard">Promo en cours ?</div>
+    <div class="form-active-promo">
+      <%= f.input :current, as: :select, label: false %>
+    </div>
+
+    <div class="label-on-modal-dashboard">Photos</div>
+    <%= f.input :photos, label: false, as: :attachinary %>
+
+
+
+  </div>
+
+
+    <%= f.submit "créer une promo", :class => 'submit-button-on-modal' %>
+
+
 <% end %>
+
+</div>
+
+
+
+
+
+

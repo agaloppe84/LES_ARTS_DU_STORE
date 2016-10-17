@@ -10,6 +10,7 @@ class TypesController < ApplicationController
 
   def new
     @type = Type.new
+    render layout: false
   end
 
   def create
@@ -22,6 +23,7 @@ class TypesController < ApplicationController
   end
 
   def edit
+    render layout: false
   end
 
   def update

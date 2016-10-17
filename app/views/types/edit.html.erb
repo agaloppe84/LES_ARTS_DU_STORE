@@ -1,29 +1,39 @@
 
 
-<div class="form-fullpage">
+<div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.4;">Modifier la catégorie</div>
+           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+
+           <div class="header-hard-dashboard"><%= @type.name %></div>
+
+           <button class="close" data-dismiss="modal">×</button>
+</div>
 
 
-    <div class="form-title"><%= "Modifier #{@type.name}" %></div>
+<div class="form-in-modal">
+
+<%= simple_form_for (@type) do |f| %>
+
+  <div class="container-without-button">
+
+    <div class="label-on-modal-dashboard">Nom</div>
+    <%= f.input :name, label: false %>
+
+    <div class="label-on-modal-dashboard">Nom au pluriel</div>
+    <%= f.input :plurname, label: false %>
+
+    <div class="label-on-modal-dashboard">Couleur</div>
+    <%= f.input :color, label: false %>
 
 
-    <%= simple_form_for(@type) do |f| %>
-
-      <div class="form-label">Nom</div>
-      <%= f.input :name, label: false %>
-
-      <div class="form-label">Nom au pluriel</div>
-      <%= f.input :plurname, label: false %>
-
-      <div class="form-label">Couleur</div>
-      <%= f.input :color, label: false %>
+  </div>
 
 
-      <div class="form-fullpage-button">
-          <%= f.button :submit, 'Modifier', class: 'form-button' %>
-      </div>
+    <%= f.submit "Modifier #{@type.name}", :class => 'submit-button-on-modal' %>
 
-    <% end %>
 
+<% end %>
 
 </div>
+
 
