@@ -11,6 +11,7 @@ class AlbumsController < ApplicationController
 
   def new
     @album = Album.new
+    render layout: false
   end
 
   def create
@@ -24,6 +25,7 @@ class AlbumsController < ApplicationController
 
   def edit
     @album = Album.find(params[:id])
+    render layout: false
   end
 
   def update

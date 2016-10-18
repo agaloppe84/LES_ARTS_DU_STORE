@@ -11,6 +11,7 @@ class PowersController < ApplicationController
 
   def new
     @power = Power.new
+    render layout: false
   end
 
   def create
@@ -25,6 +26,7 @@ class PowersController < ApplicationController
 
   def edit
     @power = Power.find(params[:id])
+    render layout: false
   end
 
 

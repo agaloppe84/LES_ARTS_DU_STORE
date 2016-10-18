@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    render layout: false
   end
 
   def create
@@ -40,6 +41,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    render layout: false
   end
 
   def update

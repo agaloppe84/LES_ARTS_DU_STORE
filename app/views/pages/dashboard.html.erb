@@ -307,7 +307,7 @@
 
                 <% if type.albums.any? %>
 
-                  <%= link_to edit_type_album_path(type,type.albums.last), class: "", data: { confirm: "Modifier l'album ?" } do %>
+                  <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{type.albums.last.id}", typeid: "#{type.id}" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -353,7 +353,7 @@
                             <div class="infos-small-boob"><%= "#{album.photos.count} photos" %></div>
 
                             <div class="v2-link-on-active-infos">
-                              <%= link_to edit_type_album_path(type,album), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier cet album ?" } do %>
+                              <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{album.id}", typeid: "#{album.type.id}" } do %>
                                   <div class="text-on-edit-hover">Modifier</div>
                                   <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
                               <% end %>
@@ -584,7 +584,7 @@
 
                 <% if type.albums.any? %>
 
-                  <%= link_to edit_type_album_path(type,type.albums.last), class: "", data: { confirm: "Modifier l'album ?" } do %>
+                  <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{type.albums.last.id}", typeid: "#{type.id}" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -596,7 +596,7 @@
 
                 <% else %>
 
-                  <%= link_to "#promoNewModal", class: "", data: { toggle: "modal", id: "#{type.id}" } do %>
+                  <%= link_to "#albumNewModal", class: "", data: { toggle: "modal", typeid: "#{type.id}" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -632,7 +632,7 @@
                             <div class="infos-small-boob"><%= "#{album.photos.count} photos" %></div>
 
                             <div class="v2-link-on-active-infos">
-                              <%= link_to edit_type_album_path(type, album), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier cet album ?" } do %>
+                              <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{album.id}", typeid: "#{album.type.id}" } do %>
                                   <div class="text-on-edit-hover">Modifier</div>
                                   <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
                               <% end %>
@@ -1329,7 +1329,7 @@
                   <!--******************* NEW PROMO END *********************-->
 
                   <!--******************* EDIT INFO START *********************-->
-                  <div class="modal fade" id="infoEditModal" tabindex="-1" role="dialog" aria-labelledby="TypeEdit">
+                  <div class="modal fade" id="infoEditModal" tabindex="-1" role="dialog" aria-labelledby="InfoEdit">
                     <div class="modal-body">
                       Loading...
                     </div>
@@ -1337,12 +1337,44 @@
                   <!--******************* EDIT INFO END *********************-->
 
                   <!--******************* NEW INFO START *********************-->
-                  <div class="modal fade" id="infoNewModal" tabindex="-1" role="dialog" aria-labelledby="TypeNew">
+                  <div class="modal fade" id="infoNewModal" tabindex="-1" role="dialog" aria-labelledby="InfoNew">
                     <div class="modal-body">
                       Loading...
                     </div>
                   </div>
                   <!--******************* NEW INFO END *********************-->
+
+                  <!--******************* EDIT POWER START *********************-->
+                  <div class="modal fade" id="powerEditModal" tabindex="-1" role="dialog" aria-labelledby="PowerEdit">
+                    <div class="modal-body">
+                      Loading...
+                    </div>
+                  </div>
+                  <!--******************* EDIT POWER END *********************-->
+
+                  <!--******************* NEW POWER START *********************-->
+                  <div class="modal fade" id="powerNewModal" tabindex="-1" role="dialog" aria-labelledby="PowerNew">
+                    <div class="modal-body">
+                      Loading...
+                    </div>
+                  </div>
+                  <!--******************* NEW POWER END *********************-->
+
+                   <!--******************* EDIT ALBUM START *********************-->
+                  <div class="modal fade" id="albumEditModal" tabindex="-1" role="dialog" aria-labelledby="AlbumEdit">
+                    <div class="modal-body">
+                      Loading...
+                    </div>
+                  </div>
+                  <!--******************* EDIT ALBUM END *********************-->
+
+                  <!--******************* NEW ALBUM START *********************-->
+                  <div class="modal fade" id="albumNewModal" tabindex="-1" role="dialog" aria-labelledby="AlbumNew">
+                    <div class="modal-body">
+                      Loading...
+                    </div>
+                  </div>
+                  <!--******************* NEW ALBUM END *********************-->
 
 
 
