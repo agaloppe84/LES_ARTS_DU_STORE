@@ -439,7 +439,7 @@
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
-                <%= link_to edit_type_product_path(type,product), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier ce produit ?" } do %>
+                <%= link_to "#productEditModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
                     <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
                     <i class="fa fa-pencil" aria-hidden="true" style="color: <%= type.color %>;"></i>
                 <% end %>
@@ -454,7 +454,7 @@
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
-                <%= link_to edit_type_product_path(type, product), class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir modifier ce produit ?" } do %>
+                <%= link_to "#productEditModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
                     <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
                     <i class="fa fa-pencil" aria-hidden="true" style="color: <%= type.color %>;"></i>
                 <% end %>
@@ -1207,7 +1207,7 @@
               </div>
             </div>
 
-            <div class="all-active-promo">
+            <!-- <div class="all-active-promo">
               <div class="all-active-promo-header">
                 <div class="all-active-promo-header-text">Promos actives</div>
               </div>
@@ -1216,7 +1216,7 @@
                   <div class="all-active-promo-header-text-v2"><%= truncate(current_promo.title, length: 15, omission: "...") %></div>
                 <% end %>
               </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -1278,7 +1278,7 @@
 
 
 
-<!--**************************** MODALS FOR CONTROLLERS ACTIONS START ****************************-->
+<!--**************************** AJAXIFIED MODALS FOR CONTROLLERS ACTIONS START ****************************-->
 
                   <!--******************* EDIT TYPE START *********************-->
                   <div class="modal fade" id="typeEditModal" tabindex="-1" role="dialog" aria-labelledby="TypeEdit">
@@ -1378,7 +1378,7 @@
 
 
 
-<!--**************************** MODALS FOR CONTROLLERS ACTIONS END ****************************-->
+<!--**************************** AJAXIFIED MODALS FOR CONTROLLERS ACTIONS END ****************************-->
 
 
 
