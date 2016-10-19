@@ -1,3 +1,3 @@
-$("#boom").click(function() {
-    $('.bim').removeClass('active');
-});
+// $("#boom").click(function() {
+//     $('.bim').removeClass('active');
+// });
