@@ -1,16 +1,44 @@
+<div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Modifier l'album pour la catégorie" %></div>
+            <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+            <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@album.type.name}" %></div>
+           <button class="close" data-dismiss="modal">×</button>
+</div>
+
+<div class="header-on-modal-2">
+    <div class="header-hard-dashboard" style="opacity: 0.8;font-size: 13px;"><%= "Catégorie" %></div>
+    <div style="margin-left: 8px;margin-right: 8px;padding-top: 2px;opacity: 0.8;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <div class="header-hard-dashboard" style="font-size: 13px;opacity: 0.4;color: <%= @album.type.color %>"><%= @album.type.plurname.capitalize %></div>
+</div>
 
 
-<div>Modifier<%= @album.name %> </div>
 
 
+<div class="form-in-modal">
 
 <%= simple_form_for [@type, @album] do |f| %>
 
+  <div class="container-without-button">
 
-  <%= f.input :photos, as: :attachinary %>
-  <%= f.input :name %>
+    <div class="label-on-modal-dashboard">Nom de l'album</div>
+    <%= f.input :name, label: false %>
 
-  <%= f.submit %>
+    <div class="label-on-modal-dashboard">Photos</div>
+    <%= f.input :photos, as: :attachinary, label: false %>
+
+  </div>
+
+
+    <%= f.submit "créer un album", :class => 'submit-button-on-modal' %>
 
 
 <% end %>
+
+</div>
+
+
+
+
+
+
+

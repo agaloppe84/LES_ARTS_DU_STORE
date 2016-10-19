@@ -1,12 +1,16 @@
 
 
 <div class="header-on-modal">
-           <div class="header-hard-dashboard" style="opacity: 0.4;">Modifier</div>
+           <div class="header-hard-dashboard" style="opacity: 0.8;">Modifier l'info</div>
            <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @info.product.title %></div>
-            <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-            <div class="header-hard-dashboard"><%= @info.title %></div>
+           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @info.title %></div>
            <button class="close" data-dismiss="modal">×</button>
+</div>
+
+<div class="header-on-modal-2">
+    <div class="header-hard-dashboard" style="opacity: 0.8;font-size: 13px;"><%= "Produit" %></div>
+    <div style="margin-left: 8px;margin-right: 8px;padding-top: 2px;opacity: 0.8;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <div class="header-hard-dashboard" style="font-size: 13px;opacity: 0.4;color: <%= @product.type.color %>"><%= @product.title.capitalize %></div>
 </div>
 
 

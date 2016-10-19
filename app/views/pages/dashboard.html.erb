@@ -195,7 +195,7 @@
 
 
         <!--*********** COMPILATED PROMOS CONTAINER START ***********-->
-        <div class="dashv2-infos-compilated-alt">
+        <div class="dashv2-infos-compilated-alt" style="border-top: 1px solid rgba(100,100,100,0.2);">
 
                 <div class="dashv2-infos-compilated-item">
                   <div class="v2-big-number"><%= type.promos.count %></div>
@@ -472,7 +472,7 @@
       </ul>
     </div>
 
-    <div class="dashv2-infos-compilated-alt">
+    <div class="dashv2-infos-compilated-alt" style="border-top: 1px solid rgba(100,100,100,0.2);">
 
                 <div class="dashv2-infos-compilated-item">
                   <div class="v2-big-number"><%= type.promos.count %></div>
@@ -621,31 +621,29 @@
 
 
             <!--*********** SI ALBUM PRESENT ***********-->
-            <div class="v3-prod-infos-alt">
-                    <div class="infos-volets">
-                        <% type.albums.each do |album| %>
+            <div class="v3-dash-powers-container-start">
 
-                          <div class="infos-item-boob">
+                <% type.albums.last.photos.each do |photo| %>
+                    <div class="v3-power-item-cont-big">
 
-                            <div class="v10-album-name"><%= album.name %>&nbsp;</div>
+                      <div class="v3-powers-text-on-hover-bottom" style="color: <%= type.color %>;">
+                        <div class="file-type">
+                          <%= photo.resource_type %>
+                          <%= "  " %>
+                          <%= photo.format %>
+                        </div>
+                        <div class="file-size">
+                          <%= photo.width %>
+                          <%= " X " %>
+                          <%= photo.height %>
+                        </div>
 
-                            <div class="infos-small-boob"><%= "#{album.photos.count} photos" %></div>
+                      </div>
 
-                            <div class="v2-link-on-active-infos">
-                              <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{album.id}", typeid: "#{album.type.id}" } do %>
-                                  <div class="text-on-edit-hover">Modifier</div>
-                                  <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
-                              <% end %>
-                              <%= link_to type_album_path(type, album), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cet album ?" } do %>
-                                  <div class="text-on-destroy-hover">Supprimer</div>
-                                  <i class="fa fa-times" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
-                              <% end %>
-                            </div>
-
-                          </div>
-
-                        <% end %>
+                      <div class="v3-power-item-big" style="background-image: url(<%= cl_image_path photo.path %>);"></div>
                     </div>
+                <% end %>
+
             </div>
         <!--*********** SI ALBUM PRESENT ***********-->
 
@@ -654,7 +652,7 @@
 
             <div class="v3-prod-infos-alt">
               <div class="v4-no-promo-div">
-                  <div class="v5-big-text">Pas de pouvoirs</div>
+                  <div class="v5-big-text">Pas d'album</div>
                   <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer un album !!</div>
               </div>
             </div>
@@ -775,7 +773,7 @@
 
                 <% if product.powers.any? %>
 
-                  <%= link_to edit_type_product_power_path(type, product, product.powers.last), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
+                  <%= link_to "#powerEditModal", class: "", data: { toggle: "modal", powerid: "#{product.powers.last.id}", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -787,7 +785,7 @@
 
                 <% else %>
 
-                  <%= link_to new_type_product_power_path(type, product), class: "", data: { confirm: "Créer des pouvoirs pour ce produit ?" } do %>
+                  <%= link_to "#powerNewModal", class: "", data: { toggle: "modal", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -1014,7 +1012,7 @@
 
                 <% if product.powers.any? %>
 
-                  <%= link_to edit_type_product_power_path(type,product,product.powers.last), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
+                  <%= link_to "#powerEditModal", class: "", data: { toggle: "modal", powerid: "#{product.powers.last.id}", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-toggle-on" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">
@@ -1026,7 +1024,7 @@
 
                 <% else %>
 
-                  <%= link_to new_type_product_power_path(type, product), class: "", data: { confirm: "Créer des pouvoirs pour ce produit ?" } do %>
+                  <%= link_to "#powerNewModal", class: "", data: { toggle: "modal", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
                     <div class="v4-info-new-button" style="color: <%= type.color %>;">
                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
                       <div class="v5-text-on-button-hover">

@@ -1,64 +1,86 @@
-
-
-<div class="form-fullpage">
-
-  <div class="form-title"><%= "Créer des pouvoirs pour #{@product.title}" %></div>
-
-
-    <%= simple_form_for [@product.type, @product, @power] do |f| %>
-
+<div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.8;">Créer des pouvoirs pour le produit</div>
+           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
+           <button class="close" data-dismiss="modal">×</button>
+</div>
 
 
 
 
-      <div class="form-label">Protection contre le Vent</div>
+
+
+<div class="form-in-modal">
+
+<%= simple_form_for [@product.type, @product, @power] do |f| %>
+
+  <div class="container-without-button">
+
+      <div class="label-on-modal-dashboard">Protection contre le Vent</div>
       <%= f.input :wind, label: false %>
 
-      <div class="form-label">Protection contre le Froid</div>
+      <div class="label-on-modal-dashboard">Protection contre le Froid</div>
       <%= f.input :cold, label: false %>
 
-      <div class="form-label">Protection contre le Chaud</div>
+      <div class="label-on-modal-dashboard">Protection contre le Chaud</div>
       <%= f.input :hot, label: false %>
 
-      <div class="form-label">Protection contre l'Humidité</div>
+      <div class="label-on-modal-dashboard">Protection contre l'Humidité</div>
       <%= f.input :humidity, label: false %>
 
-      <div class="form-label">Economie d'energie</div>
+      <div class="label-on-modal-dashboard">Economie d'energie</div>
       <%= f.input :energysaver, label: false %>
 
-      <div class="form-label">Crédit d'impot</div>
+      <div class="label-on-modal-dashboard">Crédit d'impot</div>
       <%= f.input :taxsaver, label: false %>
 
-      <div class="form-label">Protection contre les insectes</div>
+      <div class="label-on-modal-dashboard">Protection contre les insectes</div>
       <%= f.input :insects, label: false %>
 
-      <div class="form-label">Protection contre le vol</div>
+      <div class="label-on-modal-dashboard">Protection contre le vol</div>
       <%= f.input :security, label: false %>
 
-      <div class="form-label">Protection contre le soleil</div>
+      <div class="label-on-modal-dashboard">Protection contre le soleil</div>
       <%= f.input :sun, label: false %>
 
-      <div class="form-label">Protection contre la pluis</div>
+      <div class="label-on-modal-dashboard">Protection contre la pluis</div>
       <%= f.input :rain, label: false %>
 
-      <div class="form-label">Produit d'intérieur</div>
+      <div class="label-on-modal-dashboard">Produit d'intérieur</div>
       <%= f.input :inside, label: false %>
 
-      <div class="form-label">Produit d'extérieur</div>
+      <div class="label-on-modal-dashboard">Produit d'extérieur</div>
       <%= f.input :outside, label: false %>
 
-      <div class="form-label">Certification</div>
+      <div class="label-on-modal-dashboard">Certification</div>
       <%= f.input :certification, label: false %>
 
 
+  </div>
 
 
-
-      <div class="form-fullpage-button">
-        <%= f.button :submit, 'Créer des pouvoirs', class: 'form-button' %>
-      </div>
+    <%= f.submit "Créer des pouvoirs pour #{@product.title}", :class => 'submit-button-on-modal' %>
 
 
-    <% end %>
+<% end %>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,65 +1,123 @@
 
-
-
-<div class="form-fullpage">
-
-  <div class="form-title"><%= "Modifier #{@product.title} / Pouvoirs n°#{@power.id}" %></div>
-
-
-    <%= simple_form_for [@product.type, @product, @power] do |f| %>
-
+<div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.8;">Modifier les pouvoirs pour le produit</div>
+           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
+           <button class="close" data-dismiss="modal">×</button>
+</div>
 
 
 
 
-      <div class="form-label">Protection contre le Vent</div>
-      <%= f.input :wind, label: false %>
+<div class="form-in-modal">
 
-      <div class="form-label">Protection contre le Froid</div>
-      <%= f.input :cold, label: false %>
+<%= simple_form_for [@product.type, @product, @power] do |f| %>
 
-      <div class="form-label">Protection contre le Chaud</div>
-      <%= f.input :hot, label: false %>
+  <div class="container-without-button">
 
-      <div class="form-label">Protection contre l'Humidité</div>
-      <%= f.input :humidity, label: false %>
-
-      <div class="form-label">Economie d'energie</div>
-      <%= f.input :energysaver, label: false %>
-
-      <div class="form-label">Crédit d'impot</div>
-      <%= f.input :taxsaver, label: false %>
-
-      <div class="form-label">Protection contre les insectes</div>
-      <%= f.input :insects, label: false %>
-
-      <div class="form-label">Protection contre le vol</div>
-      <%= f.input :security, label: false %>
-
-      <div class="form-label">Protection contre le soleil</div>
-      <%= f.input :sun, label: false %>
-
-      <div class="form-label">Protection contre la pluis</div>
-      <%= f.input :rain, label: false %>
-
-      <div class="form-label">Produit d'intérieur</div>
-      <%= f.input :inside, label: false %>
-
-      <div class="form-label">Produit d'extérieur</div>
-      <%= f.input :outside, label: false %>
-
-      <div class="form-label">Certification</div>
-      <%= f.input :certification, label: false %>
-
-
-
-
-
-      <div class="form-fullpage-button">
-        <%= f.button :submit, 'Valider', class: 'form-button' %>
+      <div class="checkbox-inline-form">
+        <%= f.input :wind, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'wind.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre le Vent</div>
       </div>
 
+      <div class="checkbox-inline-form">
+        <%= f.input :cold, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'cold.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre le Froid</div>
+      </div>
 
-    <% end %>
+      <div class="checkbox-inline-form">
+        <%= f.input :hot, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'hot.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre la chaleur</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :humidity, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'humidity.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre l'Humidité</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :energysaver, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'eolienne.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Economie d'energie</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :taxsaver, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'price.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Crédit d'impot</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :insects, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'insects.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre les insectes</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :security, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'security.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre le vol</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :sun, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'sun.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre le soleil</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :rain, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'rain.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Protection contre la pluis</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :inside, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'inside.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Produit d'intérieur</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :outside, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'outside.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Produit d'extérieur</div>
+      </div>
+
+      <div class="checkbox-inline-form">
+        <%= f.input :certification, label: false %>
+        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'certif.svg' %>);"></div>
+        <div class="label-on-modal-dashboard">Certification</div>
+      </div>
+
+  </div>
+
+
+    <%= f.submit "Modifier les pouvoirs pour #{@product.title}", :class => 'submit-button-on-modal' %>
+
+
+<% end %>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
