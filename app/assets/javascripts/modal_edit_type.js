@@ -1,3 +1,4 @@
+
 $('#typeEditModal').on('show.bs.modal', function (event) {
     var $modal = $(this);
     var button = $(event.relatedTarget);

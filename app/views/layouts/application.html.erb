@@ -17,12 +17,12 @@
 
     <%= yield %>
 
-
-
     <%= javascript_include_tag 'application' %>
-    <%= cloudinary_js_config %>
     <%= content_for :afterjs %>
     <%= content_for :afterjstwo %>
-    <%= content_for :ajaxpromo %>
+    <%= cloudinary_js_config %>
+
+
+
   </body>
 </html>

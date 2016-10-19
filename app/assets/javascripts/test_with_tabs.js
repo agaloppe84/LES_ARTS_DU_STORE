@@ -1,3 +1,3 @@
-// $("#boom").click(function() {
-//     $('.bim').removeClass('active');
+// $('.close-modal').click(function() {
+//     $('.modal-backdrop.in').remove();
 // });

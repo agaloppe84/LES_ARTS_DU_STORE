@@ -11,6 +11,7 @@ class BrandsController < ApplicationController
 
   def new
     @brand = Brand.new
+    render layout: false
   end
 
   def create
@@ -23,6 +24,7 @@ class BrandsController < ApplicationController
   end
 
   def edit
+    render layout: false
   end
 
   def update
