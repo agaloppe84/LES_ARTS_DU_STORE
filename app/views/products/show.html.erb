@@ -31,23 +31,9 @@
         <div class="product-title-container-show">
           <div class="pro-header-top">Produit</div>
 
-          <% if @product.type.name == "volet roulant" %>
-              <div class="product-show-big-title color-one-text"><%= @product.title %></div>
-          <% elsif @product.type.name == "store interieur" %>
-              <div class="product-show-big-title color-two-text"><%= @product.title %></div>
-          <% elsif @product.type.name == "store exterieur" %>
-              <div class="product-show-big-title color-three-text"><%= @product.title %></div>
-          <% elsif @product.type.name == "pergola" %>
-              <div class="product-show-big-title color-four-text"><%= @product.title %></div>
-          <% elsif @product.type.name == "menuiserie" %>
-              <div class="product-show-big-title color-five-text"><%= @product.title %></div>
-          <% elsif @product.type.name == "moustiquaire" %>
-              <div class="product-show-big-title color-six-text"><%= @product.title %></div>
-          <% elsif @product.type.name == "porte de garage" %>
-              <div class="product-show-big-title color-seven-text"><%= @product.title %></div>
-          <% else %>
-              <div class="product-show-big-title"><%= @product.title %></div>
-          <% end %>
+
+          <div class="product-show-big-title" style="color: <%= @product.type.color %>;"><%= @product.title %></div>
+
 
         </div>
 
