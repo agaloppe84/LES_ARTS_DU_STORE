@@ -154,10 +154,14 @@
 .modal-body {
   padding: 0;
   padding-top: 0px;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .modal {
   padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
 
@@ -199,20 +203,20 @@
 
 .form-in-modal {
   padding-top: 20px;
-  padding-bottom: 70px;
+  height: 80%;
+  position: relative;
 }
 
 
 .submit-button-on-modal {
-  width: 50%;
-  height: 60px;
+  width: 100px;
+  height: 40px;
   border: none;
-  position: fixed;
-  bottom: 15%;
-  font-size: 14px;
+  font-size: 13px;
   color: #424242;
   background-color: white;
-  border-top: 1px solid rgba(66,66,66,0.4);
+  border: 1px solid rgba(66,66,66,0.4);
+  border-radius: 3px;
   opacity: 1;
   transition: 0.3s ease;
   font-family: "Circular-Book";
@@ -232,6 +236,7 @@
 .container-without-button {
   padding-left: 25px;
   padding-right: 25px;
+  height: 100%;
 }
 
 

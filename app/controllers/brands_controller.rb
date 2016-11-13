@@ -15,7 +15,7 @@ class BrandsController < ApplicationController
   end
 
   def create
-    @brand = Brand.new(brand_params)
+    @brand = @product.brands.build(brand_params)
     if @brand.save
       redirect_to dashboard_path, notice: "La marque #{@brand.name} à été crée"
     else

@@ -1,8 +1,40 @@
+<script>
+
+  $(document).ready(function() {
+    $('.attachinary-input').attachinary();
+  });
+
+</script>
+
+
+<div class="header-on-modal">
+           <div class="header-hard-dashboard" style="opacity: 0.8;">Modifier la marque</div>
+           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @brand.name %></div>
+           <button class="close" data-dismiss="modal">×</button>
+</div>
 
 
 
-<%= simple_form_for[@product, @brand] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :logo, as: :attachinary %>
-  <%= f.submit %>
-<% end %>
+
+<div class="form-in-modal">
+
+  <%= simple_form_for [@product.type, @product, @brand] do |f| %>
+
+    <div class="container-without-button">
+
+      <div class="label-on-modal-dashboard">Nom de la marque</div>
+      <%= f.input :name, label: false %>
+
+      <div class="label-on-modal-dashboard">Logo</div>
+      <%= f.input :logo, as: :attachinary, label: false %>
+
+    </div>
+
+
+      <%= f.submit "Modifier #{@brand.name}", :class => 'submit-button-on-modal' %>
+
+
+  <% end %>
+
+</div>
