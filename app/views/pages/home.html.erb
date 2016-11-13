@@ -1,5 +1,5 @@
 
-
+<!--
 <div class="banner" style="background-image: linear-gradient(90deg, rgba(255,255,255,0.1)30%, rgba(0,0,0,0.1)), url(<%= cl_image_path @random_album.sample.path %>);">
 
   <div class="banner-content">
@@ -8,12 +8,23 @@
   </div>
 
 
+</div> -->
 
 
-
+<div class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <% @random_album.each_with_index do |photo, index| %>
+          <% if index == 0 %>
+            <div class="item active" style="background-image: linear-gradient(90deg, rgba(255,255,255,0.1)30%, rgba(0,0,0,0.1)), url(<%= cl_image_path photo.path %>);">
+            </div>
+          <% else %>
+            <div class="item" style="background-image: linear-gradient(90deg, rgba(255,255,255,0.1)30%, rgba(0,0,0,0.1)), url(<%= cl_image_path photo.path %>);">
+            </div>
+          <% end %>
+        <% end %>
+    </div>
 </div>
-
-
 
 
 

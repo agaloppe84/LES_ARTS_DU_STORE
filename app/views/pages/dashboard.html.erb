@@ -39,11 +39,11 @@
     <div class="dashboardv2-left-menu">
       <ul class="nav nav-pills nav-stacked">
       <% @types.each_with_index do |type,index| %>
-        <% if type == @types.first %>
+        <% if index == 0 %>
             <li role="presentation" class="active">
               <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
               <div class="index-on-navtabs" style="color: <%= type.color %>;"><%= "#{index + 1}" %></div>
-              <a href="#<%= type.id %>" data-toggle="tab"><%= type.plurname %></a>
+              <a href="#<%= type.id %>" data-toggle="tab" class="reset-active-on-tab"><%= type.plurname %></a>
               <div class="v2-link-on-active">
                 <%= link_to "#typeEditModal", class: "v3-link", data: { toggle: "modal", id: "#{type.id}" } do %>
                     <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
@@ -56,10 +56,10 @@
               </div>
             </li>
         <% else %>
-            <li role="presentation">
+            <li role="presentation" class="reset-active-on-tab">
               <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
               <div class="index-on-navtabs" style="color: <%= type.color %>;"><%= "#{index + 1}" %></div>
-              <a href="#<%= type.id %>" data-toggle="tab"><%= type.plurname %></a>
+              <a href="#<%= type.id %>" data-toggle="tab" class="reset-active-on-tab"><%= type.plurname %></a>
               <div class="v2-link-on-active">
                 <%= link_to "#typeEditModal", class: "v3-link", data: { toggle: "modal", id: "#{type.id}" } do %>
                   <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
@@ -97,10 +97,10 @@
 
     <div class="tab-content">
 
-      <% @types.each do |type| %>
+      <% @types.each_with_index do |type, index| %>
 
 
-      <% if type == @types.first %>
+      <% if index == 0 %>
     <!--****************************** CONTENU SI PREMIER TAB DES TYPES ******************************-->
     <div role="tabpanel" class="tab-pane active" id="<%= type.id %>">
 
@@ -151,11 +151,11 @@
         <!--*********** EACH TYPE PRODUCTS CONTAINER START ***********-->
         <div class="dashboardv2-left-menu">
           <ul class="nav nav-pills nav-stacked">
-            <% type.products.each do |product| %>
+            <% type.products.each_with_index do |product, index| %>
 
 
-                <% if type.products.first == product %>
-            <li role="presentation" class="active">
+                <% if index == 0 %>
+            <li role="presentation" class="other-active-to-remove">
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
@@ -171,7 +171,7 @@
             </li>
 
         <% else %>
-            <li role="presentation">
+            <li role="presentation" class="other-active-to-remove">
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
@@ -431,13 +431,13 @@
 
     <div class="dashboardv2-left-menu">
       <ul class="nav nav-pills nav-stacked">
-        <% type.products.each do |product| %>
+        <% type.products.each_with_index do |product, index| %>
 
 
-              <% if product == type.products.first %>
-            <li role="presentation" class="active">
+              <% if index == 0 %>
+            <li role="presentation" class="other-active-to-remove">
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
-              <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
+              <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab" class="add-active-to-tab"><%= product.title %></a>
               <div class="v2-link-on-active">
                 <%= link_to "#productEditModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
                     <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
@@ -450,7 +450,7 @@
               </div>
             </li>
         <% else %>
-            <li role="presentation">
+            <li role="presentation" class="other-active-to-remove">
               <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
@@ -689,11 +689,11 @@
     <div class="tab-content">
 
       <% @types.each do |type| %>
-        <% type.products.each do |product| %>
+        <% type.products.each_with_index do |product, index| %>
 
-          <% if product == type.products.first %>
+          <% if index == 0 %>
 
-            <div role="tabpanel" class="tab-pane" id="<%= "#{product.id}" + "produit" + "#{type.id}" %>">
+            <div role="tabpanel" class="tab-pane tab-to-reset" id="<%= "#{product.id}" + "produit" + "#{type.id}" %>">
 
               <div class="v2-fullpage-item-01-header">
                  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= type.plurname %></div>
@@ -932,7 +932,7 @@
 
           <% else %>
 
-            <div role="tabpanel" class="tab-pane" id="<%= "#{product.id}" + "produit" + "#{type.id}" %>">
+            <div role="tabpanel" class="tab-pane tab-to-reset" id="<%= "#{product.id}" + "produit" + "#{type.id}" %>">
 
               <div class="v2-fullpage-item-01-header">
                  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= type.plurname %></div>
