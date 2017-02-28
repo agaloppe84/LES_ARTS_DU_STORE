@@ -1,0 +1,20 @@
+<div class="index-header">
+
+
+
+</div>
+
+<div class="fullpage-indexv2">
+  <div class="filter-trigger">Catégories</div>
+  <div class="filter-container">
+    <div class="flex-with-js">
+      <% @types.each do |type| %>
+        <div class="type-namev2" id="typeid-<%= type.id %>" data-type="<%= type %>"><%= type.name %></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="filter-overlay">test</div>
+</div>
+
+
+

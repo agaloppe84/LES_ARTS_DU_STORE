@@ -10,3 +10,16 @@ $('#albumEditModal').on('show.bs.modal', function (event) {
       }
     });
 })
+
+
+
+    var menuitem = $(".type-namev2");
+    var type = menuitem.data('type');
+    alert(type);
+
+
+$(".type-namev2").click(function() {
+    var menuitem = $(".type-namev2");
+    var type = menuitem.data('type');
+    $(this).toggleClass('activemenu');
+});

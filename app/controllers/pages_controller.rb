@@ -60,4 +60,8 @@ class PagesController < ApplicationController
     @last_promo = Promo.all.last
   end
 
+  def indexv2
+    @types = Type.all
+  end
+
 end

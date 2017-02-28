@@ -14,6 +14,7 @@ resources :types
   get 'contact' => 'pages#contact'
   get 'dashboard' => 'pages#dashboard'
   get 'promotions' => 'pages#promotions'
+  get 'indexv2' => 'pages#indexv2'
   # get 'promo' => 'pages#promo'
 
   resources :types do

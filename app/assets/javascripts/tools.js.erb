@@ -1,0 +1,22 @@
+<% n3 = (1..20) %>
+
+<% trigger_numbers = n3 %>
+
+
+
+
+<% trigger_numbers.each_with_index do |number, index| %>
+  $('.trig-<%= number %>').click(function() {
+      $( ".targ-<%= number %>-slide-up" ).toggle("slide", { direction: "up" }, 400);
+      $( ".targ-<%= number %>-slide-right" ).toggle("slide", { direction: "right" }, 400);
+      $( ".targ-<%= number %>-slide-down" ).toggle("slide", { direction: "down" }, 400);
+      $( ".targ-<%= number %>-slide-left" ).toggle("slide", { direction: "left" }, 400);
+  });
+<% end %>
+
+
+<% trigger_numbers.each_with_index do |number, index| %>
+  $('.active-trig-<%= number %>').click(function() {
+      $( this ).toggleClass("active-targ-<%= number %>");
+  });
+<% end %>
