@@ -10,3 +10,5 @@ $('.reset-active-on-tab').click(function() {
 $('.add-active-to-tab').click(function() {
     $('.tab-to-active').addClass('active');
 });
+
+

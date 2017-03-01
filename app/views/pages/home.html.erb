@@ -9,7 +9,8 @@
 
 
 </div> -->
-
+<%= link_to "test", dashboard_quotations_path %>
+<%= link_to "New devis", new_quotation_path %>
 
 <div class="carousel slide carousel-fade" data-ride="carousel">
     <!-- Wrapper for slides -->
@@ -48,12 +49,12 @@
     </div>
   <% end %>
 
-  <%= link_to promotions_path(@last_promo) do %>
+  <%= link_to type_promo_path(@last_promo.type, @last_promo) do %>
     <div class="flex-one">
 
       <div class="home-small-container-item">
         <div class="home-small-header">Dernière promo</div>
-        <div class="home-small-header-title"><%= "#{@promos.last.title}" %></div>
+        <div class="home-small-header-title"><%= "#{@last_promo.title}" %></div>
       </div>
 
       <%= image_tag("price.svg", size: "28x28", alt: "Devis") %>
@@ -62,6 +63,7 @@
   <% end %>
 
 
+<%= link_to photos_path do %>
   <div class="flex-one">
 
     <div class="home-small-container-item">
@@ -72,6 +74,7 @@
     <%= image_tag("pictures.svg", size: "28x28", alt: "Devis") %>
 
   </div>
+<% end %>
 
 
 

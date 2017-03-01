@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015163621) do
+ActiveRecord::Schema.define(version: 20170228140047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,21 @@ ActiveRecord::Schema.define(version: 20161015163621) do
   end
 
   add_index "promos", ["type_id"], name: "index_promos_on_type_id", using: :btree
+
+  create_table "quotations", force: :cascade do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "firstname"
+    t.string   "city"
+    t.string   "phone"
+    t.string   "zipcode"
+    t.string   "blindttype"
+    t.text     "message"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "address"
+    t.boolean  "treated",    default: false
+  end
 
   create_table "types", force: :cascade do |t|
     t.string   "name"

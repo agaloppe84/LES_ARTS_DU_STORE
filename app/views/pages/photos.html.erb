@@ -1,0 +1,8 @@
+ <% @albums.each do |album| %>
+  <%= album.name %>
+
+  <% album.photos.each do |photo| %>
+    <%= cl_image_tag photo.path, width: '100px', height: '50px' %>
+  <% end %>
+
+ <% end %>

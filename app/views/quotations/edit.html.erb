@@ -1,0 +1,16 @@
+<%= simple_form_for (@quotation) do |f| %>
+
+    <%= f.input :email %>
+    <%= f.input :name %>
+    <%= f.input :firstname %>
+    <%= f.input :city %>
+    <%= f.input :phone %>
+    <%= f.input :zipcode %>
+    <%= f.input :address %>
+    <%= f.input :blindttype, collection: @typesname %>
+    <%= f.input :message %>
+    <%= f.input :treated %>
+    <%= f.submit "Devis gratuit", :class => 'submit-button-on-modal' %>
+
+
+<% end %>

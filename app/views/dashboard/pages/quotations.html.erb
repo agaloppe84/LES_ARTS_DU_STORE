@@ -1,0 +1,223 @@
+<div class="fullpage-quotation">
+
+
+
+  <div class="full-quota-left">
+  <div class="quota-filter-header">
+    <div class="quota-filter-header-text">Toutes les demandes</div>
+    <div class="quota-filter-header-count"><%= @quotations.count %></div>
+  </div>
+<% @quotations.reverse.each do |quotation| %>
+
+<% content_for :grostest do %>
+  <script>
+  $( ".quot-<%= quotation.id %>" ).click(function() {
+    var quotId = "<%= quotation.id %>";
+    var quotBlindtype = "<%= quotation.blindttype %>";
+    var quotName = "<%= quotation.name.capitalize %>";
+    var quotFirstname = "<%= quotation.firstname %>";
+    var quotZipcode = "<%= quotation.zipcode %>";
+    var quotCity = "<%= quotation.city.capitalize %>";
+    var quotEmail = "<%= quotation.email %>";
+    var quotMessage = "<%= quotation.message.gsub(/["'();]/, ' ') %>";
+    var quotPhone = "<%= quotation.phone %>";
+    var quotTreated = "<%= quotation.treated %>";
+
+    if (quotTreated == 'false'){
+      $( ".waiting-color" ).removeClass('quot-green');
+      $( ".waiting-color" ).addClass('quot-red');
+      $( ".waiting-text" ).removeClass('waiting-green');
+      $( ".waiting-text" ).addClass('waiting-red');
+      $( ".waiting-text" ).text( "Bad" );
+    } else {
+      $( ".waiting-color" ).removeClass('quot-red');
+      $( ".waiting-color" ).addClass('quot-green');
+      $( ".waiting-text" ).removeClass('waiting-red');
+      $( ".waiting-text" ).addClass('waiting-green');
+      $( ".waiting-text" ).text( "Ok" );
+    }
+
+    console.log(quotTreated);
+
+    $( ".r01" ).text( quotId );
+    $( ".r02" ).text( quotBlindtype );
+    $( ".r03" ).text( quotName + " " + quotFirstname );
+    $( ".r06" ).text( quotCity + " - " + quotZipcode );
+    $( ".r07" ).text( quotEmail );
+    $( ".r08" ).text( quotMessage );
+    $( ".r09" ).text( quotPhone );
+  });
+
+  $( ".qb-<%= quotation.id %>" ).click(function() {
+    $(".quota-dynamic-<%= quotation.id %> .form-group :checkbox")[0].checked = true;
+  });
+
+  $(document).ready(function(){
+    setInterval(function(){
+        location.reload();
+    }, 120000);
+  });
+
+  </script>
+<% end %>
+
+
+
+  <div class="quotation-container">
+
+    <div class="quot-item-small">
+      <div class="quot-item-content quota-big-number"><%= quotation.id %></div>
+    </div>
+
+
+    <div class="quot-item-small quot-margin">
+      <div class="quot-item-title">Crée le : </div>
+      <% if quotation.created_at < (DateTime.now + 0.5) %>
+        <div class="quot-item-content"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% elsif quotation.created_at < (DateTime.now + 1) %>
+        <div class="quot-item-content"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% elsif quotation.created_at < (DateTime.now + 2) %>
+        <div class="quot-item-content"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% elsif quotation.created_at > (DateTime.now + 2) %>
+        <div class="quot-item-content red-warning"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% end %>
+    </div>
+    <div class="quot-item">
+      <div class="quot-item-title">Nom : </div>
+      <div class="quot-item-content quota-big-number"><%= quotation.name.capitalize %></div>
+    </div>
+    <div class="quot-item">
+      <div class="quot-item-title">Ville : </div>
+      <div class="quot-item-content quota-big-number"><%= quotation.city %></div>
+    </div>
+    <div class="quot-item">
+      <div class="quot-item-title">Etat : </div>
+      <% if quotation.treated == true %>
+        <div class="quot-item-content treated-success">Traitée</div>
+      <% else %>
+        <div class="quot-item-content treated-failed">Non traitée</div>
+      <% end %>
+    </div>
+    <div class="quot-item">
+      <% if quotation.treated? %>
+      <% else %>
+        <%= simple_form_for (quotation) do |f| %>
+          <div class="quota-dynamic-<%= quotation.id %> hidden-quota-checkbox"><%= f.input :treated %></div>
+          <%= f.submit "Done", class: "quota-button qb-#{quotation.id}" %>
+        <% end %>
+      <% end %>
+      <div class="quot-<%= quotation.id %> quota-alt-button">
+        <div>Voir</div>
+      </div>
+    </div>
+
+  </div>
+<% end %>
+
+
+
+<div class="quota-filter-header qfh-margin">
+  <div class="quota-filter-header-text">Non traitées</div>
+  <div class="quota-filter-header-count"><%= @non_treated_quotas.count %></div>
+</div>
+
+<% @non_treated_quotas.reverse.each do |quotation| %>
+  <div class="quotation-container">
+
+    <div class="quot-item-small">
+      <div class="quot-item-content quota-big-number"><%= quotation.id %></div>
+    </div>
+
+
+    <div class="quot-item-small quot-margin">
+      <div class="quot-item-title">Crée le : </div>
+      <% if quotation.created_at < (DateTime.now + 0.5) %>
+        <div class="quot-item-content"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% elsif quotation.created_at < (DateTime.now + 1) %>
+        <div class="quot-item-content"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% elsif quotation.created_at < (DateTime.now + 2) %>
+        <div class="quot-item-content"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% elsif quotation.created_at > (DateTime.now + 2) %>
+        <div class="quot-item-content red-warning"><%= "#{quotation.created_at.day}/#{quotation.created_at.month}/#{quotation.created_at.year}" %></div>
+      <% end %>
+    </div>
+    <div class="quot-item">
+      <div class="quot-item-title">Nom : </div>
+      <div class="quot-item-content quota-big-number"><%= quotation.name.capitalize %></div>
+    </div>
+    <div class="quot-item">
+      <div class="quot-item-title">Ville : </div>
+      <div class="quot-item-content quota-big-number"><%= quotation.city %></div>
+    </div>
+    <div class="quot-item">
+      <div class="quot-item-title">Etat : </div>
+      <% if quotation.treated == true %>
+        <div class="quot-item-content treated-success">Traitée</div>
+      <% else %>
+        <div class="quot-item-content treated-failed">Non traitée</div>
+      <% end %>
+    </div>
+    <div class="quot-item">
+      <% if quotation.treated? %>
+      <% else %>
+        <%= simple_form_for (quotation) do |f| %>
+          <div class="quota-dynamic-<%= quotation.id %> hidden-quota-checkbox"><%= f.input :treated %></div>
+          <%= f.submit "Done", class: "quota-button qb-#{quotation.id}" %>
+        <% end %>
+      <% end %>
+      <div class="quot-<%= quotation.id %> quota-alt-button">
+        <div>Voir</div>
+      </div>
+    </div>
+
+  </div>
+<% end %>
+
+
+
+</div>
+
+
+<div class="full-quota-right">
+  <div class="quota-right-header">
+    <div class="quota-header-text">Demande de devis n°</div>
+    <div class="r01"></div>
+    <div class="waiting-text"></div>
+  </div>
+  <div class="quota-right-item">
+    <div class="blindtype-class">Produit</div>
+    <div class="r02"></div>
+  </div>
+  <div class="quota-right-item">
+    <div class="name-class">Nom</div>
+    <div class="r03"></div>
+  </div>
+  <div class="quota-right-item">
+    <div class="city-class">Ville</div>
+    <div class="r06"></div>
+  </div>
+  <div class="quota-right-item">
+    <div class="email-class">Email</div>
+    <div class="r07"></div>
+  </div>
+  <div class="quota-right-item">
+    <div class="phone-class">Telephone</div>
+    <div class="r09"></div>
+  </div>
+  <div class="quota-right-item-message">
+    <div class="message-class">Message</div>
+  </div>
+  <div class="r08"></div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+

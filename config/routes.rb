@@ -7,13 +7,19 @@ resources :types
     root to: "users#index"
   end
 
+  namespace :dashboard do
+    get 'quotations' => 'pages#quotations'
+  end
+
   devise_for :users
   root to: 'pages#home'
   get 'services' => 'pages#services'
   get 'devis' => 'pages#devis'
   get 'contact' => 'pages#contact'
+  get 'photos' => 'pages#photos'
   get 'dashboard' => 'pages#dashboard'
   get 'promotions' => 'pages#promotions'
+  get 'quotaconfirm' => 'pages#quotaconfirm'
   # get 'promo' => 'pages#promo'
 
   resources :types do
@@ -25,7 +31,8 @@ resources :types
       resources :brands
     end
   end
-
+  resources :quotations, only: [:index, :new, :create, :edit, :update]
+  get 'confirmation', to: 'quotations#show'
 
   mount Attachinary::Engine => "/attachinary"
   # The priority is based upon order of creation: first created -> highest priority.

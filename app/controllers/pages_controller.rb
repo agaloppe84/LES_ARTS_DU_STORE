@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :services, :devis, :contact, :promo]
+  skip_before_action :authenticate_user!, only: [:home, :services, :devis, :contact, :promo, :photos]
   def home
 
     @products = Product.all
     @promos = Promo.all
     @albums = Album.all
-    @last_promo = Promo.all.last
+    @last_promo = Promo.where("current = 'true'").last
     @types = Type.all
 
     @photos = 0
@@ -32,6 +32,10 @@ class PagesController < ApplicationController
   def devis
   end
 
+  def photos
+    @albums = Album.all
+  end
+
   def contact
   end
 
@@ -52,7 +56,9 @@ class PagesController < ApplicationController
       @photos = @photos + album.photos.count
       @photos
     end
+  end
 
+  def quotaconfirm
 
   end
 
