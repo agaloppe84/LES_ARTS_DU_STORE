@@ -1744,7 +1744,7 @@
 }
 
 .quot-margin {
-  margin-right: 110px;
+  margin-right: 50px;
 }
 
 .quota-big-number {
@@ -1754,21 +1754,22 @@
 
 .fullpage-quotation {
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  align-items: stretch;
 }
 
 .full-quota-left {
   width: 60%;
-  height: 100%;
+  min-height: 100%;
   background-color: rgba(240,240,240,0.9);
   padding: 25px;
+  overflow-y: scroll;
 }
 
 .full-quota-right {
   width: 40%;
   min-height: 100%;
-  border-left: 1px solid lightgrey;
 }
 
 .red-warning {
@@ -1852,7 +1853,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 25px;
+  padding-left: 50px;
 }
 
 .quota-right-item-message {
@@ -1871,48 +1872,48 @@
 
 .blindtype-class {
   margin-right: 30px;
-  width: 90px;
+  width: 40px;
   font-family: "Circular-Book";
   font-size: 12px;
 }
 .name-class {
   margin-right: 30px;
-  width: 90px;
+  width: 40px;
   font-family: "Circular-Book";
   font-size: 12px;
 }
 .firstname-class {
   margin-right: 30px;
-  width: 90px;
+  width: 40px;
   font-family: "Circular-Book";
   font-size: 12px;
 }
 .zipcode-class {
   margin-right: 30px;
-  width: 90px;
+  width: 40px;
   font-family: "Circular-Book";
   font-size: 12px;
 }
 .city-class {
   margin-right: 30px;
-  width: 90px;
+  width: 40px;
   font-family: "Circular-Book";
   font-size: 12px;
 }
 .email-class {
   margin-right: 30px;
-  width: 90px;
+  width: 40px;
   font-family: "Circular-Book";
   font-size: 12px;
 }
 .message-class {
-  margin-right: 30px;
-  width: 90px;
+  margin-left: 12px;
+  width: 40px;
   font-family: "Circular-Bold";
 }
 .phone-class {
   margin-right: 30px;
-  width: 90px;
+  width: 40px;
   font-family: "Circular-Book";
   font-size: 12px;
 }
@@ -2018,38 +2019,240 @@
 .quota-filter-header {
   width: 100%;
   height: 60px;
-  border-top: 1px solid lightgrey;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 15px;
   padding-left: 25px;
 }
 
 .quota-filter-header-text {
-  font-size: 24px;
-  font-family: "Roboto";
+  font-size: 20px;
+  font-family: "Circular-Bold";
   font-weight: 100;
 }
 
 .quota-filter-header-count {
   width: 30px;
-  font-size: 18px;
-  font-family: "Circular-Book";
+  font-size: 20px;
+  font-family: "Circular-Bold";
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .qfh-margin {
   margin-top: 100px;
+  border-top: 1px solid lightgrey;
+}
+
+.quota-form-fullpage {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 22%;
+  padding-right: 22%;
+}
+
+.quota-form-fullpage .form-control {
+  height: 45px;
+  padding-left: 20px;
+}
+
+.quota-form-fullpage .form-group {
+  width: 100%;
+}
+
+.quota-form-fullpage .form-control:focus {
+  height: 45px;
+  border: 1px solid $orange;
+}
+
+.quota-form-label {
+  font-size: 12px;
+  font-family: "Circular-Book";
+  width: 110px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 300;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding-left: 4px;
+}
+
+.quota-form-layout-one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.quota-form-layout-one-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 47%;
+}
+
+.orange-border-form {
+  color: rgba(55,55,55,0.9);
+  transition: 0.3s ease;
+  font-family: "Circular-Bold";
+  letter-spacing: -0.5px;
+}
+
+.orange-dyn-text {
+  color: $orange;
+  transition: 0.3s ease;
+}
+
+select #quotation_blindttype .select {
+  border-radius: 1px !important;
+}
+
+.small-quota-icon {
+  margin-left: 8px;
+}
+
+.ff-flex-start {
+  width: 25%;
+}
+
+.ff-flex-middle {
+  width: 18%;
+}
+
+.ff-flex-end {
+  width: 45%;
+}
+
+.ff-flex-top {
+  width: 30%;
+}
+
+textarea#quotation_message {
+  height: 200px;
+  padding-top: 20px;
 }
 
 
 
+.quota-layout-header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+.quota-layout-header-text {
+  font-family: "Circular-Bold";
+  letter-spacing: -0.5px;
+  font-size: 22px;
+}
+
+.quota-countdown {
+  font-size: 16px;
+  font-family: "Circular-Bold";
+  font-weight: 100;
+}
+
+.quota-countdown-red {
+  font-size: 16px;
+  font-family: "Circular-Bold";
+  font-weight: 100;
+  color: $red;
+}
+
+.quota-countdown-green {
+  font-size: 16px;
+  font-family: "Circular-Bold";
+  font-weight: 100;
+  color: $green;
+}
 
 
+.confirmation-fullpage {
+  background-color: rgba(240,240,240,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
 
+.conf-fullpage-item {
+  width: 30%;
+  height: 45%;
+  background-color: white;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+}
 
+.conf-text {
+  font-size: 20px;
+  font-family: "Circular-Bold";
+  font-weight: 100;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
 
+.conf-text-small {
+  font-size: 13px;
+  font-family: "Circular-Medium";
+  opacity: 0.7;
+}
 
+.conf-text-email {
+  font-size: 18px;
+  font-family: "Circular-Book";
+  letter-spacing: -0.3px;
+  color: $green;
+}
+
+.bigsize {
+  font-size: 32px;
+  margin-top: 30px;
+}
+
+.conf-abs-container {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-button {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    color: $red;
+    border-color: $red;
+  }
+}
 
 
 

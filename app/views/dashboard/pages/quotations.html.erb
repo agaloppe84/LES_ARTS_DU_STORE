@@ -4,7 +4,7 @@
 
   <div class="full-quota-left">
   <div class="quota-filter-header">
-    <div class="quota-filter-header-text">Toutes les demandes</div>
+    <div class="quota-filter-header-text">All</div>
     <div class="quota-filter-header-count"><%= @quotations.count %></div>
   </div>
 <% @quotations.reverse.each do |quotation| %>
@@ -91,6 +91,18 @@
       <div class="quot-item-content quota-big-number"><%= quotation.city %></div>
     </div>
     <div class="quot-item">
+      <div class="quot-item-title">Posté : </div>
+      <% @hours = (((quotation.created_at - DateTime.now)/60/60).round(2)) - (((quotation.created_at - DateTime.now)/60/60).round(2)) %>
+      <% @hours_good = @hours - (((quotation.created_at - DateTime.now)/60/60).round(2)) %>
+      <% if @hours_good > 24 and quotation.treated == false %>
+        <div class="quota-countdown-red"><%= "#{@countdown = @hours_good.round(1)} Hrs"  %></div>
+      <% elsif quotation.treated == true %>
+        <div class="quota-countdown-green"><%= "#{@countdown = @hours_good.round(1)} Hrs"  %></div>
+      <% else %>
+        <div class="quota-countdown"><%= "#{@countdown = @hours_good.round(1)} Hrs"  %></div>
+      <% end %>
+    </div>
+    <div class="quot-item">
       <div class="quot-item-title">Etat : </div>
       <% if quotation.treated == true %>
         <div class="quot-item-content treated-success">Traitée</div>
@@ -117,7 +129,7 @@
 
 
 <div class="quota-filter-header qfh-margin">
-  <div class="quota-filter-header-text">Non traitées</div>
+  <div class="quota-filter-header-text">Pending</div>
   <div class="quota-filter-header-count"><%= @non_treated_quotas.count %></div>
 </div>
 
@@ -185,26 +197,27 @@
     <div class="waiting-text"></div>
   </div>
   <div class="quota-right-item">
-    <div class="blindtype-class">Produit</div>
+    <div class="blindtype-class"><i class="fa fa-product-hunt" aria-hidden="true"></i></div>
     <div class="r02"></div>
   </div>
   <div class="quota-right-item">
-    <div class="name-class">Nom</div>
+    <div class="name-class"><i class="fa fa-male" aria-hidden="true"></i></div>
     <div class="r03"></div>
   </div>
   <div class="quota-right-item">
-    <div class="city-class">Ville</div>
+    <div class="city-class"><i class="fa fa-location-arrow" aria-hidden="true"></i></div>
     <div class="r06"></div>
   </div>
   <div class="quota-right-item">
-    <div class="email-class">Email</div>
+    <div class="email-class"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
     <div class="r07"></div>
   </div>
   <div class="quota-right-item">
-    <div class="phone-class">Telephone</div>
+    <div class="phone-class"><i class="fa fa-phone" aria-hidden="true"></i></div>
     <div class="r09"></div>
   </div>
   <div class="quota-right-item-message">
+    <i class="fa fa-commenting-o" aria-hidden="true"></i>
     <div class="message-class">Message</div>
   </div>
   <div class="r08"></div>

@@ -20,7 +20,7 @@ class QuotationsController < ApplicationController
   def create
     @quotation = Quotation.new(quotation_params)
     if @quotation.save
-      redirect_to confirmation_path(name: @quotation.name, firstname: @quotation.firstname)
+      redirect_to confirmation_path(name: @quotation.name, firstname: @quotation.firstname, email: @quotation.email)
     else
       render :new
     end

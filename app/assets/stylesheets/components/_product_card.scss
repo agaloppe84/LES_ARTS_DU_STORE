@@ -569,8 +569,8 @@ a:hover {
   background-color: transparent;
   opacity: 1;
   color: rgba(5,5,5,0.7);
-  font-family: "Circular-Book";
-  font-size: 15px;
+  font-family: "Circular-Bold";
+  font-size: 13px;
   transition: 0.5s ease;
 }
 
@@ -578,7 +578,7 @@ a:hover {
   background-color: transparent;
   color: rgba(5,5,5,0.7);
   opacity: 1;
-  font-family: "Circular-Book";
+  font-family: "Circular-Bold";
 }
 
 
@@ -589,7 +589,7 @@ a:hover {
   color: rgba(5,5,5,0.7);
   opacity: 1;
   font-family: "Circular-Book";
-  font-size: 15px;
+  font-size: 13px;
   transition: 0.5s ease;
 }
 
@@ -598,7 +598,7 @@ a:hover {
   color: rgba(5,5,5,0.7);
   opacity: 0.5;
   font-family: "Circular-Book";
-  font-size: 15px;
+  font-size: 13px;
   transition: 0.5s ease;
 }
 
@@ -607,7 +607,7 @@ a:hover {
   opacity: 1;
   color: rgba(5,5,5,0.7);
   font-family: "Circular-Book";
-  font-size: 15px;
+  font-size: 13px;
   transition: 0.5s ease;
 }
 
@@ -616,7 +616,7 @@ a:hover {
   opacity: 1;
   color: rgba(5,5,5,0.7);
   font-family: "Circular-Book";
-  font-size: 15px;
+  font-size: 13px;
   transition: 0.5s ease;
 }
 
@@ -685,7 +685,8 @@ a:hover {
 
 .fullpage-show {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  flex-direction: column;
 }
 
 
