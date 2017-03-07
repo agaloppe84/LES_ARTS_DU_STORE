@@ -9,6 +9,7 @@ resources :types
 
   namespace :dashboard do
     get 'quotations' => 'pages#quotations'
+    get 'pathfilter' => 'pages#pathfilter'
   end
 
   devise_for :users

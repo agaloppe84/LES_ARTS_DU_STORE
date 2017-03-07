@@ -1,4 +1,4 @@
-<div class="navigation-small-top">
+<div class="navigation-v2-fixed">
 
   <%= image_tag("nav-wheel.svg", size: "20x20", alt: "Devis") %>
 
@@ -34,7 +34,7 @@
 
 
   <div class="nav-small-top-link">
-      <%= link_to devis_path do %>
+      <%= link_to new_quotation_path do %>
         <div class="nav-small-link-design">devis</div>
       <% end %>
   </div>
@@ -43,8 +43,8 @@
   <% if user_signed_in? %>
 
       <div class="nav-small-top-link">
-        <%= link_to dashboard_path do %>
-          <div class="nav-small-link-design">Dashboard</div>
+        <%= link_to dashboard_pathfilter_path do %>
+          <div class="nav-small-link-design">dashboard</div>
         <% end %>
       </div>
 
@@ -52,15 +52,6 @@
         <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "admin-button-destroy" %>
       </div>
 
-  <% else %>
-
-      <div class="nav-small-top-link">
-        <%= link_to new_user_session_path do %>
-          <div class="nav-small-link-design">Connexion</div>
-        <% end %>
-      </div>
-
   <% end %>
-
 
 </div>

@@ -1,15 +1,14 @@
 <div class="fullpage-quotation">
 
 
-
   <div class="full-quota-left">
   <div class="quota-filter-header">
-    <div class="quota-filter-header-text">All</div>
-    <div class="quota-filter-header-count"><%= @quotations.count %></div>
+    <div class="quota-filter-header-text">Pending</div>
+    <div class="quota-filter-header-count"><%= @non_treated_quotas.count %></div>
   </div>
-<% @quotations.reverse.each do |quotation| %>
+<% @non_treated_quotas.reverse.each do |quotation| %>
 
-<% content_for :grostest do %>
+<% content_for :nontreatedquotas do %>
   <script>
   $( ".quot-<%= quotation.id %>" ).click(function() {
     var quotId = "<%= quotation.id %>";
@@ -37,7 +36,6 @@
       $( ".waiting-text" ).text( "Ok" );
     }
 
-    console.log(quotTreated);
 
     $( ".r01" ).text( quotId );
     $( ".r02" ).text( quotBlindtype );
@@ -129,11 +127,57 @@
 
 
 <div class="quota-filter-header qfh-margin">
-  <div class="quota-filter-header-text">Pending</div>
-  <div class="quota-filter-header-count"><%= @non_treated_quotas.count %></div>
+  <div class="quota-filter-header-text">All</div>
+  <div class="quota-filter-header-count"><%= @quotations.count %></div>
 </div>
 
-<% @non_treated_quotas.reverse.each do |quotation| %>
+<% @quotations.reverse.each do |quotation| %>
+
+<% content_for :allquotas do %>
+  <script>
+  $( ".quot-<%= quotation.id %>" ).click(function() {
+    var quotId = "<%= quotation.id %>";
+    var quotBlindtype = "<%= quotation.blindttype %>";
+    var quotName = "<%= quotation.name.capitalize %>";
+    var quotFirstname = "<%= quotation.firstname %>";
+    var quotZipcode = "<%= quotation.zipcode %>";
+    var quotCity = "<%= quotation.city.capitalize %>";
+    var quotEmail = "<%= quotation.email %>";
+    var quotMessage = "<%= quotation.message.gsub(/["'();]/, ' ') %>";
+    var quotPhone = "<%= quotation.phone %>";
+    var quotTreated = "<%= quotation.treated %>";
+
+    if (quotTreated == 'false'){
+      $( ".waiting-color" ).removeClass('quot-green');
+      $( ".waiting-color" ).addClass('quot-red');
+      $( ".waiting-text" ).removeClass('waiting-green');
+      $( ".waiting-text" ).addClass('waiting-red');
+      $( ".waiting-text" ).text( "Bad" );
+    } else {
+      $( ".waiting-color" ).removeClass('quot-red');
+      $( ".waiting-color" ).addClass('quot-green');
+      $( ".waiting-text" ).removeClass('waiting-red');
+      $( ".waiting-text" ).addClass('waiting-green');
+      $( ".waiting-text" ).text( "Ok" );
+    }
+
+
+    $( ".r01" ).text( quotId );
+    $( ".r02" ).text( quotBlindtype );
+    $( ".r03" ).text( quotName + " " + quotFirstname );
+    $( ".r06" ).text( quotCity + " - " + quotZipcode );
+    $( ".r07" ).text( quotEmail );
+    $( ".r08" ).text( quotMessage );
+    $( ".r09" ).text( quotPhone );
+  });
+
+  $( ".qb-<%= quotation.id %>" ).click(function() {
+    $(".quota-dynamic-<%= quotation.id %> .form-group :checkbox")[0].checked = true;
+  });
+  </script>
+<% end %>
+
+
   <div class="quotation-container">
 
     <div class="quot-item-small">

@@ -1,6 +1,6 @@
 class QuotationsController < ApplicationController
   before_action :set_quotation, only: [:edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
     @quotations = Quotation.all

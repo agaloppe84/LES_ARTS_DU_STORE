@@ -1770,6 +1770,8 @@
 .full-quota-right {
   width: 40%;
   min-height: 100%;
+  position: fixed;
+  right: 0;
 }
 
 .red-warning {
@@ -2254,8 +2256,15 @@ textarea#quotation_message {
   }
 }
 
+.item01 {
+  border: 1px solid red;
+  height: 1px;
+  margin-bottom: 5px;
+}
 
-
+.testooo {
+  width: 100px;
+}
 
 
 
