@@ -78,17 +78,6 @@
             </div>
 
 
-            <%= render partial: "product_in_index", locals: {product: product} %>
-
-            <% content_for :afterjs do %>
-              <script>
-                $(document).ready(function() {
-                  $(".product-modal-button-<%= product.id %>").click(function() {
-                  $(".form-create-prospect-<%= product.id %>").removeClass("hidden");
-                  });
-                });
-              </script>
-            <% end %>
 
           <% end %>
         </div>
@@ -142,17 +131,7 @@
                 </div>
               </div>
             </div>
-            <%= render partial: "product_in_index", locals: {product: product} %>
 
-            <% content_for :afterjs do %>
-              <script>
-                $(document).ready(function() {
-                  $(".product-modal-button-<%= product.id %>").click(function() {
-                  $(".form-create-prospect-<%= product.id %>").removeClass("hidden");
-                  });
-                });
-              </script>
-            <% end %>
 
         <% end %>
       </div>

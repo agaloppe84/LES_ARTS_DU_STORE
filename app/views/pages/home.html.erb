@@ -28,12 +28,11 @@
   <%= link_to types_path do %>
     <div class="flex-one">
 
-      <div class="home-small-container-item">
-        <div class="home-small-header">Nos produits</div>
-        <div class="home-small-header-title"><%= "#{@products.count} produits" %></div>
-      </div>
+      <%= image_tag("home-one.svg", size: "24x24", alt: "Devis") %>
 
-      <%= image_tag("store.svg", size: "28x28", alt: "Devis") %>
+      <div class="home-small-container-item">
+        <div class="home-small-header-title"><%= "Produits" %></div>
+      </div>
 
     </div>
   <% end %>
@@ -41,12 +40,11 @@
   <%= link_to type_promo_path(@last_promo.type, @last_promo) do %>
     <div class="flex-one">
 
-      <div class="home-small-container-item">
-        <div class="home-small-header">Dernière promo</div>
-        <div class="home-small-header-title"><%= "#{@last_promo.title}" %></div>
-      </div>
+      <%= image_tag("home-two.svg", size: "24x24", alt: "Devis") %>
 
-      <%= image_tag("price.svg", size: "28x28", alt: "Devis") %>
+      <div class="home-small-container-item">
+        <div class="home-small-header-title"><%= "Promos" %></div>
+      </div>
 
     </div>
   <% end %>
@@ -55,12 +53,11 @@
 <%= link_to photos_path do %>
   <div class="flex-one">
 
-    <div class="home-small-container-item">
-      <div class="home-small-header">Notre travail</div>
-      <div class="home-small-header-title"><%= "#{@photos} photos" %></div>
-    </div>
+    <%= image_tag("home-three.svg", size: "24x24", alt: "Devis") %>
 
-    <%= image_tag("pictures.svg", size: "28x28", alt: "Devis") %>
+    <div class="home-small-container-item">
+      <div class="home-small-header-title"><%= "Photos" %></div>
+    </div>
 
   </div>
 <% end %>
