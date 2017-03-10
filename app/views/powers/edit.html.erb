@@ -11,6 +11,7 @@
 
 
 
+
 <div class="form-in-modal">
 
 <%= simple_form_for [@product.type, @product, @power] do |f| %>
@@ -18,22 +19,45 @@
   <div class="container-without-button">
 
       <div class="checkbox-inline-form">
-        <%= f.input :wind, label: false %>
-        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'wind.svg' %>);"></div>
-        <div class="label-on-modal-dashboard">Protection contre le Vent</div>
+
+        <div class="can-toggle demo-rebrand-2">
+          <input id="power_wind" type="checkbox" name="power[wind]">
+          <label for="power_wind">
+            <div class="can-toggle__switch"></div>
+            <div class="can-toggle__label-text">Protection contre le vent</div>
+          </label>
+        </div>
+
       </div>
 
-      <div class="checkbox-inline-form">
-        <%= f.input :cold, label: false %>
-        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'cold.svg' %>);"></div>
-        <div class="label-on-modal-dashboard">Protection contre le Froid</div>
-      </div>
 
       <div class="checkbox-inline-form">
-        <%= f.input :hot, label: false %>
-        <div class="v3-power-item-mini" style="background-image: url(<%= asset_path 'hot.svg' %>);"></div>
-        <div class="label-on-modal-dashboard">Protection contre la chaleur</div>
+
+        <div class="can-toggle demo-rebrand-2">
+          <input id="power_cold" type="checkbox" name="power[cold]" value="0">
+          <label for="power_cold">
+            <div class="can-toggle__switch"></div>
+            <div class="can-toggle__label-text">Protection contre le froid</div>
+          </label>
+        </div>
+
       </div>
+
+
+      <div class="checkbox-inline-form">
+
+        <div class="can-toggle demo-rebrand-2 power_hot">
+          <input id="power_hot" type="checkbox" name="power[hot]" class="boolean optional" value="1">
+          <label for="power_hot">
+            <div class="can-toggle__switch"></div>
+            <div class="can-toggle__label-text">Protection contre la chaleur</div>
+          </label>
+        </div>
+
+      </div>
+
+
+
 
       <div class="checkbox-inline-form">
         <%= f.input :humidity, label: false %>
@@ -104,8 +128,6 @@
 <% end %>
 
 </div>
-
-
 
 
 
