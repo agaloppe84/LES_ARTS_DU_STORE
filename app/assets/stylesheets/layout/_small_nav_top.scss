@@ -72,16 +72,15 @@
 
 
 .nav-small-link-design {
-  font-family: "Circular-Book";
+  font-family: "Camphor";
   color: rgba(15,15,15,0.7);
-  font-size: 14px;
-  transition: 0.4s ease;
+  font-size: 15px;
+  transition: 0.2s ease;
+  font-weight: 300;
 }
 
 
 .nav-small-link-design:hover {
-  font-family: "Circular-Book";
+  font-family: "Camphor";
   color: $orange;
-  font-size: 14px;
-  transition: 0.4s ease;
 }

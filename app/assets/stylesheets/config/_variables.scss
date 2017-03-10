@@ -40,15 +40,49 @@ $header-font: "Raleway", "Helvetica", "sans-serif";
 }
 
 
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Camphor';
+  src: font-url('Camphor-Light.eot?#iefix') format('embedded-opentype'),  font-url('Camphor-Light.woff') format('woff'), font-url('Camphor-Light.ttf')  format('truetype'), font-url('Camphor-Light.svg#Camphor-Light') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Camphor';
+  src: font-url('Camphor-Regular.eot?#iefix') format('embedded-opentype'),  font-url('Camphor-Regular.woff') format('woff'), font-url('Camphor-Regular.ttf')  format('truetype'), font-url('Camphor-Regular.svg#Camphor-Regular') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Camphor';
+  src: font-url('Camphor-Medium.eot?#iefix') format('embedded-opentype'),  font-url('Camphor-Medium.woff') format('woff'), font-url('Camphor-Medium.ttf')  format('truetype'), font-url('Camphor-Medium.svg#Camphor-Medium') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Camphor';
+  src: font-url('Camphor-Bold.eot?#iefix') format('embedded-opentype'),  font-url('Camphor-Bold.woff') format('woff'), font-url('Camphor-Bold.ttf')  format('truetype'), font-url('Camphor-Bold.svg#Camphor-Bold') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
 
 // Font-size and line-height
 $base-size: 16px;
@@ -62,6 +96,8 @@ $brand-color: #D23333;
 $mycolor1: #4EC1D6;
 $mycolor2: #4ED69E;
 $mycolor3: #A4D64E;
+
+$light-color-text: #6B7C93;
 
 $red: #EE5F5B;
 $blue: #469AE0;

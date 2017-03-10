@@ -737,11 +737,11 @@
 }
 
 .button-two {
-  font-family: "Circular-Bold";
-  color: rgba(55,55,55,0.9);
+  font-family: "Camphor";
+  color: $light-color-text;
   font-size: 17px;
   text-shadow: none;
-  letter-spacing: -0.4px;
+  font-weight: 200;
 }
 
 .brand-name-on-index {
@@ -896,10 +896,10 @@
 
 
 .big-title-v2 {
-  font-family: "Circular-Bold";
-  font-size: 15px;
-  letter-spacing: -0.3px;
-  color: rgba(55,55,55,0.9);
+  font-family: "Camphor";
+  font-size: 17px;
+  font-weight: 200;
+  color: $light-color-text;
 }
 
 .index-new-container {
@@ -917,10 +917,11 @@
   height: 25%;
   padding-left: 22px;
   padding-right: 22px;
-  font-family: "Circular-Book";
-  font-size: 12px;
+  font-family: "Camphor";
+  font-size: 15px;
   text-shadow: none;
-  color: rgba(55,55,55,0.8);
+  font-weight: 100;
+  color: $light-color-text;
 }
 
 .banner-on-index-content-v2 {
