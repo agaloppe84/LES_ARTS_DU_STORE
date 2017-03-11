@@ -2073,7 +2073,7 @@
 }
 
 .quota-form-label {
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Circular-Book";
   width: 110px;
   height: 30px;
@@ -2102,10 +2102,8 @@
 }
 
 .orange-border-form {
-  color: rgba(55,55,55,0.9);
+  color: $orange;
   transition: 0.3s ease;
-  font-family: "Circular-Bold";
-  letter-spacing: -0.5px;
 }
 
 .orange-dyn-text {

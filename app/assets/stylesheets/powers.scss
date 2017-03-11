@@ -28,11 +28,11 @@
     &:hover ~label { color: darken($can-toggle-off-color, 5%); }
     &:checked {
       ~ label {
-        &:hover { color: darken($can-toggle-on-color, 3%); }
+        &:hover { color: darken($can-toggle-on-color, 1%); }
 
         .can-toggle__switch {
-          background-color: lighten($can-toggle-on-color, 5%);
-          &:after { color: darken($can-toggle-on-color, 5%); }
+          background-color: lighten($can-toggle-on-color, 1%);
+          &:after { color: darken($can-toggle-on-color, 1%); }
         }
       }
 
@@ -184,6 +184,10 @@
     .can-toggle__label-text {
       flex: 1;
       padding-left: 20px;
+      width: 300px;
+      font-family: "Circular-Medium";
+      font-size: 14px;
+      color: rgba(55,55,55,0.5);
     }
 
     .can-toggle__switch {
@@ -270,7 +274,7 @@
       2px,   // Offset (distance btw switch and box)
       13px,  // Label font size
       13px,  // Switch font size
-      0 4px 4px rgba(black, 0.1) // Switch shadow on hover/focus
+      0 4px 4px rgba(black, 0) // Switch shadow on hover/focus
     );
   }
 
