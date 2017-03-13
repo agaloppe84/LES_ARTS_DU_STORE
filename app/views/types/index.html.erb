@@ -33,7 +33,7 @@
         <% if type.albums.any? %>
           <div class="banner-on-index" style="background-image: url(<%=  cl_image_path type.albums.last.photos.sample.path if type.albums.last.photos.any? %>);">
               <div class="banner-on-index-content-v2">
-                <%= type.plurname %>
+                <%= composed_plurname(type.name) %>
               </div>
           </div>
         <% end %>

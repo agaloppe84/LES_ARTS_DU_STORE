@@ -55,13 +55,13 @@ puts "Création des types de stores - START"
 # ------------------------- Création des types de stores ------------------------- #
 
 
-    moustiquaire =      Type.create!(name: 'moustiquaire', color:'#007CB9', plurname: 'Moustiquaires')
-    porte_de_garage =   Type.create!(name: 'porte de garage', color:'#007CB9', plurname: 'Portes de garage')
-    store_interieur =   Type.create!(name: 'store interieur', color:'#007CB9', plurname: 'Stores intérieurs')
-    store_exterieur =   Type.create!(name: 'store exterieur', color:'#007CB9', plurname: 'Stores extérieurs')
-    menuiserie =        Type.create!(name: 'menuiserie', color:'#007CB9', plurname: 'Menuiseries')
-    pergola =           Type.create!(name: 'pergola', color:'#007CB9', plurname: 'Pergolas')
-    volet_roulant =     Type.create!(name: 'volet roulant', color:'#007CB9', plurname: 'Volets roulants')
+    moustiquaire =      Type.create!(name: 'moustiquaire', color:'#007CB9')
+    porte_de_garage =   Type.create!(name: 'porte de garage', color:'#007CB9')
+    store_interieur =   Type.create!(name: 'store interieur', color:'#007CB9')
+    store_exterieur =   Type.create!(name: 'store exterieur', color:'#007CB9')
+    menuiserie =        Type.create!(name: 'menuiserie', color:'#007CB9')
+    pergola =           Type.create!(name: 'pergola', color:'#007CB9')
+    volet_roulant =     Type.create!(name: 'volet roulant', color:'#007CB9')
 
 
 # ------------------------- Création des types de stores ------------------------- #

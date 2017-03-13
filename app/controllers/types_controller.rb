@@ -50,7 +50,7 @@ class TypesController < ApplicationController
   end
 
   def type_params
-    params.require(:type).permit(:name, :color, :plurname)
+    params.require(:type).permit(:name, :color)
   end
 
 

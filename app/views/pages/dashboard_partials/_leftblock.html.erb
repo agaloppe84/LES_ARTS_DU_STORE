@@ -36,7 +36,7 @@
             <li role="presentation" class="active">
               <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
               <div class="index-on-navtabs" style="color: <%= type.color %>;"><%= "#{index + 1}" %></div>
-              <a href="#<%= type.id %>" data-toggle="tab" class="reset-active-on-tab"><%= type.plurname %></a>
+              <a href="#<%= type.id %>" data-toggle="tab" class="reset-active-on-tab"><%= composed_plurname(type.name) %></a>
               <div class="v2-link-on-active">
                 <%= link_to "#typeEditModal", class: "v3-link", data: { toggle: "modal", id: "#{type.id}" } do %>
                     <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
@@ -52,7 +52,7 @@
             <li role="presentation" class="reset-active-on-tab">
               <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
               <div class="index-on-navtabs" style="color: <%= type.color %>;"><%= "#{index + 1}" %></div>
-              <a href="#<%= type.id %>" data-toggle="tab" class="reset-active-on-tab"><%= type.plurname %></a>
+              <a href="#<%= type.id %>" data-toggle="tab" class="reset-active-on-tab"><%= composed_plurname(type.name) %></a>
               <div class="v2-link-on-active">
                 <%= link_to "#typeEditModal", class: "v3-link", data: { toggle: "modal", id: "#{type.id}" } do %>
                   <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
