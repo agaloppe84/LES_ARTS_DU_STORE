@@ -6,7 +6,7 @@ $('#albumEditModal').on('show.bs.modal', function (event) {
     $.ajax({
       url: "types/" + typeId + "/albums/" + albumId + "/edit",
       success: function(data){
-          $modal.find('.modal-body').html(data)
+          $modal.find('.modal-content').html(data)
       }
     });
 })

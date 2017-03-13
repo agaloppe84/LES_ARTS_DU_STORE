@@ -1,7 +1,7 @@
   <div role="tabpanel" class="tab-pane tab-to-reset" id="<%= "#{product.id}" + "produit" + "#{type.id}" %>">
 
               <div class="v2-fullpage-item-01-header">
-                 <div class="header-hard-dashboard" style="opacity: 0.4;"><%= type.plurname %></div>
+                 <div class="header-hard-dashboard" style="opacity: 0.4;"><%= composed_plurname(type.name) %></div>
                  <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
                  <div class="header-hard-dashboard"><%= product.title %></div>
               </div>

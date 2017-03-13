@@ -9,12 +9,12 @@
         <% if type == @types.first %>
             <li role="presentation" class="active">
               <div class="menu-index-active" style="background-image: url(<%=  typeicon(type)  %>);"></div>
-              <a href="#<%= type.id %>" data-toggle="tab"><%= type.plurname %></a>
+              <a href="#<%= type.id %>" data-toggle="tab"><%= composed_plurname(type.name) %></a>
             </li>
         <% else %>
             <li role="presentation">
               <div class="menu-index-active" style="background-image: url(<%=  typeicon(type)  %>);"></div>
-              <a href="#<%= type.id %>" data-toggle="tab"><%= type.plurname %></a>
+              <a href="#<%= type.id %>" data-toggle="tab"><%= composed_plurname(type.name) %></a>
             </li>
         <% end %>
       <% end %>
@@ -29,15 +29,19 @@
       <% if type == @types.first %>
 
     <div role="tabpanel" class="tab-pane active" id="<%= type.id %>">
-        <div class="banner-on-index" style="background-image: url(<%=  cl_image_path type.albums.last.photos.sample.path  %>);">
-            <div class="banner-on-index-content-v2">
-              <%= type.plurname %>
-            </div>
-        </div>
+
+        <% if type.albums.any? %>
+          <div class="banner-on-index" style="background-image: url(<%=  cl_image_path type.albums.last.photos.sample.path if type.albums.last.photos.any? %>);">
+              <div class="banner-on-index-content-v2">
+                <%= type.plurname %>
+              </div>
+          </div>
+        <% end %>
+
 
         <div class="navtab-big-title">
           <div class="menu-index-active-v2" style="background-image: url(<%=  typeicon(type)  %>);"></div>
-          <div class="big-title-v2"><%= type.plurname %></div>
+          <div class="big-title-v2"><%= composed_plurname(type.name) %></div>
         </div>
 
       <div class="index-new-container">
@@ -86,13 +90,16 @@
   <% else %>
 
     <div role="tabpanel" class="tab-pane" id="<%= type.id %>">
-        <div class="banner-on-index" style="background-image: url(<%=cl_image_path type.albums.last.photos.sample.path if type.albums.any?  %>);background-color: <%= type.color %>">
-            <div class="banner-on-index-content"></div>
-        </div>
+
+         <% if type.albums.any? %>
+          <div class="banner-on-index" style="background-image: url(<%=cl_image_path type.albums.last.photos.sample.path if type.albums.last.photos.any?  %>);background-color: <%= type.color %>">
+              <div class="banner-on-index-content"></div>
+          </div>
+          <% end %>
 
         <div class="navtab-big-title">
           <div class="menu-index-active-v2" style="background-image: url(<%=  typeicon(type)  %>);"></div>
-          <div class="big-title-v2"><%= type.plurname %></div>
+          <div class="big-title-v2"><%= composed_plurname(type.name) %></div>
         </div>
 
         <div class="index-new-container">

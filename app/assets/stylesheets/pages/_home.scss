@@ -169,14 +169,14 @@ body {
 }
 
 
-.modal {
-  width: 50%;
-  height: 70%;
-  background-color: white;
-  top: 15%;
-  left: 25%;
-  border-radius: 6px;
-}
+// .modal {
+//   width: 50%;
+//   height: 70%;
+//   background-color: white;
+//   top: 15%;
+//   left: 25%;
+//   border-radius: 6px;
+// }
 
 .modal-header {
   width: 100%;
@@ -184,19 +184,49 @@ body {
   z-index: 1;
   padding: 0;
   height: 70px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-footer {
+  height: 60px;
+  position: relative;
+  border: none;
+}
+
+.modal-content {
+  border: none;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.modal-dialog {
+  width: 40%;
+  height: 70%;
+  margin-left: 30%;
+  margin-top: 15%;
 }
 
 .modal-body {
   padding: 0;
-  padding-top: 0px;
-  min-height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
   width: 100%;
-  position: relative;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.checkbox-padding {
+  padding-left: 45px;
 }
 
 .modal {
   padding-right: 0 !important;
   padding-left: 0 !important;
+  border-radius: 6px;
 }
 
 
@@ -204,7 +234,13 @@ body {
   opacity: 0.35;
 }
 
+.checkbox label {
+  padding-left: 0;
+}
 
+.modal.in {
+  height: 100%;
+}
 
 
 
@@ -246,8 +282,10 @@ body {
 
 .submit-button-on-modal {
   width: 100%;
-  height: 55px;
+  height: 100%;
   border: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   font-size: 13px;
   z-index: 2000;
   color: white;
@@ -282,7 +320,7 @@ body {
 
 
 .label-on-modal-dashboard {
-  font-size: 11px;
+  font-size: 13px;
   font-family: "Circular-Book";
   color: #59748C;
   margin-bottom: 5px;
@@ -301,7 +339,7 @@ body {
 
 .form-control:focus {
   outline: none;
-  border-color: white;
+  border-color: $orange;
   box-shadow: none;
 }
 
@@ -344,6 +382,145 @@ a {
   align-items: center;
   justify-content: flex-start;
 }
+
+
+
+.edit-product-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+
+
+
+input#product_photos {
+  display: none;
+}
+
+input#album_photos {
+  display: none;
+}
+
+input#promo_photos {
+  display: none;
+}
+
+#attach-substitution {
+  color: $red;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid $red;
+  border-radius: 3px;
+  width: 90px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $red;
+    color: white;
+  }
+}
+
+.attach-substitution {
+  color: $red;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid $red;
+  border-radius: 3px;
+  width: 90px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $red;
+    color: white;
+  }
+}
+
+.attachinary_container ul {
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.attachinary_container {
+  padding: 25px;
+  margin-top: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+}
+
+.attachinary_container ul li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.attachinary_container ul li a {
+  font-size: 13px;
+  font-family: "Circular-Medium";
+  &:hover {
+    color: $red;
+  }
+}
+
+.attachinary_container ul li img {
+  border: 1px solid lightgrey;
+  width: 55px;
+  height: 55px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.label-on-modal-dashboard {
+  display: flex;
+  align-items: center;
+}
+
+.small-photos-indicator {
+  font-size: 10px;
+  font-family: "Circular-Bold";
+  margin-left: 5px;
+  padding-top: 2px;
+  color: $red;
+}
+
+.border-on-checkbox {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgrey;
+  padding-top: 15px;
+  height: 45px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  border-radius: 3px;
+}
+
+
+
+
 
 
 

@@ -6,7 +6,7 @@ $('#typeEditModal').on('show.bs.modal', function (event) {
     $.ajax({
       url: "types/" + typeId + "/edit",
       success: function(data){
-          $modal.find('.modal-body').html(data)
+          $modal.find('.modal-content').html(data)
       }
     });
 })

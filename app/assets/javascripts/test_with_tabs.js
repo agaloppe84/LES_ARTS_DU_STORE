@@ -62,5 +62,3 @@ $( "#quotation_message" ).focus(function() {
 
 
 
-
-

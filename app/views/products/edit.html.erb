@@ -5,52 +5,40 @@
     $('.attachinary-input').attachinary();
   });
 
+  $( "#attach-substitution" ).click(function() {
+    $( "input#product_photos" ).click();
+  });
+
 </script>
-
-
-<div class="header-on-modal">
-    <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Modifier le produit" %></div>
-    <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-    <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@product.title}" %></div>
-    <button class="close" data-dismiss="modal">×</button>
-</div>
-
-
-<div class="header-on-modal-2">
-    <div class="header-hard-dashboard" style="opacity: 0.8;font-size: 13px;"><%= "Catégorie" %></div>
-    <div style="margin-left: 8px;margin-right: 8px;padding-top: 2px;opacity: 0.8;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-    <div class="header-hard-dashboard" style="font-size: 13px;opacity: 0.4;color: <%= @product.type.color %>"><%= @product.type.plurname.capitalize %></div>
-</div>
-
-
-
-
-
-
-<div class="form-in-modal">
 
 <%= simple_form_for [@type, @product] do |f| %>
 
-  <div class="container-without-button">
+<div class="modal-header">
+  <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Modifier le produit" %></div>
+  <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@product.title}" %></div>
+  <button class="close" data-dismiss="modal">×</button>
+</div>
 
+<div class="modal-body">
+  <div class="edit-product-container">
     <div class="label-on-modal-dashboard">Nom du produit</div>
     <%= f.input :title, label: false %>
 
     <div class="label-on-modal-dashboard">Description</div>
     <%= f.input :description, label: false %>
 
-    <div class="label-on-modal-dashboard">Photos</div>
+    <div class="label-on-modal-dashboard">Photos ( Maximum: 4 )</div>
+    <div id="attach-substitution">Télécharger</div>
     <%= f.input :photos, label: false, as: :attachinary %>
-
   </div>
-
-  <%= f.submit "Modifier #{@product.title}", :class => 'submit-button-on-modal' %>
-
-<% end %>
-
 </div>
 
+<div class="modal-footer">
+  <%= f.submit "Modifier #{@product.title}", :class => 'submit-button-on-modal' %>
+</div>
 
+<% end %>
 
 
 

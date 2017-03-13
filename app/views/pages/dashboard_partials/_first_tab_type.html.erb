@@ -6,7 +6,7 @@
         <div class="v2-fullpage-item-01-header">
            <div class="header-hard-dashboard" style="opacity: 0.4;">Catégorie</div>
            <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-           <div class="header-hard-dashboard"><%= type.plurname %></div>
+           <div class="header-hard-dashboard"><%= composed_plurname(type.name) %></div>
         </div>
         <!--*********** TOP HEADER END ***********-->
 
@@ -157,7 +157,7 @@
                         <% end %>
 
 
-                        <!-- <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path promo.photos.last.path %>);"></div> -->
+
 
                         <div class="infos-big-boob"><%= truncate( promo.title, length: 18, omission: '...' ) %></div>
 
@@ -245,34 +245,32 @@
           <% if type.albums.any? %>
 
 
-            <!--*********** IF ALBUM PRESENT START ***********-->
-            <div class="v3-prod-infos-alt">
-                    <div class="infos-volets">
-                        <% type.albums.each do |album| %>
+            <!--*********** SI ALBUM PRESENT ***********-->
+            <div class="v3-dash-powers-container-start">
 
-                          <div class="infos-item-boob">
+                <% type.albums.last.photos.each do |photo| %>
+                    <div class="v3-power-item-cont-big">
 
-                            <div class="v10-album-name"><%= album.name %>&nbsp;</div>
+                      <div class="v3-powers-text-on-hover-bottom" style="color: <%= type.color %>;">
+                        <div class="file-type">
+                          <%= photo.resource_type %>
+                          <%= "  " %>
+                          <%= photo.format %>
+                        </div>
+                        <div class="file-size">
+                          <%= photo.width %>
+                          <%= " X " %>
+                          <%= photo.height %>
+                        </div>
 
-                            <div class="infos-small-boob"><%= "#{album.photos.count} photos" %></div>
+                      </div>
 
-                            <div class="v2-link-on-active-infos">
-                              <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{album.id}", typeid: "#{album.type.id}" } do %>
-                                  <div class="text-on-edit-hover">Modifier</div>
-                                  <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
-                              <% end %>
-                              <%= link_to type_album_path(type, album), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cet album ?" } do %>
-                                  <div class="text-on-destroy-hover">Supprimer</div>
-                                  <i class="fa fa-times" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
-                              <% end %>
-                            </div>
-
-                          </div>
-
-                        <% end %>
+                      <div class="v3-power-item-big" style="background-image: url(<%= cl_image_path photo.path %>);"></div>
                     </div>
+                <% end %>
+
             </div>
-            <!--*********** IF ALBUM PRESENT END ***********-->
+        <!--*********** SI ALBUM PRESENT ***********-->
 
 
           <% else %>

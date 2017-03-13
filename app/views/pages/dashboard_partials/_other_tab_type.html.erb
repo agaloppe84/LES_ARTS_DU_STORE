@@ -5,7 +5,7 @@
         <div class="v2-fullpage-item-01-header">
            <div class="header-hard-dashboard" style="opacity: 0.4;">Catégorie</div>
            <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-           <div class="header-hard-dashboard"><%= type.plurname %></div>
+           <div class="header-hard-dashboard"><%= composed_plurname(type.name) %></div>
         </div>
 
 
@@ -145,7 +145,7 @@
                         <% end %>
 
 
-                        <!-- <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path promo.photos.last.path %>);"></div> -->
+
 
                         <div class="infos-big-boob"><%= truncate( promo.title, length: 18, omission: '...' ) %></div>
 

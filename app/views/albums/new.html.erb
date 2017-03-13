@@ -5,43 +5,40 @@
     $('.attachinary-input').attachinary();
   });
 
+
+  $( ".attach-substitution" ).click(function() {
+    $( "input#album_photos" ).click();
+  });
+
 </script>
-
-
-
-<div class="header-on-modal">
-           <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Créer un album pour la catégorie" %></div>
-            <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-            <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@type.name}" %></div>
-           <button class="close" data-dismiss="modal">×</button>
-</div>
-
-
-
-
-<div class="form-in-modal">
 
 <%= simple_form_for [@type, @album] do |f| %>
 
-  <div class="container-without-button">
+  <div class="modal-header">
+    <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Créer un album pour la catégorie" %></div>
+    <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@type.name}" %></div>
+    <button class="close" data-dismiss="modal">×</button>
+  </div>
 
-    <div class="label-on-modal-dashboard">Nom de l'album</div>
-    <%= f.input :name, label: false %>
+  <div class="modal-body">
 
-    <div class="label-on-modal-dashboard">Photos</div>
-    <%= f.input :photos, as: :attachinary, label: false %>
+    <div class="edit-product-container">
+      <div class="label-on-modal-dashboard">Nom de l'album</div>
+      <%= f.input :name, label: false %>
+
+      <div class="label-on-modal-dashboard">Photos</div>
+      <div class="attach-substitution">Télécharger</div>
+      <%= f.input :photos, as: :attachinary, label: false %>
+    </div>
 
   </div>
 
-
-    <%= f.submit "créer un album", :class => 'submit-button-on-modal' %>
-
+  <div class="modal-footer">
+    <%= f.submit "Créer un album", :class => 'submit-button-on-modal' %>
+  </div>
 
 <% end %>
-
-</div>
-
-
 
 
 
