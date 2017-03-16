@@ -19,11 +19,11 @@
 
                 <%= link_to "#infoNewModal", class: "", data: { toggle: "modal", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
 
-                  <div class="v4-info-new-button" style="color: <%= type.color %>;">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <div class="icon-list-add padding-on-small-icon"></div>
                     <div class="v5-text-on-button-hover">
-                      <div class="">Créer une info</div>
-                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                      <div class="">new info</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
                     </div>
                   </div>
 
@@ -40,8 +40,8 @@
                 <div class="infos-volets">
                     <% product.infos.each do |info| %>
 
-                      <div class="infos-item-boob">
-                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+                      <div class="infos-item-boob" style="padding-left: 37px;">
+                        <div class="infos-icon-boob <%= info.icon %>"></div>
 
                         <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
 
@@ -68,8 +68,11 @@
 
               <div class="v3-prod-infos-alt" style="border-bottom: 1px solid rgba(155,155,155,0.3);">
                 <div class="v4-no-promo-div">
-                  <div class="v5-big-text">Pas d'infos</div>
-                  <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer une info !!</div>
+                  <div class="v5-big-text">0 info</div>
+                  <div class="dash-flexbox-display">
+                    <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                    <div class="icon-list-add"></div>
+                  </div>
                 </div>
               </div>
 
@@ -101,11 +104,11 @@
 
                 <%= link_to "#brandNewModal", class: "", data: { toggle: "modal", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
 
-                  <div class="v4-info-new-button" style="color: <%= type.color %>;">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <div class="icon-list-add padding-on-small-icon"></div>
                     <div class="v5-text-on-button-hover">
-                      <div class="">Créer une marque</div>
-                      <i class="fa fa-angle-right" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                      <div class="">new marque</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
                     </div>
                   </div>
 
@@ -149,8 +152,11 @@
 
               <div class="v3-prod-infos-alt" style="border-bottom: 1px solid rgba(155,155,155,0.3);">
                 <div class="v4-no-promo-div">
-                  <div class="v5-big-text">Pas de marque</div>
-                  <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer une marque !!</div>
+                  <div class="v5-big-text">0 marque</div>
+                  <div class="dash-flexbox-display">
+                    <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                    <div class="icon-list-add"></div>
+                  </div>
                 </div>
               </div>
 
@@ -190,9 +196,9 @@
 
                 <div class="dashv2-infos-compilated-item">
                   <% if product.powers.any? %>
-                    <div class="v2-big-number-brand" style="color: #52D681;">Oui</div>
+                    <div class="camera-icon" style="color: #2AC88E;"><div class="icon-zap"></div></div>
                   <% else %>
-                    <div class="v2-big-number-brand" style="color: #FA4659;">Non</div>
+                   <div class="camera-icon" style="color: #FA4659;"><div class="icon-zap"></div></div>
                   <% end %>
                   <div class="dashv2-infos-compilated-item-label">Powers</div>
 
@@ -202,25 +208,29 @@
                 <% if product.powers.any? %>
 
                   <%= link_to "#powerEditModal", class: "", data: { toggle: "modal", powerid: "#{product.powers.last.id}", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
-                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
-                      <i class="fa fa-toggle-on" aria-hidden="true"></i>
+
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
                       <div class="v5-text-on-button-hover">
-                      <div class="">Editer les pouvoirs</div>
-                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                        <div class="">edit powers</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
                     </div>
-                    </div>
+
                   <% end %>
 
                 <% else %>
 
                   <%= link_to "#powerNewModal", class: "", data: { toggle: "modal", typeid: "#{product.type.id}", productid: "#{product.id}" } do %>
-                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
-                      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
                       <div class="v5-text-on-button-hover">
-                      <div class="">Créer des pouvoirs</div>
-                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                        <div class="">new powers</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
                     </div>
-                    </div>
+
                   <% end %>
 
                 <% end %>
@@ -231,111 +241,136 @@
 
                <% if product.powers.any? %>
 
-
-                <div class="v3-dash-powers-container">
+                <div class="v3-prod-infos-v12">
 
 
                   <% if product.powers.last.sun == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Soleil</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'sun.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Soleil</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.rain == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Pluie</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'rain.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-rain-2 pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Pluie</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.wind == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Vent</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'wind.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-wind pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Vent</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.cold == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Froid</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'cold.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-thermometer pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Froid</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.hot == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Chaleur</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'hot.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-thermometer pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Chaleur</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.humidity == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Humidité</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'humidity.svg' %>);"></div>
+                     <div class="icon-button-container">
+                        <div class="icon-droplet pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Humidité</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.energysaver == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Enérgie</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'eolienne.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-battery pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Energie</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.taxsaver == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Impots</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'price.svg' %>);"></div>
+                     <div class="icon-button-container">
+                        <div class="icon-euro pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Impot</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.insects == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Insectes</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'insects.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-bug-1 pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Insectes</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.security == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Sécurité</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'security.svg' %>);"></div>
+                     <div class="icon-button-container">
+                        <div class="icon-lock-alt pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Sécurité</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.inside == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Intérieur</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'inside.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Intérieur</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.outside == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Extérieur</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'outside.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Exterieur</div>
+                      </div>
                     </div>
                   <% end %>
 
                   <% if product.powers.last.certification == false %>
                   <% else %>
                     <div class="v3-power-item-cont">
-                      <div class="v3-powers-text-on-hover" style="color: <%= type.color %>;">Certif</div>
-                      <div class="v3-power-item" style="background-image: url(<%= asset_path 'certif.svg' %>);"></div>
+                      <div class="icon-button-container">
+                        <div class="icon-clipboard pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Certif</div>
+                      </div>
                     </div>
                   <% end %>
 
@@ -345,8 +380,11 @@
 
                   <div class="v3-prod-infos-alt">
                     <div class="v4-no-promo-div">
-                      <div class="v5-big-text">Pas de pouvoirs</div>
-                      <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer des pouvoirs !!</div>
+                      <div class="v5-big-text">0 pouvoir</div>
+                      <div class="dash-flexbox-display">
+                        <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                        <div class="icon-list-add"></div>
+                      </div>
                     </div>
                   </div>
 

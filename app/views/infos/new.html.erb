@@ -1,19 +1,34 @@
 
 <script>
 
-  $(document).ready(function() {
-    $('.attachinary-input').attachinary();
+  $('.font-cont-tastic').children().click(function() {
+    $( ".dynamic-font-append" ).empty();
+    var iconName = $(this).attr('class');
+    var unchecked = $(".fontastic-container .font-cont-tastic div").not(iconName);
+    $(unchecked).parent().css( "background-color", "white" );
+    $(unchecked).css( "color", "grey" );
+    var tempoAppend = $(this).clone();
+    $(".dynamic-font-append").append(tempoAppend);
+    $(".dynamic-font-append-text").text(iconName);
+    $(".info_icon input").val(iconName);
+    $(this).parent().css( "background-color", "#2AC88E" );
+    $(this).css( "color", "white" );
   });
 
 </script>
 
+<%= simple_form_for [@product.type, @product, @info] do |f| %>
+
+ <script>
+    $(".dynamic-font-append-text").text("Pas d'icone");
+  </script>
 
 
-<div class="header-on-modal">
-           <div class="header-hard-dashboard" style="opacity: 0.8;">Créer une info pour le produit</div>
-           <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-           <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
-           <button class="close" data-dismiss="modal">×</button>
+<div class="modal-header">
+    <div class="header-hard-dashboard" style="opacity: 0.8;">Créer une info pour le produit</div>
+    <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
+    <button class="close" data-dismiss="modal">×</button>
 </div>
 
 
@@ -21,12 +36,8 @@
 
 
 
-<div class="form-in-modal">
-
-<%= simple_form_for [@product.type, @product, @info] do |f| %>
-
-  <div class="container-without-button">
-
+<div class="modal-body">
+  <div class="edit-product-container">
     <div class="label-on-modal-dashboard">Nom de l'info</div>
     <%= f.input :title, label: false %>
 
@@ -34,20 +45,27 @@
     <%= f.input :content, label: false %>
 
     <div class="label-on-modal-dashboard">Icone</div>
-    <%= f.input :icon, as: :attachinary, label: false %>
+    <%= f.input :icon, label: false, as: :hidden %>
 
+    <div class="dynamic-font-append"></div>
+    <div class="dynamic-font-append-text"></div>
+
+
+    <div class="fontastic-container">
+      <% font_icon_dynamic.each do |icon| %>
+        <div class="font-cont-tastic">
+          <div class="<%= icon %>" style="font-size: 20px;"></div>
+        </div>
+      <% end %>
+    </div>
 
   </div>
-
-
-    <%= f.submit "Créer une info pour #{@product.title}", :class => 'submit-button-on-modal' %>
-
-
-<% end %>
-
 </div>
 
+<div class="modal-footer">
+  <%= f.submit "Créer une info pour #{@product.title}", :class => 'submit-button-on-modal' %>
+</div>
 
-
+<% end %>
 
 

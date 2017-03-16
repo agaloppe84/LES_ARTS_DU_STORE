@@ -2,6 +2,54 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.fontastic-container {
+  width: 100%;
+  max-height: 200px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid lightgrey;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.font-cont-tastic {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7px;
+  border-radius: 4px;
+  color: grey;
+}
+
+.fontastic-hover-button:hover {
+  color: #2AC88E;
+}
+
+.font-cont-tastic:hover {
+  border-radius: 4px;
+}
+
+.dynamic-font-append {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightgrey;
+  padding-top: 7px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.dynamic-font-append-text {
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  color: #2AC88E;
+  margin-bottom: 20px;
+}
 
 
 .home-content-container {

@@ -182,7 +182,7 @@
 
 .banner-on-index {
   height: 300px;
-  margin-top: 80px;
+  margin-top: 60px;
   width: 100%;
   background-size: cover !important;
   background-position: center center;
@@ -682,26 +682,39 @@
 
 .card {
   height: 300px;
-  width: 100%;
+  width: 45%;
   display: flex;
+  flex-direction: column;
+  margin-right: 5%;
   margin-bottom: 40px;
   position: relative;
   box-shadow: 0 15px 20px 0px rgba(50,50,93,0.1), 0 5px 20px rgba(0,0,0,0.07);
   border-radius: 4px;
   padding: 20px;
   background-color: white;
+  overflow: hidden;
 }
 
 .card-top {
-  width: 40%;
-  height: 100%;
+  width: 100%;
+  height: 85%;
   background-color: lightgrey;
   position: relative;
+  border-radius: 2px;
+}
+
+.absolute-over-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  color: $red;
+  text-shadow: none;
 }
 
 .card-bottom {
-  width: 60%;
-  height: 100%;
+  width: 100%;
+  height: 15%;
   background-color: white;
   display: flex;
   justify-content: flex-start;
@@ -709,13 +722,11 @@
 }
 
 .card-bottom-item {
-  height: 18%;
   width: 100%;
   background-color: white;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 22px;
 }
 
 .card-bottom-item-two {
@@ -743,9 +754,9 @@
 .button-two {
   font-family: "Circular-Bold";
   color: rgba(55,55,55,0.9);
-  font-size: 17px;
+  font-size: 15px;
   text-shadow: none;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.2px;
 }
 
 .brand-name-on-index {
@@ -848,22 +859,22 @@
 
 .type-index-v2-header {
   width: 100%;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   position: fixed;
   z-index: 5000;
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(50,50,58,1);
 }
 
 
 .menu-index-active {
   position: absolute;
-  width: 12px;
+  width: calc(100% - 16px);
+  border-bottom: 2px solid lightgrey;
   height: 12px;
-  bottom: -10px;
-  left: calc(50% - 6px);
+  bottom: -4px;
   display: none;
   transition: 0.4s ease;
   background-size: contain;
@@ -911,9 +922,11 @@
   height: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 15%;
+  padding-left: 20%;
   padding-right: 15%;
   background-color: rgba(245,245,255,0.3);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .description-body {
@@ -937,7 +950,10 @@
   flex-direction: column;
 }
 
-
+.leftblock-content-show .nav > li > a {
+  padding: 0;
+  margin-right: 16px;
+}
 
 
 

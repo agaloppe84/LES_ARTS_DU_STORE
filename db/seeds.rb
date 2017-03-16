@@ -296,9 +296,9 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Moustiquaires ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: mousty01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: mousty02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: mousty03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: mousty02 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: mousty03 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Moustiquaires ------------------------- #
@@ -307,8 +307,8 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Portes de garage ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: porto01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: porto02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: porto01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: porto02 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Portes de garage ------------------------- #
@@ -317,11 +317,11 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Stores intérieurs ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: inte01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: inte02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: inte03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: inte04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: inte05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: inte01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: inte02 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: inte03 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: inte04 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: inte05 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Stores intérieurs ------------------------- #
@@ -331,11 +331,11 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Stores exterieurs ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: exte01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: exte02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: exte03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: exte04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: exte05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: exte01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: exte02 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: exte03 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: exte04 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: exte05 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Stores exterieurs ------------------------- #
@@ -345,11 +345,11 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Menuiseries ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: menui01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: menui02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: menui03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: menui04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: menui05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: menui01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: menui02 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: menui03 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: menui04 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: menui05 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Menuiseries ------------------------- #
@@ -359,8 +359,8 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Pergolas ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: pergo02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: pergo02 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Pergolas ------------------------- #
@@ -370,11 +370,11 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Volets roulants ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: volet01 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: volet02 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: volet03 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: volet04 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
-    Info.create!(title: 'info', content: 'info-test', product: volet05 , icon_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1473094164/ni7h3aok9vm0fghuq3jq.svg')
+    Info.create!(title: 'info', content: 'info-test', product: volet01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: volet02 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: volet03 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: volet04 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: volet05 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Volets roulants ------------------------- #

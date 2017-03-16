@@ -58,7 +58,15 @@ $( "#quotation_message" ).focus(function() {
 });
 
 
-
-
+$('.font-cont-tastic').children().click(function() {
+  var iconName = $(this).attr('class');
+  var unchecked = $(".fontastic-container .font-cont-tastic div").not(iconName);
+  $(unchecked).parent().css( "background-color", "white" );
+  $(unchecked).css( "color", "grey" );
+  console.log(iconName);
+  $(".info_icon input").val(iconName);
+  $(this).parent().css( "background-color", "#2AC88E" );
+  $(this).css( "color", "white" );
+});
 
 

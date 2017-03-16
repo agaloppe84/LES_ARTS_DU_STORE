@@ -17,20 +17,16 @@
         <!--*********** COMPILATED PRODUCTS CONTAINER START ***********-->
         <div class="dashv2-infos-compilated-alt">
           <div class="dashv2-infos-compilated-item">
-            <div class="v2-big-type-color" style="background-color: <%= type.color %>;"></div>
-            <div class="dashv2-infos-compilated-item-label">Couleur</div>
-          </div>
-          <div class="dashv2-infos-compilated-item">
             <div class="v2-big-number"><%= type.products.count %></div>
             <div class="dashv2-infos-compilated-item-label">Produits</div>
           </div>
           <%= link_to "#productNewModal", class: "", data: { toggle: "modal", typeid: "#{type.id}" } do %>
 
                   <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
-                    <i class="fa fa-plus-circle" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                    <div class="icon-list-add padding-on-small-icon"></div>
                     <div class="v5-text-on-button-hover">
-                      <div class="">Créer un produit</div>
-                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                      <div class="">new produit</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
                     </div>
                   </div>
 
@@ -52,40 +48,60 @@
 
                 <% if index == 0 %>
             <li role="presentation" class="other-active-to-remove">
-              <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
+              <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: #2AC88E;"></i></div>
+              <div class="index-on-navtabs" style="color: #2AC88E;"><%= "#{index + 1}" %></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
-                <%= link_to "#productEditModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
-                    <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
-                    <i class="fa fa-pencil" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                <%= link_to "#productEditModal", class: "v3-link", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
+                    <div class="text-on-edit-hover">
+                      <div>modifier</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-check-circle newicon-size"></div>
                 <% end %>
-                <%= link_to "#productShowModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
-                    <div class="text-on-edit-hover" style="color: <%= type.color %>;">Voir</div>
-                    <i class="fa fa-eye" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
+                     <div class="text-on-edit-hover">
+                      <div>voir</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-information-black newicon-size"></div>
                 <% end %>
                 <%= link_to type_product_path(type, product), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
-                    <div class="text-on-destroy-hover" style="color: <%= type.color %>;">Supprimer</div>
-                    <i class="fa fa-times" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                    <div class="text-on-destroy-hover">
+                      <div>effacer</div>
+                      <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-cancel-circle newicon-size-two"></div>
                 <% end %>
               </div>
             </li>
 
         <% else %>
             <li role="presentation" class="other-active-to-remove">
-              <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: <%= type.color %>;"></i></div>
+              <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: #2AC88E;"></i></div>
+              <div class="index-on-navtabs" style="color: #2AC88E;"><%= "#{index + 1}" %></div>
               <a href="#<%= "#{product.id}" + "produit" + "#{type.id}" %>" data-toggle="tab"><%= product.title %></a>
               <div class="v2-link-on-active">
-                <%= link_to "#productEditModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
-                    <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
-                    <i class="fa fa-pencil" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                <%= link_to "#productEditModal", class: "v3-link", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
+                    <div class="text-on-edit-hover">
+                      <div>modifier</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-check-circle newicon-size"></div>
                 <% end %>
-                <%= link_to "#productShowModal", class: "", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
-                    <div class="text-on-edit-hover" style="color: <%= type.color %>;">Voir</div>
-                    <i class="fa fa-eye" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{type.id}", productid: "#{product.id}" } do %>
+                     <div class="text-on-edit-hover">
+                      <div>voir</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-information-black newicon-size"></div>
                 <% end %>
                 <%= link_to type_product_path(type, product), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
-                    <div class="text-on-destroy-hover" style="color: <%= type.color %>;">Supprimer</div>
-                    <i class="fa fa-times" aria-hidden="true" style="color: <%= type.color %>;"></i>
+                     <div class="text-on-destroy-hover">
+                      <div>effacer</div>
+                      <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-cancel-circle newicon-size-two"></div>
                 <% end %>
               </div>
             </li>
@@ -110,20 +126,15 @@
                   <% end %>
                 </div>
 
-                <% if type.promos.where( "current = true " ).last %>
-                  <div class="v5-type-with-active-promo">
-                    <div class="active-promo-green-dot"></div>
-                    <div class="active-promo-green-dot-text">Promo active</div>
-                  </div>
-               <% end %>
+
 
                 <%= link_to "#promoNewModal", class: "", data: { toggle: "modal", id: "#{type.id}" } do %>
 
-                  <div class="v4-info-new-button" style="color: <%= type.color %>;">
-                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  <div class="v4-info-new-button">
+                    <div class="icon-list-add padding-on-small-icon"></div>
                     <div class="v5-text-on-button-hover">
-                      <div class="">Créer une promo</div>
-                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
+                      <div class="">new promo</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
                     </div>
                   </div>
 
@@ -141,37 +152,47 @@
               <% if type.promos.any? %>
 
                 <div class="infos-volets">
-                    <% type.promos.each do |promo| %>
+                    <% type.promos.each_with_index do |promo, index| %>
 
                       <div class="infos-item-boob">
 
+
+
                        <% if promo.current? %>
                           <div class="v5-type-with-active-promo">
-                            <div class="active-promo-green-dot"></div>
-                            <div class="active-promo-green-dot-text">Active</div>
+                            <div class="active-promo-green-dot-text icon-size-on-index"><div class="icon-pulse padding-on-small-icon"></div></div>
                           </div>
                         <% else %>
                           <div class="v5-type-with-active-promo">
-                            <div class="active-promo-green-dot" style="background-color: rgba(155,155,155,0.4);"></div>
+                             <div class="active-promo-green-dot-text icon-size-on-index-2"><div class="icon-pulse padding-on-small-icon"></div></div>
                           </div>
                         <% end %>
 
+                        <% if promo.current? %>
+                          <div class="active-promo-verysmall-index" style="color: #2AC88E;"><%= index + 1 %></div>
+                        <% else %>
+                          <div class="active-promo-verysmall-index"><%= index + 1 %></div>
+                        <% end %>
 
-
-
-                        <div class="infos-big-boob"><%= truncate( promo.title, length: 18, omission: '...' ) %></div>
+                        <div class="infos-big-boob"><%= truncate( promo.title.capitalize, length: 18, omission: '...' ) %></div>
 
 
                         <div class="infos-small-boob"></div>
 
                         <div class="v2-link-on-active-infos">
                           <%= link_to "#promoEditModal", class: "v3-link", data: { toggle: "modal", id: "#{promo.id}", typeid: "#{promo.type.id}" } do %>
-                              <div class="text-on-edit-hover" style="color: <%= type.color %>;">Modifier</div>
-                              <i class="fa fa-pencil" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                            <div class="text-on-edit-hover">
+                              <div>modifier</div>
+                              <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true" style="font-size: 20px;"></i></div>
+                            </div>
+                            <div class="icon-android-done newicon-size"></div>
                           <% end %>
                           <%= link_to type_promo_path(type,promo), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette promo ?" } do %>
-                              <div class="text-on-destroy-hover" style="color: <%= type.color %>;">Supprimer</div>
-                              <i class="fa fa-times" aria-hidden="true" style="color: rgba(55,55,55,0.8);"></i>
+                              <div class="text-on-destroy-hover">
+                                <div>effacer</div>
+                                <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true" style="font-size: 20px;"></i></div>
+                              </div>
+                              <div class="icon-android-close newicon-size-two"></div>
                           <% end %>
                         </div>
 
@@ -182,8 +203,11 @@
 
               <% else %>
                 <div class="v4-no-promo-div">
-                  <div class="v5-big-text">Pas de promo</div>
-                  <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer une promo !!</div>
+                  <div class="v5-big-text">0 promo</div>
+                  <div class="dash-flexbox-display">
+                    <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                    <div class="icon-list-add"></div>
+                  </div>
                 </div>
               <% end %>
 
@@ -200,36 +224,35 @@
 
                 <div class="dashv2-infos-compilated-item">
                   <% if type.albums.any? %>
-                    <div class="v2-big-number-brand" style="color: #52D681;">Oui</div>
+                    <div class="camera-icon" style="color: #2AC88E;"><div class="icon-aperture"></div></div>
                   <% else %>
-                    <div class="v2-big-number-brand" style="color: #FA4659;">Non</div>
+                    <div class="camera-icon" style="color: #FA4659;"><div class="icon-aperture"></div></div>
                   <% end %>
                   <div class="dashv2-infos-compilated-item-label">Album</div>
-
                 </div>
 
 
                 <% if type.albums.any? %>
 
                   <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{type.albums.last.id}", typeid: "#{type.id}" } do %>
-                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
-                      <i class="fa fa-toggle-on" aria-hidden="true"></i>
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
                       <div class="v5-text-on-button-hover">
-                      <div class="">Editer l'album</div>
-                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
-                    </div>
+                        <div class="">edit album</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
                     </div>
                   <% end %>
 
                 <% else %>
 
                   <%= link_to new_type_album_path(type), class: "", data: { confirm: "Créer un album pour cette catégorie ?" } do %>
-                    <div class="v4-info-new-button" style="color: <%= type.color %>;">
-                      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
                       <div class="v5-text-on-button-hover">
-                      <div class="">Créer un album</div>
-                      <i class="fa fa-angle-right animated infinite pulse" aria-hidden="true" style="font-size: 15px;margin-left: 10px;"></i>
-                    </div>
+                        <div class="">new album</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
                     </div>
                   <% end %>
 
