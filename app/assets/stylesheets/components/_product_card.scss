@@ -568,7 +568,7 @@ a:hover {
 .leftblock-content-show .nav li.active a {
   background-color: transparent;
   opacity: 1;
-  color: white;
+  color: rgba(30,30,40,1);
   font-family: "Circular-Bold";
   font-size: 13px;
   transition: 0.3s ease;
@@ -576,7 +576,7 @@ a:hover {
 
 .leftblock-content-show .nav li.active:hover a {
   background-color: transparent;
-  color: white;
+  color: rgba(30,30,40,1);
   opacity: 1;
   font-family: "Circular-Bold";
 }
@@ -586,7 +586,7 @@ a:hover {
 
 .leftblock-content-show .nav li {
   background-color: transparent;
-  color: white;
+  color: rgba(30,30,40,1);
   opacity: 1;
   font-family: "Circular-Book";
   font-size: 13px;
@@ -595,7 +595,7 @@ a:hover {
 
 .leftblock-content-show .nav li a {
   background-color: transparent;
-  color: white;
+  color: rgba(30,30,40,1);
   opacity: 0.6;
   font-family: "Circular-Bold";
   font-size: 13px;
@@ -605,7 +605,7 @@ a:hover {
 .leftblock-content-show .nav li:hover {
   background-color: transparent;
   opacity: 1;
-  color: white;
+  color: rgba(30,30,40,1);
   font-family: "Circular-Bold";
   font-size: 13px;
   transition: 0.3s ease;
@@ -614,7 +614,7 @@ a:hover {
 .leftblock-content-show .nav li:hover a {
   background-color: transparent;
   opacity: 1;
-  color: white;
+  color: rgba(30,30,40,1);
   font-family: "Circular-Bold";
   font-size: 13px;
   transition: 0.5s ease;

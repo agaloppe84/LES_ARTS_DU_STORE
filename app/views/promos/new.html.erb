@@ -15,7 +15,7 @@
 
  <%= simple_form_for [@type, @promo] do |f| %>
 
- <div class="modal-header">
+ <div class="modal-header-custom">
   <div class="header-hard-dashboard" style="opacity: 0.8;">Créer une promo pour la catégorie</div>
   <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
   <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @type.name %></div>
@@ -23,7 +23,7 @@
 </div>
 
 
-<div class="modal-body">
+<div class="modal-body-custom">
   <div class="edit-product-container">
 
       <div class="label-on-modal-dashboard">Titre de la promo</div>
@@ -69,7 +69,7 @@
     </div>
 </div>
 
-<div class="modal-footer">
+<div class="modal-footer-custom">
    <%= f.submit "Créer une promo", :class => 'submit-button-on-modal' %>
 </div>
 

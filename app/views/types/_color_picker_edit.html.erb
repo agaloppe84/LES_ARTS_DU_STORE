@@ -99,8 +99,8 @@
 
   <div class="color-container color-container-10">
     <div class="cc-flex random-collection">
-      <div class="random-trigger">Random color</div>
-      <div class="random-color"></div>
+      <div class="random-trigger-edit">Random color</div>
+      <div class="random-color-edit"></div>
     </div>
   </div>
 
@@ -445,8 +445,8 @@ $( ".sc09-light-30" ).click(function() {
 
 
 
-$( ".random-color" ).click(function() {
-    var data = $( ".random-color" ).css( "background-color" );
+$( ".random-color-edit" ).click(function() {
+    var data = $( ".random-color-edit" ).css( "background-color" );
     $('.type_color input').val(data);
     $( '.input-container .current-color' ).css( "background-color", data );
     $( '.bigdiv' ).css( "background-color", data );
@@ -509,13 +509,13 @@ $( ".random-color-link" ).click(function() {
 
 
 
-$( ".random-trigger" ).click(function() {
+$( ".random-trigger-edit" ).click(function() {
     var test = "#2AC88E";
     var rRgb = Math.floor(Math.random() * 210) + 50;
     var gRgb = Math.floor(Math.random() * 210) + 50;
     var bRgb = Math.floor(Math.random() * 210) + 50;
     var result = "rgb" + "(" + rRgb + "," + gRgb + "," + bRgb + ")";
-    $( '.random-color' ).css( "background-color", result );
+    $( '.random-color-edit' ).css( "background-color", result );
 });
 
 

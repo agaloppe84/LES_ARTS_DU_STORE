@@ -44,6 +44,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
     administrate (0.2.2)
       autoprefixer-rails (~> 6.0)
       datetime_picker_rails (~> 0.0.7)
@@ -123,6 +125,10 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -156,6 +162,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    public_suffix (2.0.5)
     puma (3.6.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
@@ -251,6 +258,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails
+  letter_opener
   pg
   pry-byebug
   pry-rails
@@ -264,5 +272,8 @@ DEPENDENCIES
   spring
   uglifier
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.12.5
+   1.13.1

@@ -1,10 +1,11 @@
 class PromosController < ApplicationController
   before_action :set_promo, only: [:show, :edit, :update, :destroy]
-  before_action :find_type, only: [ :new, :create, :edit, :update, :destroy, :show, :index ]
+  before_action :find_type, only: [ :new, :create, :edit, :update, :destroy, :show ]
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
     @promos = Promo.all
+    @active_promos = Promo.where(current: true)
   end
 
   def show

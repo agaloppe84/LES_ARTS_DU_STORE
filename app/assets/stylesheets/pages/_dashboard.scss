@@ -2183,6 +2183,7 @@
   padding-bottom: 40px;
   padding-left: 22%;
   padding-right: 22%;
+  margin-top: 140px;
 }
 
 .quota-form-fullpage .form-control {
@@ -2201,13 +2202,12 @@
 
 .quota-form-label {
   font-size: 13px;
-  font-family: "Circular-Book";
+  font-family: "Circular-Medium";
   width: 110px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  z-index: 300;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   padding-left: 4px;
@@ -2271,17 +2271,29 @@ textarea#quotation_message {
 
 .quota-layout-header {
   width: 100%;
-  height: 100px;
+  height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  position: fixed;
+  top: 60px;
+  padding-left: 22%;
+  z-index: 4000;
+  background-color: white;
 }
 
 .quota-layout-header-text {
   font-family: "Circular-Bold";
-  letter-spacing: -0.5px;
-  font-size: 22px;
+  font-size: 20px;
+}
+
+.quota-layout-header-text-thin {
+  font-family: "Circular-Book";
+  font-size: 16px;
+  margin-left: 10px;
+  color: $red;
 }
 
 .quota-countdown {
@@ -2420,7 +2432,8 @@ textarea#quotation_message {
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 55vh;
+  height: 100%;
+  background-color: white;
   font-size: 35px;
   color: rgba(55,55,55,0.8);
 }

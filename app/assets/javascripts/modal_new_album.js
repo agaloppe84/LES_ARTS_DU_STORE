@@ -5,7 +5,7 @@ $('#albumNewModal').on('show.bs.modal', function (event) {
     $.ajax({
       url: "types/" + typeId + "/albums/new",
       success: function(data){
-          $modal.find('.modal-content').html(data)
+          $modal.find('.modal-content-custom').html(data)
       }
     });
 })

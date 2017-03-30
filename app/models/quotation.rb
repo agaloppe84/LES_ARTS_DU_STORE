@@ -1,11 +1,11 @@
 class Quotation < ActiveRecord::Base
-  validates :email, presence: true
-  validates :name, presence: true
-  validates :firstname, presence: true
-  validates :city, presence: true
-  validates :phone, presence: true
-  validates :zipcode, presence: true
-  validates :blindttype, presence: true
-  validates :message, presence: true
-  validates :address, presence: true
+  validates :email, presence: { message: "email requis" }
+  validates :name, presence: { message: "nom requis" }
+  validates :firstname, presence: { message: "prénom requis" }
+  validates :city, presence: { message: "ville requise" }
+  validates :phone, presence: { message: "téléphone requis" }
+  validates :zipcode, presence: { message: "code postal requis" }
+  validates :blindttype, presence: { message: "type de produit requis" }
+  validates :message, presence: { message: "message requis" }
+  validates :address, presence: { message: "adresse requise" }
 end

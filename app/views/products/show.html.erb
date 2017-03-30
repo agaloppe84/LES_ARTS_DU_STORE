@@ -1,44 +1,45 @@
-<div class="modal-header">
-    <div class="header-hard-dashboard" style="opacity: 0.9;"><%= "#{@product.title}" %></div>
+<div class="modal-header-custom" style="height: 16%;">
+    <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 17px;font-family: 'Circular-Book';"><%= "#{@product.title}" %></div>
     <button class="close" data-dismiss="modal">×</button>
 </div>
 
 
 
-<div class="modal-body" style="padding-top: 0;padding-bottom: 0;">
+<div class="modal-body-custom" style="height: 84%;padding-top: 0;padding-bottom: 0;">
+  <div class="modal-body-custom-container">
 
-  <div class="info-header-iterator">
-    <div class="info-header-iterator-text">infos</div>
-  </div>
-
-  <div class="dyn-modal-cont">
-
-    <% @product.infos.each do |info| %>
-      <div class="info-item-iterator">
-        <div class="info-item-iterator-icon-plus-title">
-          <div class="<%= info.icon %> pad-on-icons" style="font-size: 14px;"></div>
-          <div class="info-title"><%= info.title %></div>
-        </div>
-        <div class="info-contents"><%= info.content %></div>
+      <div class="modal-custom-product-headers">
+        <div class="modal-custom-product-headers-text">Infos</div>
       </div>
-    <% end %>
 
-  </div>
+      <% if @product.infos.any? %>
+        <div class="modal-custom-product-infos">
+          <div class="infos-volets">
+            <% @product.infos.each do |info| %>
+
+              <div class="modal-custom-product-infos-item">
+                <div class="infos-icon-boob <%= info.icon %>"></div>
+                <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
+                <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+      <% end %>
 
 
-  <div class="info-header-iterator">
-    <div class="info-header-iterator-text">powers</div>
-  </div>
+      <div class="modal-custom-product-headers" style="border-top: 1px solid lightgrey;">
+        <div class="modal-custom-product-headers-text">Powers</div>
+      </div>
 
-   <% if @product.powers.any? %>
-
-
-                <div class="v3-prod-infos-v12" style="padding-bottom: 35px;padding-top: 37px;">
+       <% if @product.powers.any? %>
+                <div class="v3-prod-infos-v12">
 
 
                   <% if @product.powers.last.sun == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Soleil</div>
@@ -48,7 +49,7 @@
 
                   <% if @product.powers.last.rain == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-rain-2 pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Pluie</div>
@@ -58,7 +59,7 @@
 
                   <% if @product.powers.last.wind == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-wind pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Vent</div>
@@ -68,7 +69,7 @@
 
                   <% if @product.powers.last.cold == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-thermometer pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Froid</div>
@@ -78,7 +79,7 @@
 
                   <% if @product.powers.last.hot == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-thermometer pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Chaleur</div>
@@ -88,7 +89,7 @@
 
                   <% if @product.powers.last.humidity == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                      <div class="icon-button-container">
                         <div class="icon-droplet pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Humidité</div>
@@ -98,7 +99,7 @@
 
                   <% if @product.powers.last.energysaver == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-battery pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Energie</div>
@@ -108,7 +109,7 @@
 
                   <% if @product.powers.last.taxsaver == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                      <div class="icon-button-container">
                         <div class="icon-euro pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Impot</div>
@@ -118,7 +119,7 @@
 
                   <% if @product.powers.last.insects == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-bug-1 pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Insectes</div>
@@ -128,7 +129,7 @@
 
                   <% if @product.powers.last.security == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                      <div class="icon-button-container">
                         <div class="icon-lock-alt pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Sécurité</div>
@@ -138,7 +139,7 @@
 
                   <% if @product.powers.last.inside == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Intérieur</div>
@@ -148,7 +149,7 @@
 
                   <% if @product.powers.last.outside == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Exterieur</div>
@@ -158,7 +159,7 @@
 
                   <% if @product.powers.last.certification == false %>
                   <% else %>
-                    <div class="v3-power-item-cont">
+                    <div class="v3-power-item-cont" style="width: 15%;">
                       <div class="icon-button-container">
                         <div class="icon-clipboard pad-on-icons" style="font-size: 24px;"></div>
                         <div class="v3-powers-text-on-hover-v2">Certif</div>
@@ -167,28 +168,21 @@
                   <% end %>
 
                 </div>
-
-                <% else %>
-
-                  <div class="v3-prod-infos-alt">
-                    <div class="v4-no-promo-div">
-                      <div class="v5-big-text">0 pouvoir</div>
-                    </div>
-                  </div>
-
               <% end %>
 
 
-  <div class="info-header-iterator">
-    <div class="info-header-iterator-text">photos</div>
-  </div>
-
-  <div class="banner-product-page-show" style="background-image: url(<%= if @product.photos.any? then cl_image_path @product.photos.last.path end %>);">
-    <div class="banner-product-show-description">
-    </div>
-  </div>
 
 
+
+
+      <div class="modal-custom-product-headers">
+        <div class="modal-custom-product-headers-text">Photos</div>
+      </div>
+
+      <div class="modal-custom-product-photo" style="background-image: url(<%=  cl_image_path @product.photos.first.path if @product.photos.any? %>)"></div>
+
+
+   </div>
 </div>
 
 

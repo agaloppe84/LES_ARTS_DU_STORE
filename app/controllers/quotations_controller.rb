@@ -2,6 +2,7 @@ class QuotationsController < ApplicationController
   before_action :set_quotation, only: [:edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:new, :create, :show]
 
+
   def index
     @quotations = Quotation.all
   end
@@ -20,6 +21,7 @@ class QuotationsController < ApplicationController
   def create
     @quotation = Quotation.new(quotation_params)
     if @quotation.save
+      QuotationMailer.success(@quotation).deliver_now
       redirect_to confirmation_path(name: @quotation.name, firstname: @quotation.firstname, email: @quotation.email)
     else
       render :new
@@ -45,6 +47,7 @@ class QuotationsController < ApplicationController
 
 
   private
+
 
   def set_quotation
     @quotation = Quotation.find(params[:id])

@@ -865,16 +865,16 @@
   justify-content: space-around;
   position: fixed;
   z-index: 5000;
-  background-color: rgba(50,50,58,1);
+  background-color: white;
 }
 
 
 .menu-index-active {
   position: absolute;
   width: calc(100% - 16px);
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 2px solid rgba(30,30,40,0.3);
   height: 12px;
-  bottom: -4px;
+  bottom: -5px;
   display: none;
   transition: 0.4s ease;
   background-size: contain;

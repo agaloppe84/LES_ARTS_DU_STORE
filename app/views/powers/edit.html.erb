@@ -1,15 +1,15 @@
 <%= simple_form_for [@product.type, @product, @power] do |f| %>
 
-<div class="modal-header">
+<div class="modal-header-custom">
   <div class="header-hard-dashboard" style="opacity: 0.8;">Modifier les pouvoirs pour le produit</div>
   <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
   <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
   <button class="close" data-dismiss="modal">×</button>
 </div>
 
-<div class="modal-body checkbox-padding">
+<div class="modal-body-custom checkbox-padding">
 
-      <div class="checkbox-inline-form">
+
 
         <div class="form-group boolean optional power_wind">
           <div class="checkbox">
@@ -28,10 +28,10 @@
           </div>
         </div>
 
-      </div>
 
 
-       <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_cold">
           <div class="checkbox">
             <input type="hidden" name="power[cold]" value="0">
@@ -48,10 +48,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_hot">
           <div class="checkbox">
             <input type="hidden" name="power[hot]" value="0">
@@ -68,10 +68,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_humidity">
           <div class="checkbox">
             <input type="hidden" name="power[humidity]" value="0">
@@ -88,10 +88,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_energysaver">
           <div class="checkbox">
             <input type="hidden" name="power[energysaver]" value="0">
@@ -108,10 +108,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-       <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_taxsaver">
           <div class="checkbox">
             <input type="hidden" name="power[taxsaver]" value="0">
@@ -128,10 +128,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_insects">
           <div class="checkbox">
             <input type="hidden" name="power[insects]" value="0">
@@ -148,10 +148,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_security">
           <div class="checkbox">
             <input type="hidden" name="power[security]" value="0">
@@ -168,10 +168,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_sun">
           <div class="checkbox">
             <input type="hidden" name="power[sun]" value="0">
@@ -188,10 +188,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-       <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_rain">
           <div class="checkbox">
             <input type="hidden" name="power[rain]" value="0">
@@ -208,10 +208,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_inside">
           <div class="checkbox">
             <input type="hidden" name="power[inside]" value="0">
@@ -228,10 +228,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_outside">
           <div class="checkbox">
             <input type="hidden" name="power[outside]" value="0">
@@ -248,10 +248,10 @@
             </div>
           </div>
         </div>
-      </div>
 
 
-      <div class="checkbox-inline-form">
+
+
         <div class="form-group boolean optional power_certification">
           <div class="checkbox">
             <input type="hidden" name="power[certification]" value="0">
@@ -268,12 +268,12 @@
             </div>
           </div>
         </div>
-      </div>
+
 
 
 </div>
 
-<div class="modal-footer">
+<div class="modal-footer-custom">
   <%= f.submit "Modifier les pouvoirs pour #{@product.title}", :class => 'submit-button-on-modal' %>
 </div>
 

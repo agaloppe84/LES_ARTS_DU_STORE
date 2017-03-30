@@ -7,7 +7,7 @@ $('#brandEditModal').on('show.bs.modal', function (event) {
         $.ajax({
           url: "types/" + typeId + "/products/" + productId + "/brands/" + brandId + "/edit" ,
           success: function(data){
-              $modal.find('.modal-content').html(data)
+              $modal.find('.modal-content-custom').html(data)
           }
         });
       })

@@ -72,16 +72,14 @@
 
 
 .nav-small-link-design {
-  font-family: "Circular-Book";
-  color: rgba(15,15,15,0.7);
+  font-family: "Circular-Bold";
+  color: rgba(15,15,15,0.8);
   font-size: 14px;
-  transition: 0.4s ease;
+  transition: 0.3s ease;
 }
 
 
 .nav-small-link-design:hover {
-  font-family: "Circular-Book";
   color: $orange;
-  font-size: 14px;
-  transition: 0.4s ease;
+  transition: 0.3s ease;
 }

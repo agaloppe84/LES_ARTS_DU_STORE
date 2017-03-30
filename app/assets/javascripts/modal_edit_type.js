@@ -4,16 +4,16 @@ $('#typeEditModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
     var typeId = button.data('id');
 
-    $modal.find('.modal-content').html("<div class='await-modal'><div class='fa fa-gear fa-spin'></div></div>");
+    $modal.find('.modal-content-custom').html("<div class='await-modal'><div class='fa fa-gear fa-spin'></div></div>");
 
     setTimeout(function() {
       $.ajax({
       url: "types/" + typeId + "/edit",
       success: function(data){
-          $modal.find('.modal-content').html(data)
+          $modal.find('.modal-content-custom').html(data)
       }
     });
-    }, 1200);
+    }, 1000);
 
 
 

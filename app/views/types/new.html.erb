@@ -1,12 +1,12 @@
 <%= simple_form_for (@type) do |f| %>
 
-<div class="modal-header">
+<div class="modal-header-custom">
   <div class="header-hard-dashboard" style="opacity: 0.8;">Créer une catégorie</div>
   <button class="close" data-dismiss="modal">×</button>
 </div>
 
 
-<div class="modal-body">
+<div class="modal-body-custom">
   <div class="edit-product-container">
     <div class="label-on-modal-dashboard">Nom</div>
     <%= f.input :name, label: false %>
@@ -19,7 +19,7 @@
   <%= render "color_picker" %>
 </div>
 
-<div class="modal-footer">
+<div class="modal-footer-custom">
   <%= f.submit "Créer une catégorie", :class => 'submit-button-on-modal' %>
 </div>
 

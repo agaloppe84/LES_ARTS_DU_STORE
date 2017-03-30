@@ -163,9 +163,9 @@
 
 .admin-button  {
   text-decoration: none;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0,0,0,0.8);
   font-size: 13px;
-  font-family: "Circular-Book";
+  font-family: "Circular-Medium";
   font-weight: 400;
   line-height: 1.8;
 }
@@ -173,11 +173,11 @@
 .admin-button-destroy {
   text-decoration: none;
   color: #D72323;
-  font-size: 13px;
-  font-family: "Circular-Book";
+  font-size: 14px;
+  font-family: "Circular-Bold";
   font-weight: 400;
   line-height: 1.8;
-  opacity: 0.5;
+  opacity: 0.7;
   &:hover {
     opacity: 0.9;
     text-decoration: none;

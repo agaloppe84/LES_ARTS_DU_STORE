@@ -1,0 +1,23 @@
+.mailer-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mailer-user-name {
+  font-family: "Circular-Medium";
+  font-size: 18px;
+  color: rgba(40,40,50,0.8);
+}
+
+
+.mailer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}

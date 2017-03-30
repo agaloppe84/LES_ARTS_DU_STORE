@@ -25,7 +25,7 @@ resources :types
 
   resources :types do
     resources :albums
-    resources :promos
+    resources :promos, only: [:new, :create, :edit, :update]
     resources :products do
       resources :infos
       resources :powers
@@ -33,6 +33,7 @@ resources :types
     end
   end
   resources :quotations, only: [:index, :new, :create, :edit, :update]
+  resources :promos, only: [:index]
   get 'confirmation', to: 'quotations#show'
 
   mount Attachinary::Engine => "/attachinary"

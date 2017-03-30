@@ -5,7 +5,7 @@ $('#promoNewModal').on('show.bs.modal', function (event) {
     $.ajax({
       url: "types/" + typeId + "/promos/new",
       success: function(data){
-          $modal.find('.modal-content').html(data)
+          $modal.find('.modal-content-custom').html(data)
       }
     });
 })
