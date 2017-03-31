@@ -10,6 +10,7 @@ resources :types
   namespace :dashboard do
     get 'quotations' => 'pages#quotations'
     get 'pathfilter' => 'pages#pathfilter'
+    get 'analytics' => 'pages#analytics'
   end
 
   devise_for :users

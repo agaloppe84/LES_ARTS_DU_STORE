@@ -1,0 +1,121 @@
+
+
+<div class="analytics-fullpage">
+
+  <div class="analytics-top-container">
+    <div class="ana-top-cont-text">Analytics</div>
+    <div class="ana-top-cont-text-thin-absolute">Demandes de devis</div>
+  </div>
+
+  <div class="analytics-bottom-container">
+    <div class="analytics-bottom-left">
+
+      <div class="quot-receiver-header">
+        <div class="quot-stats-text">Année</div>
+        <div class="quot-stats-text-month">2017</div>
+      </div>
+
+      <div class="quotgraph-abs-button">
+        <div class="quotgraph-header-month">
+          <div class="quotgraph-header-month-text">Janvier</div>
+        </div>
+        <%= render partial: "quotgraph", locals: {month: @january} %>
+        <div class="quotgraph-trigger-january">Détails</div>
+      </div>
+
+      <div class="quotgraph-abs-button">
+        <div class="quotgraph-header-month">
+          <div class="quotgraph-header-month-text">Février</div>
+        </div>
+        <%= render partial: "quotgraph", locals: {month: @february} %>
+        <div class="quotgraph-trigger-february">Détails</div>
+      </div>
+
+      <div class="quotgraph-abs-button">
+        <div class="quotgraph-header-month">
+          <div class="quotgraph-header-month-text">Mars</div>
+        </div>
+        <%= render partial: "quotgraph", locals: {month: @march} %>
+        <div class="quotgraph-trigger-march">Détails</div>
+      </div>
+
+
+      <div class="quotgraph-abs-button">
+        <div class="quotgraph-header-month">
+          <div class="quotgraph-header-month-text">Avril</div>
+        </div>
+        <%= render partial: "quotgraph", locals: {month: @april} %>
+        <div class="quotgraph-trigger-april">Détails</div>
+      </div>
+
+
+      <div class="quotgraph-abs-button">
+        <div class="quotgraph-header-month">
+          <div class="quotgraph-header-month-text">Mai</div>
+        </div>
+        <%= render partial: "quotgraph", locals: {month: @may} %>
+        <div class="quotgraph-trigger-may">Détails</div>
+      </div>
+
+
+      <div class="quotgraph-abs-button">
+        <div class="quotgraph-header-month">
+          <div class="quotgraph-header-month-text">Juin</div>
+        </div>
+        <%= render partial: "quotgraph", locals: {month: @june} %>
+        <div class="quotgraph-trigger-june">Détails</div>
+      </div>
+
+      <div class="quotgraph-header-month">
+        <div class="quotgraph-header-month-text">Juillet</div>
+      </div>
+      <%= render partial: "quotgraph", locals: {month: @july} %>
+      <div class="quotgraph-trigger-july">Détails</div>
+
+      <div class="quotgraph-header-month">
+        <div class="quotgraph-header-month-text">Août</div>
+      </div>
+      <%= render partial: "quotgraph", locals: {month: @august} %>
+      <div class="quotgraph-trigger-august">Détails</div>
+
+      <div class="quotgraph-header-month">
+        <div class="quotgraph-header-month-text">Septembre</div>
+      </div>
+      <%= render partial: "quotgraph", locals: {month: @september} %>
+      <div class="quotgraph-trigger-september">Détails</div>
+
+      <div class="quotgraph-header-month">
+        <div class="quotgraph-header-month-text">Octobre</div>
+      </div>
+      <%= render partial: "quotgraph", locals: {month: @october} %>
+      <div class="quotgraph-trigger-october">Détails</div>
+
+      <div class="quotgraph-header-month">
+        <div class="quotgraph-header-month-text">Novembre</div>
+      </div>
+      <%= render partial: "quotgraph", locals: {month: @november} %>
+      <div class="quotgraph-trigger-november">Détails</div>
+
+      <div class="quotgraph-header-month">
+        <div class="quotgraph-header-month-text">Decembre</div>
+      </div>
+      <%= render partial: "quotgraph", locals: {month: @december} %>
+      <div class="quotgraph-trigger-december">Détails</div>
+
+    </div>
+
+    <%= render "month_one" %>
+    <%= render "month_two" %>
+    <%= render "month_three" %>
+    <%= render "month_four" %>
+    <%= render "month_five" %>
+    <%= render "month_six" %>
+    <%= render "month_seven" %>
+    <%= render "month_eight" %>
+    <%= render "month_nine" %>
+    <%= render "month_ten" %>
+    <%= render "month_eleven" %>
+    <%= render "month_twelve" %>
+
+  </div>
+</div>
