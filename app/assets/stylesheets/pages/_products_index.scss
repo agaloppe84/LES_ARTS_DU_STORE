@@ -752,7 +752,7 @@
 }
 
 .button-two {
-  font-family: "Circular-Bold";
+  font-family: "Circular-Black";
   color: rgba(55,55,55,0.9);
   font-size: 15px;
   text-shadow: none;
@@ -865,8 +865,38 @@
   justify-content: space-around;
   position: fixed;
   z-index: 5000;
-  background-color: rgba(50,50,58,1);
+  background-color: rgba(40,40,48,1);
 }
+
+.absolute-logo-v2-header {
+  position: absolute;
+  left: 5%;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.menu-button-ttr {
+  font-size: 13px;
+  font-family: "Circular-Black";
+  color: white;
+  margin-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .menu-index-active {
@@ -874,7 +904,7 @@
   width: calc(100% - 16px);
   border-bottom: 2px solid lightgrey;
   height: 12px;
-  bottom: -4px;
+  bottom: -6px;
   display: none;
   transition: 0.4s ease;
   background-size: contain;
